@@ -1,0 +1,401 @@
+[2026-02-16 09:03:50][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 09:03:50][WARNING] Login fallido para usuario: sergio
+[2026-02-16 09:09:47][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 09:10:47][INFO] roto
+[2026-02-16 09:10:47][INFO] roto2
+[2026-02-16 09:10:47][INFO] El usuario se ha eliminado correctamente
+[2026-02-16 09:10:47][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 17
+[2026-02-16 09:10:52][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 09:10:58][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 09:10:58][WARNING] Login fallido para usuario: sergio
+[2026-02-16 09:12:16][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 09:14:30][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 09:14:50][WARNING] Registro: usuario 'Pepe' o email 'manel@manel.com' ya existe
+[2026-02-16 09:14:50][WARNING] Registro fallido para usuario: Pepe, email: manel@manel.com
+[2026-02-16 09:16:19][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:16:32][WARNING] Login: contraseña incorrecta para usuario - Pepe
+[2026-02-16 09:16:32][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:16:56][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:17:01][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 09:17:24][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 09:17:42][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:17:49][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:18:04][WARNING] Registro: usuario 'Pepe' o email 'aydiosmiodemialma@gmail.com' ya existe
+[2026-02-16 09:18:04][WARNING] Registro fallido para usuario: Pepe, email: aydiosmiodemialma@gmail.com
+[2026-02-16 09:18:24][WARNING] Registro: usuario 'pepe' o email 'pepe@gmail.com' ya existe
+[2026-02-16 09:18:24][WARNING] Registro fallido para usuario: pepe, email: pepe@gmail.com
+[2026-02-16 09:19:17][WARNING] Registro: usuario 'pepe' o email 'pepe@gmail.com' ya existe
+[2026-02-16 09:19:17][WARNING] Registro fallido para usuario: pepe, email: pepe@gmail.com
+[2026-02-16 09:20:10][WARNING] Login: contraseña incorrecta para usuario - Pepe
+[2026-02-16 09:20:10][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:20:17][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:20:18][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:20:19][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:20:19][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:20:27][WARNING] Login fallido para usuario: Pepe
+[2026-02-16 09:20:56][WARNING] Login fallido para usuario: walo
+[2026-02-16 09:21:14][WARNING] Login fallido para usuario: walo
+[2026-02-16 09:21:30][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 09:21:48][WARNING] Login fallido para usuario: manolete
+[2026-02-16 09:22:00][WARNING] Login: contraseña incorrecta para usuario - manolete
+[2026-02-16 09:22:00][WARNING] Login fallido para usuario: manolete
+[2026-02-16 09:22:03][WARNING] Login fallido para usuario: manolete
+[2026-02-16 09:22:13][WARNING] Registro: usuario 'juan' o email 'juan@juan.com' ya existe
+[2026-02-16 09:22:13][WARNING] Registro fallido para usuario: juan, email: juan@juan.com
+[2026-02-16 09:22:13][WARNING] Login fallido para usuario: manolete
+[2026-02-16 09:25:49][WARNING] Login fallido para usuario: juan
+[2026-02-16 09:27:57][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 09:27:57][WARNING] Login fallido para usuario: sergio
+[2026-02-16 09:28:04][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 09:28:04][WARNING] Login fallido para usuario: sergio
+[2026-02-16 09:28:24][WARNING] Login fallido para usuario: juan
+[2026-02-16 09:31:15][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 09:42:57][WARNING] Registro: usuario 'Manolete' o email 'manuel@manuel.com' ya existe
+[2026-02-16 09:42:57][WARNING] Registro fallido para usuario: Manolete, email: manuel@manuel.com
+[2026-02-16 09:46:28][ERROR] Registro: excepción al insertar usuario 'Manolete' - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Manolete' for key 'Usuario.idx_nombre'
+[2026-02-16 09:46:28][WARNING] Registro fallido para usuario: Manolete, email: manuel@manuel.com
+[2026-02-16 09:48:25][INFO] Registro: registrando nuevo usuario 'Manolete'
+[2026-02-16 09:48:25][ERROR] Registro: excepción al insertar usuario 'Manolete' - SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'Manolete' for key 'Usuario.idx_nombre'
+[2026-02-16 09:48:25][WARNING] Registro fallido para usuario: Manolete, email: manuel@manuel.com
+[2026-02-16 09:51:23][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 09:51:23][WARNING] Login fallido para usuario: sergio
+[2026-02-16 09:59:19][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 09:59:32][INFO] Registro: registrando nuevo usuario 'Manolete'
+[2026-02-16 10:03:07][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 10:04:15][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 10:07:16][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-16 10:07:34][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 10:08:01][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-16 10:12:40][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 10:12:46][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 10:12:51][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 10:12:51][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-16 10:14:40][ERROR] Usuario 57 ya está siendo modificado por otro administrador
+[2026-02-16 10:14:40][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-16 10:14:47][ERROR] Usuario 57 ya está siendo modificado por otro administrador
+[2026-02-16 10:14:47][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-16 10:14:49][ERROR] Usuario 55 ya está siendo modificado por otro administrador
+[2026-02-16 10:14:49][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-16 10:16:40][ERROR] Usuario 57 ya está siendo modificado por otro administrador
+[2026-02-16 10:16:40][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-16 10:16:44][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 16
+[2026-02-16 10:16:48][ERROR] Usuario 60 ya está siendo modificado por otro administrador
+[2026-02-16 10:16:48][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-16 10:18:07][INFO] roto
+[2026-02-16 10:18:08][INFO] roto
+[2026-02-16 10:18:09][INFO] roto
+[2026-02-16 10:18:09][INFO] roto
+[2026-02-16 10:18:09][INFO] roto
+[2026-02-16 10:18:09][INFO] roto
+[2026-02-16 10:18:09][INFO] roto
+[2026-02-16 10:20:41][INFO] roto
+[2026-02-16 10:20:45][INFO] roto
+[2026-02-16 10:23:48][INFO] roto
+[2026-02-16 10:27:20][INFO] roto
+[2026-02-16 10:27:53][ERROR] Error al eliminar sesiones del usuario: 
+[2026-02-16 10:27:53][INFO] roto
+[2026-02-16 10:28:22][INFO] roto
+[2026-02-16 10:29:28][INFO] roto
+[2026-02-16 10:30:40][INFO] roto
+[2026-02-16 10:33:25][INFO] roto
+[2026-02-16 10:35:16][INFO] roto
+[2026-02-16 10:35:16][INFO] Eliminar usuario:  - Eliminación de sesiones resultó: éxito
+[2026-02-16 10:35:26][INFO] roto
+[2026-02-16 10:35:26][INFO] Eliminar usuario:  - Eliminación de sesiones resultó: éxito
+[2026-02-16 10:35:26][INFO] roto
+[2026-02-16 10:35:26][INFO] Eliminar usuario:  - Eliminación de sesiones resultó: éxito
+[2026-02-16 10:35:37][INFO] roto
+[2026-02-16 10:35:37][INFO] Eliminar usuario:  - Eliminación de sesiones resultó: éxito
+[2026-02-16 10:35:59][INFO] roto
+[2026-02-16 10:35:59][INFO] Eliminar usuario: 57 - Eliminación de sesiones resultó: éxito
+[2026-02-16 10:35:59][INFO] Error: 57
+[2026-02-16 10:35:59][INFO] roto2
+[2026-02-16 10:35:59][INFO] El usuario se ha eliminado correctamente
+[2026-02-16 10:36:02][INFO] roto
+[2026-02-16 10:36:02][INFO] Eliminar usuario: 55 - Eliminación de sesiones resultó: éxito
+[2026-02-16 10:36:02][INFO] Error: 55
+[2026-02-16 10:36:02][INFO] roto2
+[2026-02-16 10:36:02][INFO] El usuario se ha eliminado correctamente
+[2026-02-16 10:36:34][INFO] roto
+[2026-02-16 10:38:03][INFO] roto
+[2026-02-16 10:38:03][INFO] 1
+[2026-02-16 10:38:19][INFO] roto
+[2026-02-16 10:38:19][INFO] 1
+[2026-02-16 10:38:21][INFO] roto
+[2026-02-16 10:38:21][INFO] 1
+[2026-02-16 10:38:21][INFO] roto
+[2026-02-16 10:38:21][INFO] 1
+[2026-02-16 10:38:21][INFO] roto
+[2026-02-16 10:38:21][INFO] 1
+[2026-02-16 10:38:21][INFO] roto
+[2026-02-16 10:38:21][INFO] 1
+[2026-02-16 10:38:22][INFO] roto
+[2026-02-16 10:38:22][INFO] 1
+[2026-02-16 10:38:22][INFO] roto
+[2026-02-16 10:38:22][INFO] 1
+[2026-02-16 10:38:22][INFO] roto
+[2026-02-16 10:38:22][INFO] 1
+[2026-02-16 10:38:22][INFO] roto
+[2026-02-16 10:38:22][INFO] 1
+[2026-02-16 10:38:22][INFO] roto
+[2026-02-16 10:38:22][INFO] 1
+[2026-02-16 10:38:23][INFO] roto
+[2026-02-16 10:38:23][INFO] 1
+[2026-02-16 10:38:23][INFO] roto
+[2026-02-16 10:38:23][INFO] 1
+[2026-02-16 10:38:23][INFO] roto
+[2026-02-16 10:38:23][INFO] 1
+[2026-02-16 10:38:23][INFO] roto
+[2026-02-16 10:38:23][INFO] 1
+[2026-02-16 10:38:23][INFO] roto
+[2026-02-16 10:38:23][INFO] 1
+[2026-02-16 10:38:23][INFO] roto
+[2026-02-16 10:38:23][INFO] 1
+[2026-02-16 10:38:24][INFO] roto
+[2026-02-16 10:38:24][INFO] 1
+[2026-02-16 10:38:24][INFO] roto
+[2026-02-16 10:38:24][INFO] 1
+[2026-02-16 10:38:24][INFO] roto
+[2026-02-16 10:38:24][INFO] 1
+[2026-02-16 10:38:24][INFO] roto
+[2026-02-16 10:38:24][INFO] 1
+[2026-02-16 10:38:24][INFO] roto
+[2026-02-16 10:38:24][INFO] 1
+[2026-02-16 10:38:24][INFO] roto
+[2026-02-16 10:38:24][INFO] 1
+[2026-02-16 10:38:25][INFO] roto
+[2026-02-16 10:38:25][INFO] 1
+[2026-02-16 10:38:25][INFO] roto
+[2026-02-16 10:38:25][INFO] 1
+[2026-02-16 10:38:25][INFO] roto
+[2026-02-16 10:38:25][INFO] 1
+[2026-02-16 10:42:27][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 10:43:53][INFO] roto
+[2026-02-16 10:43:53][INFO] 1
+[2026-02-16 10:43:53][INFO] Error: 53
+[2026-02-16 10:43:53][INFO] roto2
+[2026-02-16 10:43:53][INFO] El usuario se ha eliminado correctamente
+[2026-02-16 10:43:59][INFO] roto
+[2026-02-16 10:43:59][INFO] 1
+[2026-02-16 10:43:59][INFO] Error: 52
+[2026-02-16 10:43:59][INFO] roto2
+[2026-02-16 10:43:59][INFO] El usuario se ha eliminado correctamente
+[2026-02-16 10:45:31][INFO] Error: 51
+[2026-02-16 10:45:31][INFO] El usuario se ha eliminado correctamente
+[2026-02-16 10:45:59][INFO] El usuario se ha eliminado correctamente
+[2026-02-16 10:46:32][INFO] El usuario se ha eliminado correctamente
+[2026-02-16 11:27:27][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 12:43:00][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 12:43:00][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-16 12:43:02][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 12:43:02][WARNING] Login fallido para usuario: sergio
+[2026-02-16 12:43:08][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 12:43:08][WARNING] Login fallido para usuario: sergio
+[2026-02-16 12:43:27][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 12:43:27][WARNING] Login fallido para usuario: sergio
+[2026-02-16 17:09:07][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 17:09:07][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-16 17:12:07][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 17:12:07][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-16 17:12:09][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 17:12:09][WARNING] Login fallido para usuario: sergio
+[2026-02-16 17:12:13][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 17:12:13][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-16 17:26:36][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 17:26:38][INFO] Login: usuario no encontrado - 
+[2026-02-16 17:26:38][WARNING] Login fallido para usuario: 
+[2026-02-16 17:30:28][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 17:30:36][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-16 17:30:36][WARNING] Login fallido para usuario: sergio
+[2026-02-16 17:30:52][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 17:30:52][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-16 17:39:27][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 17:39:27][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-16 17:40:23][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 17:40:52][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 17:42:46][INFO] error CARGAR CLIENTES
+[2026-02-16 17:43:17][INFO] error CARGAR CLIENTES
+[2026-02-16 17:43:50][INFO] error CARGAR CLIENTES
+[2026-02-16 17:50:59][INFO] error CARGAR CLIENTES
+[2026-02-16 17:51:27][INFO] error CARGAR CLIENTES
+[2026-02-16 17:52:13][INFO] error CARGAR CLIENTES
+[2026-02-16 17:52:55][INFO] error CARGAR CLIENTES
+[2026-02-16 17:53:01][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 17:53:07][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 17:53:07][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-16 17:55:00][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 17:55:42][INFO] error CARGAR CLIENTES
+[2026-02-16 18:02:34][INFO] error CARGAR CLIENTES
+[2026-02-16 18:19:29][INFO] error CARGAR CLIENTES
+[2026-02-16 18:19:35][ERROR] Error al eliminar cliente: 1
+[2026-02-16 18:20:11][INFO] error CARGAR CLIENTES
+[2026-02-16 18:20:43][INFO] error CARGAR CLIENTES
+[2026-02-16 18:20:49][INFO] error CARGAR CLIENTES
+[2026-02-16 18:21:06][INFO] error CARGAR CLIENTES
+[2026-02-16 18:21:07][INFO] error CARGAR CLIENTES
+[2026-02-16 18:21:15][INFO] error CARGAR CLIENTES
+[2026-02-16 18:21:16][INFO] error CARGAR CLIENTES
+[2026-02-16 18:21:43][INFO] error CARGAR CLIENTES
+[2026-02-16 18:22:24][INFO] error CARGAR CLIENTES
+[2026-02-16 18:22:37][INFO] error CARGAR CLIENTES
+[2026-02-16 18:22:39][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 18:35:22][INFO] error CARGAR CLIENTES
+[2026-02-16 18:38:13][INFO] Ultima actividadArray
+[2026-02-16 18:38:13][INFO] Tiempo sesión1800
+[2026-02-16 18:38:14][INFO] Ultima actividadArray
+[2026-02-16 18:38:14][INFO] Tiempo sesión1800
+[2026-02-16 18:38:16][INFO] Ultima actividadArray
+[2026-02-16 18:38:16][INFO] Tiempo sesión1800
+[2026-02-16 18:38:16][INFO] error CARGAR CLIENTES
+[2026-02-16 18:38:16][INFO] Ultima actividadArray
+[2026-02-16 18:38:16][INFO] Tiempo sesión1800
+[2026-02-16 18:38:17][INFO] Ultima actividadArray
+[2026-02-16 18:38:17][INFO] Tiempo sesión1800
+[2026-02-16 18:38:49][INFO] Ultima actividadArray
+[2026-02-16 18:38:49][INFO] Tiempo sesión1800
+[2026-02-16 18:38:57][INFO] Ultima actividadArray
+[2026-02-16 18:38:57][INFO] Tiempo sesión1800
+[2026-02-16 18:38:58][INFO] Ultima actividadArray
+[2026-02-16 18:38:58][INFO] Tiempo sesión1800
+[2026-02-16 18:38:58][INFO] error CARGAR CLIENTES
+[2026-02-16 18:44:14][INFO] error CARGAR CLIENTES
+[2026-02-16 18:44:31][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 18:44:38][INFO] error CARGAR CLIENTES
+[2026-02-16 18:54:15][INFO] error CARGAR CLIENTES
+[2026-02-16 19:01:39][INFO] error CARGAR CLIENTES
+[2026-02-16 19:03:49][INFO] error CARGAR CLIENTES
+[2026-02-16 19:05:48][INFO] error CARGAR CLIENTES
+[2026-02-16 19:06:29][INFO] error CARGAR CLIENTES
+[2026-02-16 19:06:48][INFO] error CARGAR CLIENTES
+[2026-02-16 19:07:19][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-16 19:16:36][INFO] error CARGAR CLIENTES
+[2026-02-16 19:18:04][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-16 19:18:14][INFO] error CARGAR CLIENTES
+[2026-02-16 19:18:32][INFO] error CARGAR CLIENTES
+[2026-02-16 19:19:51][INFO] error CARGAR CLIENTES
+[2026-02-16 19:19:52][INFO] error CARGAR CLIENTES
+[2026-02-16 19:20:19][INFO] error CARGAR CLIENTES
+[2026-02-16 19:20:24][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:20:30][INFO] error CARGAR CLIENTES
+[2026-02-16 19:20:45][INFO] error CARGAR CLIENTES
+[2026-02-16 19:20:51][INFO] error CARGAR CLIENTES
+[2026-02-16 19:20:55][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:20:55][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:21:04][INFO] error CARGAR CLIENTES
+[2026-02-16 19:21:07][INFO] error CARGAR CLIENTES
+[2026-02-16 19:21:08][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:21:42][INFO] error CARGAR CLIENTES
+[2026-02-16 19:21:44][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:21:47][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:23:49][INFO] error CARGAR CLIENTES
+[2026-02-16 19:23:55][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:23:59][INFO] error CARGAR CLIENTES
+[2026-02-16 19:24:04][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:24:07][INFO] error CARGAR CLIENTES
+[2026-02-16 19:24:10][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:24:13][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:24:51][INFO] error CARGAR CLIENTES
+[2026-02-16 19:24:55][INFO] error CARGAR CLIENTES
+[2026-02-16 19:24:55][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:25:24][INFO] error CARGAR CLIENTES
+[2026-02-16 19:25:28][INFO] error CARGAR CLIENTES
+[2026-02-16 19:25:28][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:25:42][INFO] error CARGAR CLIENTES
+[2026-02-16 19:25:45][INFO] error CARGAR CLIENTES
+[2026-02-16 19:25:45][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:25:46][INFO] error CARGAR CLIENTES
+[2026-02-16 19:25:46][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:26:29][INFO] error CARGAR CLIENTES
+[2026-02-16 19:26:34][INFO] error CARGAR CLIENTES
+[2026-02-16 19:26:34][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:26:37][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:26:39][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:26:41][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:26:43][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:26:46][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:27:30][INFO] error CARGAR CLIENTES
+[2026-02-16 19:28:26][INFO] error CARGAR CLIENTES
+[2026-02-16 19:28:37][INFO] error CARGAR CLIENTES
+[2026-02-16 19:28:37][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:28:44][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:29:01][INFO] error CARGAR CLIENTES
+[2026-02-16 19:29:01][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:29:31][INFO] El cliente se ha eliminado correctamente
+[2026-02-16 19:30:25][INFO] error CARGAR CLIENTES
+[2026-02-16 19:30:29][INFO] error CARGAR CLIENTES
+[2026-02-16 19:30:29][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:30:32][INFO] error CARGAR CLIENTES
+[2026-02-16 19:30:32][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:30:34][INFO] error CARGAR CLIENTES
+[2026-02-16 19:30:34][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:30:36][INFO] error CARGAR CLIENTES
+[2026-02-16 19:30:36][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:30:38][INFO] error CARGAR CLIENTES
+[2026-02-16 19:30:38][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:31:15][INFO] error CARGAR CLIENTES
+[2026-02-16 19:31:15][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:32:20][INFO] error CARGAR CLIENTES
+[2026-02-16 19:33:54][INFO] error CARGAR CLIENTES
+[2026-02-16 19:33:56][INFO] error CARGAR CLIENTES
+[2026-02-16 19:34:28][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-16 19:34:28][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-16 19:34:54][INFO] error CARGAR CLIENTES
+[2026-02-16 19:36:20][INFO] error CARGAR CLIENTES
+[2026-02-16 19:36:24][INFO] error CARGAR CLIENTES
+[2026-02-16 19:36:24][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:37:07][INFO] error CARGAR CLIENTES
+[2026-02-16 19:37:10][INFO] error CARGAR CLIENTES
+[2026-02-16 19:37:10][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:38:12][INFO] error CARGAR CLIENTES
+[2026-02-16 19:40:03][INFO] error CARGAR CLIENTES
+[2026-02-16 19:40:07][INFO] error CARGAR CLIENTES
+[2026-02-16 19:40:07][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:40:56][INFO] error CARGAR CLIENTES
+[2026-02-16 19:40:59][INFO] error CARGAR CLIENTES
+[2026-02-16 19:40:59][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:41:16][INFO] error CARGAR CLIENTES
+[2026-02-16 19:42:25][INFO] error CARGAR CLIENTES
+[2026-02-16 19:42:27][INFO] error CARGAR CLIENTES
+[2026-02-16 19:42:27][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:42:38][INFO] error CARGAR CLIENTES
+[2026-02-16 19:42:38][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:43:09][INFO] error CARGAR CLIENTES
+[2026-02-16 19:43:11][INFO] error CARGAR CLIENTES
+[2026-02-16 19:43:11][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:43:12][INFO] error CARGAR CLIENTES
+[2026-02-16 19:43:12][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:43:14][INFO] error CARGAR CLIENTES
+[2026-02-16 19:43:14][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:43:17][INFO] error CARGAR CLIENTES
+[2026-02-16 19:43:17][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:43:45][INFO] error CARGAR CLIENTES
+[2026-02-16 19:43:59][INFO] error CARGAR CLIENTES
+[2026-02-16 19:44:40][INFO] error CARGAR CLIENTES
+[2026-02-16 19:45:03][INFO] error CARGAR CLIENTES
+[2026-02-16 19:45:32][INFO] error CARGAR CLIENTES
+[2026-02-16 19:47:29][INFO] error CARGAR CLIENTES
+[2026-02-16 19:47:50][INFO] error CARGAR CLIENTES
+[2026-02-16 19:48:02][INFO] error CARGAR CLIENTES
+[2026-02-16 19:48:15][INFO] error CARGAR CLIENTES
+[2026-02-16 19:48:21][INFO] error CARGAR CLIENTES
+[2026-02-16 19:48:31][INFO] error CARGAR CLIENTES
+[2026-02-16 19:48:47][INFO] error CARGAR CLIENTES
+[2026-02-16 19:49:09][INFO] error CARGAR CLIENTES
+[2026-02-16 19:49:15][INFO] error CARGAR CLIENTES
+[2026-02-16 19:49:15][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:49:20][INFO] error CARGAR CLIENTES
+[2026-02-16 19:49:24][WARNING] Registro: cliente 'set' ya existe
+[2026-02-16 19:49:24][INFO] error CARGAR CLIENTES
+[2026-02-16 19:49:24][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:50:08][INFO] error CARGAR CLIENTES
+[2026-02-16 19:50:12][WARNING] Registro: cliente 'set' ya existe
+[2026-02-16 19:50:12][INFO] error CARGAR CLIENTES
+[2026-02-16 19:50:12][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:51:46][INFO] error CARGAR CLIENTES
+[2026-02-16 19:51:52][WARNING] Registro: cliente 'set' ya existe
+[2026-02-16 19:51:52][INFO] error CARGAR CLIENTES
+[2026-02-16 19:51:52][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-16 19:54:40][INFO] error CARGAR CLIENTES
+[2026-02-16 19:54:44][WARNING] Registro: cliente 'set' ya existe
+[2026-02-16 19:54:44][INFO] error CARGAR CLIENTES
+[2026-02-16 19:54:44][INFO] La carpeta del cliente se ha creado correctamente

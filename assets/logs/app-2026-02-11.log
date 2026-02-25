@@ -1,0 +1,49 @@
+[2026-02-11 09:19:02][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-11 09:19:02][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-11 09:32:21][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-11 09:32:21][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-11 09:36:16][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-11 09:36:16][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-11 10:41:02][WARNING] Login fallido para usuario: sergio
+[2026-02-11 10:41:07][WARNING] Login fallido para usuario: sergio
+[2026-02-11 10:41:08][WARNING] Login fallido para usuario: sergio
+[2026-02-11 10:41:08][WARNING] Login fallido para usuario: sergio
+[2026-02-11 10:41:15][WARNING] Login fallido para usuario: sergio
+[2026-02-11 10:41:58][WARNING] Login fallido para usuario: manel
+[2026-02-11 10:42:36][WARNING] Login fallido para usuario: manel
+[2026-02-11 10:42:41][WARNING] Login fallido para usuario: sergio
+[2026-02-11 10:43:47][WARNING] Login fallido para usuario: manel
+[2026-02-11 10:44:16][ERROR] Usuario 17 ya está siendo modificado por otro administrador
+[2026-02-11 10:44:16][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-11 10:46:50][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-11 10:46:54][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 5
+[2026-02-11 10:49:38][ERROR] Error al liberar el usuario de modificación - Usuario: 17, Admin: 16
+[2026-02-11 10:49:41][ERROR] Error al liberar el usuario de modificación - Usuario: 17, Admin: 5
+[2026-02-11 10:57:38][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-11 11:46:33][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-11 12:04:34][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-11 12:05:12][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-11 12:05:15][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-11 12:05:30][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-11 12:05:39][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:05:46][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:05:52][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:05:52][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:05:52][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:05:53][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:05:53][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:05:53][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:05:53][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:08:05][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:08:06][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:08:13][WARNING] Login fallido para usuario: usuario
+[2026-02-11 12:17:33][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-11 12:22:15][WARNING] Login: usuario eliminado - hola
+[2026-02-11 12:24:43][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-11 12:36:16][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-11 12:55:37][INFO] roto
+[2026-02-11 12:55:38][INFO] roto2
+[2026-02-11 12:55:38][INFO] El usuario se ha eliminado correctamente
+[2026-02-11 12:55:44][INFO] roto
+[2026-02-11 12:55:44][INFO] roto2
+[2026-02-11 12:55:44][INFO] El usuario se ha eliminado correctamente

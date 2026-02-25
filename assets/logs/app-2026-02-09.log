@@ -1,0 +1,942 @@
+[2026-02-09 08:59:22][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-09 08:59:22][WARNING] Login fallido para usuario: sergio
+[2026-02-09 09:07:21][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 09:07:40][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 09:07:40][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 09:07:41][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 09:33:06][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 09:42:56][INFO] Login: usuario no encontrado - 
+[2026-02-09 09:42:56][WARNING] Login fallido para usuario: 
+[2026-02-09 10:05:30][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:14:46][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:14:56][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:14:57][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:14:57][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:14:57][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:14:57][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:14:57][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:15:06][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:17:05][INFO] Eliminando sesión con ID: vp8fm8lipd9kdp5tuuruu02oa4
+[2026-02-09 10:20:48][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:25:27][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:32:42][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:33:19][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:36:19][INFO] Eliminando sesión con ID: t7kca8vejvuet8tmcvv7hgulhh
+[2026-02-09 10:36:22][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:36:25][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:36:27][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:36:40][INFO] Eliminando sesión con ID: 7jpclb3b14bvhr0c10hdh6hj8t
+[2026-02-09 10:36:46][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:39:07][INFO] Eliminando sesión con ID: ghf7oc3hak0q91bdobkb9nukiv
+[2026-02-09 10:39:07][INFO] Login: usuario no encontrado - 
+[2026-02-09 10:39:07][WARNING] Login fallido para usuario: 
+[2026-02-09 10:39:08][INFO] Eliminando sesión con ID: ghf7oc3hak0q91bdobkb9nukiv
+[2026-02-09 10:46:32][INFO] Eliminando sesión con ID: lfubp6gorq6scv1icvkaq808pk
+[2026-02-09 10:46:48][INFO] Eliminando sesión con ID: og95152neinje4p1le9mj1k8k5
+[2026-02-09 10:46:53][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:47:41][INFO] Eliminando sesión con ID: 9g5c35cqe07uei0h2ihvclq81j
+[2026-02-09 10:48:34][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 10:51:09][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 11:21:54][INFO] Eliminando sesión con ID: eihvmt8scbteusoi0a2aan205v
+[2026-02-09 11:22:19][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 11:35:37][INFO] Eliminando sesión con ID: 8ksfkll3sal3er9qk9dnsnv147
+[2026-02-09 11:37:51][INFO] Eliminando sesión con ID: 2tvnqo7sh2ku25l292e88m9bdc
+[2026-02-09 11:38:18][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 11:52:12][INFO] Eliminando sesión con ID: bmps55sgaidaejcioav3sljb6b
+[2026-02-09 11:52:14][INFO] Eliminando sesión con ID: bmps55sgaidaejcioav3sljb6b
+[2026-02-09 11:54:20][INFO] Logout automático para sesión ID: 45cgu589mjmvku3o4ptt8bmqhr
+[2026-02-09 11:54:20][INFO] Eliminando sesión con ID: 45cgu589mjmvku3o4ptt8bmqhr
+[2026-02-09 11:54:23][INFO] Eliminando sesión con ID: 26moffq0it6g07mai67nbparij
+[2026-02-09 11:54:26][INFO] Eliminando sesión con ID: 26moffq0it6g07mai67nbparij
+[2026-02-09 11:54:27][INFO] Eliminando sesión con ID: 26moffq0it6g07mai67nbparij
+[2026-02-09 11:54:40][INFO] Eliminando sesión con ID: 26moffq0it6g07mai67nbparij
+[2026-02-09 11:54:41][INFO] Eliminando sesión con ID: 26moffq0it6g07mai67nbparij
+[2026-02-09 11:54:44][INFO] Eliminando sesión con ID: 26moffq0it6g07mai67nbparij
+[2026-02-09 12:01:12][INFO] Eliminando sesión con ID: bmps55sgaidaejcioav3sljb6b
+[2026-02-09 12:01:15][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 12:01:28][INFO] Eliminando sesión con ID: 6krvddss6oc3a5ejp0g1gju553
+[2026-02-09 12:01:46][INFO] Eliminando sesión con ID: ujeurvtbpcs41ceahs92lqrsf5
+[2026-02-09 12:03:31][INFO] Eliminando sesión con ID: osccmsd41iuo5epm5987a1rtcj
+[2026-02-09 12:03:44][INFO] Logout automático para sesión ID: vld7d35fqvmv9tdiu5dajec7g0
+[2026-02-09 12:03:44][INFO] Eliminando sesión con ID: vld7d35fqvmv9tdiu5dajec7g0
+[2026-02-09 12:03:49][INFO] Eliminando sesión con ID: 3hu6nlrpvg6r2tdtfjrdb4ksp0
+[2026-02-09 12:04:05][INFO] Eliminando sesión con ID: hjsmqc9169f0ju5i2cu22vht58
+[2026-02-09 12:04:16][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 12:05:57][INFO] Eliminando sesión con ID: c9m5prqgmkkj8vf215c0o4icm2
+[2026-02-09 12:10:36][INFO] Logout automático para sesión ID: qever1d500nvd6pdcu0p8dof0r
+[2026-02-09 12:10:36][INFO] Eliminando sesión con ID: qever1d500nvd6pdcu0p8dof0r
+[2026-02-09 12:10:38][INFO] Eliminando sesión con ID: t9tu3qm65270udunhru1tag5i8
+[2026-02-09 12:10:41][INFO] No hay sesión activa para el usuario: sergio, creando nueva sesión
+[2026-02-09 12:10:43][INFO] Eliminando sesión con ID: 0gqh6h5evqs2htud2nokekmbei
+[2026-02-09 12:10:45][INFO] Eliminando sesión con ID: 0gqh6h5evqs2htud2nokekmbei
+[2026-02-09 12:10:48][INFO] No hay sesión activa para el usuario: sergio, creando nueva sesión
+[2026-02-09 12:10:59][INFO] Logout automático para sesión ID: 9doidfm5c7qn1faonoes4gp4sb
+[2026-02-09 12:10:59][INFO] Eliminando sesión con ID: 9doidfm5c7qn1faonoes4gp4sb
+[2026-02-09 12:15:24][INFO] Eliminando sesión con ID: u9qclmpn88gbc62s3n1i2h562g
+[2026-02-09 12:15:30][INFO] No hay sesión activa para el usuario: sergio, creando nueva sesión
+[2026-02-09 12:15:36][INFO] Eliminando sesión con ID: ruo56l4tjgrct31cmh27kqstj8
+[2026-02-09 12:15:40][INFO] No hay sesión activa para el usuario: sergio, creando nueva sesión
+[2026-02-09 12:15:47][INFO] Eliminando sesión con ID: lv005d8dg6up48ei8tqgksa223
+[2026-02-09 12:15:59][INFO] No hay sesión activa para el usuario: sergio, creando nueva sesión
+[2026-02-09 12:15:59][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 12:16:13][INFO] No hay sesión activa para el usuario: sergio, creando nueva sesión
+[2026-02-09 12:16:20][INFO] Eliminando sesión con ID: 9aqtmn6s2cjosft72gm3ovo9va
+[2026-02-09 12:17:09][INFO] No hay sesión activa para el usuario: sergio, creando nueva sesión
+[2026-02-09 12:17:09][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 12:18:23][INFO] Eliminando sesión con ID: evk4ln4ftmalarnf4dfupv555m
+[2026-02-09 12:18:44][INFO] No hay sesión activa para el usuario: sergio, creando nueva sesión
+[2026-02-09 12:18:52][INFO] Eliminando sesión con ID: busscpdi69psn800ffoq5afeel
+[2026-02-09 12:19:28][INFO] No hay sesión activa para el usuario: sergio, creando nueva sesión
+[2026-02-09 12:19:33][INFO] Eliminando sesión con ID: c6h3n1gkumuu9p9krkgkgjr3r6
+[2026-02-09 12:20:08][INFO] Eliminando sesión con ID: 86b83dnj1gn8n2i2ch6nd20p83
+[2026-02-09 12:22:46][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 12:24:18][INFO] Eliminando sesión con ID: h16i9kj61aenhf6h5p09qmhrfd
+[2026-02-09 12:28:13][WARNING] Login: contraseña incorrecta para usuario - usuario
+[2026-02-09 12:28:13][WARNING] Login fallido para usuario: usuario
+[2026-02-09 12:28:36][ERROR] Error al registrar sesión para usuario: usuario
+[2026-02-09 12:29:24][INFO] Eliminando sesión con ID: 4kd7mp9tubv119g274mhh7e6ji
+[2026-02-09 12:31:58][INFO] Eliminando sesión con ID: 4kd7mp9tubv119g274mhh7e6ji
+[2026-02-09 12:33:37][ERROR] Error en controller: Call to undefined function registroUsuario() | Línea: 135
+[2026-02-09 12:36:14][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 12:37:59][INFO] Eliminando sesión con ID: cm1g3tfs18ddvv9uic6pv3fnsg
+[2026-02-09 12:38:17][INFO] Eliminando sesión con ID: a7cranin05t67j25268c94mlq7
+[2026-02-09 12:40:17][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 12:40:21][INFO] Login: usuario no encontrado - sad
+[2026-02-09 12:40:21][WARNING] Login fallido para usuario: sad
+[2026-02-09 12:40:24][INFO] Login: usuario no encontrado - asd
+[2026-02-09 12:40:24][WARNING] Login fallido para usuario: asd
+[2026-02-09 12:40:27][INFO] Login: usuario no encontrado - asd
+[2026-02-09 12:40:27][WARNING] Login fallido para usuario: asd
+[2026-02-09 12:41:17][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 12:46:50][INFO] Eliminando sesión con ID: q91eab7h8s7crrrh61l6h05rfb
+[2026-02-09 12:51:23][INFO] Eliminando sesión con ID: 44e55pahni40v09dqv0k1b9puh
+[2026-02-09 12:51:57][INFO] Eliminando sesión con ID: i0v0o8r6p00rq5ba5u553caap4
+[2026-02-09 12:52:38][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 12:52:38][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 12:52:50][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 12:52:50][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 12:53:19][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 12:53:19][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 12:54:03][INFO] Eliminando sesión con ID: c2l08dsr9tldvadev5nn3ktaaj
+[2026-02-09 12:54:37][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 12:55:06][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 12:55:14][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 12:55:30][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 12:56:31][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 12:59:23][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:03:06][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:04:56][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:04:59][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:05:02][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:05:02][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:05:05][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:05:08][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:05:13][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:05:14][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:05:14][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:05:16][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:05:16][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:05:16][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:05:17][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:05:17][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:05:17][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:05:27][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:05:27][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:05:30][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:05:30][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:05:31][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:05:36][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:05:36][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:05:39][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:05:39][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:05:39][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:05:43][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:05:46][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:05:46][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:05:47][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:06:02][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:06:02][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:06:20][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:06:21][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:06:48][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:06:48][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:06:49][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:06:50][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:06:50][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:06:51][INFO] ModificarUsuario: no hay cambios para aplicar para usuario - manuel
+[2026-02-09 13:06:52][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:06:52][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:06:59][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:06:59][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:07:02][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:07:05][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:07:05][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:07:06][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:07:36][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:07:42][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:08:59][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:09:37][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:09:43][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:09:43][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:10:46][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:10:46][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:10:52][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:10:52][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:10:55][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:10:55][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:10:56][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 13:10:57][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:10:57][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:11:00][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-09 13:11:00][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:11:04][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:11:04][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:11:46][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:11:46][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:11:57][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 13:11:57][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 13:13:31][INFO] Eliminando sesión con ID: a05eo68m416fgojp8dpt4ou9qu
+[2026-02-09 13:14:04][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 13:14:30][INFO] Eliminando sesión con ID: 7tfb8mmlm3067gri44vp1qqokf
+[2026-02-09 13:14:31][INFO] Eliminando sesión con ID: 7tfb8mmlm3067gri44vp1qqokf
+[2026-02-09 13:14:31][INFO] Eliminando sesión con ID: 7tfb8mmlm3067gri44vp1qqokf
+[2026-02-09 13:14:31][INFO] Eliminando sesión con ID: 7tfb8mmlm3067gri44vp1qqokf
+[2026-02-09 13:14:39][INFO] Eliminando sesión con ID: 6otnr0hiqlj7j72qhrq9r89rc5
+[2026-02-09 13:14:53][INFO] Eliminando sesión con ID: 876mr2pmk6igcd2qagads0ttci
+[2026-02-09 13:15:08][INFO] Eliminando sesión con ID: qi1bgjma2pk9alhlpgi9pp4qq9
+[2026-02-09 13:15:42][INFO] Eliminando sesión con ID: af2r6sfd5p8927e1vntue048bo
+[2026-02-09 13:15:45][INFO] Eliminando sesión con ID: af2r6sfd5p8927e1vntue048bo
+[2026-02-09 13:16:00][INFO] Eliminando sesión con ID: cp8ag7h4095ghhh0nfm5e5fq6o
+[2026-02-09 13:16:13][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 13:20:45][INFO] Eliminando sesión con ID: vq3c95ehiaohfqqs1njrhghc58
+[2026-02-09 13:21:18][INFO] Eliminando sesión con ID: to4uubc67f7vp1nl4ir2qguuk5
+[2026-02-09 13:21:20][INFO] Eliminando sesión con ID: to4uubc67f7vp1nl4ir2qguuk5
+[2026-02-09 13:21:54][INFO] Eliminando sesión con ID: 39al6081705e9e1fdtan11gr06
+[2026-02-09 13:22:14][INFO] Eliminando sesión con ID: aa75sceab3i8um30lq12m1cstc
+[2026-02-09 13:22:45][INFO] Logout automático para sesión ID: ogljs630vhnlf8i479hjricmrn
+[2026-02-09 13:22:45][INFO] Eliminando sesión con ID: ogljs630vhnlf8i479hjricmrn
+[2026-02-09 13:26:17][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 13:26:18][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 13:26:37][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 13:26:46][INFO] Eliminando sesión con ID: rl3ggpisi6tvai3fsaepkl4354
+[2026-02-09 13:26:52][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 13:27:45][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 13:27:46][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-09 13:27:59][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 13:28:00][INFO] Eliminando sesión con ID: 6e3p2q2duhi51oad7e41uq0kub
+[2026-02-09 13:28:10][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 13:28:31][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 13:28:31][INFO] Eliminando sesión con ID: 8qsjb0gtshpl6tni0bprjlk58m
+[2026-02-09 13:28:33][INFO] Eliminando sesión con ID: 8qsjb0gtshpl6tni0bprjlk58m
+[2026-02-09 13:28:44][INFO] Eliminando sesión con ID: d4oji2joik2b73920je4s0b6bl
+[2026-02-09 13:28:46][INFO] Eliminando sesión con ID: d4oji2joik2b73920je4s0b6bl
+[2026-02-09 13:29:03][INFO] Eliminando sesión con ID: 3nqm2r3i5hrlfjsjiu51cf4eng
+[2026-02-09 13:29:14][INFO] Eliminando sesión con ID: vfc5o23eni7kmq248np2ll0a74
+[2026-02-09 13:29:18][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-09 13:29:18][WARNING] Login fallido para usuario: sergio
+[2026-02-09 13:29:24][INFO] Eliminando sesión con ID: 317766d0po0ikhd2eqaarlaq31
+[2026-02-09 13:30:09][INFO] Eliminando sesión con ID: mb7hlr15212j9a5aj3gp44s56l
+[2026-02-09 13:31:35][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 13:31:40][INFO] Eliminando sesión con ID: gpt53idpni1fmjnn6r71ur781f
+[2026-02-09 13:31:42][INFO] Eliminando sesión con ID: pu5uu2i0df1sjlsol5ivlvgspr
+[2026-02-09 13:31:52][INFO] Eliminando sesión con ID: g1jqg70gj3g4d3cagher149vea
+[2026-02-09 13:32:00][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-09 13:38:08][INFO] Login: usuario no encontrado - 
+[2026-02-09 13:38:08][WARNING] Login fallido para usuario: 
+[2026-02-09 13:38:24][WARNING] Registro: usuario 'usuario' o email 'usuario@usuario.com' ya existe
+[2026-02-09 13:38:24][WARNING] Registro fallido para usuario: usuario, email: usuario@usuario.com
+[2026-02-09 13:38:56][INFO] Eliminando sesión con ID: gsr9vbh9kfnc93rbmam3sn1a4r
+[2026-02-09 13:51:16][INFO] Eliminando sesión con ID: v4sibhuahvnlvspl399c0icu4o
+[2026-02-09 13:51:18][INFO] Eliminando sesión con ID: v4sibhuahvnlvspl399c0icu4o
+[2026-02-09 13:51:34][WARNING] Login: contraseña incorrecta para usuario - usuario
+[2026-02-09 13:51:34][WARNING] Login fallido para usuario: usuario
+[2026-02-09 13:51:48][INFO] Eliminando sesión con ID: elpdgcfnitg5hg6fc42fmll9tf
+[2026-02-09 13:51:51][INFO] Eliminando sesión con ID: elpdgcfnitg5hg6fc42fmll9tf
+[2026-02-09 13:55:23][INFO] Eliminando sesión con ID: 9l7mqbt37mactbje6fjmogfcgs
+[2026-02-09 16:57:01][INFO] Eliminando sesión con ID: lkn0oq6fgtan9bi598ttejai8j
+[2026-02-09 16:57:12][INFO] Logout automático para sesión ID: m9h9i9drodfhomv9st61rprads
+[2026-02-09 16:57:12][INFO] Eliminando sesión con ID: m9h9i9drodfhomv9st61rprads
+[2026-02-09 17:14:17][INFO] Eliminando sesión con ID: 19oahdb0d8sgbi7ltomrhj7blb
+[2026-02-09 17:14:18][INFO] Eliminando sesión con ID: 19oahdb0d8sgbi7ltomrhj7blb
+[2026-02-09 17:15:05][INFO] Eliminando sesión con ID: q71mm7hfnidotts55e11h56ee5
+[2026-02-09 17:15:05][INFO] Eliminando sesión con ID: q71mm7hfnidotts55e11h56ee5
+[2026-02-09 17:15:07][INFO] Eliminando sesión con ID: q71mm7hfnidotts55e11h56ee5
+[2026-02-09 17:15:08][INFO] Eliminando sesión con ID: q71mm7hfnidotts55e11h56ee5
+[2026-02-09 17:15:20][INFO] Eliminando sesión con ID: sg3hokb0qnh2i00rkouvrrq87b
+[2026-02-09 17:15:20][INFO] Eliminando sesión con ID: sg3hokb0qnh2i00rkouvrrq87b
+[2026-02-09 17:15:43][INFO] Eliminando sesión con ID: 6ieclfv54p9tf55r01j1utd7fs
+[2026-02-09 17:15:49][INFO] Eliminando sesión con ID: uvg4o8psj8tpinapi2k0qn5mu7
+[2026-02-09 17:15:50][INFO] Eliminando sesión con ID: uvg4o8psj8tpinapi2k0qn5mu7
+[2026-02-09 17:17:09][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:17:13][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:17:16][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:17:18][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 17:17:18][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 17:25:01][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:29:10][WARNING] Intento de cambio foto sin archivo válido. Error: 1
+[2026-02-09 17:29:24][INFO] Eliminando sesión con ID: j59fgcrckn04lf7qnbeu41l28h
+[2026-02-09 17:29:27][INFO] Eliminando sesión con ID: j59fgcrckn04lf7qnbeu41l28h
+[2026-02-09 17:29:37][INFO] Logout automático para sesión ID: 44reavjch5o6peosd1smevjirh
+[2026-02-09 17:29:37][INFO] Eliminando sesión con ID: 44reavjch5o6peosd1smevjirh
+[2026-02-09 17:29:48][INFO] Eliminando sesión con ID: kvne5cnngt2603pqgc2ce9fkeb
+[2026-02-09 17:29:49][INFO] Eliminando sesión con ID: kvne5cnngt2603pqgc2ce9fkeb
+[2026-02-09 17:30:24][INFO] Eliminando sesión con ID: koebjqpmb0v9ahehqegav3so33
+[2026-02-09 17:30:25][INFO] Login: usuario no encontrado - 
+[2026-02-09 17:30:25][WARNING] Login fallido para usuario: 
+[2026-02-09 17:30:25][INFO] Eliminando sesión con ID: koebjqpmb0v9ahehqegav3so33
+[2026-02-09 17:30:51][INFO] Eliminando sesión con ID: ason1k4egcrn623en4nelpe1iv
+[2026-02-09 17:30:52][INFO] Eliminando sesión con ID: ason1k4egcrn623en4nelpe1iv
+[2026-02-09 17:30:53][INFO] Eliminando sesión con ID: ason1k4egcrn623en4nelpe1iv
+[2026-02-09 17:30:53][INFO] Eliminando sesión con ID: ason1k4egcrn623en4nelpe1iv
+[2026-02-09 17:30:59][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:31:03][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 17:31:03][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 17:34:33][INFO] Logout automático para sesión ID: 44reavjch5o6peosd1smevjirh
+[2026-02-09 17:34:33][INFO] Eliminando sesión con ID: 44reavjch5o6peosd1smevjirh
+[2026-02-09 17:34:35][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:37:01][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:40:51][INFO] Logout automático para sesión ID: 44reavjch5o6peosd1smevjirh
+[2026-02-09 17:40:51][INFO] Eliminando sesión con ID: 44reavjch5o6peosd1smevjirh
+[2026-02-09 17:40:53][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:41:47][INFO] Logout automático para sesión ID: 44reavjch5o6peosd1smevjirh
+[2026-02-09 17:41:47][INFO] Eliminando sesión con ID: 44reavjch5o6peosd1smevjirh
+[2026-02-09 17:41:48][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 17:41:48][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 17:41:55][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 17:41:55][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 17:43:14][INFO] Eliminando sesión con ID: v8v81r2o10meoagjjls28asmte
+[2026-02-09 17:43:19][INFO] Eliminando sesión con ID: 9laf84lujj76v2slnpq2imf0gm
+[2026-02-09 17:43:19][INFO] Eliminando sesión con ID: 9laf84lujj76v2slnpq2imf0gm
+[2026-02-09 17:43:19][INFO] Eliminando sesión con ID: 9laf84lujj76v2slnpq2imf0gm
+[2026-02-09 17:43:19][INFO] Eliminando sesión con ID: 9laf84lujj76v2slnpq2imf0gm
+[2026-02-09 17:43:19][INFO] Eliminando sesión con ID: 9laf84lujj76v2slnpq2imf0gm
+[2026-02-09 17:43:20][INFO] Eliminando sesión con ID: 9laf84lujj76v2slnpq2imf0gm
+[2026-02-09 17:43:20][INFO] Eliminando sesión con ID: 9laf84lujj76v2slnpq2imf0gm
+[2026-02-09 17:43:20][INFO] Eliminando sesión con ID: 9laf84lujj76v2slnpq2imf0gm
+[2026-02-09 17:44:38][INFO] Eliminando sesión con ID: 6uv3itf7iprcp8s1ccnnc604vf
+[2026-02-09 17:44:38][INFO] Eliminando sesión con ID: 6uv3itf7iprcp8s1ccnnc604vf
+[2026-02-09 17:44:49][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:45:16][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 17:45:16][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 17:45:24][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 17:45:24][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 17:45:31][INFO] Eliminando sesión con ID: sadlciono9dlqnof1jbsvidm8h
+[2026-02-09 17:45:45][INFO] Eliminando sesión con ID: ncg662huofiem9ofmq5q9um0nf
+[2026-02-09 17:45:45][INFO] Eliminando sesión con ID: hlqdfui5lodlu03niasafh7tba
+[2026-02-09 17:45:56][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 17:46:30][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:30][INFO] Session ID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:30][INFO] SESSION['login']: TRUE
+[2026-02-09 17:46:30][INFO] SESSION['usuario']: sergio
+[2026-02-09 17:46:30][INFO] COOKIE PHPSESSID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:30][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:37][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:37][INFO] Session ID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:37][INFO] SESSION['login']: TRUE
+[2026-02-09 17:46:37][INFO] SESSION['usuario']: sergio
+[2026-02-09 17:46:37][INFO] COOKIE PHPSESSID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:37][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:38][INFO] Eliminando sesión con ID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:38][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:38][INFO] Session ID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:38][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:38][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:38][INFO] COOKIE PHPSESSID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:38][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:38][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:38][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:38][INFO] Session ID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:38][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:38][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:38][INFO] COOKIE PHPSESSID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:38][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:38][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:38][INFO] Eliminando sesión con ID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:41][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:41][INFO] Session ID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:41][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:41][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:41][INFO] COOKIE PHPSESSID: 3ldasc5ob83trhnuq3n01jpiap
+[2026-02-09 17:46:41][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:41][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: TRUE
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: sergio
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: TRUE
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: sergio
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][INFO] Eliminando sesión con ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: TRUE
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: sergio
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] Eliminando sesión con ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] Eliminando sesión con ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] Eliminando sesión con ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] Eliminando sesión con ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] Eliminando sesión con ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:46:43][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:46:43][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:46:43][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:46:43][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:46:43][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:46:43][INFO] Eliminando sesión con ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:04][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:04][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:04][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:50:04][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:50:04][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:04][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:04][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:50:04][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:04][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:04][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:50:04][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:50:04][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:04][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:04][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:50:04][INFO] Eliminando sesión con ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:06][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:06][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:06][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:50:06][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:50:06][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:06][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:06][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:50:06][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:06][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:06][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:50:06][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:50:06][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:06][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:06][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:50:06][INFO] Eliminando sesión con ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:09][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:09][INFO] Session ID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:09][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:50:09][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:50:09][INFO] COOKIE PHPSESSID: j16ns8lu4inl2a41mjao6s5aer
+[2026-02-09 17:50:09][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:09][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:50:11][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:11][INFO] Session ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:11][INFO] SESSION['login']: TRUE
+[2026-02-09 17:50:11][INFO] SESSION['usuario']: sergio
+[2026-02-09 17:50:11][INFO] COOKIE PHPSESSID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:11][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:11][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:11][INFO] Session ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:11][INFO] SESSION['login']: TRUE
+[2026-02-09 17:50:11][INFO] SESSION['usuario']: sergio
+[2026-02-09 17:50:11][INFO] COOKIE PHPSESSID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:11][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:11][INFO] Eliminando sesión con ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:11][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:11][INFO] Session ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:11][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:50:11][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:50:11][INFO] COOKIE PHPSESSID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:11][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:11][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:50:11][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:11][INFO] Session ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:11][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:50:11][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:50:11][INFO] COOKIE PHPSESSID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:11][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:11][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:50:11][INFO] Eliminando sesión con ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:12][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:12][INFO] Session ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:12][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:50:12][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:50:12][INFO] COOKIE PHPSESSID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:12][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:12][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:50:12][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:50:12][INFO] Session ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:12][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:50:12][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:50:12][INFO] COOKIE PHPSESSID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:50:12][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:50:12][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:50:12][INFO] Eliminando sesión con ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:52:21][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:21][INFO] Session ID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:21][INFO] SESSION['login']: TRUE
+[2026-02-09 17:52:21][INFO] SESSION['usuario']: manel
+[2026-02-09 17:52:21][INFO] COOKIE PHPSESSID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:21][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:21][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:21][INFO] Session ID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:21][INFO] SESSION['login']: TRUE
+[2026-02-09 17:52:21][INFO] SESSION['usuario']: manel
+[2026-02-09 17:52:21][INFO] COOKIE PHPSESSID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:21][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:22][INFO] Eliminando sesión con ID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:22][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:22][INFO] Session ID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:22][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:52:22][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:52:22][INFO] COOKIE PHPSESSID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:22][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:22][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:52:22][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:22][INFO] Session ID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:22][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:52:22][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:52:22][INFO] COOKIE PHPSESSID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:22][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:22][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:52:22][INFO] Eliminando sesión con ID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:24][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:24][INFO] Session ID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:24][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:52:24][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:52:24][INFO] COOKIE PHPSESSID: cf0jddhr715b1rbiu012muhhnt
+[2026-02-09 17:52:24][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:24][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:52:25][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:25][INFO] Session ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:25][INFO] SESSION['login']: TRUE
+[2026-02-09 17:52:25][INFO] SESSION['usuario']: manel
+[2026-02-09 17:52:25][INFO] COOKIE PHPSESSID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:25][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:25][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:25][INFO] Session ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:25][INFO] SESSION['login']: TRUE
+[2026-02-09 17:52:25][INFO] SESSION['usuario']: manel
+[2026-02-09 17:52:25][INFO] COOKIE PHPSESSID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:25][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:25][INFO] Eliminando sesión con ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:25][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:25][INFO] Session ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:25][INFO] SESSION['login']: TRUE
+[2026-02-09 17:52:25][INFO] SESSION['usuario']: manel
+[2026-02-09 17:52:25][INFO] COOKIE PHPSESSID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:25][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:25][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:25][INFO] Session ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:25][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:52:25][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:52:25][INFO] COOKIE PHPSESSID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:25][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:25][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:52:25][INFO] Eliminando sesión con ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:26][INFO] Session ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:52:26][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:52:26][INFO] COOKIE PHPSESSID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:26][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:52:26][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:26][INFO] Session ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:52:26][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:52:26][INFO] COOKIE PHPSESSID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:26][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:52:26][INFO] Eliminando sesión con ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:26][INFO] Session ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:52:26][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:52:26][INFO] COOKIE PHPSESSID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:26][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:52:26][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:26][INFO] Session ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:52:26][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:52:26][INFO] COOKIE PHPSESSID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:26][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:26][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:52:26][INFO] Eliminando sesión con ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:29][INFO] === INICIO INDEX.PHP ===
+[2026-02-09 17:52:29][INFO] Session ID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:29][INFO] SESSION['login']: NOT SET
+[2026-02-09 17:52:29][INFO] SESSION['usuario']: NOT SET
+[2026-02-09 17:52:29][INFO] COOKIE PHPSESSID: npeam8p2nfug9r47jp68hiij8o
+[2026-02-09 17:52:29][INFO] COOKIE remember: NOT SET
+[2026-02-09 17:52:29][WARNING] SESSION login vacía, ejecutando loginConCookie
+[2026-02-09 17:58:00][INFO] Eliminando sesión con ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:58:13][INFO] Eliminando sesión con ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:58:13][INFO] Eliminando sesión con ID: 2cl40t30hl7rb5m6r6cai4b67i
+[2026-02-09 17:58:24][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 18:01:17][INFO] Eliminando sesión con ID: jb1752ppqk6cfqkl7rjo1t0nk8
+[2026-02-09 18:01:18][INFO] Eliminando sesión con ID: jb1752ppqk6cfqkl7rjo1t0nk8
+[2026-02-09 18:01:20][INFO] Eliminando sesión con ID: jb1752ppqk6cfqkl7rjo1t0nk8
+[2026-02-09 18:01:24][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-09 18:01:24][WARNING] Login fallido para usuario: sergio
+[2026-02-09 18:01:35][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 18:01:38][INFO] Eliminando sesión con ID: jb1752ppqk6cfqkl7rjo1t0nk8
+[2026-02-09 18:01:48][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 18:05:11][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:05:16][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:05:16][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:05:16][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:05:17][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:06:25][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:06:25][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:06:25][WARNING] Guard: No se encontró sesión válida en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:06:25][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:06:25][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:06:25][WARNING] Guard: No se encontró sesión válida en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:06:25][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:15][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 18:07:24][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 18:07:29][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:29][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:29][WARNING] Guard: No se encontró sesión válida en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:29][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:30][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:30][WARNING] Guard: No se encontró sesión válida en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:30][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:58][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:58][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:58][WARNING] Guard: No se encontró sesión válida en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:58][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:59][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:59][WARNING] Guard: No se encontró sesión válida en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:07:59][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:34][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:34][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:08:35][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:35][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:35][WARNING] Guard: No se encontró sesión válida en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:35][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:38][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:38][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:08:39][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:40][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:40][WARNING] Guard: No se encontró sesión válida en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:08:40][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:54][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:54][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:09:56][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:56][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:56][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:56][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:56][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:56][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:56][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:58][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:58][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:09:59][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:59][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:59][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:09:59][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:49][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:49][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:10:51][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:51][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:51][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:51][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:51][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:51][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:51][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:53][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:53][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:10:54][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:54][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:54][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:10:54][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:31][INFO] Eliminando sesión con ID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:11:31][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:11:31][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:11:31][INFO] Eliminando sesión con ID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:11:35][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:35][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:11:36][INFO] CrearSesion llamada para usuario ID: 16, SessionID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:11:36][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 16
+[2026-02-09 18:11:36][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:36][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:36][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:36][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:37][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:37][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:37][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:38][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 18:11:38][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:38][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:11:39][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:39][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:39][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:39][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:39][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:39][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:39][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:40][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:40][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:40][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:11:46][INFO] Eliminando sesión con ID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:12:03][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:12:03][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:12:03][INFO] Eliminando sesión con ID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:12:07][INFO] CrearSesion llamada para usuario ID: 16, SessionID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:12:07][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 16
+[2026-02-09 18:12:10][INFO] Eliminando sesión con ID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:12:10][INFO] Eliminando sesión con ID: 93iougecpkk01cl3vdda16p5tn
+[2026-02-09 18:12:20][INFO] CrearSesion llamada para usuario ID: 16, SessionID: vlctkhv8g4cji9255gbb2evkdm
+[2026-02-09 18:12:20][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 16
+[2026-02-09 18:12:22][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 18:12:33][INFO] Eliminando sesión con ID: vlctkhv8g4cji9255gbb2evkdm
+[2026-02-09 18:12:33][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: vlctkhv8g4cji9255gbb2evkdm
+[2026-02-09 18:12:33][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: vlctkhv8g4cji9255gbb2evkdm
+[2026-02-09 18:12:33][INFO] Eliminando sesión con ID: vlctkhv8g4cji9255gbb2evkdm
+[2026-02-09 18:12:35][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:35][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:12:37][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:37][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:37][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:37][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:37][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:37][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:37][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:37][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:37][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:37][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:40][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:40][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:12:40][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:41][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:41][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:12:41][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:46][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:47][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:13:48][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:13:48][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:48][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:48][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: guard.php:60 -> logoutForzoso()
+[2026-02-09 18:13:48][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:48][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:48][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: guard.php:60 -> logoutForzoso()
+[2026-02-09 18:13:50][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:50][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:13:51][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:13:51][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:51][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:51][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: guard.php:60 -> logoutForzoso()
+[2026-02-09 18:13:52][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:52][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:13:52][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: guard.php:60 -> logoutForzoso()
+[2026-02-09 18:14:16][INFO] CrearSesion llamada para usuario ID: 16, SessionID: vlctkhv8g4cji9255gbb2evkdm
+[2026-02-09 18:14:16][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 16
+[2026-02-09 18:14:23][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 18:14:23][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 18:14:29][INFO] CrearSesion llamada para usuario ID: 16, SessionID: o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:14:29][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 16
+[2026-02-09 18:14:36][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 18:14:36][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 18:14:38][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-09 18:14:44][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:45][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:14:46][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:14:46][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:46][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:46][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:46][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:46][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:46][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:49][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:49][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:14:49][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:14:49][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:49][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:50][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:50][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:50][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:14:50][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:52][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:52][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:15:54][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:15:54][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:54][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:54][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:54][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:54][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:54][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:57][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:57][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:15:58][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:15:58][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:58][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:58][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:15:58][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:38][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:39][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:16:40][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:16:40][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:40][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:40][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:40][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:41][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:41][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:41][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:41][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:43][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:43][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:16:44][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:16:45][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:45][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:45][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:16:45][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:28][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:28][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:28][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:28][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:28][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:28][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:29][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:29][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:32][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:32][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:36][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:36][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:17:37][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:17:37][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:37][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:38][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:17:38][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:22][INFO] CONTROLLER: accion='login', usuario='manel', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:22][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:22][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:18:24][INFO] CONTROLLER: accion='logout', usuario='', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:24][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:18:24][INFO] CONTROLLER: accion='logout', usuario='', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:24][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:24][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:24][INFO] CONTROLLER: accion='logout', usuario='', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:24][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:24][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:26][INFO] CONTROLLER: accion='login', usuario='manel', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:26][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:26][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:18:27][INFO] CONTROLLER: accion='logout', usuario='', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:27][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:18:28][INFO] CONTROLLER: accion='logout', usuario='', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:28][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:28][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:18:45][INFO] CONTROLLER: accion='logout', usuario='', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:18:45][INFO] Eliminando sesión con ID: o619ng50hgvued258pj6ku0emc | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:18:49][INFO] CONTROLLER: accion='login', usuario='sergio', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:18:50][INFO] CrearSesion llamada para usuario ID: 16, SessionID: o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:18:50][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 16
+[2026-02-09 18:18:51][INFO] CONTROLLER: accion='logout', usuario='', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:18:51][INFO] Eliminando sesión con ID: o619ng50hgvued258pj6ku0emc | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:18:51][INFO] CONTROLLER: accion='modificarUsuario', usuario='', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:18:51][INFO] Eliminando sesión con ID: o619ng50hgvued258pj6ku0emc | Llamado desde: guard.php:77 -> logoutForzoso()
+[2026-02-09 18:18:52][INFO] CONTROLLER: accion='usuarios', usuario='', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:18:52][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:18:52][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:22:13][INFO] CONTROLLER: accion='login', usuario='manel', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:22:13][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:22:14][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:22:15][INFO] CONTROLLER: accion='logout', usuario='', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:22:15][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:22:18][INFO] CONTROLLER: accion='login', usuario='manel', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:22:18][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:22:18][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:22:19][INFO] CONTROLLER: accion='logout', usuario='', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:22:19][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:22:21][INFO] CONTROLLER: accion='login', usuario='manel', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:22:21][INFO] CrearSesion llamada para usuario ID: 5, SessionID: 632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:22:21][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 5
+[2026-02-09 18:22:22][INFO] CONTROLLER: accion='logout', usuario='', sessionId=632bl3aub1q3l7097kbciorugr
+[2026-02-09 18:22:22][INFO] Eliminando sesión con ID: 632bl3aub1q3l7097kbciorugr | Llamado desde: index.php:19 -> include()
+[2026-02-09 18:23:28][INFO] CONTROLLER: accion='logout', usuario='', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:23:28][WARNING] Guard: SESSION vacía, intentando recuperar desde BD. SessionID: o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:23:28][WARNING] Guard: No se encontró ninguna sesión en BD para SessionID: o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:23:32][INFO] CONTROLLER: accion='login', usuario='sergio', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:23:32][INFO] CrearSesion llamada para usuario ID: 16, SessionID: o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:23:32][INFO] CrearSesion: Sesión creada exitosamente para usuario ID: 16
+[2026-02-09 18:23:34][INFO] CONTROLLER: accion='usuarios', usuario='', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:23:35][INFO] CONTROLLER: accion='importar', usuario='', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:23:35][INFO] CONTROLLER: accion='usuarios', usuario='', sessionId=o619ng50hgvued258pj6ku0emc
+[2026-02-09 18:48:20][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-09 18:48:20][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-09 18:50:30][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-09 18:50:30][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-09 18:50:30][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-09 18:56:54][ERROR] Error al eliminar usuario: 16

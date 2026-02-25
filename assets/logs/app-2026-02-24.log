@@ -1,0 +1,122 @@
+[2026-02-24 09:31:09][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-24 09:31:21][INFO] Iniciando generación de tablas desde archivo SQL
+[2026-02-24 09:31:21][INFO] Iniciando proceso de guardar archivo y crear tabla para archivo: vltfddb.sql
+[2026-02-24 09:31:27][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 09:31:27][INFO] Iniciando generación de tablas desde archivo SQL
+[2026-02-24 09:31:27][INFO] Iniciando proceso de guardar archivo y crear tabla para archivo: vltfddb.sql
+[2026-02-24 09:31:48][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-24 09:40:12][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-24 09:41:59][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-24 09:41:59][WARNING] Login fallido para usuario: sergio
+[2026-02-24 10:00:05][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-24 10:05:58][ERROR] Archivo ya existe en la base de datos: Error.html para cliente ID: 40
+[2026-02-24 10:05:58][ERROR] Error al subir archivo para cliente 40: archivo_existente - Ya existe un archivo con ese nombre para este cliente
+[2026-02-24 10:11:29][INFO] El archivo se ha eliminado correctamente: 78 para cliente: 40
+[2026-02-24 10:23:25][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-24 10:24:02][INFO] El cliente se ha eliminado correctamente
+[2026-02-24 11:16:37][INFO] Archivo vltfddb.sql por manel
+[2026-02-24 11:16:37][INFO] Import SQL 'vltfddb.sql' usando _DBNAME_='app2026' y DATABASE()='app2026'
+[2026-02-24 11:18:27][INFO] Archivo vltfddb.sql por manel
+[2026-02-24 11:18:27][INFO] Import SQL 'vltfddb.sql' usando _DBNAME_='app2026' y DATABASE()='app2026'
+[2026-02-24 11:18:32][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 11:58:09][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 11:58:09][INFO] Import SQL 'vltfddb.sql' usando _DBNAME_='app2026' y DATABASE()='app2026'
+[2026-02-24 11:58:13][ERROR] Error al ejecutar SQL para tabla principal: There is no active transaction
+[2026-02-24 11:58:13][ERROR] Error al generar tablas desde archivo SQL: sql_execution_failed - Error al recargar la tabla principal: There is no active transaction
+[2026-02-24 12:05:52][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 12:05:52][INFO] Import SQL 'vltfddb.sql' usando _DBNAME_='app2026' y DATABASE()='app2026'
+[2026-02-24 12:05:57][ERROR] Error al ejecutar SQL para tabla principal: There is no active transaction
+[2026-02-24 12:05:57][ERROR] Error al generar tablas desde archivo SQL: sql_execution_failed - Error al recargar la tabla principal: There is no active transaction
+[2026-02-24 12:07:04][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 12:07:04][INFO] Import SQL 'vltfddb.sql' usando _DBNAME_='app2026' y DATABASE()='app2026'
+[2026-02-24 12:07:09][ERROR] Error al ejecutar SQL para tabla principal: There is no active transaction
+[2026-02-24 12:07:09][ERROR] Error al generar tablas desde archivo SQL: sql_execution_failed - Error al recargar la tabla principal: There is no active transaction
+[2026-02-24 12:08:21][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 12:08:21][INFO] Import SQL 'vltfddb.sql' usando _DBNAME_='app2026' y DATABASE()='app2026'
+[2026-02-24 12:08:26][ERROR] Error al ejecutar SQL para tabla principal: There is no active transaction
+[2026-02-24 12:08:26][ERROR] Error al generar tablas desde archivo SQL: sql_execution_failed - Error al recargar la tabla principal: There is no active transaction
+[2026-02-24 12:11:35][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 12:11:40][ERROR] Error al ejecutar SQL para tabla principal: There is no active transaction
+[2026-02-24 12:11:40][ERROR] Error al generar tablas desde archivo SQL: sql_execution_failed - Error al recargar la tabla principal: There is no active transaction
+[2026-02-24 12:13:41][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 12:13:45][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 12:55:59][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 12:56:03][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 13:00:02][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 13:00:07][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 13:00:43][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 13:00:43][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 13:01:03][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 13:01:03][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 13:01:19][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:01:27][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 13:01:32][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 13:02:22][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:23][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:23][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:24][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:25][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:25][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:25][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:25][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:26][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:26][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:26][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:26][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:26][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:26][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:27][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:27][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:27][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:27][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:27][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:27][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:27][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:28][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:28][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:28][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:28][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:28][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:28][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:29][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:30][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:30][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:30][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:37][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:02:42][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 13:02:47][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 13:03:01][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:11:23][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:11:28][INFO] Archivo vltfddb.sql por manel
+[2026-02-24 13:11:29][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 13:11:40][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:20:18][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:20:22][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:20:57][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb.sql"}
+[2026-02-24 13:21:02][INFO] Archivo vltfddb.sql por sergio
+[2026-02-24 13:21:02][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-24 13:21:21][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:24:10][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:24:13][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:26:37][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:26:48][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:35:35][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:35:38][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:36:24][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:38:51][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:39:22][WARNING] Acción no válida recibida: 
+[2026-02-24 13:39:22][WARNING] Acción no válida recibida: 
+[2026-02-24 13:39:45][WARNING] Acción no válida recibida: 
+[2026-02-24 13:39:58][WARNING] Acción no válida recibida: 
+[2026-02-24 13:41:34][WARNING] Acción no válida recibida: 
+[2026-02-24 13:42:39][WARNING] Acción no válida recibida: 
+[2026-02-24 13:44:15][INFO] El archivo se ha eliminado correctamente: 81 para cliente: 39
+[2026-02-24 13:44:17][INFO] El archivo se ha eliminado correctamente: 80 para cliente: 39
+[2026-02-24 13:46:41][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-24 13:46:57][WARNING] Login: usuario eliminado - ads
+[2026-02-24 13:47:19][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-24 13:47:28][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:49:30][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:49:36][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:49:40][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-24 13:49:42][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}

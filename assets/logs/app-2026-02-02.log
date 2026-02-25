@@ -1,0 +1,151 @@
+[2026-02-02 08:07:59][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-02 08:07:59][WARNING] Login fallido para usuario: sergio
+[2026-02-02 08:17:26][INFO] 
+[2026-02-02 08:29:45][INFO] 
+[2026-02-02 08:29:45][INFO] 
+[2026-02-02 08:30:20][INFO] 
+[2026-02-02 08:30:32][INFO] 
+[2026-02-02 08:30:34][INFO] 
+[2026-02-02 08:30:35][INFO] 
+[2026-02-02 08:30:35][INFO] 
+[2026-02-02 08:30:35][INFO] 
+[2026-02-02 08:30:36][INFO] 
+[2026-02-02 08:30:36][INFO] 
+[2026-02-02 08:30:36][INFO] 
+[2026-02-02 08:30:36][INFO] 
+[2026-02-02 08:30:37][INFO] 
+[2026-02-02 08:30:37][INFO] 
+[2026-02-02 08:30:37][INFO] 
+[2026-02-02 08:30:37][INFO] 
+[2026-02-02 08:30:37][INFO] 
+[2026-02-02 08:30:38][INFO] 
+[2026-02-02 08:30:38][INFO] 
+[2026-02-02 08:34:00][INFO] 
+[2026-02-02 08:34:00][INFO] 
+[2026-02-02 08:34:50][INFO] 
+[2026-02-02 08:35:24][INFO] 
+[2026-02-02 08:35:24][INFO] 
+[2026-02-02 08:35:24][INFO] 
+[2026-02-02 08:38:37][INFO] 
+[2026-02-02 08:38:37][INFO] 
+[2026-02-02 08:38:37][INFO] 
+[2026-02-02 08:44:02][INFO] 
+[2026-02-02 08:45:02][INFO] 
+[2026-02-02 08:45:30][INFO] 
+[2026-02-02 08:46:05][WARNING] Login: contraseña incorrecta para usuario - manel
+[2026-02-02 08:46:05][WARNING] Login fallido para usuario: manel
+[2026-02-02 09:46:10][INFO] 
+[2026-02-02 09:47:02][INFO] 
+[2026-02-02 08:47:29][INFO] Login: usuario no encontrado - 
+[2026-02-02 08:47:29][WARNING] Login fallido para usuario: 
+[2026-02-02 09:47:56][INFO] Login: usuario no encontrado - 
+[2026-02-02 09:47:56][WARNING] Login fallido para usuario: 
+[2026-02-02 09:48:03][INFO] Login: usuario no encontrado - 
+[2026-02-02 09:48:03][WARNING] Login fallido para usuario: 
+[2026-02-02 09:48:15][INFO] Login: usuario no encontrado - 
+[2026-02-02 09:48:15][WARNING] Login fallido para usuario: 
+[2026-02-02 09:48:15][INFO] Login: usuario no encontrado - 
+[2026-02-02 09:48:15][WARNING] Login fallido para usuario: 
+[2026-02-02 09:54:53][WARNING] Intento de cambio foto sin archivo válido. Error: no enviado
+[2026-02-02 10:03:55][WARNING] Login: contraseña incorrecta para usuario - usuario
+[2026-02-02 10:03:55][WARNING] Login fallido para usuario: usuario
+[2026-02-02 10:04:57][INFO] Ha entrado en el case nombre
+[2026-02-02 10:08:19][INFO] Array
+[2026-02-02 10:59:49][WARNING] Registro: datos incompletos para usuario ''
+[2026-02-02 10:59:49][WARNING] Registro fallido para usuario: , email: 
+[2026-02-02 12:10:52][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-02 12:11:08][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-02 12:11:32][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-02 12:12:19][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-02 12:53:21][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-02 13:11:00][ERROR] CambiarContrasenia: no se pudo cambiar la contraseña para usuario: ser
+[2026-02-02 13:11:00][ERROR] Error al cambiar contraseña para usuario: ser
+[2026-02-02 13:11:43][ERROR] CambiarContrasenia: no se pudo cambiar la contraseña para usuario: ser
+[2026-02-02 13:11:43][ERROR] Error al cambiar contraseña para usuario: ser
+[2026-02-02 13:11:47][ERROR] CambiarContrasenia: no se pudo cambiar la contraseña para usuario: ser
+[2026-02-02 13:11:47][ERROR] Error al cambiar contraseña para usuario: ser
+[2026-02-02 13:17:30][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-02 17:57:01][WARNING] ModificarUsuario: usuario no encontrado
+[2026-02-02 18:17:36][WARNING] Acción no válida recibida: botonModal
+[2026-02-02 18:18:24][WARNING] ModificarUsuario: usuario no encontrado
+[2026-02-02 18:18:29][WARNING] ModificarUsuario: usuario no encontrado
+[2026-02-02 18:37:40][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 18:40:08][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 18:40:21][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:00:41][WARNING] Acción no válida recibida: botonModal
+[2026-02-02 19:06:18][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:06:21][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:06:30][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:07:48][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:13:38][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:14:11][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:21:33][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:21:35][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:21:50][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:24:53][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:25:21][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:25:34][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:26:46][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:27:57][WARNING] ModificarUsuario: filtro no válido - 
+[2026-02-02 19:29:31][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:31:37][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:34:18][ERROR] Error al liberar el usuario de modificación
+[2026-02-02 19:34:22][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:34:25][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:37:47][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:39:22][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:39:58][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:40:21][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:42:52][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:43:07][ERROR] Error al liberar el usuario de modificación
+[2026-02-02 19:43:15][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:43:34][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:43:36][ERROR] Error al liberar el usuario de modificación
+[2026-02-02 19:46:08][INFO] Intentando liberar usuario  por admin 16
+[2026-02-02 19:46:08][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-02 19:46:08][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-02 19:46:08][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 16
+[2026-02-02 19:48:23][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-02 19:48:23][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-02 19:48:23][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-02 19:48:23][INFO] Usuario 5 liberado correctamente
+[2026-02-02 19:48:25][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-02 19:48:25][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-02 19:48:25][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-02 19:48:25][INFO] Usuario 5 liberado correctamente
+[2026-02-02 19:48:27][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-02 19:48:27][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-02 19:48:27][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-02 19:48:27][INFO] Usuario 5 liberado correctamente
+[2026-02-02 19:48:32][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-02 19:48:32][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-02 19:48:32][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-02 19:48:32][INFO] Usuario 5 liberado correctamente
+[2026-02-02 19:48:35][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:48:41][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:48:43][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-02 19:48:43][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-02 19:48:43][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-02 19:48:43][INFO] Usuario 5 liberado correctamente
+[2026-02-02 19:48:47][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:48:52][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:49:47][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-02 19:49:47][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-02 19:49:47][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-02 19:49:47][INFO] Usuario 5 liberado correctamente
+[2026-02-02 19:49:51][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:50:27][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-02 19:50:42][INFO] Intentando liberar usuario 5 por admin 5
+[2026-02-02 19:50:42][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-02 19:50:42][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-02 19:50:42][INFO] Usuario 5 liberado correctamente
+[2026-02-02 19:50:49][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-02 19:50:49][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-02 19:50:49][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-02 19:50:49][INFO] Usuario 5 liberado correctamente
+[2026-02-02 19:50:58][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-02 19:50:58][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-02 19:50:58][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-02 19:50:58][INFO] Usuario 5 liberado correctamente
+[2026-02-02 19:53:13][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-02 19:54:39][ERROR] Error el usuario ya estaba siendo modificado

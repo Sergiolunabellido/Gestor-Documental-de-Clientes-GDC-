@@ -1,0 +1,144 @@
+[2026-02-10 09:00:08][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-10 09:00:29][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-10 09:44:19][INFO] Sesiones del usuario 5 eliminadas correctamente
+[2026-02-10 09:46:00][INFO] Sesiones del usuario 5 eliminadas correctamente
+[2026-02-10 09:46:00][INFO] roto
+[2026-02-10 09:48:52][INFO] Sesiones del usuario 5 eliminadas correctamente
+[2026-02-10 09:48:52][INFO] roto
+[2026-02-10 09:49:34][INFO] Sesiones del usuario 5 eliminadas correctamente
+[2026-02-10 09:49:34][INFO] roto
+[2026-02-10 09:49:34][INFO] Aqui?
+[2026-02-10 09:51:45][INFO] Sesiones del usuario 5 eliminadas correctamente
+[2026-02-10 09:51:45][INFO] roto
+[2026-02-10 09:51:45][INFO] Aqui?
+[2026-02-10 09:51:45][ERROR] ERROR PDO: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'session_id' in 'field list'
+[2026-02-10 09:51:45][INFO] O Se rompe aqui
+[2026-02-10 09:51:45][INFO] Usuario 5 marcado como eliminado correctamente
+[2026-02-10 09:51:45][INFO] roto2
+[2026-02-10 09:51:45][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 09:55:34][WARNING] Login: usuario eliminado - manel
+[2026-02-10 09:55:58][INFO] Sesiones del usuario 5 eliminadas correctamente
+[2026-02-10 09:55:58][INFO] roto
+[2026-02-10 09:55:58][INFO] roto2
+[2026-02-10 09:55:58][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 09:59:53][INFO] Sesiones del usuario 16 eliminadas correctamente
+[2026-02-10 09:59:53][INFO] roto
+[2026-02-10 09:59:53][INFO] roto2
+[2026-02-10 09:59:53][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 10:03:20][INFO] Sesiones del usuario 16 eliminadas correctamente
+[2026-02-10 10:03:20][INFO] roto
+[2026-02-10 10:03:20][INFO] roto2
+[2026-02-10 10:03:20][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 10:19:34][INFO] roto
+[2026-02-10 10:19:34][INFO] roto2
+[2026-02-10 10:19:34][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 10:19:47][WARNING] Login: usuario eliminado - manel
+[2026-02-10 10:20:12][INFO] roto
+[2026-02-10 10:20:12][INFO] roto2
+[2026-02-10 10:20:12][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 10:20:18][WARNING] LoginConCookie: usuario eliminado - manel
+[2026-02-10 10:29:27][WARNING] Login fallido para usuario: sergio
+[2026-02-10 10:34:25][WARNING] Login fallido para usuario: hola
+[2026-02-10 10:36:55][WARNING] Login fallido para usuario: hola
+[2026-02-10 10:36:56][WARNING] Login fallido para usuario: hola
+[2026-02-10 10:37:02][WARNING] Login fallido para usuario: hola
+[2026-02-10 10:37:16][WARNING] Login fallido para usuario: hola
+[2026-02-10 10:55:01][WARNING] Login: contraseña incorrecta para usuario - admin
+[2026-02-10 10:55:01][WARNING] Login fallido para usuario: admin
+[2026-02-10 10:55:02][WARNING] Login: contraseña incorrecta para usuario - admin
+[2026-02-10 10:55:02][WARNING] Login fallido para usuario: admin
+[2026-02-10 10:55:03][WARNING] Login: contraseña incorrecta para usuario - admin
+[2026-02-10 10:55:03][WARNING] Login fallido para usuario: admin
+[2026-02-10 10:55:03][WARNING] Login: contraseña incorrecta para usuario - admin
+[2026-02-10 10:55:03][WARNING] Login fallido para usuario: admin
+[2026-02-10 10:55:03][WARNING] Login: contraseña incorrecta para usuario - admin
+[2026-02-10 10:55:03][WARNING] Login fallido para usuario: admin
+[2026-02-10 10:55:08][WARNING] Login: contraseña incorrecta para usuario - admin
+[2026-02-10 10:55:08][WARNING] Login fallido para usuario: admin
+[2026-02-10 11:07:38][ERROR] Registro: excepción al insertar usuario 'adminP' - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[2026-02-10 11:07:38][WARNING] Registro fallido para usuario: adminP, email: adminP@adminP.com
+[2026-02-10 11:07:45][ERROR] Registro: excepción al insertar usuario 'adminP' - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[2026-02-10 11:07:45][WARNING] Registro fallido para usuario: adminP, email: adminP@adminP.com
+[2026-02-10 11:58:52][ERROR] Registro: excepción al insertar usuario 'ads' - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[2026-02-10 11:58:52][WARNING] Registro fallido para usuario: ads, email: dsa
+[2026-02-10 11:58:55][ERROR] Registro: excepción al insertar usuario 'dasdsa' - SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+[2026-02-10 11:58:55][WARNING] Registro fallido para usuario: dasdsa, email: dsa
+[2026-02-10 12:01:02][WARNING] Registro: usuario 'asd' o email 'asd' ya existe
+[2026-02-10 12:01:02][WARNING] Registro fallido para usuario: asd, email: asd
+[2026-02-10 12:01:05][ERROR] Registro: excepción al insertar usuario 'dassdasdsad' - SQLSTATE[HY093]: Invalid parameter number: parameter was not defined
+[2026-02-10 12:01:05][WARNING] Registro fallido para usuario: dassdasdsad, email: asd
+[2026-02-10 12:06:44][INFO] valor admin: 0
+[2026-02-10 12:07:26][INFO] valor admin: 
+[2026-02-10 12:08:09][INFO] valor admin: 
+[2026-02-10 12:08:59][INFO] valor admin: 
+[2026-02-10 12:08:59][INFO] valor admin: 
+[2026-02-10 12:09:53][INFO] valor admin: false
+[2026-02-10 12:09:53][INFO] valor admin: 
+[2026-02-10 12:09:53][INFO] valor admin: 
+[2026-02-10 12:10:16][INFO] valor admin: false
+[2026-02-10 12:10:16][INFO] valor admin: 
+[2026-02-10 12:10:16][INFO] valor admin: 
+[2026-02-10 12:11:32][INFO] valor admin: false
+[2026-02-10 12:11:32][INFO] valor admin: false
+[2026-02-10 12:12:00][INFO] valor admin: false
+[2026-02-10 12:12:00][INFO] valor admin: 
+[2026-02-10 12:37:57][INFO] roto
+[2026-02-10 12:37:57][INFO] roto2
+[2026-02-10 12:37:57][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 12:38:08][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:38:09][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:38:16][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:38:16][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:38:16][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:12][INFO] roto
+[2026-02-10 12:39:13][INFO] roto2
+[2026-02-10 12:39:13][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 12:39:18][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:18][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:19][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:19][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:19][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:23][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:24][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:24][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:24][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:39:24][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:40:56][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:41:13][INFO] roto
+[2026-02-10 12:41:13][INFO] roto2
+[2026-02-10 12:41:13][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 12:41:19][WARNING] Login: usuario eliminado - sergio
+[2026-02-10 12:53:21][INFO] Estado antes de liberar - Usuario: 22, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-10 12:53:21][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-10 12:56:56][INFO] roto
+[2026-02-10 12:56:56][INFO] roto2
+[2026-02-10 12:56:56][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 12:57:34][INFO] Estado antes de liberar - Usuario: 22, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-10 12:57:34][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-10 12:57:34][ERROR] Error al liberar el usuario de modificación - Usuario: 22, Admin: 16
+[2026-02-10 13:04:09][INFO] roto
+[2026-02-10 13:04:09][INFO] roto2
+[2026-02-10 13:04:09][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 13:05:09][INFO] roto
+[2026-02-10 13:05:09][INFO] roto2
+[2026-02-10 13:05:09][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 13:12:42][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-10 13:15:23][INFO] entra
+[2026-02-10 13:17:04][INFO] entra
+[2026-02-10 13:17:29][INFO] entra
+[2026-02-10 13:17:57][INFO] entra
+[2026-02-10 13:28:26][WARNING] Registro: usuario 'manel2' o email 'manel' ya existe
+[2026-02-10 13:28:26][WARNING] Registro fallido para usuario: manel2, email: manel
+[2026-02-10 13:29:47][INFO] lo que se guarda: 1 lo que recive false
+[2026-02-10 13:30:54][INFO] lo que se guarda: false lo que recive false
+[2026-02-10 13:33:10][INFO] admin: 
+[2026-02-10 13:56:18][INFO] roto
+[2026-02-10 13:56:19][INFO] roto2
+[2026-02-10 13:56:19][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 13:56:21][INFO] roto
+[2026-02-10 13:56:22][INFO] roto2
+[2026-02-10 13:56:22][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 13:56:24][INFO] roto
+[2026-02-10 13:56:24][INFO] roto2
+[2026-02-10 13:56:24][INFO] El usuario se ha eliminado correctamente
+[2026-02-10 13:56:24][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 50

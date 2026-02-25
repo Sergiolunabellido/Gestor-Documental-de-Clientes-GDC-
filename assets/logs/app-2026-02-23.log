@@ -1,0 +1,48 @@
+[2026-02-23 19:27:25][INFO] Iniciando generación de tablas desde archivo SQL
+[2026-02-23 19:27:34][INFO] Iniciando generación de tablas desde archivo SQL
+[2026-02-23 19:28:11][INFO] Iniciando generación de tablas desde archivo SQL
+[2026-02-23 19:34:32][INFO] Iniciando generación de tablas desde archivo SQL
+[2026-02-23 19:34:32][INFO] Iniciando proceso de guardar archivo y crear tabla para archivo: vltfddb.sql
+[2026-02-23 19:34:32][INFO] Archivo SQL procesado, número de statements a ejecutar: 11
+[2026-02-23 19:34:32][INFO] Iniciando transacción para ejecutar statements SQL del archivo: vltfddb.sql
+[2026-02-23 19:34:32][ERROR] Error al leer el archivo subido: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'app2026.vltfddb' doesn't exist
+[2026-02-23 19:34:32][ERROR] Error al generar tablas desde archivo SQL: sql_failed - Error al ejecutar el SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'app2026.vltfddb' doesn't exist
+[2026-02-23 19:41:32][INFO] Iniciando generación de tablas desde archivo SQL
+[2026-02-23 19:41:32][INFO] Iniciando proceso de guardar archivo y crear tabla para archivo: vltfddb.sql
+[2026-02-23 19:41:32][INFO] Archivo SQL procesado, número de statements a ejecutar: 11
+[2026-02-23 19:41:32][INFO] Statement 1: START TRANSACTION
+[2026-02-23 19:41:32][INFO] Statement 2: SET time_zone = "+00:00"
+[2026-02-23 19:41:32][INFO] Statement 3: /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
+[2026-02-23 19:41:32][INFO] Statement 4: /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
+[2026-02-23 19:41:32][INFO] Statement 5: /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
+[2026-02-23 19:41:32][INFO] Statement 6: /*!40101 SET NAMES utf8mb4 */
+[2026-02-23 19:41:32][INFO] Statement 9: INSERT INTO `vltfddb` (`id`, `mtable`, `mfield`, `mtype`, `mlong`, `mdefault`, `mindex`, `deleted`) 
+[2026-02-23 19:41:32][INFO] Statement 12: COMMIT
+[2026-02-23 19:41:32][INFO] Statement 13: /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
+[2026-02-23 19:41:32][INFO] Statement 14: /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
+[2026-02-23 19:41:32][INFO] Statement 15: /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
+[2026-02-23 19:41:32][INFO] Iniciando transacción para ejecutar statements SQL del archivo: vltfddb.sql
+[2026-02-23 19:41:32][ERROR] Error al leer el archivo subido: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'app2026.vltfddb' doesn't exist
+[2026-02-23 19:41:32][ERROR] Error al generar tablas desde archivo SQL: sql_failed - Error al ejecutar el SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'app2026.vltfddb' doesn't exist
+[2026-02-23 19:44:23][INFO] Iniciando generación de tablas desde archivo SQL
+[2026-02-23 19:44:23][INFO] Iniciando proceso de guardar archivo y crear tabla para archivo: vltfddb.sql
+[2026-02-23 19:44:23][INFO] Archivo SQL procesado, número de statements a ejecutar: 11
+[2026-02-23 19:44:23][INFO] Statement 1: START TRANSACTION
+[2026-02-23 19:44:23][INFO] Statement 2: SET time_zone = "+00:00"
+[2026-02-23 19:44:23][INFO] Statement 3: /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
+[2026-02-23 19:44:23][INFO] Statement 4: /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
+[2026-02-23 19:44:23][INFO] Statement 5: /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
+[2026-02-23 19:44:23][INFO] Statement 6: /*!40101 SET NAMES utf8mb4 */
+[2026-02-23 19:44:23][INFO] Statement 9: INSERT INTO `vltfddb` (`id`, `mtable`, `mfield`, `mtype`, `mlong`, `mdefault`, `mindex`, `deleted`) 
+[2026-02-23 19:44:23][INFO] Statement 12: COMMIT
+[2026-02-23 19:44:23][INFO] Statement 13: /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
+[2026-02-23 19:44:23][INFO] Statement 14: /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
+[2026-02-23 19:44:23][INFO] Statement 15: /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */
+[2026-02-23 19:44:23][INFO] Iniciando transacción para ejecutar statements SQL del archivo: vltfddb.sql
+[2026-02-23 19:44:23][ERROR] Error al leer el archivo subido: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'app2026.vltfddb' doesn't exist
+[2026-02-23 19:44:23][ERROR] Error al generar tablas desde archivo SQL: sql_failed - Error al ejecutar el SQL: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'app2026.vltfddb' doesn't exist
+[2026-02-23 19:44:44][INFO] El cliente se ha eliminado correctamente
+[2026-02-23 19:44:51][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-23 19:44:53][INFO] El cliente se ha eliminado correctamente
+[2026-02-23 19:44:57][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-23 19:56:09][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16

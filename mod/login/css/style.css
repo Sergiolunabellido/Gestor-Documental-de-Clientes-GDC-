@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#padre{
+    background-color: #f0f0f0;
+}
+
+
+
+#formulario-login form input{
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 90%;
+}
+
+#botones {
+    display: flex;
+    gap: 1rem;
+}
+
+#botones button{
+    &:hover{
+        cursor: pointer;
+        border: 2px solid white;
+    }
+}
+

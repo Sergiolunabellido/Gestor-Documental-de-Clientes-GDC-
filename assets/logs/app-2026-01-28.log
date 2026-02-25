@@ -1,0 +1,114 @@
+[2026-01-28 11:36:31][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:36:41][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:36:51][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:37:10][ERROR] Error al registrar sesión para usuario: sergio
+[2026-01-28 11:37:14][ERROR] Error al registrar sesión para usuario: sergio
+[2026-01-28 11:43:06][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:43:11][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:43:19][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:43:58][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:44:30][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:45:31][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:45:48][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:50:51][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:51:02][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:51:22][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:54:12][ERROR] Error al registrar sesión para usuario: sergio
+[2026-01-28 11:54:43][ERROR] Error al registrar sesión para usuario: sergio
+[2026-01-28 11:57:09][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 11:58:39][ERROR] Error al registrar sesión para usuario: manel
+[2026-01-28 12:15:58][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-01-28 12:15:58][WARNING] Login fallido para usuario: sergio
+[2026-01-28 12:16:10][ERROR] Error al registrar sesión para usuario: sergio
+[2026-01-28 12:16:11][ERROR] Error al registrar sesión para usuario: sergio
+[2026-01-28 12:16:24][ERROR] Error al registrar sesión para usuario: sergio
+[2026-01-28 12:17:51][INFO] Login: usuario no encontrado - 
+[2026-01-28 12:17:51][WARNING] Login fallido para usuario: 
+[2026-01-28 12:17:52][INFO] Login: usuario no encontrado - 
+[2026-01-28 12:17:52][WARNING] Login fallido para usuario: 
+[2026-01-28 12:20:02][ERROR] Error al registrar sesión para usuario: sergio
+[2026-01-28 12:20:10][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-01-28 12:20:10][WARNING] Login fallido para usuario: sergio
+[2026-01-28 12:23:41][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:23:41][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:23:44][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:23:44][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:24:53][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:24:53][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:24:54][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:24:54][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:19][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:19][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:28][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:28][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:28][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:28][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:29][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:29][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:29][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:29][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:29][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:29][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:30][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:30][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:30][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:30][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:30][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:30][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:30][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:25:30][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:25:36][WARNING] Registro: usuario 'sergio' o email 'dsfas' ya existe
+[2026-01-28 12:25:36][WARNING] Registro fallido para usuario: sergio, email: dsfas
+[2026-01-28 12:25:37][WARNING] Registro: usuario 'sergio' o email 'dsfas' ya existe
+[2026-01-28 12:25:37][WARNING] Registro fallido para usuario: sergio, email: dsfas
+[2026-01-28 12:25:37][WARNING] Registro: usuario 'sergio' o email 'dsfas' ya existe
+[2026-01-28 12:25:37][WARNING] Registro fallido para usuario: sergio, email: dsfas
+[2026-01-28 12:25:37][WARNING] Registro: usuario 'sergio' o email 'dsfas' ya existe
+[2026-01-28 12:25:37][WARNING] Registro fallido para usuario: sergio, email: dsfas
+[2026-01-28 12:25:38][WARNING] Registro: usuario 'sergio' o email 'dsfas' ya existe
+[2026-01-28 12:25:38][WARNING] Registro fallido para usuario: sergio, email: dsfas
+[2026-01-28 12:25:38][WARNING] Registro: usuario 'sergio' o email 'dsfas' ya existe
+[2026-01-28 12:25:38][WARNING] Registro fallido para usuario: sergio, email: dsfas
+[2026-01-28 12:39:36][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:39:36][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:39:37][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:39:37][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:39:37][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:39:37][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:39:38][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:39:38][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:39:38][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:39:38][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:39:38][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:39:38][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:39:38][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:39:38][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:39:38][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:39:38][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:39:38][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:39:38][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:40:29][WARNING] Registro: datos incompletos para usuario 'sergio'
+[2026-01-28 12:40:29][WARNING] Registro fallido para usuario: sergio, email: 
+[2026-01-28 12:42:23][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:42:23][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:42:24][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:42:24][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:42:25][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:42:25][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:42:27][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:42:27][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:43:28][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:43:28][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:44:28][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:44:28][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:45:53][WARNING] Registro: datos incompletos para usuario ''
+[2026-01-28 12:45:53][WARNING] Registro fallido para usuario: , email: 
+[2026-01-28 12:45:58][WARNING] Registro: datos incompletos para usuario 'sergio'
+[2026-01-28 12:45:58][WARNING] Registro fallido para usuario: sergio, email: 
+[2026-01-28 12:46:04][WARNING] Registro: usuario 'sergio' o email 'asdas' ya existe
+[2026-01-28 12:46:04][WARNING] Registro fallido para usuario: sergio, email: asdas
+[2026-01-28 12:46:39][WARNING] Registro: usuario 'sergio' o email 'sda' ya existe
+[2026-01-28 12:46:39][WARNING] Registro fallido para usuario: sergio, email: sda
+[2026-01-28 12:46:57][WARNING] Registro: usuario 'sergio' o email 'sdad' ya existe
+[2026-01-28 12:46:57][WARNING] Registro fallido para usuario: sergio, email: sdad
+[2026-01-28 12:47:06][ERROR] Error al registrar sesión para usuario: sergio

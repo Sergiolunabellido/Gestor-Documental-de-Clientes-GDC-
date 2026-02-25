@@ -1,0 +1,627 @@
+[2026-02-03 08:57:30][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 08:57:45][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 08:58:55][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:00:34][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-03 09:00:34][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:00:34][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:00:34][INFO] Usuario 5 liberado correctamente
+[2026-02-03 09:00:38][INFO] Intentando liberar usuario 5 por admin 16
+[2026-02-03 09:00:38][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:00:38][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:00:38][INFO] Usuario 5 liberado correctamente
+[2026-02-03 09:00:43][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:02:35][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:02:58][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:02:58][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:02:58][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:03:11][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-03 09:03:11][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:03:34][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:03:34][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:03:34][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:03:35][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:03:35][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:03:35][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:03:35][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:03:35][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:03:35][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:03:36][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:03:36][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:03:36][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:03:36][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:03:36][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:03:36][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:03:36][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:03:36][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:03:36][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:04:08][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:05:42][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:05:42][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:05:42][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:05:44][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 5
+[2026-02-03 09:05:44][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:05:44][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 5
+[2026-02-03 09:05:45][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:05:46][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:05:53][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:05:53][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:05:53][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:05:54][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:05:54][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:05:54][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:05:54][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:05:54][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:05:54][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:05:54][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:05:54][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:05:54][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:05:54][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:05:54][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:05:54][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:05:54][INFO] Estado antes de liberar - Usuario: , bloqueado_por: NULL, intentando liberar por admin: 5
+[2026-02-03 09:05:54][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:05:54][ERROR] Error al liberar el usuario de modificación - Usuario: , Admin: 5
+[2026-02-03 09:05:57][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-03 09:05:57][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:06:03][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:06:21][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-03 09:06:21][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:07:00][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-03 09:07:00][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:12:22][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:13:31][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:20:07][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:22:27][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:22:27][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:22:30][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:22:30][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:22:34][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:33:33][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:35:19][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:44:06][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:44:06][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:44:11][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:44:12][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:44:12][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 09:44:12][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:44:12][ERROR] Error al liberar el usuario de modificación - Usuario: 17, Admin: 16
+[2026-02-03 09:44:17][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:44:17][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:44:17][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 09:44:17][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:44:17][ERROR] Error al liberar el usuario de modificación - Usuario: 17, Admin: 16
+[2026-02-03 09:44:17][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 09:44:17][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:44:17][ERROR] Error al liberar el usuario de modificación - Usuario: 17, Admin: 16
+[2026-02-03 09:44:24][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:44:24][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:44:24][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 09:44:24][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:44:24][ERROR] Error al liberar el usuario de modificación - Usuario: 17, Admin: 16
+[2026-02-03 09:44:24][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 09:44:24][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:44:24][ERROR] Error al liberar el usuario de modificación - Usuario: 17, Admin: 16
+[2026-02-03 09:44:24][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 09:44:24][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:44:24][ERROR] Error al liberar el usuario de modificación - Usuario: 17, Admin: 16
+[2026-02-03 09:45:16][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:45:16][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:45:21][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:45:22][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:45:22][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 09:45:22][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 09:45:22][ERROR] Error al liberar el usuario de modificación - Usuario: 17, Admin: 16
+[2026-02-03 09:52:57][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:57:21][ERROR] Error el usuario ya estaba siendo modificado
+[2026-02-03 09:57:40][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:57:40][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:57:43][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:57:43][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:57:46][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:57:46][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 09:57:49][INFO] Estado antes de liberar - Usuario: 17, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 09:57:49][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:03:50][WARNING] Acción no válida recibida: eliminarUsuario
+[2026-02-03 10:06:01][WARNING] Acción no válida recibida: eliminarUsuarios
+[2026-02-03 10:15:41][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-03 10:15:41][WARNING] Login fallido para usuario: sergio
+[2026-02-03 10:25:00][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:25:00][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:25:00][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 10:25:00][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 10:25:00][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-03 10:26:20][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:26:20][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:26:21][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 10:26:21][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 10:26:21][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-03 10:28:02][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:28:03][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:28:11][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:28:11][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:28:21][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:28:21][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:28:21][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: NULL, intentando liberar por admin: 16
+[2026-02-03 10:28:21][INFO] Filas afectadas al liberar usuario: 0
+[2026-02-03 10:28:21][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-03 10:29:35][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:29:35][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:29:40][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:29:40][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:29:49][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:29:49][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:30:04][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:30:04][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:30:12][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:30:12][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:30:14][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:30:15][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:31:31][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:31:31][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:31:33][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:31:33][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:37:23][INFO] Login: usuario no encontrado - admin
+[2026-02-03 10:37:23][WARNING] Login fallido para usuario: admin
+[2026-02-03 10:37:48][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 10:37:48][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 10:55:37][WARNING] Acción no válida recibida: 
+[2026-02-03 10:59:15][WARNING] Acción no válida recibida: 
+[2026-02-03 11:07:06][WARNING] Acción no válida recibida: 
+[2026-02-03 11:11:36][WARNING] Acción no válida recibida: 
+[2026-02-03 11:13:37][WARNING] Acción no válida recibida: 
+[2026-02-03 11:15:34][WARNING] Acción no válida recibida: 
+[2026-02-03 11:17:34][WARNING] Acción no válida recibida: 
+[2026-02-03 11:34:34][INFO] Login: usuario no encontrado - 
+[2026-02-03 11:34:34][WARNING] Login fallido para usuario: 
+[2026-02-03 11:34:36][INFO] Login: usuario no encontrado - 
+[2026-02-03 11:34:36][WARNING] Login fallido para usuario: 
+[2026-02-03 11:36:58][INFO] Guard - UsuarioId: 5, SessionId: l3u92v0gbv38s3gqga4io3h1a1
+[2026-02-03 11:36:58][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:38:00][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:00][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:01][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:01][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:02][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:02][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:04][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:04][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:08][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:08][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:09][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:09][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:09][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 5, intentando liberar por admin: 5
+[2026-02-03 11:38:09][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 11:38:11][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:11][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:14][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:14][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:18][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:18][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:28][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:28][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:43][INFO] Guard - UsuarioId: 16, SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:38:43][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:48][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:48][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:52][INFO] Guard - UsuarioId: 5, SessionId: s4hkj1ojodfvom11amduh0v55h
+[2026-02-03 11:38:52][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:56][INFO] Guard - UsuarioId: 5, SessionId: f3b6qf0s5jbo8g5c6leqrss6r4
+[2026-02-03 11:38:56][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:58][INFO] Guard - UsuarioId: 16, SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:38:58][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:38:59][INFO] Guard - UsuarioId: 16, SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:38:59][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:39:00][INFO] Guard - UsuarioId: 16, SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:39:00][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:39:03][INFO] Guard - UsuarioId: 5, SessionId: f3b6qf0s5jbo8g5c6leqrss6r4
+[2026-02-03 11:39:03][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:42:04][INFO] Guard - UsuarioId: 16, SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:42:04][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:42:05][INFO] Guard - UsuarioId: , SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:42:05][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:42:06][INFO] Guard - UsuarioId: , SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:42:06][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:42:07][INFO] Guard - UsuarioId: , SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:42:07][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:42:08][INFO] Guard - UsuarioId: , SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:42:08][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:42:08][INFO] Guard - UsuarioId: , SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:42:08][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:43:04][INFO] Guard - UsuarioId: 16, SessionId: ke39uqig0evf8c8g4knkok9692
+[2026-02-03 11:43:04][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:43:13][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-03 11:43:44][INFO] Guard - UsuarioId: 5, SessionId: ejup80bqcen3c8bbnln0h7e3bj
+[2026-02-03 11:43:44][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:43:44][INFO] Guard - UsuarioId: 5, SessionId: ejup80bqcen3c8bbnln0h7e3bj
+[2026-02-03 11:43:44][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:43:47][INFO] Guard - UsuarioId: 5, SessionId: ejup80bqcen3c8bbnln0h7e3bj
+[2026-02-03 11:43:47][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:43:54][INFO] Guard - UsuarioId: , SessionId: l1b519dsj2cqvua3n4otrlvfrh
+[2026-02-03 11:43:54][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:43:59][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-03 11:44:08][INFO] Guard - UsuarioId: 16, SessionId: k6o4tjijoms8tcu4513uslev9p
+[2026-02-03 11:44:08][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:44:09][INFO] Guard - UsuarioId: 16, SessionId: k6o4tjijoms8tcu4513uslev9p
+[2026-02-03 11:44:09][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:44:11][INFO] Guard - UsuarioId: 16, SessionId: k6o4tjijoms8tcu4513uslev9p
+[2026-02-03 11:44:11][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:44:11][INFO] Guard - UsuarioId: 16, SessionId: k6o4tjijoms8tcu4513uslev9p
+[2026-02-03 11:44:11][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:44:13][INFO] Guard - UsuarioId: 16, SessionId: k6o4tjijoms8tcu4513uslev9p
+[2026-02-03 11:44:13][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:44:14][INFO] Guard - UsuarioId: 16, SessionId: k6o4tjijoms8tcu4513uslev9p
+[2026-02-03 11:44:14][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:47:01][INFO] Guard - UsuarioId: 5, SessionId: ejup80bqcen3c8bbnln0h7e3bj
+[2026-02-03 11:47:01][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:49:33][INFO] Guard - UsuarioId: 5, SessionId: 80nv9gskei4b96kueejh8rihs6
+[2026-02-03 11:49:33][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:51:47][INFO] Guard - UsuarioId: 16, SessionId: k6o4tjijoms8tcu4513uslev9p
+[2026-02-03 11:51:47][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:51:55][INFO] Guard - UsuarioId: 5, SessionId: 80nv9gskei4b96kueejh8rihs6
+[2026-02-03 11:51:55][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:53:47][INFO] Guard - UsuarioId: , SessionId: k6o4tjijoms8tcu4513uslev9p
+[2026-02-03 11:53:47][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:55:03][INFO] Guard - UsuarioId: 5, SessionId: 7evor3kg0dvnlqcusbjmaqaclu
+[2026-02-03 11:55:03][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:55:47][INFO] Guard - UsuarioId: , SessionId: k6o4tjijoms8tcu4513uslev9p
+[2026-02-03 11:55:47][INFO] Guard - Sesión activa: NO
+[2026-02-03 11:57:08][INFO] Guard - UsuarioId: 5, SessionId: av6emlk01sbau73mmla7jf5er6
+[2026-02-03 11:57:08][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:57:09][INFO] Guard - UsuarioId: 5, SessionId: av6emlk01sbau73mmla7jf5er6
+[2026-02-03 11:57:09][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:57:10][INFO] Guard - UsuarioId: 5, SessionId: av6emlk01sbau73mmla7jf5er6
+[2026-02-03 11:57:10][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:57:10][WARNING] Acción no válida recibida: 
+[2026-02-03 11:57:26][INFO] Guard - UsuarioId: 5, SessionId: av6emlk01sbau73mmla7jf5er6
+[2026-02-03 11:57:26][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:59:19][INFO] Guard - UsuarioId: 5, SessionId: av6emlk01sbau73mmla7jf5er6
+[2026-02-03 11:59:19][INFO] Guard - Sesión activa: SI
+[2026-02-03 11:59:19][WARNING] Acción no válida recibida: 
+[2026-02-03 11:59:38][INFO] Guard - UsuarioId: 16, SessionId: s6423c1e2eecbvtkubugd1vgrt
+[2026-02-03 11:59:38][INFO] Guard - Sesión activa: NO
+[2026-02-03 12:00:54][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:01:05][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:01:24][INFO] Guard - UsuarioId: 5, SessionId: av6emlk01sbau73mmla7jf5er6
+[2026-02-03 12:01:24][INFO] Guard - Sesión activa: NO
+[2026-02-03 12:01:38][INFO] Guard - UsuarioId: 5, SessionId: av51tqmpl6eanmjv3lgi53uoqk
+[2026-02-03 12:01:38][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:01:38][WARNING] Acción no válida recibida: 
+[2026-02-03 12:02:59][INFO] Guard - UsuarioId: , SessionId: msvu46cholfih9ksl3jp0vs11c
+[2026-02-03 12:02:59][INFO] Guard - Sesión activa: NO
+[2026-02-03 12:03:08][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:03:43][INFO] Guard - UsuarioId: 5, SessionId: av51tqmpl6eanmjv3lgi53uoqk
+[2026-02-03 12:03:43][INFO] Guard - Sesión activa: NO
+[2026-02-03 12:05:44][INFO] Guard - UsuarioId: , SessionId: av51tqmpl6eanmjv3lgi53uoqk
+[2026-02-03 12:05:44][INFO] Guard - Sesión activa: NO
+[2026-02-03 12:06:12][INFO] Guard - UsuarioId: 16, SessionId: boc8q4b4ji3o6aar2j153aupb3
+[2026-02-03 12:06:12][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:06:12][WARNING] Acción no válida recibida: 
+[2026-02-03 12:07:44][INFO] Guard - UsuarioId: , SessionId: av51tqmpl6eanmjv3lgi53uoqk
+[2026-02-03 12:07:44][INFO] Guard - Sesión activa: NO
+[2026-02-03 12:08:43][INFO] Guard - UsuarioId: 16, SessionId: boc8q4b4ji3o6aar2j153aupb3
+[2026-02-03 12:08:43][INFO] Guard - Sesión activa: NO
+[2026-02-03 12:08:58][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:08:58][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:08:58][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:08:58][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:08:59][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:08:59][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:08:59][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:08:59][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:00][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:00][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:00][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:00][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:01][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:01][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:01][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:01][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:01][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:01][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:02][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:02][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:02][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:02][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:03][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:03][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:03][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:03][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:04][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:04][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:04][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:04][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:05][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:05][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:05][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:05][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:05][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:05][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:06][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:06][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:06][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:06][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:07][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:07][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:07][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:07][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:08][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:08][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:08][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:08][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:09][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:09][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:09][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:09][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:09][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:09][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:10][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:10][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:10][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:10][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:11][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:11][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:11][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:11][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:12][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:12][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:12][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:12][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:13][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:13][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:13][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:13][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:13][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:13][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:14][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:14][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:14][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:14][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:15][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:15][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:16][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:16][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:17][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:17][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:17][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:17][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:17][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:17][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:18][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:18][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:18][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:18][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:19][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:19][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:19][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:19][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:20][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:20][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:20][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:20][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:21][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:21][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:21][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:21][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:21][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:21][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:22][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:22][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:22][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:22][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:23][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:23][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:23][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:23][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:24][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:24][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:24][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:24][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:25][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:25][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:25][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:25][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:25][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:25][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:26][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:26][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:26][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:26][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:27][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:27][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:27][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:27][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:28][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:28][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:28][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:28][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:29][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:29][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:30][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:30][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:30][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:30][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:31][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:31][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:31][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:31][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:31][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:31][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:38][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:38][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:38][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:38][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:38][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:38][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:39][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:39][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:39][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:39][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:40][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:40][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:40][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:40][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:41][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:41][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:41][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:41][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:41][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:41][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:42][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:42][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:43][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:43][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:44][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:44][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:44][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:44][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:44][INFO] Guard - UsuarioId: , SessionId: av51tqmpl6eanmjv3lgi53uoqk
+[2026-02-03 12:09:44][INFO] Guard - Sesión activa: NO
+[2026-02-03 12:09:44][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:44][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:45][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:45][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:45][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:45][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:46][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:46][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:46][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:46][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:47][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:47][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:47][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:47][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:48][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:48][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:48][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:48][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:49][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:49][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:49][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:49][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:50][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:50][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:50][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:50][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:50][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:50][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:51][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:51][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:51][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:51][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:52][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:52][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:52][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:52][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:52][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:52][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:53][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:53][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:53][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:53][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:54][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:54][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:09:54][INFO] Guard - UsuarioId: 16, SessionId: si546e088ke5lie79rqm8vfr0g
+[2026-02-03 12:09:54][INFO] Guard - Sesión activa: SI
+[2026-02-03 12:10:43][WARNING] Acción no válida recibida: 
+[2026-02-03 12:12:52][WARNING] Acción no válida recibida: 
+[2026-02-03 12:15:21][WARNING] Acción no válida recibida: 
+[2026-02-03 12:15:44][WARNING] Acción no válida recibida: 
+[2026-02-03 12:46:17][INFO] Estado antes de liberar - Usuario: 16, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 12:46:17][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 12:46:20][INFO] Estado antes de liberar - Usuario: 5, bloqueado_por: 16, intentando liberar por admin: 16
+[2026-02-03 12:46:20][INFO] Filas afectadas al liberar usuario: 1
+[2026-02-03 12:53:02][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:53:24][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:53:29][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:53:50][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:54:11][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:54:20][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:55:16][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 12:59:37][WARNING] Acción no válida recibida: 
+[2026-02-03 12:59:51][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:01:38][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:13:49][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:13:49][WARNING] Login fallido para usuario: 
+[2026-02-03 13:13:56][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:13:56][WARNING] Login fallido para usuario: 
+[2026-02-03 13:14:01][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:14:01][WARNING] Login fallido para usuario: 
+[2026-02-03 13:14:10][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:14:10][WARNING] Login fallido para usuario: 
+[2026-02-03 13:20:44][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:20:44][WARNING] Login fallido para usuario: 
+[2026-02-03 13:20:50][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:21:58][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:21:58][WARNING] Login fallido para usuario: 
+[2026-02-03 13:22:07][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:22:07][WARNING] Login fallido para usuario: 
+[2026-02-03 13:22:12][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:26:53][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:53][WARNING] Login fallido para usuario: 
+[2026-02-03 13:26:53][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:53][WARNING] Login fallido para usuario: 
+[2026-02-03 13:26:54][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:54][WARNING] Login fallido para usuario: 
+[2026-02-03 13:26:54][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:54][WARNING] Login fallido para usuario: 
+[2026-02-03 13:26:54][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:54][WARNING] Login fallido para usuario: 
+[2026-02-03 13:26:54][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:54][WARNING] Login fallido para usuario: 
+[2026-02-03 13:26:55][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:55][WARNING] Login fallido para usuario: 
+[2026-02-03 13:26:55][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:55][WARNING] Login fallido para usuario: 
+[2026-02-03 13:26:55][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:55][WARNING] Login fallido para usuario: 
+[2026-02-03 13:26:55][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:26:55][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:00][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:00][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:02][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:02][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:02][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:02][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:03][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:03][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:03][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:03][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:04][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:04][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:04][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:04][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:08][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:08][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:12][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:27:27][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:27][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:38][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:27:38][WARNING] Login fallido para usuario: 
+[2026-02-03 13:27:43][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:28:28][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:28:28][WARNING] Login fallido para usuario: 
+[2026-02-03 13:28:32][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:28:38][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:28:38][WARNING] Login fallido para usuario: 
+[2026-02-03 13:28:47][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:28:47][WARNING] Login fallido para usuario: 
+[2026-02-03 13:28:51][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:29:27][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:29:27][WARNING] Login fallido para usuario: 
+[2026-02-03 13:31:38][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:31:38][WARNING] Login fallido para usuario: 
+[2026-02-03 13:31:39][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:31:39][WARNING] Login fallido para usuario: 
+[2026-02-03 13:31:39][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:31:39][WARNING] Login fallido para usuario: 
+[2026-02-03 13:32:02][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:32:02][WARNING] Login fallido para usuario: 
+[2026-02-03 13:32:10][INFO] Login: usuario no encontrado - 
+[2026-02-03 13:32:10][WARNING] Login fallido para usuario: 
+[2026-02-03 13:32:18][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:35:10][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:35:39][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:37:32][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:46:02][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-03 13:48:30][WARNING] Login: contraseña incorrecta para usuario - manel
+[2026-02-03 13:48:30][WARNING] Login fallido para usuario: manel

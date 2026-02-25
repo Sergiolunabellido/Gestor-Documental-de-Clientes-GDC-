@@ -1,0 +1,148 @@
+[2026-02-17 09:02:27][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:02:27][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-17 09:03:04][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:03:04][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-17 09:03:20][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:03:20][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-17 09:08:11][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:11][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:11][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-17 09:08:12][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:12][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:12][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-17 09:08:17][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:17][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:17][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-17 09:08:20][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:20][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:20][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-17 09:08:32][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:32][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:08:32][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-17 09:10:53][INFO] Intento de login para usuario:5
+[2026-02-17 09:10:53][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:10:54][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:10:54][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-17 09:11:53][INFO] Intento de login para usuario:16
+[2026-02-17 09:12:23][INFO] Intento de login para usuario:2026-02-16 19:51:52
+[2026-02-17 09:12:23][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:12:23][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:12:23][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-17 09:14:56][INFO] Intento de login para usuario:2026-02-16 19:51:52
+[2026-02-17 09:14:56][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:17:01][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:17:05][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:20:19][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:20:31][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:20:39][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:24:36][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:24:36][INFO] Usuario 'manel' ha cerrado sesión.
+[2026-02-17 09:24:36][INFO] Token de 'recordarme' eliminado para usuario ID: 5
+[2026-02-17 09:25:46][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:25:46][INFO] Usuario 'manel' ha cerrado sesión.
+[2026-02-17 09:25:46][INFO] Token de 'recordarme' eliminado para usuario ID: 5
+[2026-02-17 09:27:23][INFO] Comprobando admin '1.
+[2026-02-17 09:27:23][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:27:23][INFO] Usuario 'manel' ha cerrado sesión.
+[2026-02-17 09:27:23][INFO] Token de 'recordarme' eliminado para usuario ID: 5
+[2026-02-17 09:28:32][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:28:32][INFO] Usuario '5' ha cerrado sesión.
+[2026-02-17 09:28:32][INFO] Token de 'recordarme' eliminado para usuario ID: 5
+[2026-02-17 09:30:05][INFO] Usuario '5' ha cerrado sesión.
+[2026-02-17 09:30:05][INFO] Token de 'recordarme' eliminado para usuario ID: 5
+[2026-02-17 09:30:32][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:30:32][INFO] Usuario '5' ha cerrado sesión.
+[2026-02-17 09:30:32][INFO] Token de 'recordarme' eliminado para usuario ID: 5
+[2026-02-17 09:33:59][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:34:29][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:40:38][INFO] error CARGAR CLIENTES
+[2026-02-17 09:40:50][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:40:51][INFO] error CARGAR CLIENTES
+[2026-02-17 09:40:58][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:40:59][INFO] error CARGAR CLIENTES
+[2026-02-17 09:41:07][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 09:41:11][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:41:20][INFO] error CARGAR CLIENTES
+[2026-02-17 09:42:41][INFO] error CARGAR CLIENTES
+[2026-02-17 09:42:46][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 09:42:50][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:43:58][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 09:44:02][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 09:52:55][INFO] error CARGAR CLIENTES
+[2026-02-17 09:57:16][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 10:03:37][INFO] error CARGAR CLIENTES
+[2026-02-17 10:07:08][INFO] error CARGAR CLIENTES
+[2026-02-17 10:07:24][INFO] error CARGAR CLIENTES
+[2026-02-17 10:09:14][INFO] error CARGAR CLIENTES
+[2026-02-17 10:09:19][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 10:09:47][INFO] error CARGAR CLIENTES
+[2026-02-17 10:10:40][INFO] error CARGAR CLIENTES
+[2026-02-17 10:11:08][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 10:23:25][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 10:24:49][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 10:24:54][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 10:26:45][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 10:28:34][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 10:30:27][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 10:33:09][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 10:35:01][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 10:58:13][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 11:00:04][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:31:51][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:31:54][INFO] Login: usuario no encontrado - 
+[2026-02-17 11:31:54][WARNING] Login fallido para usuario: 
+[2026-02-17 11:32:48][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 11:33:24][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 11:34:50][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:35:03][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 11:36:07][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:36:44][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:36:48][INFO] Login: usuario no encontrado - 
+[2026-02-17 11:36:48][WARNING] Login fallido para usuario: 
+[2026-02-17 11:40:18][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:44:35][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:44:37][INFO] Login: usuario no encontrado - 
+[2026-02-17 11:44:37][WARNING] Login fallido para usuario: 
+[2026-02-17 11:44:47][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:45:06][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:45:21][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 11:46:10][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 11:48:38][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 11:51:38][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 11:52:16][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:53:25][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:54:08][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 11:56:54][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 12:01:26][INFO] El cliente se ha eliminado correctamente
+[2026-02-17 12:01:27][INFO] El cliente se ha eliminado correctamente
+[2026-02-17 12:01:28][INFO] El cliente se ha eliminado correctamente
+[2026-02-17 12:01:29][INFO] El cliente se ha eliminado correctamente
+[2026-02-17 12:01:30][INFO] El cliente se ha eliminado correctamente
+[2026-02-17 12:01:31][INFO] El cliente se ha eliminado correctamente
+[2026-02-17 12:01:58][INFO] El cliente se ha eliminado correctamente
+[2026-02-17 12:02:04][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 12:03:34][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-17 12:03:40][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 12:08:15][WARNING] Registro: cliente '' ya existe
+[2026-02-17 12:08:15][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 12:08:29][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 12:08:39][WARNING] Registro: cliente '' ya existe
+[2026-02-17 12:08:39][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 12:28:09][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-17 12:28:19][INFO] El usuario se ha eliminado correctamente
+[2026-02-17 12:28:19][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 57
+[2026-02-17 12:34:43][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-17 12:49:45][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-17 12:55:31][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-17 13:38:46][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 13:39:00][INFO] El cliente se ha eliminado correctamente
+[2026-02-17 13:39:52][WARNING] Registro: cliente 'Farmaceutica ElBrillante' ya existe
+[2026-02-17 13:39:52][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 13:40:25][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 13:40:36][INFO] El cliente se ha eliminado correctamente
+[2026-02-17 13:41:36][WARNING] Registro: cliente 'Farmaceutica ElBrillante' ya existe
+[2026-02-17 13:41:36][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 13:43:09][WARNING] Registro: cliente 'Farmaceutica ElBrillante' ya existe
+[2026-02-17 13:43:09][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 13:43:31][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-17 13:44:25][INFO] El cliente se ha eliminado correctamente

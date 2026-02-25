@@ -1,0 +1,122 @@
+[2026-02-18 09:02:33][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 09:02:33][ERROR] Error al registrar sesión para usuario: sergio
+[2026-02-18 09:02:35][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 09:02:35][WARNING] Login: contraseña incorrecta para usuario - sergio
+[2026-02-18 09:02:35][WARNING] Login fallido para usuario: sergio
+[2026-02-18 09:06:20][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 09:06:31][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 09:10:11][INFO] El cliente se ha eliminado correctamente
+[2026-02-18 10:01:57][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-18 10:02:00][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-18 10:03:52][INFO] El cliente se ha eliminado correctamente
+[2026-02-18 10:03:52][INFO] El cliente se ha eliminado correctamente
+[2026-02-18 10:25:28][WARNING] Acción no válida recibida: 
+[2026-02-18 10:51:12][INFO] Entrando en caso subirArchivo - ID Cliente: 
+[2026-02-18 10:51:12][WARNING] Intento de subir archivo sin archivo válido. Error: no enviado
+[2026-02-18 10:55:08][INFO] Entrando en caso subirArchivo - ID Cliente: 31
+[2026-02-18 10:55:08][WARNING] Intento de subir archivo sin archivo válido. Error: no enviado
+[2026-02-18 11:01:04][WARNING] Intento de subir archivo sin archivo válido. Error: no enviado
+[2026-02-18 11:01:08][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 11:01:08][ERROR] No se pudo crear el directorio para el cliente: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:01:08][ERROR] Error al subir archivo para cliente 31: mkdir_fallo - No se pudo crear el directorio: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:10:58][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:11:25][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:11:25][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:16:32][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:16:32][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:17:01][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:17:02][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:17:02][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:17:02][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:17:02][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:17:02][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:17:02][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:17:03][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:17:08][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:17:08][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:17:08][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:17:08][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:17:08][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:17:08][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:17:08][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:17:08][ERROR] Error al registrar sesión para usuario: manel
+[2026-02-18 11:19:14][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 11:19:52][WARNING] Intento de subir archivo sin archivo válido. Error: 1
+[2026-02-18 11:20:08][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario manel
+[2026-02-18 11:20:08][INFO] 
+[2026-02-18 11:20:08][ERROR] No se pudo crear el directorio para el cliente: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:20:08][ERROR] Error al subir archivo para cliente 31: mkdir_fallo - No se pudo crear el directorio: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:24:20][WARNING] Intento de subir archivo sin archivo válido. Error: 1
+[2026-02-18 11:24:37][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario manel
+[2026-02-18 11:24:37][INFO] 
+[2026-02-18 11:24:37][ERROR] No se pudo crear el directorio para el cliente: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:24:37][ERROR] Error al subir archivo para cliente 31: mkdir_fallo - No se pudo crear el directorio: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:26:18][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario manel
+[2026-02-18 11:26:18][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:26:18][ERROR] No se pudo crear el directorio para el cliente: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:26:18][ERROR] Error al subir archivo para cliente 31: mkdir_fallo - No se pudo crear el directorio: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:30:53][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario manel
+[2026-02-18 11:30:53][ERROR] El directorio base no es escribible: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/
+[2026-02-18 11:30:53][ERROR] Error al subir archivo para cliente 31: no_escribible - El directorio no es escribible: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/
+[2026-02-18 11:32:17][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 11:32:17][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:32:19][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario manel
+[2026-02-18 11:32:19][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:32:44][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 11:32:44][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:41:10][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 11:41:10][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 11:41:59][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 11:41:59][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:11:10][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 12:11:10][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:11:28][INFO] Usuario 'manel' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-18 12:11:38][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-18 12:11:48][INFO] Iniciando proceso de subida de archivo para cliente 39 por usuario manel
+[2026-02-18 12:11:48][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_39/
+[2026-02-18 12:36:52][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 12:36:52][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:47:01][INFO] Iniciando proceso de subida de archivo para cliente 39 por usuario manel
+[2026-02-18 12:47:01][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_39/
+[2026-02-18 12:47:07][INFO] Iniciando proceso de subida de archivo para cliente 39 por usuario manel
+[2026-02-18 12:47:07][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_39/
+[2026-02-18 12:51:22][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 12:51:22][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:51:22][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 12:51:22][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:51:22][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 12:51:22][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:51:22][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 12:51:22][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:51:22][WARNING] Intento de subir archivo sin archivo válido. Error: 1
+[2026-02-18 12:52:43][WARNING] Acción no válida recibida: 
+[2026-02-18 12:52:50][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 12:52:50][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:55:20][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 12:55:20][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:55:37][INFO] Iniciando proceso de subida de archivo para cliente 31 por usuario sergio
+[2026-02-18 12:55:37][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_31/
+[2026-02-18 12:55:37][ERROR] Archivo ya existe en la base de datos: logoLibreria4.jpg para cliente ID: 31
+[2026-02-18 12:55:37][ERROR] Error al subir archivo para cliente 31: archivo_existente - Ya existe un archivo con ese nombre para este cliente
+[2026-02-18 12:59:15][INFO] El cliente se ha eliminado correctamente
+[2026-02-18 13:02:29][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-18 13:04:42][INFO] El cliente se ha eliminado correctamente
+[2026-02-18 13:04:52][INFO] La carpeta del cliente se ha creado correctamente
+[2026-02-18 13:27:06][INFO] Iniciando proceso de subida de archivo para cliente 40 por usuario sergio
+[2026-02-18 13:27:06][INFO] Ruta destino: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_40/
+[2026-02-18 13:27:07][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 13:43:20][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 13:43:27][INFO] Registro: registrando nuevo usuario 'sads'
+[2026-02-18 13:43:48][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 13:44:07][INFO] Login: usuario no encontrado - 
+[2026-02-18 13:44:07][WARNING] Login fallido para usuario: 
+[2026-02-18 13:44:22][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 13:44:23][INFO] Login: usuario no encontrado - 
+[2026-02-18 13:44:23][WARNING] Login fallido para usuario: 
+[2026-02-18 13:44:34][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 13:46:37][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 13:49:27][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 5
+[2026-02-18 13:50:41][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 13:55:55][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 13:57:29][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-18 13:57:43][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16

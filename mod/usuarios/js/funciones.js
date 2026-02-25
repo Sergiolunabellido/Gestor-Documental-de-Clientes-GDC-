@@ -169,7 +169,7 @@ $(document).on('click', '#botonModificar', (e) =>{
                         alert('Error de conexión al cancelar modificación del usuario');
                     }
                 });
-                window.location.reload();
+                
                 
                 
                

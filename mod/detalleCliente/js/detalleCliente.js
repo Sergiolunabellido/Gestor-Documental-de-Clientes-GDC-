@@ -295,34 +295,62 @@ function renderizarArchivosClientes(cliente) {
  * @return html
  */
 
- $(document).on('click', '#botonEliminarArchivo', function (e){
-       const idArchivo = this.dataset.idArchivo;
-        const idCliente = this.dataset.idCliente;
+$(document).on('click', '#botonEliminarArchivo', function (e){
+    const idArchivo = this.dataset.idArchivo;
+    const idCliente = this.dataset.idCliente;
 
-                    $.ajax({
-                        url: 'index.php',
-                        method: 'POST',
-                        dataType: 'json',
-                        data: {
-                            accion:'eliminarArchivoCliente',
-                            idArchivo: idArchivo,
-                            idCliente: idCliente
-                        },
-                        success: function(respuesta) {
-                            if(respuesta.ok){
-                                renderizarArchivosClientes(idCliente);
-                                const modal = bootstrap.Modal.getInstance(document.getElementById('modalEliminarArchivo'));
-                                modal.hide();
-                            } else {
-                                alert(res.msg || 'Ha habido un error al eliminar el archivo.');
-                                console.log(res.msg)
-                            }
-                        },
-                        error: function(xhr, status, error) {
-                            console.error('Error al eliminar el archivo:', error, status, xhr);
-                        }
-                    })
+    $.ajax({
+        url: 'index.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            accion:'eliminarArchivoCliente',
+            idArchivo: idArchivo,
+            idCliente: idCliente
+        },
+        success: function(respuesta) {
+            if(respuesta.ok){
+                renderizarArchivosClientes(idCliente);
+                const modal = bootstrap.Modal.getInstance(document.getElementById('modalEliminarArchivo'));
+                modal.hide();
+            } else {
+                alert(respuesta.msg || 'Ha habido un error al eliminar el archivo.');
+                console.log(res.msg)
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error al eliminar el archivo:', error, status, xhr);
+        }
+    })
 
-                });
+});
+
+$(document).on('click', '#botonEliminarTodos', function (e){
+        const idCliente = document.getElementById('nombreClienteDetalle')?.dataset.idUsuario;
+
+    $.ajax({
+        url: 'index.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            accion:'eliminarArchivosCliente',
+            idCliente: idCliente
+        },
+        success: function(respuesta) {
+            if(respuesta.ok){
+                renderizarArchivosClientes(idCliente);
+                
+            } else {
+                alert(respuesta.msg || 'Ha habido un error al eliminar el archivo.');
+                console.log(res.msg)
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('Error al eliminar el archivo:', error, status, xhr);
+        }
+    })
+
+});
+
 
 

@@ -121,4 +121,35 @@ class Archivo {
 
         return ['success' => true, 'msg' => 'Archivo eliminado correctamente'];
     }
+
+    /**
+     * @brief Elimina todos los archivos asociados a un cliente, tanto del sistema de archivos como de la base de datos
+     * @param int $idCliente ID del cliente
+     * @return array{success: bool, msg: string} Resultado de la operación
+     * Fecha de creación: 2026-02-25
+     */
+    public function eliminarArchivosCliente(int $idCliente): array {
+        $sql = "SELECT ruta FROM Archivo WHERE id_Cliente = :idCliente";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['idCliente' => $idCliente]);
+        $rutasA = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($rutasA as $archivo) {
+            $rutaCompleta = _ROOT_ . DW . $archivo['ruta'];
+            if (file_exists($rutaCompleta)) {
+                if (!unlink($rutaCompleta)) {
+                    debug("Error al eliminar el archivo del sistema: " . $rutaCompleta, "ERROR");
+                    return ['success' => false, 'msg' => 'No se pudo eliminar el archivo del sistema'];
+                }
+            } else {
+                debug("Archivo no encontrado en el sistema: " . $rutaCompleta, "WARNING");
+            }
+        }
+
+        $sql = "DELETE FROM Archivo WHERE id_Cliente = :idCliente";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['idCliente' => $idCliente]);
+
+        return ['success' => true, 'msg' => 'Archivos del cliente eliminados correctamente'];
+    }
 }

@@ -7,3 +7,77 @@
 [2026-02-25 09:18:24][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
 [2026-02-25 09:25:31][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
 [2026-02-25 09:25:33][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 09:33:46][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:33:08][INFO] Login: usuario no encontrado - sergioymanu
+[2026-02-25 10:33:08][WARNING] Login fallido para usuario: sergioymanu
+[2026-02-25 10:33:34][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:34:50][INFO] Archivo vltfddb.sql por sergio
+[2026-02-25 10:34:51][INFO] Archivo procesado exitosamente: vltfddb.sql
+[2026-02-25 10:35:02][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:35:22][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:35:28][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 16
+[2026-02-25 10:35:37][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:36:04][INFO] El archivo se ha eliminado correctamente: 82 para cliente: 40
+[2026-02-25 10:36:55][INFO] El archivo se ha eliminado correctamente: 87 para cliente: 40
+[2026-02-25 10:37:09][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:37:18][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:37:36][INFO] El archivo se ha eliminado correctamente: 84 para cliente: 40
+[2026-02-25 10:37:39][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:38:15][INFO] El usuario se ha eliminado correctamente
+[2026-02-25 10:38:15][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 62
+[2026-02-25 10:38:24][ERROR] Error al liberar el usuario de modificación - Usuario: 16, Admin: 16
+[2026-02-25 10:38:25][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:41:07][ERROR] Error al liberar el usuario de modificación - Usuario: 16, Admin: 16
+[2026-02-25 10:41:09][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:43:30][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:43:36][INFO] El archivo se ha eliminado correctamente: 85 para cliente: 40
+[2026-02-25 10:43:40][INFO] El archivo se ha eliminado correctamente: 83 para cliente: 40
+[2026-02-25 10:43:41][INFO] El archivo se ha eliminado correctamente: 86 para cliente: 40
+[2026-02-25 10:43:54][WARNING] Acción no válida recibida: 
+[2026-02-25 10:43:54][WARNING] Acción no válida recibida: 
+[2026-02-25 10:43:54][WARNING] Acción no válida recibida: 
+[2026-02-25 10:43:55][WARNING] Intento de subir archivo sin archivo válido. Error: 1
+[2026-02-25 10:43:55][WARNING] Intento de subir archivo sin archivo válido. Error: 1
+[2026-02-25 10:43:56][WARNING] Acción no válida recibida: 
+[2026-02-25 10:43:56][WARNING] Acción no válida recibida: 
+[2026-02-25 10:43:56][WARNING] Acción no válida recibida: 
+[2026-02-25 10:43:56][WARNING] Acción no válida recibida: 
+[2026-02-25 10:43:57][WARNING] Acción no válida recibida: 
+[2026-02-25 10:43:58][WARNING] Acción no válida recibida: 
+[2026-02-25 10:43:59][WARNING] Intento de subir archivo sin archivo válido. Error: 1
+[2026-02-25 10:43:59][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:01][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:03][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:03][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:05][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:07][WARNING] Intento de subir archivo sin archivo válido. Error: 1
+[2026-02-25 10:44:07][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:10][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:12][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:12][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:13][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:16][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:16][WARNING] Intento de subir archivo sin archivo válido. Error: 1
+[2026-02-25 10:44:17][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:17][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:19][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:20][WARNING] Intento de subir archivo sin archivo válido. Error: 1
+[2026-02-25 10:44:21][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:21][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:24][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:24][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:31][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:32][WARNING] Acción no válida recibida: 
+[2026-02-25 10:44:36][ERROR] Error al liberar el usuario de modificación - Usuario: 5, Admin: 16
+[2026-02-25 10:44:37][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:45:21][INFO] El archivo se ha eliminado correctamente: 116 para cliente: 40
+[2026-02-25 10:47:21][INFO] Login: usuario no encontrado - 
+[2026-02-25 10:47:21][WARNING] Login fallido para usuario: 
+[2026-02-25 10:49:07][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:49:09][ERROR] Archivo no encontrado con ID: 
+[2026-02-25 10:49:09][INFO] El archivo se ha eliminado correctamente:  para cliente: 
+[2026-02-25 10:51:39][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:52:35][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 10:56:00][INFO] El archivo se ha eliminado correctamente: 115 para cliente: 40
+[2026-02-25 11:35:30][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 11:37:34][INFO] Archivos eliminados correctamente para cliente: 40

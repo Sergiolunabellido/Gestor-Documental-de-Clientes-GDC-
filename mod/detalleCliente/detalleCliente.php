@@ -7,16 +7,20 @@
         </div>
        
     </div>
-    <div class="d-flex flex-column align-items-start gap-2">
+    <div class="d-flex align-items-center justify-content-between gap-2">
     
         <input id="inputArchivo"  type="file"  hidden multiple>
         <label for="inputArchivo" class="w-25 ms-3 btn btn-primary ">
             Seleccione el archivo
         </label>
 
+
+        <button id="botonEliminarTodos" class="btn btn-danger w-25 me-3">Eliminar Todos</button>
+
     </div>
    
-    <div id="ficherosCliente" class="m-3 h-100 border border-2 shadow rounded">
+    <div id="ficherosCliente" class="m-3 h-100 border border-2 shadow rounded overflow-auto"
+    style="max-height: calc(100vh - 220px);">
        
     </div>
 </div>

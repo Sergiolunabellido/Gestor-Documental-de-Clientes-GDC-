@@ -462,6 +462,30 @@ switch ($accion) {
         
         break;
 
+    case 'eliminarArchivosCliente':
+
+        if (!isset($_SESSION['login']) || !$_SESSION['login']) {
+            $response = ['ok' => false, 'msg' => 'Sesion expirada'];
+            break;
+        }
+
+        if (empty($idCliente)) {
+            $response = ['ok' => false, 'msg' => 'Cliente no valido'];
+            break;
+        }
+
+        $archivosEliminados[] = $archivoModel->eliminarArchivosCliente($idCliente);
+
+        if ($archivosEliminados[0] === false) {
+            debug("Error al eliminar archivos del cliente: $idCliente", "ERROR");
+            $response = ['ok' => false, 'msg' => 'Error al eliminar los archivos del cliente'];
+        } else {
+            debug("Archivos eliminados correctamente para cliente: $idCliente", "INFO");
+            $response = ['ok' => true, 'msg' => 'Los archivos del cliente se han eliminado correctamente'];
+        }
+
+        break;
+
     case 'cambiarContrasenia':
 
         if (cambiarContrasenia($db, $_SESSION['idUsuario'] ?? null, $_POST['contrasenia'] ?? '', $usuario)) {

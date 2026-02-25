@@ -5,3 +5,5 @@
 [2026-02-25 09:15:48][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
 [2026-02-25 09:18:02][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
 [2026-02-25 09:18:24][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 09:25:31][INFO] Usuario 'sergio' ya tiene una sesión activa. Eliminando sesión anterior.
+[2026-02-25 09:25:33][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}

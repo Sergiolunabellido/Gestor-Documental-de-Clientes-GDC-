@@ -17,7 +17,7 @@ Aplicación web monolítica construida en **PHP + MySQL + jQuery + Bootstrap** c
 - 👤 autenticación y sesiones de usuario
 - 🧑‍💼 administración de usuarios (alta, baja lógica, modificación, estado)
 - 🧾 perfil y foto de usuario
-- 📁 clientes y archivos por cliente (subida múltiple + drag & drop)
+- 📁 clientes y archivos por cliente (subida múltiple + drag & drop + eliminación individual/masiva)
 - 🗃️ carga de SQL (`.sql`) para recrear/refrescar la tabla principal `vltfddb`
 - 📊 visualización tabular de datos SQL
 
@@ -102,6 +102,7 @@ El proyecto usa un patrón de entrada única en `index.php`, con peticiones AJAX
 - `crearCarpetaCliente`
 - `eliminarCliente`
 - `eliminarArchivoCliente`
+- `eliminarArchivosCliente`
 - `verificarSesion`
 - `modificarEstadoUsuario`
 
@@ -153,7 +154,7 @@ Ambos contienen estructura + datos para la tabla `vltfddb`.
 - `mod/usuarios`: listado, filtros, modificación, eliminación, alta de estado.
 - `mod/perfil`: datos de perfil + subida/cambio de foto.
 - `mod/fuente`: gestión visual de carpetas/clientes.
-- `mod/detalleCliente`: subida/listado/eliminación de archivos por cliente.
+- `mod/detalleCliente`: subida/listado de archivos por cliente, eliminación individual (por archivo) y eliminación masiva (botón "Eliminar Todos").
 - `mod/archivo`: carga SQL y acceso a visualización de tabla.
 - `mod/detalleTabla`: renderizado de tabla SQL en HTML.
 - `mod/estatico`: navbar y sliders por rol.

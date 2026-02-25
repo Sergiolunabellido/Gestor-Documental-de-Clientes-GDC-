@@ -11,7 +11,7 @@
     
         <input id="inputArchivo"  type="file"  hidden multiple>
         <label for="inputArchivo" class="w-25 ms-3 btn btn-primary ">
-            Seleccione el archivo
+            Subir el archivo
         </label>
 
 

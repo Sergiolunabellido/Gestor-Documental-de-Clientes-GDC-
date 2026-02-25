@@ -326,7 +326,17 @@ $(document).on('click', '#botonEliminarArchivo', function (e){
 });
 
 $(document).on('click', '#botonEliminarTodos', function (e){
-        const idCliente = document.getElementById('nombreClienteDetalle')?.dataset.idUsuario;
+    
+    const modal = document.getElementById('modalEliminarArchivos');
+    new bootstrap.Modal(modal).show();
+
+
+});
+
+$(document).on('click', '#botonEliminarArchivos', function (e){
+    
+    
+    const idCliente = document.getElementById('nombreClienteDetalle')?.dataset.idUsuario;
 
     $.ajax({
         url: 'index.php',
@@ -339,7 +349,8 @@ $(document).on('click', '#botonEliminarTodos', function (e){
         success: function(respuesta) {
             if(respuesta.ok){
                 renderizarArchivosClientes(idCliente);
-                
+                const modal = bootstrap.Modal.getInstance(document.getElementById('modalEliminarArchivos'));
+                modal.hide();
             } else {
                 alert(respuesta.msg || 'Ha habido un error al eliminar el archivo.');
                 console.log(res.msg)
@@ -350,7 +361,6 @@ $(document).on('click', '#botonEliminarTodos', function (e){
         }
     })
 
+
 });
-
-
 

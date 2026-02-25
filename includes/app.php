@@ -204,6 +204,32 @@ function renderModalesBase(): void {
         ],
     ]);
 
+    renderModal([
+        'id' => 'modalEliminarArchivos',
+        'title' => 'Eliminar Archivos',
+        'ariaLabelledBy' => 'modalEliminarArchivosTitle',
+        'ariaHidden' => 'true',
+        'body' => <<<'HTML'
+            <div class="d-flex align-items-center">
+                <label for="nuevoNombre" class="form-label">Esta usted seguro de que desea eliminar todos los archivos?</label>
+            </div>
+        HTML,
+        'footerButtons' => [
+            [
+                'id' => 'botonCancelarEliminar',
+                'type' => 'button',
+                'class' => 'btn btn-secondary',
+                'label' => 'Cancelar',
+                'dismiss' => true,
+            ],
+            [
+                'id' => 'botonEliminarArchivos',
+                'type' => 'button',
+                'class' => 'btn btn-primary',
+                'label' => 'Aceptar',
+            ],
+        ],
+    ]);
 
     renderModal([
         'id' => 'modalCrearCliente',

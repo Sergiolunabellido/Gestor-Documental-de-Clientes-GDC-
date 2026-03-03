@@ -4,7 +4,7 @@
             Subir fichero
         </button>
     </div>
-        <div id="divPadreFicheros" class="d-flex flex-wrap  m-2">
+        <div id="divPadreFicheros" class="m-5" style="max-height: 100vh; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; align-content: start;">
 
         </div>
 

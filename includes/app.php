@@ -310,6 +310,16 @@ function renderModalesBase(): void {
  */
 function guardarArchivoYCrearTabla($archivo) {
 
+    if (
+        !is_array($archivo) ||
+        !isset($archivo['error']) ||
+        $archivo['error'] !== UPLOAD_ERR_OK ||
+        empty($archivo['name']) ||
+        empty($archivo['tmp_name'])
+    ) {
+        return ['error' => 'upload_invalido', 'msg' => 'No se recibio un archivo SQL valido'];
+    }
+
     $baseDir = _ROOT_.DW._ASSETS_.DW._ARCHIVOSQL_.DW;
 
     if (!is_dir($baseDir)) {
@@ -346,10 +356,12 @@ function guardarArchivoYCrearTabla($archivo) {
 
     $tablaPrincipal = 'vltfddb';
     $contenidoSinComentarios = limpiarComentariosSQL($contenido);
-    $createTablaPrincipal = extraerCreateTablaSQL($contenidoSinComentarios, $tablaPrincipal);
-    $alterTablaPrincipal = extraerAlterTablaSQL($contenidoSinComentarios, $tablaPrincipal);
-    $insertTablaPrincipal = extraerInsertTablaSQL($contenidoSinComentarios, $tablaPrincipal);
-    escribirJSON(_ROOT_.DW._ASSETS_.DW._CACHE_.DW."nombreBD.json", ['nombre' => $tablaPrincipal]);
+    $nombreTabla = obtenerTablasDesdeSQL($contenidoSinComentarios);
+    $nombreCampoTabla = obtenerCampoTablaSQL($contenidoSinComentarios, $nombreTabla[0] ?? $tablaPrincipal);
+    $createTablaPrincipal = extraerCreateTablaSQL($contenidoSinComentarios, $nombreTabla[0] ?? $tablaPrincipal);
+    $alterTablaPrincipal = extraerAlterTablaSQL($contenidoSinComentarios, $nombreTabla[0] ?? $tablaPrincipal);
+    $insertTablaPrincipal = extraerInsertTablaSQL($contenidoSinComentarios, $nombreTabla[0] ?? $tablaPrincipal);
+    escribirJSON(_ROOT_.DW._ASSETS_.DW._CACHE_.DW."nombreBD.json", $nombreTabla[0] ?? $tablaPrincipal, $nombreCampoTabla);
 
     try {
         $conexion = getDB();
@@ -360,21 +372,7 @@ function guardarArchivoYCrearTabla($archivo) {
     }
 
     try {
-        $stmtDb = $conexion->query("SELECT DATABASE() AS db_activa");
-        $rowDb = $stmtDb->fetch(PDO::FETCH_ASSOC);
-        $dbActiva = $rowDb['db_activa'] ?? null;
-    } catch (PDOException $e) {
-        debug("No se pudo consultar la base de datos activa: " . $e->getMessage(), "ERROR");
-        return ['error' => 'db_select_failed', 'msg' => 'No se pudo validar la base de datos activa'];
-    }
-
-    if ($dbActiva !== _DBNAME_) {
-        debug("Base de datos activa inesperada. Esperada: " . _DBNAME_ . " - Activa: " . ($dbActiva ?? 'NULL'), "ERROR");
-        return ['error' => 'db_select_failed', 'msg' => 'La base de datos activa no coincide con la configurada'];
-    }
-
-    try {
-        $tablaExiste = existeTablaSQL($conexion, $tablaPrincipal);
+        $tablaExiste = existeTablaSQL($conexion, $nombreTabla[0] ?? $tablaPrincipal);
 
         // CREATE/ALTER en MySQL provocan commit implícito, por eso van fuera de la transacción de datos.
         if (!$tablaExiste) {
@@ -391,7 +389,8 @@ function guardarArchivoYCrearTabla($archivo) {
         }
 
         $conexion->beginTransaction();
-        $conexion->exec("DELETE FROM `$tablaPrincipal`");
+        $nombreRealTabla = $nombreTabla[0] ?? $tablaPrincipal;
+        $conexion->exec("DELETE FROM `$nombreRealTabla`");
 
         foreach ($insertTablaPrincipal as $sqlInsert) {
             $conexion->exec($sqlInsert);
@@ -400,7 +399,7 @@ function guardarArchivoYCrearTabla($archivo) {
         $conexion->commit();
 
         debug("Archivo procesado exitosamente: " . $archivo['name'], "INFO");
-        return ['error' => null, 'msg' => 'Archivo procesado exitosamente', 'tablas' => [$tablaPrincipal]];
+        return ['error' => null, 'msg' => 'Archivo procesado exitosamente', 'tablas' => [$nombreRealTabla], 'campoTabla' => $nombreCampoTabla];
     } catch (Throwable $e) {
         if ($conexion->inTransaction()) {
             $conexion->rollBack();
@@ -537,6 +536,32 @@ function leertablaSQL($db, $nombreTabla) {
 }
 
 /**
+ * @brief Lee los datos de un campo específico de una tabla SQL y los devuelve como un array asociativo
+ * @param PDO $db Conexión PDO a la base de datos
+ * @param string $nombreTabla Nombre de la tabla a leer
+ * @param string $nombreCampoTabla Nombre del campo específico a leer
+ * @return array Resultado con clave 'ok' indicando éxito o error, y 'datos' o 'error' según corresponda
+ * Fecha de creación: 2026-03-03
+ */
+function leerCampoTablaSQL($db, $nombreTabla, $nombreCampoTabla) {
+
+    try {
+
+        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $db->query("SELECT * FROM $nombreTabla WHERE mtable = '$nombreCampoTabla'");
+        $datos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return ['ok' => true, 'datos' => $datos];
+
+    } catch (PDOException $e) {
+        
+        return ['ok' => false, 'error' => $e->getMessage()];
+    }
+
+}
+
+/**
  * @brief Lee un archivo JSON y devuelve su contenido como un array asociativo
  * @param string $ruta Ruta del archivo JSON a leer
  * @return array Resultado con clave 'ok' indicando éxito o error, y 'datos' o 'error' según corresponda
@@ -569,7 +594,10 @@ function leerJSON($ruta) {
  * @return array Resultado con clave 'ok' indicando éxito o error, y 'error' en caso de fallo
  * Fecha de creación: 2026-02-24
  */
-function escribirJSON($ruta, $datos) {
+function escribirJSON($ruta, $nombreTabla, $datos = []) {
+     $datos = ['nombre' => $nombreTabla, 'campoTabla' => $datos];
+
+     debug("Escribiendo en JSON: $ruta con los datos: " . json_encode($datos), "INFO");
     $contenido = json_encode($datos, JSON_PRETTY_PRINT);
     if ($contenido === false) {
         return ['ok' => false, 'error' => 'Error al codificar JSON: ' . json_last_error_msg()];
@@ -580,4 +608,52 @@ function escribirJSON($ruta, $datos) {
     }
 
     return ['ok' => true];
+}
+
+/**
+ * @brief Extrae los valores únicos de un campo específico en los INSERT de una tabla dada en un archivo SQL
+ * @param string $contenido Contenido del archivo SQL
+ * @param string $tabla Nombre de la tabla a analizar
+ * @return array Lista de valores únicos encontrados para el campo especificado
+ * Fecha de creación: 2026-03-03
+ */
+function obtenerCampoTablaSQL($contenido, $tabla) {
+    
+    $nombreDelCampo = 'mtable';
+
+    // Buscar todos los INSERT de la tabla pelicula
+    $tablaEscapada = preg_quote($tabla, '/');
+    preg_match_all('/INSERT\s+INTO\s+`?' . $tablaEscapada . '`?\s*\((.*?)\)\s*VALUES\s*(.*?);/is', $contenido, $matches);
+
+    $valoresUnicos = [];
+
+    foreach ($matches[1] as $index => $columnasTexto) {
+    
+        $valoresTexto = $matches[2][$index];
+
+        // Convertir columnas en array
+        $columnas = array_map(function($col) {
+            return trim(str_replace('`', '', $col));
+        }, explode(',', $columnasTexto));
+
+        // Buscar índice del campo que quieres
+        $indiceCampo = array_search($nombreDelCampo, $columnas);
+
+        if ($indiceCampo === false) continue;
+
+        // Separar filas
+        $filas = explode("),", $valoresTexto);
+
+        foreach ($filas as $fila) {
+            $fila = str_replace(['(', ')'], '', $fila);
+            $campos = str_getcsv($fila, ',', "'");
+
+            if (isset($campos[$indiceCampo])) {
+                $valoresUnicos[] = $campos[$indiceCampo];
+            }
+        }
+
+    }
+
+    return array_values(array_unique($valoresUnicos));
 }

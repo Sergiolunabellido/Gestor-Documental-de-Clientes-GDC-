@@ -153,7 +153,7 @@ $(document).on('click', '#archivo', (e) => {
             $('#contenido').html(res.contenido);
 
             if (res.existeTabla && res.nombreTabla) {
-                renderizarFicheros(res.nombreTabla);
+                renderizarFicheros(res.campoTabla, res.nombreTabla);
             }
             
             

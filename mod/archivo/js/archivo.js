@@ -1,3 +1,8 @@
+/**
+ * @brief Permite subir un archivo .sql y crear la tabla que este contenga dentro de el y poder posterior mente renderizar el contenido de esta.
+ * @fecha 24/02/2026
+ * @returns alert | html | errores.
+ */
 function crearFichero() {
     const input = document.getElementById('idFichero');
     const archivo = input?.files?.[0];
@@ -41,7 +46,8 @@ function crearFichero() {
                 // Si la vista Archivo ya está pintada, renderizamos al instante.
                 // Si no está, recargamos la vista Archivo y su click handler la renderizará.
                 if (document.getElementById('divPadreFicheros')) {
-                    renderizarFicheros(nombreTabla);
+                    renderizarFicheros(res.campoTabla, nombreTabla);
+                    
                 } else {
                     $('#archivo').trigger('click');
                 }
@@ -70,74 +76,96 @@ $(document).on('click', '#botonCrearFichero', (e) => {
 })
 
 
-function renderizarFicheros(nombreTabla) {
+/**
+ * @brief Renderiza los ficheros de cada tabla devuelta por el backend, estos hacen referencia a todos los mtable distintos de la tabla original.
+ * @param {*} nombreTabla 
+ * @fecha 24/02/2026
+ * @returns 
+ */
+function renderizarFicheros(nombreCampo, nombreTabla) {
     const divGenerico = document.getElementById('divPadreFicheros');
     if (!divGenerico) return;
 
-    const tabla = Array.isArray(nombreTabla) ? (nombreTabla[0] || '') : (nombreTabla || '');
-    divGenerico.innerHTML = ''; // Clear existing content
-
-    console.log('Rendering nombreTabla:', tabla); // Debug: Check the nombreTabla data
-
-    if(tabla){
-
-        const divPadre = document.createElement("button")
-        divPadre.className = "d-flex flex-column align-items-center border-0 btn"
-
-        const divUsuario = document.createElement("div");
-        divUsuario.className = "d-flex  flex-wrap align-items-center justify-content-center rounded  shadow p-2 m-3 bg-primary";
-
-        const logo = document.createElement("img")
-        logo.className = "w-100 h-100 p-3  "
-        logo.src =  'assets/images/file-certificate.svg';
-
-        const nombreCliente = document.createElement("label")
-        nombreCliente.className = "text-wrap fs-5"
-        nombreCliente.textContent = tabla
+    const tablaOrigen = Array.isArray(nombreTabla) ? (nombreTabla[0] || '') : (nombreTabla || '');
+    const tablas = Array.isArray(nombreCampo)
+        ? nombreCampo.filter((tabla) => !!tabla)
+        : (nombreCampo ? [nombreCampo] : []);
+    divGenerico.innerHTML = '';
 
 
-        divPadre.addEventListener('click', (e)=>{
-            e.preventDefault()
+    if(tablas.length){
+        tablas.forEach((tabla) => {
+            const divPadre = document.createElement("button")
+            divPadre.type = "button"
+            divPadre.className = "d-flex flex-column align-items-center justify-content-start border-0 btn w-75 h-75 p-2"
+            divPadre.style.minHeight = "190px"
 
-    
-            $.ajax({
-                url:  'index.php',
-                method: 'POST',
-                dataType: 'json',
-                data: {
-                    accion:'detalleTabla',
-                    nombreTabla: tabla
-                },
-                success: function(res) {
-                    $('#estaticos').html(res.estaticos);
-                    $('#contenido').html(res.contenido);
-                    renderizarTabla(res.datos, tabla);
+            const divUsuario = document.createElement("div");
+            divUsuario.className = "d-flex align-items-center justify-content-center rounded shadow bg-primary w-100";
+            divUsuario.style.height = "120px"
 
-                },error: function(xhr, status, error) {
-                    console.error('Error al cargar la vista fuente', error, status, xhr);
-                    
-                }
+            const logo = document.createElement("img")
+            logo.className = "w-100 h-100 p-3"
+            logo.src =  'assets/images/file-certificate.svg';
+
+            const nombreCliente = document.createElement("label")
+            nombreCliente.className = "fs-6 text-center w-100 mt-2"
+            nombreCliente.textContent = tabla
+            nombreCliente.style.whiteSpace = "nowrap"
+            nombreCliente.style.overflow = "hidden"
+            nombreCliente.style.textOverflow = "ellipsis"
+
+
+            divPadre.addEventListener('click', (e)=>{
+                e.preventDefault()
+
+        
+                $.ajax({
+                    url:  'index.php',
+                    method: 'POST',
+                    dataType: 'json',
+                    data: {
+                        accion:'detalleTabla',
+                        nombreTabla: tablaOrigen,
+                        nombreCampo: tabla
+                    },
+                    success: function(res) {
+                        $('#estaticos').html(res.estaticos);
+                        $('#contenido').html(res.contenido);
+                        renderizarTabla(res.datos, tabla);
+
+                    },error: function(xhr, status, error) {
+                        console.error('Error al cargar la vista fuente', error, status, xhr);
+                        
+                    }
+                })
             })
-        })
-        divUsuario.appendChild(logo)
-        
-        divPadre.appendChild(divUsuario)
-        divPadre.appendChild(nombreCliente)
+            divUsuario.appendChild(logo)
+            
+            divPadre.appendChild(divUsuario)
+            divPadre.appendChild(nombreCliente)
 
-        divGenerico.appendChild(divPadre)
-        
+            divGenerico.appendChild(divPadre)
+        })
 
     }
        
         
 };
 
+/**
+ * @brief Renderiza la tabla completa que se le indique a travez de el nombre.
+ * @param {*} datos 
+ * @param {*} nombreTabla 
+ * @fecha 24/02/2026
+ * @returns html
+ */
 function renderizarTabla(datos, nombreTabla) {
     const contenedor = document.getElementById('datosTabla');
     const tituloTabla = document.getElementById('nombreTabla');
 
     if (tituloTabla) {
-        tituloTabla.textContent = nombreTabla ? `Tabla: ${nombreTabla}` : 'Tabla';
+        tituloTabla.textContent =  nombreTabla ? `mtable: ${nombreTabla}` : 'mtable';
     }
 
     if (!contenedor) return;

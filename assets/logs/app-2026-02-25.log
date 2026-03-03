@@ -132,3 +132,8 @@
 [2026-02-25 13:11:46][INFO] Archivos eliminados correctamente para cliente: 40
 [2026-02-25 13:46:42][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
 [2026-02-25 13:46:43][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 18:59:55][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 19:00:01][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 19:00:06][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 19:00:48][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb"}
+[2026-02-25 19:01:50][ERROR] ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: 52

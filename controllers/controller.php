@@ -29,6 +29,7 @@ $nuevoEstado = $_POST['nuevoEstado'] ?? null;
 $nombreCliente = $_POST['nombreCliente'] ?? '';
 $telefonoCliente = $_POST['telefonoCliente'] ?? '';
 $nombreTabla = $_POST['nombreTabla'] ?? '';
+$nombreCampo = $_POST['nombreCampo'] ?? '';
 
 $recordarme = filter_var($recordarme, FILTER_VALIDATE_BOOLEAN);
 
@@ -249,6 +250,7 @@ switch ($accion) {
 
         if (!empty($cacheTabla['ok']) && is_array($cacheTabla['datos'])) {
             $nombreTabla = $cacheTabla['datos']['nombre'] ?? '';
+            $campoTabla = $cacheTabla['datos']['campoTabla'] ?? '';
         }
 
         // Compatibilidad con valores antiguos guardados como nombre de fichero .sql
@@ -263,7 +265,8 @@ switch ($accion) {
             'estaticos' => $estaticos,
             'contenido' => $contenido,
             'existeTabla' => $existeTabla,
-            'nombreTabla' => $nombreTabla
+            'nombreTabla' => $nombreTabla,
+            'campoTabla' => $campoTabla
         ];
 
         break;
@@ -278,7 +281,7 @@ switch ($accion) {
         cargarVista('detalleTabla');
         $contenido = ob_get_clean();
 
-        $ok = leertablaSQL($db, $nombreTabla);
+        $ok = leerCampoTablaSQL($db, $nombreTabla, $nombreCampo);
 
         if (!$ok['ok']) {
             debug("Error al leer tabla SQL: $nombreTabla - {$ok['error']} - {$ok['msg']}", "ERROR");
@@ -457,7 +460,7 @@ switch ($accion) {
             debug("Error al generar tablas desde archivo SQL: {$ok['error']} - {$ok['msg']}", "ERROR");
             $response = ['ok' => false, 'msg' => $ok['msg'], 'error_code' => $ok['error']];
         } else {
-            $response = ['ok' => true, 'msg' => $ok['msg'], 'tablas' => $ok['tablas'] ?? []];
+            $response = ['ok' => true, 'msg' => $ok['msg'], 'tablas' => $ok['tablas'] ?? [], 'campoTabla' => $ok['campoTabla'] ?? ''];
         }
         
         break;

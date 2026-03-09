@@ -191,7 +191,7 @@ $(document).on('click', '#importar', (e) => {
 
                 const optionDefault = document.createElement('option');
                 optionDefault.value = '';
-                optionDefault.textContent = 'Selecciona un cliente';
+                optionDefault.textContent = 'Cliente';
                 optionDefault.selected = true;
                 optionDefault.disabled = true;
                 selectClientes.appendChild(optionDefault);

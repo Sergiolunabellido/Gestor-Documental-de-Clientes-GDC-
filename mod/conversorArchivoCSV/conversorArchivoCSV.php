@@ -30,13 +30,17 @@
         </div>
         <div id="tablaCampos" class="d-flex flex-column align-items-center justify-content-center gap-5 w-50 h-100">
             <Label class="fs-1">Tabla</Label>
+            <div class="d-flex gap-3 align-items-center w-100">
+                <label for="tablas">Elige la tabla de ejemplo:</label>
+                <select name="tablas" id="tablas" class="form-select w-50 rounded shadow">
+                    
+                </select>
+            </div>
 
             <input list="camposTabla" class="form-select w-50 rounded shadow" placeholder="Selecciona o escribe">
 
             <datalist id="camposTabla">
-                <option value="nombre">
-                <option value="apellido">
-                <option value="telefono">
+              
             </datalist>
         </div>
     </div>

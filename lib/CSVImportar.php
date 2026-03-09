@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @brief Gestiona la lectura y renderizado de columnas de un CSV para el modulo de importacion
+ * Fecha de creacion: 2026-03-09
+ */
 class CSVImportar {
 
     private $file;
@@ -7,29 +11,125 @@ class CSVImportar {
     private $datos = [];
     private $id;
     private $class;
+    private $delimiter = ',';
 
+    /**
+     * @brief Constructor de la clase CSVImportar
+     * Fecha de creacion: 2026-03-09
+     * @return void
+     */
     public function __construct() {
 
     }
 
+    /**
+     * @brief Define la ruta del archivo CSV a procesar
+     * Fecha de creacion: 2026-03-09
+     * @param string $path Ruta relativa o absoluta del CSV
+     * @return void
+     */
     public function setFile($path) {
         $this->file = $path;
     }
 
+    /**
+     * @brief Define la clase CSS principal del componente renderizado
+     * Fecha de creacion: 2026-03-09
+     * @param string $className Nombre de clase CSS
+     * @return void
+     */
     public function setClass($className) {
         $this->class = $className;
     }
 
+    /**
+     * @brief Genera y devuelve un identificador unico para el componente
+     * Fecha de creacion: 2026-03-09
+     * @return string ID unico del componente CSV
+     */
     public function getId() {
         // Generamos un ID único para que el JS sepa dónde actuar
         $this->id = "import_" . uniqid();
         return $this->id;
     }
 
+    /**
+     * @brief Elimina el BOM UTF-8 del inicio de un valor de texto
+     * Fecha de creacion: 2026-03-09
+     * @param mixed $valor Valor de entrada a normalizar
+     * @return mixed Valor sin BOM si era texto
+     */
+    private function limpiarBOM($valor) {
+        if (!is_string($valor)) {
+            return $valor;
+        }
+        return preg_replace('/^\xEF\xBB\xBF/', '', $valor);
+    }
+
+    /**
+     * @brief Detecta automaticamente el delimitador usado por el archivo CSV
+     * Fecha de creacion: 2026-03-09
+     * @return string Delimitador detectado
+     */
+    private function detectarSeparador() {
+        if (empty($this->file) || !is_readable($this->file)) {
+            return $this->delimiter;
+        }
+
+        $linea = '';
+        $f = fopen($this->file, 'r');
+        if ($f === false) {
+            return $this->delimiter;
+        }
+
+        while (($raw = fgets($f)) !== false) {
+            $raw = trim($raw);
+            if ($raw !== '') {
+                $linea = $this->limpiarBOM($raw);
+                break;
+            }
+        }
+        fclose($f);
+
+        if ($linea === '') {
+            return $this->delimiter;
+        }
+
+        $candidatos = [',', ';', "\t", '|'];
+        $mejor = $this->delimiter;
+        $maxCampos = 1;
+        $maxSeparadores = 0;
+
+        foreach ($candidatos as $candidato) {
+            $campos = str_getcsv($linea, $candidato);
+            $cantidadCampos = is_array($campos) ? count($campos) : 1;
+            $cantidadSeparadores = substr_count($linea, $candidato);
+
+            if (
+                $cantidadCampos > $maxCampos ||
+                ($cantidadCampos === $maxCampos && $cantidadSeparadores > $maxSeparadores)
+            ) {
+                $mejor = $candidato;
+                $maxCampos = $cantidadCampos;
+                $maxSeparadores = $cantidadSeparadores;
+            }
+        }
+
+        $this->delimiter = $mejor;
+        return $this->delimiter;
+    }
+
+    /**
+     * @brief Determina si la primera fila del CSV debe tratarse como cabecera
+     * Fecha de creacion: 2026-03-09
+     * @return bool True si se detecta cabecera, false en caso contrario
+     */
     public function detectarCabezera() {
         if (empty($this->file) || !is_readable($this->file)) {
             return false;
         }
+
+        $delimiter = $this->detectarSeparador();
 
         $f = fopen($this->file, "r");
         if ($f === false) {
@@ -39,8 +139,11 @@ class CSVImportar {
         $filas = [];
 
         for ($i = 0; $i < 5; $i++) {
-            $fila = fgetcsv($f);
+            $fila = fgetcsv($f, 0, $delimiter);
             if ($fila === false) break;
+            if ($i === 0 && isset($fila[0])) {
+                $fila[0] = $this->limpiarBOM($fila[0]);
+            }
             $filas[] = $fila;
         }
 
@@ -74,13 +177,27 @@ class CSVImportar {
 
     }
 
+    /**
+     * @brief Carga la primera fila del CSV en la propiedad de columnas
+     * Fecha de creacion: 2026-03-09
+     * @return void
+     */
     public function cargarCabeceras() {
+        $delimiter = $this->detectarSeparador();
         if (($handle = fopen($this->file, "r")) !== FALSE) {
-            $this->columnas = fgetcsv($handle, 1000, ",");
+            $this->columnas = fgetcsv($handle, 0, $delimiter);
+            if (isset($this->columnas[0])) {
+                $this->columnas[0] = $this->limpiarBOM($this->columnas[0]);
+            }
             fclose($handle);
         }
     }
 
+    /**
+     * @brief Renderiza el componente HTML con columnas detectadas del CSV
+     * Fecha de creacion: 2026-03-09
+     * @return void
+     */
     public function render() {
         // Leemos la primera fila del CSV para mostrar las cabeceras al usuario
 
@@ -92,8 +209,9 @@ class CSVImportar {
             $headers = $this->columnas;
         } else {
             // Si no hay cabecera, generamos nombres genéricos
+            $delimiter = $this->detectarSeparador();
             $f = fopen($this->file, "r");
-            $fila = fgetcsv($f);
+            $fila = fgetcsv($f, 0, $delimiter);
             fclose($f);
             for ($i = 0; $i < count($fila); $i++) {
                 $headers[] = "Campo " . ($i + 1);

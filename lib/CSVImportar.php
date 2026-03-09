@@ -27,8 +27,14 @@ class CSVImportar {
     }
 
     public function detectarCabezera() {
+        if (empty($this->file) || !is_readable($this->file)) {
+            return false;
+        }
 
         $f = fopen($this->file, "r");
+        if ($f === false) {
+            return false;
+        }
 
         $filas = [];
 
@@ -39,6 +45,10 @@ class CSVImportar {
         }
 
         fclose($f);
+
+        if (count($filas) < 2 || !is_array($filas[0]) || count($filas[0]) === 0) {
+            return false;
+        }
 
         $colCount = count($filas[0]);
         $sospechosas = 0;
@@ -58,7 +68,9 @@ class CSVImportar {
             }
         }
 
-        return $sospechosas > ($colCount / 2);
+        // Si al menos una columna parece encabezado (texto en fila 1 y números debajo),
+        // tratamos la primera fila como cabecera.
+        return $sospechosas >= 1;
 
     }
 
@@ -75,16 +87,33 @@ class CSVImportar {
         $tieneCabezera = $this->detectarCabezera();
 
         $headers = [];
-        if (($handle = fopen($this->file, "r")) !== FALSE) {
-            $headers = fgetcsv($handle, 1000, ",");
-            fclose($handle);
+        if($tieneCabezera) {
+            $this->cargarCabeceras();
+            $headers = $this->columnas;
+        } else {
+            // Si no hay cabecera, generamos nombres genéricos
+            $f = fopen($this->file, "r");
+            $fila = fgetcsv($f);
+            fclose($f);
+            for ($i = 0; $i < count($fila); $i++) {
+                $headers[] = "Campo " . ($i + 1);
+            }
         }
-
         // Renderizado del componente (HTML + Data para JS)
         echo "<div id='{$this->id}' class='{$this->class}' data-headers='".json_encode($headers)."'>";
         echo "  <div class='mapping-container flex flex-column gap-5' >";
-        echo "      <div class='expressions fs-1'><h4>Expresiones</h4><div id='exp-list-{$this->id}'></div></div>";
-        echo "      <div class='destination'><select class='db-table w-100 rounded shadow' id='camposCSV'><option>Cargando...</option></select></div>";
+        echo "      <div class='expressions fs-1'>";
+        echo "          <div id='exp-list-{$this->id}'></div>";
+        echo "      </div>";
+        echo "      <div class='destination'>";
+        echo "          <input list='camposCSV' class='form-select w-100 shadow' placeholder='Selecciona o escribe'>";
+        echo "          <datalist  id='camposCSV'>";
+        foreach ($headers as $header) {
+            echo "<option value='{$header}'>{$header}</option>";
+        }
+        echo "          </datalist>";
+
+        echo "      </div>";
         echo "  </div>";
         echo "</div>";
     }

@@ -94,7 +94,12 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                     const nombreCliente = cliente?.nombre || '';
                     const nombreArchivo = archivo?.nombre || '';
                     
+                    const contenedorExpresion = document.getElementById('contenedorExpresion');
+                    if (contenedorExpresion) {
+                        contenedorExpresion.innerHTML = res.html || '';
 
+
+                    }
                     $('#nombreCliente').text(nombreCliente);
                     $('#nombreArchivo').text(nombreArchivo);
                 },error: function(xhr, status, error) {

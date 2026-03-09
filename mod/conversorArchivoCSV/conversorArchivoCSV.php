@@ -17,17 +17,16 @@
         <div id="expresionCSV" class="d-flex flex-column align-items-center justify-content-center gap-5 w-50 h-100 border-end">
             <Label for="expresionCSV" class="fs-1">Expresion</Label>
 
-            <div class="import-select w-50">
-                <?php
-                    $o = new CSVImportar();
-                    $o->setFile("assets/archivosC/cliente_40/archivo1.csv"); // Usando uno de los CSV que creamos
-                    $o->setClass("mi-clase");
-                    $id = $o->getId();
-
-                    $o->render();
-                ?>
+            <div class="import-select w-50" id="contenedorExpresion">
+                
             </div>
-    
+            <!-- <input list="camposCSV" class="form-select w-50" placeholder="Selecciona o escribe">
+
+            <datalist id="camposCSV">
+                <option value="nombre">
+                <option value="apellido">
+                <option value="telefono">
+            </datalist> -->
         </div>
         <div id="tablaCampos" class="d-flex flex-column align-items-center justify-content-center gap-5 w-50 h-100">
             <Label class="fs-1">Tabla</Label>

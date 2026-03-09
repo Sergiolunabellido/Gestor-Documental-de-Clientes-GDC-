@@ -262,9 +262,18 @@ switch ($accion) {
         cargarVista('conversorArchivoCSV');
         $contenido = ob_get_clean();
 
+        $o = new CSVImportar();
+        $o->setFile($rutaCSV); // Usando uno de los CSV que creamos
+        $o->setClass("mi-clase");
+        $id = $o->getId();
+
+        ob_start();
+        $o->render();
+        $htmlCSV = ob_get_clean();
+
         debug("Ruta CSV recibida: $rutaCSV", "INFO");
 
-        $response = ['ok' => true, 'estaticos' => $estaticos, 'contenido' => $contenido];
+        $response = ['ok' => true, 'estaticos' => $estaticos, 'contenido' => $contenido, 'html' => $htmlCSV];
 
         break;
 

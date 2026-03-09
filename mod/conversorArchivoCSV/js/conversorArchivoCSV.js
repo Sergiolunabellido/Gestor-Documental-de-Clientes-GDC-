@@ -57,23 +57,3 @@ $(document).on('click', '#botonVolver', (e) => {
 
 })
 
-function addMappingRow(containerId) {
-    const container = document.getElementById(`exp-list-${containerId}`);
-    const headers = JSON.parse(document.getElementById(containerId).dataset.headers);
-
-    const row = document.createElement('div');
-
-    row.innerHTML = `
-        <input type="text" placeholder="Expresión (ej: CONCAT({0},{1}))">
-
-        <select multiple>
-            ${headers.map((h, i) => `<option value="${i}">${h}</option>`).join('')}
-        </select>
-
-        <span> -> </span>
-
-        <input type="text" placeholder="Campo DB">
-    `;
-
-    container.appendChild(row);
-}

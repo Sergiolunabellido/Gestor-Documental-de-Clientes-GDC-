@@ -31,3 +31,35 @@
 [2026-03-09 11:55:06][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
 [2026-03-09 11:55:43][INFO] Ruta CSV recibida: assets/archivosC/cliente_39/registro jornada.csv
 [2026-03-09 12:11:52][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:19:16][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/cache/nombreBD.json y los datos: {"nombre":"vltfddb","campoTabla":["femp","fautoria","fperiodos","fconv","ftsalariales","fmod","fhab","fusu","fservicios","fseroption","fserdoc","fsession","fop","fsex","ftipcontrato","ftitulacion","fdocop","fopcur","fophig","fcppob","fmsg","fmsgrep","fmsgview","fgrupos","fgrop","foptsalarial","fopclts","foprc","foprcdet","fopcon","fconfun","fconconfun","fmotbaja","fmotsuspension","fopconbaja","fopio","fopmaio","fopmat","fopmatrc","fopmatdet","ftardia","fopcontrol","favisos","fecivil","fprocedencia","fconvivencia","femotivos","fparentescos","ftarea","flistas","fturnos","fcuadrante","fcuaopestado","frotactivo","fturnostareas","fturnosop","fturnoespecial","frotacion","frotdet","frango","frangoturno","ftdpto","fturtartur","ftttaction","fturnan","fgroup","fapp","fempresas","fempo","fconlog","ffdestado","frespre","ftardiareg","feventos","feventoslive","fregjornada","fdoc","fdiasfestivos","fnominas","festadosop","fplan","fcabperiodos","fregpass","fconvpar","fopconbajacab","fregjornadalog","ftipdiscapacidad","fpermisos","fopmod145","fopexpediente"," 0","fturnosevent","ftippermisos","foppermisos","fregjornadainfo","fregjornadainfoaux","fregjornadainfosuccess","fregjornadaoptionsuccess","fanomalia","fregjornadaresult","","fddbindex","fturnosrota","fcuadranterota"]}
+[2026-03-09 12:20:24][INFO] Ruta CSV recibida: assets/archivosC/cliente_39/registro jornada.csv
+[2026-03-09 12:20:34][INFO] Ruta CSV recibida: assets/archivosC/cliente_39/registro jornada.csv
+[2026-03-09 12:21:18][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:27:58][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:29:01][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:37:36][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:37:53][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:41:28][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:43:21][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:44:04][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:44:47][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:45:53][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:51:12][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:53:06][INFO] Ruta CSV recibida: assets/archivosC/cliente_39/registro jornada.csv
+[2026-03-09 12:53:18][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo3.csv
+[2026-03-09 12:53:19][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:53:27][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo2.csv
+[2026-03-09 12:56:02][INFO] Ruta CSV recibida: assets/archivosC/cliente_39/operarios dos apellidos sin cabecera.csv
+[2026-03-09 12:56:25][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo2.csv
+[2026-03-09 12:57:12][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 12:57:12][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo3.csv
+[2026-03-09 12:57:26][INFO] Ruta CSV recibida: assets/archivosC/cliente_39/operarios un nombre con cabedera.csv
+[2026-03-09 12:57:31][INFO] Ruta CSV recibida: assets/archivosC/cliente_39/operarios dos apellidos sin cabecera.csv
+[2026-03-09 12:57:34][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo2.csv
+[2026-03-09 12:58:34][INFO] Ruta CSV recibida: assets/archivosC/cliente_39/operarios dos apellidos sin cabecera.csv
+[2026-03-09 12:58:56][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo2.csv
+[2026-03-09 12:59:03][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo3.csv
+[2026-03-09 13:02:20][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 13:02:35][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 13:03:02][INFO] Ruta CSV recibida: assets/archivosC/cliente_40/archivo1.csv
+[2026-03-09 13:03:45][INFO] Ruta CSV recibida: assets/archivosC/cliente_39/registro jornada.csv

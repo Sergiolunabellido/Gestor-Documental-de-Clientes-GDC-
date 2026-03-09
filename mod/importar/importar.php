@@ -2,11 +2,11 @@
     <div id="cabeceraImportar" class="d-flex align-items-center justify-content-between m-3">
         <div class="d-flex flex-wrap align-items-center w-100 gap-3">
             <label for="listaClientes">Seleccione al cliente:</label>
-            <select name="listaClientes" id="listaClientes" required class="w-sm-25 w-25">
+            <select name="listaClientes" id="listaClientes" required class="w-sm-25 w-25 rounded shadow-sm">
 
             </select>
-            <input id="dbDestino" type="text" placeholder="DB destino">
-            <input id="prefijoTabla" type="text" placeholder="Prefijo para la tabla">
+            <input id="dbDestino" type="text" class="rounded" placeholder="DB destino">
+            <input id="prefijoTabla" type="text" class="rounded " placeholder="Prefijo para la tabla">
         </div>
         <button id="exportarFicherosCliente" class="btn btn-primary">Exportar</button>
     </div>

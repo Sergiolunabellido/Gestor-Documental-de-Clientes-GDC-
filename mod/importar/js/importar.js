@@ -95,13 +95,26 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                     const nombreArchivo = archivo?.nombre || '';
                     
                     const contenedorExpresion = document.getElementById('contenedorExpresion');
+                    contenedorExpresion.innerHTML = ''
                     if (contenedorExpresion) {
                         contenedorExpresion.innerHTML = res.html || '';
-
-
                     }
                     $('#nombreCliente').text(nombreCliente);
                     $('#nombreArchivo').text(nombreArchivo);
+
+                    const select =  document.getElementById('tablas')
+                       
+
+                    res.campoTabla.forEach((campo) =>{
+                       
+
+                       const option = document.createElement('option')
+                       option.value = campo
+                       option.textContent = campo
+
+                       select.appendChild(option)
+                    })
+
                 },error: function(xhr, status, error) {
                     console.error('Error al cargar la vista importar', error, status, xhr);
                     
@@ -201,3 +214,4 @@ function inicializarImportar(clientes = []) {
 window.inicializarImportar = inicializarImportar;
 window.obtenerDatosClientes = obtenerDatosClientes;
 window.renderizarTablaArchivosCliente = renderizarTablaArchivosCliente;
+

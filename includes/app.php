@@ -657,3 +657,19 @@ function obtenerCampoTablaSQL($contenido, $tabla) {
 
     return array_values(array_unique($valoresUnicos));
 }
+
+/**
+ * @brief Obtiene los valores de un campo específico para una tabla dada desde la base de datos
+ * @param PDO $db Conexión PDO a la base de datos
+ * @param string $tabla Nombre de la tabla a consultar
+ * @return array Lista de valores encontrados para el campo especificado
+ * Fecha de creación: 2026-03-09
+ */
+function obtenerCamposPorTabla($db, $tabla) {
+    $sql = "SELECT mfield FROM vltfddb WHERE mtable = :tabla";
+    $stmt = $db->prepare($sql);
+    $stmt->execute(['tabla' => $tabla]);
+    $campos = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+    return $campos;
+}

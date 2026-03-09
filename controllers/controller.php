@@ -262,18 +262,38 @@ switch ($accion) {
         cargarVista('conversorArchivoCSV');
         $contenido = ob_get_clean();
 
-        $o = new CSVImportar();
+        $o = new CSVImportar($db);
         $o->setFile($rutaCSV); // Usando uno de los CSV que creamos
         $o->setClass("mi-clase");
         $id = $o->getId();
 
         ob_start();
-        $o->render();
+        $o->renderCSV();
         $htmlCSV = ob_get_clean();
+
+        $cacheTabla = leerJSON(_ROOT_.DW._ASSETS_.DW._CACHE_.DW."nombreBD.json");
+
+        if (!empty($cacheTabla['ok']) && is_array($cacheTabla['datos'])) {
+            $campoTabla = $cacheTabla['datos']['campoTabla'] ?? '';
+        }
 
         debug("Ruta CSV recibida: $rutaCSV", "INFO");
 
-        $response = ['ok' => true, 'estaticos' => $estaticos, 'contenido' => $contenido, 'html' => $htmlCSV];
+        $response = [
+            'ok' => true, 
+            'estaticos' => $estaticos, 
+            'contenido' => $contenido, 
+            'html' => $htmlCSV, 
+            'campoTabla' => $campoTabla
+        ];
+
+        break;
+
+    case 'tiposTablas':
+
+        $tipos = obtenerCamposPorTabla($db, $nombreTabla);
+
+        $response = ['ok' => true, 'tipos' => $tipos];
 
         break;
 

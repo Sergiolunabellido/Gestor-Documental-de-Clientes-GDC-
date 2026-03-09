@@ -6,6 +6,8 @@
  */
 class CSVImportar {
 
+    private PDO $db;
+
     private $file;
     private $columnas = [];
     private $datos = [];
@@ -18,8 +20,8 @@ class CSVImportar {
      * Fecha de creacion: 2026-03-09
      * @return void
      */
-    public function __construct() {
-
+    public function __construct(PDO $db) {
+        $this->db = $db;
     }
 
     /**
@@ -198,7 +200,7 @@ class CSVImportar {
      * Fecha de creacion: 2026-03-09
      * @return void
      */
-    public function render() {
+    public function renderCSV() {
         // Leemos la primera fila del CSV para mostrar las cabeceras al usuario
 
         $tieneCabezera = $this->detectarCabezera();
@@ -220,19 +222,16 @@ class CSVImportar {
         // Renderizado del componente (HTML + Data para JS)
         echo "<div id='{$this->id}' class='{$this->class}' data-headers='".json_encode($headers)."'>";
         echo "  <div class='mapping-container flex flex-column gap-5' >";
-        echo "      <div class='expressions fs-1'>";
-        echo "          <div id='exp-list-{$this->id}'></div>";
-        echo "      </div>";
-        echo "      <div class='destination'>";
-        echo "          <input list='camposCSV' class='form-select w-100 shadow' placeholder='Selecciona o escribe'>";
-        echo "          <datalist  id='camposCSV'>";
+        echo "      <div class='expressions csv-inputs-container d-flex flex-column gap-2' data-headers='".json_encode($headers)."'>";
+        echo "          <input list='camposCSV-{$this->id}' class='form-select w-100 shadow csv-dynamic-input' placeholder='Selecciona o escribe' data-can-add='true'>";
+        echo "          <datalist id='camposCSV-{$this->id}'>";
         foreach ($headers as $header) {
             echo "<option value='{$header}'>{$header}</option>";
         }
         echo "          </datalist>";
-
         echo "      </div>";
         echo "  </div>";
         echo "</div>";
     }
+    
 }

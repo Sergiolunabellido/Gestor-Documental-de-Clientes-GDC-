@@ -30,6 +30,7 @@ $nombreCliente = $_POST['nombreCliente'] ?? '';
 $telefonoCliente = $_POST['telefonoCliente'] ?? '';
 $nombreTabla = $_POST['nombreTabla'] ?? '';
 $nombreCampo = $_POST['nombreCampo'] ?? '';
+$rutaCSV = $_POST['rutaCSV'] ?? '';
 
 $recordarme = filter_var($recordarme, FILTER_VALIDATE_BOOLEAN);
 
@@ -232,6 +233,56 @@ switch ($accion) {
         $clientes = $clienteModel->obtenerClientes();
 
         $response = ['ok' => true, 'estaticos' => $estaticos, 'contenido' => $contenido, 'clientes' => $clientes];
+
+        break;
+
+    case 'importar':
+
+        ob_start();
+        ponerEstatico('importar');
+        $estaticos = ob_get_clean();
+
+        ob_start();
+        cargarVista('importar');
+        $contenido = ob_get_clean();
+
+        $clientes = $clienteModel->obtenerClientes();
+
+        $response = ['ok' => true, 'estaticos' => $estaticos, 'contenido' => $contenido, 'clientes' => $clientes];
+
+        break;
+
+    case 'conversorArchivoCSV':
+
+        ob_start();
+        ponerEstatico('conversorArchivoCSV');
+        $estaticos = ob_get_clean();
+
+        ob_start();
+        cargarVista('conversorArchivoCSV');
+        $contenido = ob_get_clean();
+
+        debug("Ruta CSV recibida: $rutaCSV", "INFO");
+
+        $response = ['ok' => true, 'estaticos' => $estaticos, 'contenido' => $contenido];
+
+        break;
+
+    case 'ficherosCliente':
+
+        ob_start();
+        ponerEstatico('ficherosCliente');
+        $estaticos = ob_get_clean();
+
+        ob_start();
+        cargarVista('ficherosCliente');
+        $contenido = ob_get_clean();
+
+        $clienteId = $clienteModel->obtenerClienteNombre($nombreCliente);
+        
+        $archivos = $archivoModel->recogerArchivosCliente((int)$clienteId);
+
+        $response = ['ok' => true, 'estaticos' => $estaticos, 'contenido' => $contenido, 'archivos' => $archivos];
 
         break;
 
@@ -447,7 +498,7 @@ switch ($accion) {
             break;
         }
 
-        $archivos = $archivoModel->regogerArchivosCliente($idCliente);
+        $archivos = $archivoModel->recogerArchivosCliente($idCliente);
         $response = ['ok' => true, 'archivos' => $archivos];
 
         break;
@@ -634,17 +685,19 @@ switch ($accion) {
 
     case 'crearCarpetaCliente':
 
-        $ok[] = $clienteModel->agregarCliente($nombreCliente, $telefonoCliente);
+        $resultado = $clienteModel->agregarCliente($nombreCliente, $telefonoCliente);
+        $ok = $resultado[0] ?? false;
+        $mensaje = $resultado[1] ?? 'Error desconocido';
 
         $clientes = $clienteModel->obtenerClientes();
 
-        if (!$ok[0]) {
-            debug("Error al crear carpeta para cliente: $idCliente", "ERROR");
-            $response = ['ok'=> false,'mensaje'=> $ok[1]];
+        if (!$ok) {
+            debug("Error al crear carpeta para cliente: $nombreCliente", "ERROR");
+            $response = ['ok'=> false,'mensaje'=> $mensaje];
             break;
         } else {
             debug('La carpeta del cliente se ha creado correctamente', 'INFO');
-            $response = ['ok'=> true, 'mensaje'=> $ok[1], 'clientes' => $clientes];
+            $response = ['ok'=> true, 'mensaje'=> $mensaje, 'clientes' => $clientes];
         }
 
         break;

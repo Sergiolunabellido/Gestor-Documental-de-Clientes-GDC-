@@ -13,7 +13,7 @@ class Archivo {
      * @param int $id_cliente ID del cliente
      * @return array Devuelve un array con los datos de los archivos del cliente
      */
-    public function regogerArchivosCliente($id_cliente){
+    public function recogerArchivosCliente($id_cliente){
 
         $sql = "SELECT * FROM Archivo WHERE id_Cliente = :clienteId";
         $stmt = $this->db->prepare($sql);
@@ -23,7 +23,7 @@ class Archivo {
     }
 
     /**
-     * @brief Crea o añade un archivo en el directorio del cliente
+     * @brief Crea o añade un archivo .csv en el directorio del cliente
      * @param int $idCliente ID del cliente
      * @param array $archivo Información del archivo
      * @return array{error: string, msg: string|array{msg: string, success: bool}}
@@ -56,8 +56,41 @@ class Archivo {
 
         $nuevoNombre = basename($archivo['name']);
         $destino = $dir_destino . $nuevoNombre;
+        $extension = strtolower(pathinfo($nuevoNombre, PATHINFO_EXTENSION));
 
-        if (!move_uploaded_file($archivo['tmp_name'], $destino)) {
+        if ($extension !== 'csv') {
+            debug("Tipo de archivo no permitido para cliente ID: $idCliente. Archivo: $nuevoNombre", "WARNING");
+            return ['error' => 'tipo_invalido', 'msg' => 'Solo se permiten archivos CSV'];
+        }
+
+        $tmpPath = $archivo['tmp_name'] ?? '';
+        if ($tmpPath === '' || !is_uploaded_file($tmpPath)) {
+            debug("Archivo temporal inválido para cliente ID: $idCliente", "ERROR");
+            return ['error' => 'upload_invalido', 'msg' => 'No se recibió un archivo válido'];
+        }
+
+        $mime = null;
+        if (class_exists('finfo')) {
+            $finfo = new finfo(FILEINFO_MIME_TYPE);
+            $mime = $finfo->file($tmpPath);
+        }
+
+        $mimesPermitidos = [
+            'text/csv',
+            'text/plain',
+            'application/csv',
+            'application/vnd.ms-excel',
+            'text/x-csv',
+            'application/x-csv',
+            'text/comma-separated-values'
+        ];
+
+        if (is_string($mime) && $mime !== '' && !in_array(strtolower($mime), $mimesPermitidos, true)) {
+            debug("MIME no permitido para cliente ID: $idCliente. MIME: $mime. Archivo: $nuevoNombre", "WARNING");
+            return ['error' => 'mime_invalido', 'msg' => 'El archivo debe ser un CSV válido'];
+        }
+
+        if (!move_uploaded_file($tmpPath, $destino)) {
             debug("Error al mover el archivo subido: " . $archivo['name'], "ERROR");
             return ['error' => 'move_failed', 'msg' => 'No se pudo guardar el archivo'];
         }

@@ -33,6 +33,13 @@ class Cliente {
         return $cliente;
     }
 
+    public function obtenerClienteNombre($nombre) {
+        $sql = "SELECT id FROM Cliente WHERE deleted = 0 AND nombre = :nombre";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['nombre' => $nombre]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     /**
      * @brief Elimina un cliente por su ID (marcar como eliminado)
      * Fecha de creación: 2026-02-17

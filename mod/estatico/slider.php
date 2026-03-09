@@ -16,6 +16,10 @@
         <li>
         <button class="btn text-white"  id="archivo">Archivo</button>
         </li>
+
+        <li>
+        <button class="btn text-white"  id="importar">Importar</button>
+        </li>
       </ul>
       <hr>
   </div>

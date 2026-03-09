@@ -218,12 +218,27 @@ function actualizarEstadoUsuario($db, $idUsuario, $estado) {
         'estado'    => $estado,
         'idUsuario' => $idUsuario
     ]);
+
     if ($stmt->rowCount() === 0) {
+        // rowCount puede ser 0 si el estado ya era el mismo.
+        $sqlCheck = "SELECT estado FROM Usuario WHERE id = :idUsuario";
+        $stmtCheck = $db->prepare($sqlCheck);
+        $stmtCheck->execute(['idUsuario' => $idUsuario]);
+        $estadoActual = $stmtCheck->fetchColumn();
+
+        if ($estadoActual === false) {
+            debug("ActualizarEstadoUsuario: usuario no encontrado: $idUsuario", "ERROR");
+            return false;
+        }
+
+        if ((string)$estadoActual === (string)$estado) {
+            return true;
+        }
+
         debug("ActualizarEstadoUsuario: no se pudo actualizar el estado para usuario: $idUsuario", "ERROR");
         return false;
     }
     return true;
 }
-
 
 

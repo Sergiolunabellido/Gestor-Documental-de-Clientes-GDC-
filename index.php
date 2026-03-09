@@ -10,6 +10,7 @@ include _ROOT_.DW._LIB_.DW."usuario.php";
 include _ROOT_.DW._LIB_.DW."sesion.php";
 include _ROOT_.DW._LIB_.DW."cliente.php";
 include _ROOT_.DW._LIB_.DW."archivo.php";
+include _ROOT_.DW._LIB_.DW."CSVImportar.php";
 
 # Zona horaria
 date_default_timezone_set('Europe/Madrid');

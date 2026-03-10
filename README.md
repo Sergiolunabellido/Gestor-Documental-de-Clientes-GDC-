@@ -260,48 +260,6 @@ Implementado:
 
 ---
 
-# 🚀 Instalación
-
-## 1. Configurar entorno
-
-Editar:
-
-configuracion/configuracion.php
----
-
-## 2. Crear base de datos
-
-```sql
-CREATE DATABASE app2026;
-```
----
-
-## 3. Crear tablas
-
-- Usuario
-- Cliente
-- Archivo
-- sesiones_usuario
-
----
-
-## 4. Importar SQL opcional
-
-vltfddb.sql
----
-
-## 5. Ejecutar servidor
-
-Apache / Nginx o:
-
-php -S localhost:8000
----
-
-## 6. Abrir aplicación
-
-http://localhost/index.php
----
-
 # 📊 Inventario Técnico
 
 Métrica          Valor

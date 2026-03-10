@@ -193,25 +193,13 @@ Respuesta típica:
 
 ---
 
-# 🗄 Base de Datos
-
-Configuración en:
-
-configuracion/configuracion.php
-Ejemplo:
-
-host = localhost
-user = sergioymanu
-password = sergioymanu
-database = app2026
----
-
 ## Tablas utilizadas
 
 - Usuario
 - sesiones_usuario
 - Cliente
 - Archivo
+- Vistas
 - vltfddb
 
 ---

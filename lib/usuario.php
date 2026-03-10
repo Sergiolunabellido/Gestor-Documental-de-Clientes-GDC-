@@ -1,7 +1,5 @@
 <?php
 
-
-
 class Usuario {
 
     private PDO $db;

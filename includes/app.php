@@ -673,3 +673,56 @@ function obtenerCamposPorTabla($db, $tabla) {
 
     return $campos;
 }
+
+/**
+ * @brief Guarda la configuración de un archivo CSV en un archivo JSON específico para el cliente
+ * @param array $config Configuración del CSV a guardar
+ * @param int $idCliente ID del cliente para el que se guarda la configuración
+ * @return array Resultado con clave 'ok' indicando éxito o error, y 'msg' con información adicional
+ * Fecha de creación: 2026-03-10
+ */
+function guardarConfiguracionCSV($config, $idCliente) {
+
+    // Validar que la configuración sea un array
+    if (!is_array($config)) {
+        debug("Configuración CSV no es un array válido", "ERROR");
+        return ['ok' => false, 'msg' => 'Configuración inválida'];
+    }
+
+    // Validar que tenga el campo 'archivo'
+    if (empty($config['archivo'])) {
+        debug("Configuración CSV no tiene nombre de archivo", "ERROR");
+        return ['ok' => false, 'msg' => 'Falta el nombre del archivo en la configuración'];
+    }
+
+    $cacheDir = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW._CONFIG_.DW;
+    
+    if (!is_dir($cacheDir)) {
+        if (!mkdir($cacheDir, 0755, true)) {
+            debug("No se pudo crear el directorio: $cacheDir", "ERROR");
+            return ['ok' => false, 'msg' => 'Error al crear directorio de configuración'];
+        }
+    }
+    
+    // Asegurar permisos de escritura
+    if (!is_writable($cacheDir)) {
+        debug("El directorio no tiene permisos de escritura: $cacheDir", "ERROR");
+        return ['ok' => false, 'msg' => 'El directorio de configuración no tiene permisos de escritura'];
+    }
+
+    $nombre = $config['archivo'];
+
+    if (is_string($nombre) && strtolower(pathinfo($nombre, PATHINFO_EXTENSION)) === 'csv') {
+        $nombre = pathinfo($nombre, PATHINFO_FILENAME);
+    }
+
+    $cacheFile = $cacheDir . $nombre . '.json';
+    
+    if (file_put_contents($cacheFile, json_encode($config, JSON_PRETTY_PRINT)) === false) {
+        debug("No se pudo escribir el archivo: $cacheFile", "ERROR");
+        return ['ok' => false, 'msg' => 'Error al guardar el archivo de configuración'];
+    }
+    
+    debug("Configuración guardada correctamente en: $cacheFile", "INFO");
+    return ['ok' => true, 'msg' => 'Configuración guardada correctamente'];
+}

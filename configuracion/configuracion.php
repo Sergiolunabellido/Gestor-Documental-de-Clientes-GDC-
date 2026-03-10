@@ -32,10 +32,11 @@
 	define ( '_LOGIN_', "login" );
 	define ( '_PERFIL_', "perfil" );
 	define ( '_USUARIOS_', "usuarios" );
-	define('_ROUTER_', "router");
+	define ('_ROUTER_', "router");
 	define ( '_IMAGES_', "images" );
-	define( '_ARCHIVOSC_', "archivosC" );
-	define('_ARCHIVOSQL_', "archivoSQL");
+	define ( '_ARCHIVOSC_', "archivosC" );
+	define ('_ARCHIVOSQL_', "archivoSQL");
+	define ('_CONFIG_', "config");
 
 	# Otros
 	define ( '_CSS_', "css" );

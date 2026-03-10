@@ -201,6 +201,7 @@ class CSVImportar {
      * @return void
      */
     public function renderCSV() {
+
         // Leemos la primera fila del CSV para mostrar las cabeceras al usuario
 
         $tieneCabezera = $this->detectarCabezera();
@@ -210,20 +211,27 @@ class CSVImportar {
             $this->cargarCabeceras();
             $headers = $this->columnas;
         } else {
+            $previewData = $this->previewCSV();
             // Si no hay cabecera, generamos nombres genéricos
             $delimiter = $this->detectarSeparador();
             $f = fopen($this->file, "r");
             $fila = fgetcsv($f, 0, $delimiter);
             fclose($f);
             for ($i = 0; $i < count($fila); $i++) {
-                $headers[] = "Campo " . ($i + 1);
+                $headers[] = "Campo " . ($i + 1)." (".$previewData[$i].")";
             }
         }
+
         // Renderizado del componente (HTML + Data para JS)
         echo "<div id='{$this->id}' class='{$this->class}' data-headers='".json_encode($headers)."'>";
         echo "  <div class='mapping-container flex flex-column gap-5' >";
         echo "      <div class='expressions csv-inputs-container d-flex flex-column gap-2' data-headers='".json_encode($headers)."'>";
-        echo "          <input list='camposCSV-{$this->id}' class='form-select w-100 shadow csv-dynamic-input' placeholder='Selecciona o escribe' data-can-add='true'>";
+        echo "          <div class='fila-expresion d-flex align-items-center justify-content-center gap-3 w-100' data-id='1'>";
+        echo "              <input list='camposCSV-{$this->id}' id='expresion_1' class='form-control w-75 rounded shadow' placeholder='Selecciona o escribe' data-can-add='true'>";
+        echo "              <button class='btn botonEliminarExpresion' title='Eliminar expresión'> - </button>";
+        echo "              <button class='btn botonAñadirExpresion' title='Añadir expresión'> + </button>";
+        echo "              <p class='visually-hidden'>{$this->id}<p/>    ";
+        echo "          </div>";
         echo "          <datalist id='camposCSV-{$this->id}'>";
         foreach ($headers as $header) {
             echo "<option value='{$header}'>{$header}</option>";
@@ -234,4 +242,31 @@ class CSVImportar {
         echo "</div>";
     }
     
+    /**
+     * @brief Lee la primera fila del CSV para mostrar una vista previa al usuario cuando no se detecta cabecera
+     * Fecha de creacion: 2026-03-10
+     * @return array Primera fila del CSV como vista previa
+     */
+    public function previewCSV() {
+
+        // Array para almacenar la primera fila del CSV
+        $previewData = [];
+        $delimiter = $this->detectarSeparador();
+        // Abrimos el archivo CSV para lectura
+        if (($handle = fopen($this->file, "r")) !== FALSE) {
+            // Leemos la primera fila del CSV
+            $fila = fgetcsv($handle, 0, $delimiter);
+            if ($fila !== FALSE) {
+                // Limpiamos el BOM de la primera celda si es necesario
+                if (isset($fila[0])) {
+                    $fila[0] = $this->limpiarBOM($fila[0]); 
+                }
+                $previewData = $fila;
+            }
+            fclose($handle);
+        }
+
+        return $previewData;
+
+    }
 }

@@ -31,6 +31,7 @@ $telefonoCliente = $_POST['telefonoCliente'] ?? '';
 $nombreTabla = $_POST['nombreTabla'] ?? '';
 $nombreCampo = $_POST['nombreCampo'] ?? '';
 $rutaCSV = $_POST['rutaCSV'] ?? '';
+$configuracionCSV = $_POST['configuracionCSV'] ?? null;
 
 $recordarme = filter_var($recordarme, FILTER_VALIDATE_BOOLEAN);
 
@@ -276,8 +277,6 @@ switch ($accion) {
         if (!empty($cacheTabla['ok']) && is_array($cacheTabla['datos'])) {
             $campoTabla = $cacheTabla['datos']['campoTabla'] ?? '';
         }
-
-        debug("Ruta CSV recibida: $rutaCSV", "INFO");
 
         $response = [
             'ok' => true, 
@@ -543,6 +542,26 @@ switch ($accion) {
             $response = ['ok' => true, 'msg' => $ok['msg'], 'tablas' => $ok['tablas'] ?? [], 'campoTabla' => $ok['campoTabla'] ?? ''];
         }
         
+        break;
+
+    case 'guardarConfCSV':
+
+        // Decodificar la configuración si viene como JSON string
+        if (is_string($configuracionCSV)) {
+            $configuracionCSV = json_decode($configuracionCSV, true);
+        }
+
+        debug("Guardando configuración CSV con el formato " . json_encode($configuracionCSV), "INFO");
+
+        $ok = guardarConfiguracionCSV($configuracionCSV, $idCliente);
+
+        if ($ok['ok'] === false) {
+            debug("Error al guardar configuración CSV: " . $ok['msg'], "ERROR");
+            $response = ['ok' => false, 'msg' => $ok['msg']];
+        } else {
+            $response = ['ok' => true, 'msg' => 'Configuración del CSV guardada correctamente'];
+        }
+
         break;
 
     case 'eliminarArchivosCliente':

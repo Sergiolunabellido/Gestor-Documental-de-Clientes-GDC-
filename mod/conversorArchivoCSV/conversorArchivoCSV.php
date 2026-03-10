@@ -16,22 +16,26 @@
     <div id="divPadreFicheros" class="d-flex flex-column align-items-center gap-5 m-5 h-100 w-90" style="max-height: 100vh;">
         <div class="d-flex align-items-center justify-content-around gap-5 m-5 w-100">
             <Label for="expresionCSV" class="fs-1 w-50 h-100 text-center">Expresion</Label>
-            <Label class="fs-1 w-50 text-center h-100">Tabla</Label>
-        </div>
-        <div class="d-flex align-items-center gap-5 m-5 h-100 w-100">
-            <div id="expresionCSV" class="d-flex flex-column align-items-center justify-content-center gap-5 w-50 h-100 ">
-                <div class="import-select w-50" id="contenedorExpresion">
-                
-            </div>
-            </div>
-            <div id="tablaCampos" class="d-flex flex-column align-items-center justify-content-center gap-5 w-50 h-100">
-            
+            <div class="d-flex flex-column fs-1 w-50 text-center h-100">
+                <Label >Tabla</Label>
                 <div id="divDatosCSV" class="d-flex flex-column gap-3 align-items-center w-100">
                     <label for="tablas">Elige la tabla de ejemplo:</label>
                     <select name="tablas" id="tablas" class="form-select w-50 rounded shadow" >
                         <option>Selecciona cualquier tabla:</option>
                     </select>
                 </div>
+            </div>
+            
+        </div>
+        <div class="d-flex align-items-center gap-5 m-5 h-100 w-100">
+            <div id="expresionCSV" class="d-flex flex-column align-items-center justify-content-center gap-5 w-50 h-100 ">
+                <div class="import-select w-50" id="contenedorExpresion">
+                
+                </div>
+            </div>
+            <div id="tablaCampos" class="d-flex flex-column align-items-center justify-content-center gap-5 w-50 h-100">
+            
+                
 
                 <div id="divCamposTabla" class="d-flex flex-column align-items-center justify-content-center gap-3 w-100">
                     <div class="fila-campo d-flex align-items-center justify-content-center gap-3 w-100" data-id="1">

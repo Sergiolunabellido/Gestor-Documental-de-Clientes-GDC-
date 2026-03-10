@@ -94,6 +94,8 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                     const nombreCliente = cliente?.nombre || '';
                     const nombreArchivo = archivo?.nombre || '';
                     
+                    localStorage.setItem('idCliente', cliente.id)
+
                     const contenedorExpresion = document.getElementById('contenedorExpresion');
                     contenedorExpresion.innerHTML = ''
                     if (contenedorExpresion) {

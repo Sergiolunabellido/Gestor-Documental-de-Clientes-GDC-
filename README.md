@@ -23,6 +23,7 @@ archivos SQL y visualización dinámica de datos mediante **AJAX**.
 - [Acciones Backend](#-acciones-backend)
 - [Base de Datos](#-base-de-datos)
 - [Módulos Funcionales](#-módulos-funcionales)
+- [Importacion CSV](#importacion-csv)
 - [Gestión de Archivos](#-gestión-de-archivos)
 - [Seguridad](#-seguridad)
 - [Instalación](#-instalación)
@@ -168,6 +169,8 @@ Respuesta típica:
 - perfil
 - fuente
 - archivo
+- importar
+- conversorArchivoCSV
 - detalleTabla
 - detalleCliente
 - usuarios
@@ -179,6 +182,8 @@ Respuesta típica:
 - cambiarFoto
 - subirArchivo
 - listarArchivosCliente
+- tiposTablas
+- guardarConfCSV
 - generarTablas
 - cambiarContrasenia
 - renovarSesion
@@ -218,9 +223,22 @@ fuente           gestión de clientes
 detalleCliente   archivos de cliente
 archivo          carga SQL
 detalleTabla     visualización datos
+importar         listado de archivos CSV por cliente y acceso al conversor
+conversorArchivoCSV  mapeo de columnas CSV a campos de BD y guardado de configuracion
 estatico         navbar y layout
 
 ---
+
+
+# Importacion CSV
+
+Flujo funcional implementado:
+
+- Seleccion de cliente y listado de archivos CSV asociados.
+- Apertura del conversor para un archivo concreto.
+- Mapeo de columnas/expresiones del CSV a campos de la tabla destino.
+- Carga de campos disponibles segun la tabla seleccionada.
+- Guardado de configuracion por cliente y archivo para reutilizarla.
 
 # 📁 Gestión de Archivos
 

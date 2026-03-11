@@ -193,25 +193,13 @@ Respuesta típica:
 
 ---
 
-# 🗄 Base de Datos
-
-Configuración en:
-
-configuracion/configuracion.php
-Ejemplo:
-
-host = localhost
-user = sergioymanu
-password = sergioymanu
-database = app2026
----
-
 ## Tablas utilizadas
 
 - Usuario
 - sesiones_usuario
 - Cliente
 - Archivo
+- Vistas
 - vltfddb
 
 ---
@@ -270,48 +258,6 @@ Implementado:
 - protección CSRF
 - validación más estricta de uploads
 
----
-
-# 🚀 Instalación
-
-## 1. Configurar entorno
-
-Editar:
-
-configuracion/configuracion.php
----
-
-## 2. Crear base de datos
-
-```sql
-CREATE DATABASE app2026;
-```
----
-
-## 3. Crear tablas
-
-- Usuario
-- Cliente
-- Archivo
-- sesiones_usuario
-
----
-
-## 4. Importar SQL opcional
-
-vltfddb.sql
----
-
-## 5. Ejecutar servidor
-
-Apache / Nginx o:
-
-php -S localhost:8000
----
-
-## 6. Abrir aplicación
-
-http://localhost/index.php
 ---
 
 # 📊 Inventario Técnico

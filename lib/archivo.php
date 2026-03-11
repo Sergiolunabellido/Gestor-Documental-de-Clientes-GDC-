@@ -185,4 +185,10 @@ class Archivo {
 
         return ['success' => true, 'msg' => 'Archivos del cliente eliminados correctamente'];
     }
+
+    public function añadirTablaArchivo($nombreArchivo, $nombreTabla) {
+        $sql = "UPDATE Archivo SET tabla = :tabla WHERE nombre = :nombre";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute(['tabla' => $nombreTabla, 'nombre' => $nombreArchivo]);
+    }
 }

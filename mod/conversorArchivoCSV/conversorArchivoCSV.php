@@ -34,8 +34,6 @@
                 </div>
             </div>
             <div id="tablaCampos" class="d-flex flex-column align-items-center justify-content-center gap-5 w-50 h-100">
-            
-                
 
                 <div id="divCamposTabla" class="d-flex flex-column align-items-center justify-content-center gap-3 w-100">
                     <div class="fila-campo d-flex align-items-center justify-content-center gap-3 w-100" data-id="1">

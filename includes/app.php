@@ -683,6 +683,12 @@ function obtenerCamposPorTabla($db, $tabla) {
  */
 function guardarConfiguracionCSV($config, $idCliente) {
 
+    // Validar que el ID del cliente sea un entero positivo y no esté vacío
+    if ($idCliente <= 0 || empty($idCliente)) {
+        debug("ID de cliente inválido: $idCliente", "ERROR");
+        return ['ok' => false, 'msg' => 'ID de cliente inválido o no proporcionado'];
+    }
+
     // Validar que la configuración sea un array
     if (!is_array($config)) {
         debug("Configuración CSV no es un array válido", "ERROR");
@@ -690,13 +696,13 @@ function guardarConfiguracionCSV($config, $idCliente) {
     }
 
     // Validar que tenga el campo 'archivo'
-    if (empty($config['archivo'])) {
-        debug("Configuración CSV no tiene nombre de archivo", "ERROR");
-        return ['ok' => false, 'msg' => 'Falta el nombre del archivo en la configuración'];
+    if (empty($config['archivo']) || empty($config['tabla'])) {
+        debug("Faltan datos críticos: archivo o tabla destino", "ERROR");
+        return ['ok' => false, 'msg' => 'Falta el nombre del archivo o la tabla en la configuración'];
     }
 
     $cacheDir = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW._CONFIG_.DW;
-    
+
     if (!is_dir($cacheDir)) {
         if (!mkdir($cacheDir, 0755, true)) {
             debug("No se pudo crear el directorio: $cacheDir", "ERROR");
@@ -710,13 +716,12 @@ function guardarConfiguracionCSV($config, $idCliente) {
         return ['ok' => false, 'msg' => 'El directorio de configuración no tiene permisos de escritura'];
     }
 
-    $nombre = $config['archivo'];
+    $nombreBase = pathinfo($config['archivo'], PATHINFO_FILENAME);
+    // $tablaDestino = $config['tabla'];
 
-    if (is_string($nombre) && strtolower(pathinfo($nombre, PATHINFO_EXTENSION)) === 'csv') {
-        $nombre = pathinfo($nombre, PATHINFO_FILENAME);
-    }
+    $nombreFinalId = "{$nombreBase}"./*_{$tablaDestino}*/".json";
 
-    $cacheFile = $cacheDir . $nombre . '.json';
+    $cacheFile = $cacheDir . $nombreFinalId;
     
     if (file_put_contents($cacheFile, json_encode($config, JSON_PRETTY_PRINT)) === false) {
         debug("No se pudo escribir el archivo: $cacheFile", "ERROR");
@@ -725,4 +730,37 @@ function guardarConfiguracionCSV($config, $idCliente) {
     
     debug("Configuración guardada correctamente en: $cacheFile", "INFO");
     return ['ok' => true, 'msg' => 'Configuración guardada correctamente'];
+}
+
+/**
+ * @brief Obtiene las configuraciones de archivos CSV para un cliente específico leyendo los archivos JSON correspondientes
+ * @param string $nombreArchivoCSV Nombre del archivo CSV para el cual se buscan las configuraciones
+ * @param int $idCliente ID del cliente para el que se obtienen las configuraciones
+ * @return array Resultado con clave 'ok' indicando éxito o error, y 'datos' con las configuraciones encontradas o 'msg' con información adicional
+ * Fecha de creación: 2026-03-10
+ */
+function obtenerConfiguracionesDeArchivo($nombreArchivoCSV, $idCliente) {
+    
+    $cacheDir = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW._CONFIG_.DW;
+    $nombreBase = pathinfo($nombreArchivoCSV, PATHINFO_FILENAME);
+    $configsEncontradas = [];
+
+    if (is_dir($cacheDir)) {
+        // Buscamos todos los archivos que empiecen por "nombreArchivo_"
+        $archivos = glob($cacheDir . $nombreBase . "_*.json");
+
+        foreach ($archivos as $archivo) {
+            // Usamos tu función leerJSON existente
+            $res = leerJSON($archivo); 
+            if ($res['ok']) {
+                $configsEncontradas[] = $res['datos'];
+            }
+        }
+    }
+
+    return [
+        'ok' => !empty($configsEncontradas),
+        'datos' => $configsEncontradas, // Devuelve un array de objetos de configuración
+        'msg' => empty($configsEncontradas) ? 'No hay configuraciones' : 'Configs cargadas'
+    ];
 }

@@ -200,7 +200,7 @@ class CSVImportar {
      * Fecha de creacion: 2026-03-09
      * @return void
      */
-    public function renderCSV() {
+    public function renderCSV($configuracion) {
 
         // Leemos la primera fila del CSV para mostrar las cabeceras al usuario
 
@@ -222,12 +222,16 @@ class CSVImportar {
             }
         }
 
+        if ($configuracion['ok'] !== false) {
+            $this->id = $configuracion['id'];
+        }
+
         // Renderizado del componente (HTML + Data para JS)
-        echo "<div id='{$this->id}' class='{$this->class}' data-headers='".json_encode($headers)."'>";
-        echo "  <div class='mapping-container flex flex-column gap-5' >";
-        echo "      <div class='expressions csv-inputs-container d-flex flex-column gap-2' data-headers='".json_encode($headers)."'>";
+        echo "<div id='{$this->id}' class='{$this->class} w-100' data-headers='".json_encode($headers)."'>";
+        echo "  <div class='mapping-container flex flex-column gap-5 w-100' >";
+        echo "      <div class='expressions csv-inputs-container d-flex flex-column gap-2 w-100' data-headers='".json_encode($headers)."'>";
         echo "          <div class='fila-expresion d-flex align-items-center justify-content-center gap-3 w-100' data-id='1'>";
-        echo "              <input list='camposCSV-{$this->id}' id='expresion_1' class='form-control w-75 rounded shadow' placeholder='Selecciona o escribe' data-can-add='true'>";
+        echo "              <input list='camposCSV-{$this->id}' id='expresion_1' class='form-control w-100 rounded shadow' placeholder='Selecciona o escribe' data-can-add='true'>";
         echo "              <button class='btn botonEliminarExpresion' title='Eliminar expresión'> - </button>";
         echo "              <button class='btn botonAñadirExpresion' title='Añadir expresión'> + </button>";
         echo "              <p class='visually-hidden'>{$this->id}<p/>    ";

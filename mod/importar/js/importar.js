@@ -86,36 +86,128 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                 dataType: 'json',
                 data: {
                     accion:'conversorArchivoCSV',
-                    rutaCSV: archivo.ruta
+                    rutaCSV: archivo.ruta,
+                    idCliente: cliente.id,
+                    nombreArchivoCSV: archivo.nombre
                 },
                 success: function(res) {
-                    $('#estaticos').html(res.estaticos);
-                    $('#contenido').html(res.contenido);
-                    const nombreCliente = cliente?.nombre || '';
-                    const nombreArchivo = archivo?.nombre || '';
-                    
-                    localStorage.setItem('idCliente', cliente.id)
 
-                    const contenedorExpresion = document.getElementById('contenedorExpresion');
-                    contenedorExpresion.innerHTML = ''
-                    if (contenedorExpresion) {
-                        contenedorExpresion.innerHTML = res.html || '';
+                    const conf = res.configuracionGuardada;
+                    let columnasRaw = null;
+                    if (conf && typeof conf === 'object') {
+                        if (conf.columnas !== undefined) {
+                            columnasRaw = conf.columnas;
+                        } else if (Array.isArray(conf) && conf[0] && typeof conf[0] === 'object') {
+                            columnasRaw = conf[0].columnas;
+                        }
                     }
-                    $('#nombreCliente').text(nombreCliente);
-                    $('#nombreArchivo').text(nombreArchivo);
+                    let columnas = columnasRaw;
+                    if (typeof columnasRaw === "string") {
+                        try { columnas = JSON.parse(columnasRaw); } catch (e) { columnas = null; }
+                    }
+                    const clavesColumnas = columnas && typeof columnas === 'object' ? Object.keys(columnas) : [];
+                    const valoresColumnas = columnas && typeof columnas === 'object' ? (Object.values ? Object.values(columnas) : clavesColumnas.map((k) => columnas[k])) : [];
+                
 
-                    const select =  document.getElementById('tablas')
-                       
+                    if(conf && conf.ok !== false && clavesColumnas.length > 0){
+                        console.log(res.configuracionGuardada)
 
-                    res.campoTabla.forEach((campo) =>{
-                       
+                        $('#estaticos').html(res.estaticos);
+                        $('#contenido').html(res.contenido);
+                        const nombreCliente = (cliente && cliente.nombre) ? cliente.nombre : '';
+                        let nombreArchivo = archivo.nombre;
+                        let nombreTabla = '';
+                        if (conf && typeof conf === 'object') {
+                            if (conf.tabla) {
+                                nombreTabla = conf.tabla;
+                            } else if (Array.isArray(conf) && conf[0] && conf[0].tabla) {
+                                nombreTabla = conf[0].tabla;
+                            }
+                        }
+                        
+                        localStorage.setItem('idCliente', cliente.id)
+                        
+                        const contenedorExpresion = document.getElementById('contenedorExpresion');
+                        contenedorExpresion.innerHTML = ''
+                        if (contenedorExpresion) {
+                            contenedorExpresion.innerHTML = res.html || '';
 
-                       const option = document.createElement('option')
-                       option.value = campo
-                       option.textContent = campo
+                            console.log(columnas);
+                            clavesColumnas.forEach((clave) => {
+                                añadirFilaExpresionConf(clave);
+                            });
+                            const contenedorCamposTabla = document.getElementById('divCamposTabla');
+                            if (contenedorCamposTabla) {
+                                valoresColumnas.forEach((valor) => {
+                                    añadirFilaCampoConf(valor);
+                                });
+                            }
+                           
+                        }
 
-                       select.appendChild(option)
-                    })
+                        const selectTabla = document.getElementById('tablas');
+                        if (selectTabla) {
+                            selectTabla.innerHTML = '';
+                            res.campoTabla.forEach((campo) =>{
+                                const option = document.createElement('option');
+                                option.value = campo;
+                                option.textContent = campo;
+                                selectTabla.appendChild(option);
+                            });
+                            if (nombreTabla) {
+                                selectTabla.value = nombreTabla;
+                                if (typeof recogerCamposTabla === 'function') {
+                                    recogerCamposTabla(function () {
+                                        const filasCampo = document.querySelectorAll('.fila-campo');
+                                        for (let i = 0; i < valoresColumnas.length; i++) {
+                                            const fila = filasCampo[i];
+                                            if (!fila) continue;
+                                            const sel = fila.querySelector('select');
+                                            if (sel) { sel.value = valoresColumnas[i]; }
+                                        }
+                                    });
+                                }
+                            }
+                        }
+
+                        $('#nombreCliente').text(nombreCliente);
+                        $('#nombreArchivo').text(nombreArchivo);
+
+                    }else{
+                        console.log('Mostrando el panel por defecto, configuracionGuardada esta: ', res.configuracionGuardada)
+
+                        $('#estaticos').html(res.estaticos);
+                        $('#contenido').html(res.contenido);
+                        const nombreCliente = (cliente && cliente.nombre) ? cliente.nombre : '';
+                        let nombreArchivo = archivo.nombre;
+                        
+                        localStorage.setItem('idCliente', cliente.id)
+                        
+                        const contenedorExpresion = document.getElementById('contenedorExpresion');
+                        contenedorExpresion.innerHTML = ''
+                        if (contenedorExpresion) {
+                            contenedorExpresion.innerHTML = res.html || '';
+                        }
+
+                        $('#nombreCliente').text(nombreCliente);
+                        $('#nombreArchivo').text(nombreArchivo);
+
+                        const select =  document.getElementById('tablas')
+                        
+
+                        res.campoTabla.forEach((campo) =>{
+
+                            const option = document.createElement('option')
+                            option.value = campo
+                            option.textContent = campo
+
+                            select.appendChild(option)
+                        })
+                    
+                    }
+                    
+
+                    
 
                 },error: function(xhr, status, error) {
                     console.error('Error al cargar la vista importar', error, status, xhr);
@@ -216,4 +308,18 @@ function inicializarImportar(clientes = []) {
 window.inicializarImportar = inicializarImportar;
 window.obtenerDatosClientes = obtenerDatosClientes;
 window.renderizarTablaArchivosCliente = renderizarTablaArchivosCliente;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -32,6 +32,7 @@ $nombreTabla = $_POST['nombreTabla'] ?? '';
 $nombreCampo = $_POST['nombreCampo'] ?? '';
 $rutaCSV = $_POST['rutaCSV'] ?? '';
 $configuracionCSV = $_POST['configuracionCSV'] ?? null;
+$nombreArchivoCSV = $_POST['nombreArchivoCSV'] ?? '';
 
 $recordarme = filter_var($recordarme, FILTER_VALIDATE_BOOLEAN);
 
@@ -263,13 +264,26 @@ switch ($accion) {
         cargarVista('conversorArchivoCSV');
         $contenido = ob_get_clean();
 
+        $nombreBase = pathinfo($nombreArchivoCSV, PATHINFO_FILENAME);
+        $rutaEspecifica = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_{$idCliente}".DW._CONFIG_.DW."{$nombreBase}"./*_{$nombreTablaDestino}*/".json";
+
+        $lecturaConfJSON = leerJSON($rutaEspecifica);
+
+        debug("Ruta configuración específica: $rutaEspecifica", "INFO");
+
+        if (!$lecturaConfJSON['ok']) {
+            $contenidoConf = ['ok' => false, 'msg' => 'No se ha encontrado una configuración previa para este archivo'];
+        } else {
+            $contenidoConf = $lecturaConfJSON['datos'] ?? [];
+        }
+
         $o = new CSVImportar($db);
         $o->setFile($rutaCSV); // Usando uno de los CSV que creamos
         $o->setClass("mi-clase");
         $id = $o->getId();
 
         ob_start();
-        $o->renderCSV();
+        $o->renderCSV($contenidoConf);
         $htmlCSV = ob_get_clean();
 
         $cacheTabla = leerJSON(_ROOT_.DW._ASSETS_.DW._CACHE_.DW."nombreBD.json");
@@ -278,12 +292,15 @@ switch ($accion) {
             $campoTabla = $cacheTabla['datos']['campoTabla'] ?? '';
         }
 
+        debug("Id del cliente: $idCliente", "INFO");
+
         $response = [
             'ok' => true, 
             'estaticos' => $estaticos, 
             'contenido' => $contenido, 
             'html' => $htmlCSV, 
-            'campoTabla' => $campoTabla
+            'campoTabla' => $campoTabla,
+            'configuracionGuardada' => $contenidoConf
         ];
 
         break;
@@ -551,7 +568,10 @@ switch ($accion) {
             $configuracionCSV = json_decode($configuracionCSV, true);
         }
 
-        debug("Guardando configuración CSV con el formato " . json_encode($configuracionCSV), "INFO");
+        $nombreArchivoCSV = $configuracionCSV['archivo'] ?? '';
+        $nombreTabla = $configuracionCSV['tabla'] ?? '';
+
+        $archivoModel->añadirTablaArchivo($nombreArchivoCSV, $nombreTabla);
 
         $ok = guardarConfiguracionCSV($configuracionCSV, $idCliente);
 

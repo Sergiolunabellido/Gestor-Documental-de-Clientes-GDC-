@@ -60,7 +60,7 @@ $(document).on('click', '#botonVolver', (e) => {
 let contadorFilas = 1;
 let contadorExpresiones = 1;
 
-function recogerCamposTabla(){
+function recogerCamposTabla(callback){
     const tabla = document.getElementById('tablas').value
 
     $.ajax({
@@ -94,6 +94,8 @@ function recogerCamposTabla(){
                 })
             })
 
+            if (typeof callback === 'function') { callback(); }
+
         },error: function(xhr, status, error) {
             console.error('Error al cargar la vista importar', error, status, xhr);
 
@@ -111,6 +113,35 @@ function añadirFilaCampo() {
     const nuevoSelect = nuevaFila.querySelector('select');
     nuevoSelect.id = 'camposTabla_' + contadorFilas;
     nuevoSelect.value = '';
+
+    contenedor.appendChild(nuevaFila);
+}
+
+function añadirFilaCampoConf(valorSelect) {
+    const contenedor = document.getElementById('divCamposTabla');
+    if (!contenedor) return;
+
+    const filas = contenedor.querySelectorAll('.fila-campo');
+    if (filas.length === 0) return;
+
+    const filaBase = filas[0];
+    const selectBase = filaBase.querySelector('select');
+
+    if (filas.length === 1 && selectBase && !selectBase.dataset.confInit) {
+        selectBase.value = valorSelect;
+        selectBase.dataset.confInit = '1';
+        return;
+    }
+
+    contadorFilas++;
+    const nuevaFila = filaBase.cloneNode(true);
+    nuevaFila.dataset.id = contadorFilas;
+
+    const nuevoSelect = nuevaFila.querySelector('select');
+    if (nuevoSelect) {
+        nuevoSelect.id = 'camposTabla_' + contadorFilas;
+        nuevoSelect.value = valorSelect;
+    }
 
     contenedor.appendChild(nuevaFila);
 }
@@ -156,6 +187,34 @@ function añadirFilaExpresion(boton) {
     nuevoInput.value = '';
 
     filaActual.after(nuevaFila);
+}
+
+function añadirFilaExpresionConf(valorInput) {
+    const contenedor = document.querySelector('.expressions.csv-inputs-container');
+    if (!contenedor) return;
+
+    const filas = contenedor.querySelectorAll('.fila-expresion');
+    if (filas.length === 0) return;
+
+    const filaBase = filas[0];
+    const inputBase = filaBase.querySelector('input');
+
+    if (filas.length === 1 && inputBase && inputBase.value === '') {
+        inputBase.value = valorInput;
+        return;
+    }
+
+    contadorExpresiones++;
+    const nuevaFila = filaBase.cloneNode(true);
+    nuevaFila.dataset.id = contadorExpresiones;
+
+    const nuevoInput = nuevaFila.querySelector('input');
+    if (nuevoInput) {
+        nuevoInput.id = 'expresion_' + contadorExpresiones;
+        nuevoInput.value = valorInput;
+    }
+
+    contenedor.appendChild(nuevaFila);
 }
 
 /**
@@ -267,6 +326,11 @@ $(document).on('click', '#botonGuardar', (e)=>{
 
     console.log(mapJSON)
 
+    if(tablaReferenciada === "Selecciona cualquier tabla:"){
+        alert('Si te digo que eligas una tabla es por algo melon...')
+        return;
+    }
+
     $.ajax({
         url:  'index.php',
         method: 'POST',
@@ -332,7 +396,7 @@ $(document).on('click', '#botonGuardar', (e)=>{
                 })
                 alert('El contenido de configuracion se ha guardado exitosamente.')
            }else{
-            alert('No se a podido guardar la configuracion de este archivo.')
+            alert(res.msg || 'No se a podido guardar la configuracion de este archivo.')
            }
 
         },error: function(xhr, status, error) {
@@ -343,3 +407,6 @@ $(document).on('click', '#botonGuardar', (e)=>{
 
 
 })
+
+
+

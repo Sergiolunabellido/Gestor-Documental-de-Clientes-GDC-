@@ -1,9 +1,10 @@
 {
     "archivo": "archivo1.csv",
-    "id": "import_69b0017bdba3b",
-    "tabla": "fperiodos",
+    "id": "import_69b12b6464c48",
+    "tabla": "fconv",
     "columnas": {
-        "telefono": "jornadamaximasad",
-        "nombre": "jornadamaximasad"
+        "nombre": "nombre",
+        "email": "activo",
+        "fichero": "fichero"
     }
 }

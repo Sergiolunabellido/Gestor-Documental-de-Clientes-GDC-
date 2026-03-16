@@ -595,9 +595,8 @@ function leerJSON($ruta) {
  * Fecha de creación: 2026-02-24
  */
 function escribirJSON($ruta, $nombreTabla, $datos = []) {
-     $datos = ['nombre' => $nombreTabla, 'campoTabla' => $datos];
+    $datos = ['nombre' => $nombreTabla, 'campoTabla' => $datos];
 
-     debug("Escribiendo en JSON: $ruta con los datos: " . json_encode($datos), "INFO");
     $contenido = json_encode($datos, JSON_PRETTY_PRINT);
     if ($contenido === false) {
         return ['ok' => false, 'error' => 'Error al codificar JSON: ' . json_last_error_msg()];
@@ -771,15 +770,15 @@ function obtenerConfiguracionesDeArchivo($nombreArchivoCSV, $idCliente) {
  * @return array Resultado con clave 'ok' indicando éxito o error, y 'datos' con el contenido del CSV o 'error' con información adicional
  * Fecha de creación: 2026-03-16
  */
-function leerCSV($ruta) {
+function leerCSV($ruta, $separador) {
     if (!file_exists($ruta)) {
         return ['ok' => false, 'error' => 'Archivo no encontrado'];
     }
 
     $datos = [];
     if (($handle = fopen($ruta, "r")) !== false) {
-        $cabecera = fgetcsv($handle); // Leer la primera línea como cabecera
-        while (($fila = fgetcsv($handle)) !== false) {
+        $cabecera = fgetcsv($handle, 0, $separador); // Leer la primera línea como cabecera
+        while (($fila = fgetcsv($handle, 0, $separador)) !== false) {
             $datos[] = array_combine($cabecera, $fila); // Combinar cabecera con fila para obtener un array asociativo
         }
         fclose($handle);
@@ -799,7 +798,7 @@ function detectarTipoDato($valor) {
     if (is_numeric($valor) && strpos($valor, '.') !== false) return 'FLOAT';
     if (is_numeric($valor)) return 'INT';
     if (strtotime($valor) !== false) return 'DATETIME';
-    return 'TEXT';
+    return 'VARCHAR(255)';
 }
 
 /**
@@ -819,7 +818,7 @@ function detectarTiposColumnas($filas, $mapC) {
             }
         }
         // Si hay algún VARCHAR, toda la columna es VARCHAR
-        if (in_array('VARCHAR', $tiposEncontrados)) $tipos[$columnaBD] = 'VARCHAR(255)';
+        if (in_array('VARCHAR(255)', $tiposEncontrados)) $tipos[$columnaBD] = 'VARCHAR(255)';
         elseif (in_array('FLOAT', $tiposEncontrados)) $tipos[$columnaBD] = 'FLOAT';
         elseif (in_array('DATETIME', $tiposEncontrados)) $tipos[$columnaBD] = 'DATETIME';
         else $tipos[$columnaBD] = 'INT';
@@ -827,7 +826,19 @@ function detectarTiposColumnas($filas, $mapC) {
     return $tipos;
 }
 
-function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archivoCSV) {
+/**
+ * @brief Exporta los datos de un archivo CSV a una base de datos específica utilizando la configuración guardada previamente
+ * @param int $idCliente ID del cliente para el cual se realiza la exportación
+ * @param string $bdDestino Nombre de la base de datos destino
+ * @param string $prefijodb Prefijo para el nombre de la base de datos
+ * @param PDO $conexionbd Conexión PDO a la base de datos
+ * @param array $archivoCSV Array de configuraciones de archivos CSV a exportar, cada uno con 'nombre' y 'tabla'
+ * @param array $separador Mapeo de nombres de archivos CSV a sus respectivos separadores (archivoCSV => separador)
+ * @return array Resultado con clave 'ok' indicando éxito o error, y 'msg' con información adicional
+ * Fecha de creación: 2026-03-16
+ */
+function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archivoCSV, $separador) {
+    
     // Esta función se encargará de exportar los datos de un archivo CSV a una base de datos específica, utilizando la configuración guardada previamente.
 
     if (empty($idCliente) || empty($bdDestino) || empty($prefijodb)) {
@@ -836,7 +847,14 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
     }
 
     $sql = "CREATE DATABASE IF NOT EXISTS `app2026_{$prefijodb}_{$bdDestino}`";
-    $conexionbd->exec($sql);
+    try {
+        $conexionbd->exec($sql);
+        $conexionbd->exec("USE `app2026_{$prefijodb}_{$bdDestino}`");
+    } catch (PDOException $e) {
+        debug("Error al crear o seleccionar la base de datos: " . $e->getMessage(), "ERROR");
+        return ['ok' => false, 'msg' => 'Error al preparar la base de datos destino: ' . $e->getMessage()];
+    }
+    
 
     foreach ($archivoCSV as $i => $config) {
 
@@ -851,7 +869,7 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
             $rutaCJson = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW._CONFIG_.DW."{$nombreArchivoCSV}.json";
             $resJSON = leerJSON($rutaCJson);
             $rutaCSV = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$nombreArchivoCSV}.csv";
-            $resCSV = leerCSV($rutaCSV);
+            $resCSV = leerCSV($rutaCSV, $separador[$nombreArchivoCSV.".csv"]);
 
             if ($resJSON['ok'] && $resCSV['ok']) {
                 $configExportacion = $resJSON['datos'];
@@ -863,7 +881,13 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
                 $columnasSql = array_map(fn($col, $tipo) => "`$col` $tipo", array_keys($tipos), array_values($tipos));
 
                 $sql = "CREATE TABLE IF NOT EXISTS `$nombreArchivoCSV` (" . implode(", ", $columnasSql) . ")";
-                $conexionbd->exec($sql);
+                try {
+                    $conexionbd->exec("DROP TABLE IF EXISTS `$nombreArchivoCSV`");
+                    $conexionbd->exec($sql);
+                } catch (PDOException $e) {
+                    debug("Error al crear la tabla '$nombreArchivoCSV': " . $e->getMessage(), "ERROR");
+                    return ['ok' => false, 'msg' => 'Error al crear la tabla destino: ' . $e->getMessage()];
+                }
 
                 foreach ($filas as $fila) {
                     $campos = [];
@@ -876,7 +900,12 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
                     }
                     if (!empty($campos) && !empty($valores)) {
                         $sqlInsert = "INSERT INTO `$nombreArchivoCSV` (" . implode(", ", $campos) . ") VALUES (" . implode(", ", $valores) . ")";
-                        $conexionbd->exec($sqlInsert);
+                        try {
+                            $conexionbd->exec($sqlInsert);
+                        } catch (PDOException $e) {
+                            debug("Error al insertar datos en la tabla '$nombreArchivoCSV': " . $e->getMessage(), "ERROR");
+                            return ['ok' => false, 'msg' => 'Error al insertar datos en la tabla destino: ' . $e->getMessage()];
+                        }
                     }
                 }
                 
@@ -884,6 +913,7 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
 
         } else {
             debug("Configuración incompleta para archivo index $i: " . json_encode($config), "ERROR");
+            return ['ok' => false, 'msg' => "Configuración incompleta para el archivo index $i"];
         }
     }
 

@@ -388,9 +388,20 @@ switch ($accion) {
     // Exportar archivos de cliente.
     case 'exportarArchivosCliente':
 
-        $exportacion = exportarCSVABD($idCliente, $bdDestino, $prefijodb, $db, $nombreACSV);
+        $csvI = new CSVImportar($db);
 
-        $response = ['ok' => true, 'msg' => $exportacion['msg']];
+        foreach ($nombreACSV as $archivo) {
+            $ruta = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$archivo['nombre']}";
+
+            $csvI->setFile($ruta);
+
+            $separador[$archivo['nombre']] = $csvI->detectarSeparador();
+
+        }
+
+        $exportacion = exportarCSVABD($idCliente, $bdDestino, $prefijodb, $db, $nombreACSV, $separador);
+
+        $response = ['ok' => $exportacion['ok'], 'msg' => $exportacion['msg']];
 
         break;
 

@@ -73,7 +73,7 @@ class CSVImportar {
      * Fecha de creacion: 2026-03-09
      * @return string Delimitador detectado
      */
-    private function detectarSeparador() {
+    public function detectarSeparador() {
         if (empty($this->file) || !is_readable($this->file)) {
             return $this->delimiter;
         }

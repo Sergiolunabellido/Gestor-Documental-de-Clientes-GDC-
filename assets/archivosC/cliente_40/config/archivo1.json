@@ -1,10 +1,10 @@
 {
     "archivo": "archivo1.csv",
     "id": "import_69b12b6464c48",
-    "tabla": "fconv",
+    "tabla": "fservicios",
     "columnas": {
-        "nombre": "nombre",
-        "email": "activo",
-        "fichero": "fichero"
+        "telefono": "ocupada",
+        "fichero": "nombre",
+        "nombre": "nombre"
     }
 }

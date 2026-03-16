@@ -846,6 +846,7 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
         return ['ok' => false, 'msg' => 'Parámetros inválidos para exportar CSV a base de datos'];
     }
 
+    // Crear o seleccionar la base de datos destino
     $sql = "CREATE DATABASE IF NOT EXISTS `app2026_{$prefijodb}_{$bdDestino}`";
     try {
         $conexionbd->exec($sql);
@@ -855,11 +856,12 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
         return ['ok' => false, 'msg' => 'Error al preparar la base de datos destino: ' . $e->getMessage()];
     }
     
-
+    // Recorrer cada configuración de archivo CSV proporcionada
     foreach ($archivoCSV as $i => $config) {
 
         if (isset($config['nombre']) && isset($config['tabla'])) {
 
+            // Validar que el nombre del archivo y la tabla destino sean válidos
             if (empty($config['tabla']) || $config['tabla'] === '-' || str_contains($config['tabla'], 'Selecciona')) {
                 continue;
             }
@@ -870,7 +872,8 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
             $resJSON = leerJSON($rutaCJson);
             $rutaCSV = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$nombreArchivoCSV}.csv";
             $resCSV = leerCSV($rutaCSV, $separador[$nombreArchivoCSV.".csv"]);
-
+            
+            // Validar que se hayan leído correctamente tanto la configuración JSON como el archivo CSV
             if ($resJSON['ok'] && $resCSV['ok']) {
                 $configExportacion = $resJSON['datos'];
                 $mapC = $configExportacion['columnas'];
@@ -879,7 +882,8 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
 
                 $tipos = detectarTiposColumnas($filas, $mapC);
                 $columnasSql = array_map(fn($col, $tipo) => "`$col` $tipo", array_keys($tipos), array_values($tipos));
-
+                
+                // Crear la tabla destino en la base de datos con las columnas y tipos detectados
                 $sql = "CREATE TABLE IF NOT EXISTS `$nombreArchivoCSV` (" . implode(", ", $columnasSql) . ")";
                 try {
                     $conexionbd->exec("DROP TABLE IF EXISTS `$nombreArchivoCSV`");
@@ -888,16 +892,21 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
                     debug("Error al crear la tabla '$nombreArchivoCSV': " . $e->getMessage(), "ERROR");
                     return ['ok' => false, 'msg' => 'Error al crear la tabla destino: ' . $e->getMessage()];
                 }
-
+                    
+                // Insertar los datos del CSV en la tabla creada utilizando el mapeo de columnas definido en la configuración
                 foreach ($filas as $fila) {
                     $campos = [];
                     $valores = [];
+
+                    // Solo insertamos las columnas que estén definidas en el mapeo y presentes en la fila del CSV
                     foreach ($mapC as $columnaCSV => $columnaBD) {
                         if (isset($fila[$columnaCSV])) {
                             $campos[] = "`$columnaBD`";
                             $valores[] = $conexionbd->quote($fila[$columnaCSV]);
                         }
                     }
+
+                    // Solo intentamos insertar si tenemos campos y valores válidos para evitar errores de SQL
                     if (!empty($campos) && !empty($valores)) {
                         $sqlInsert = "INSERT INTO `$nombreArchivoCSV` (" . implode(", ", $campos) . ") VALUES (" . implode(", ", $valores) . ")";
                         try {

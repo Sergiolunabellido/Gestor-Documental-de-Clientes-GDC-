@@ -123,3 +123,4 @@
 [2026-03-16 18:38:27][INFO] Id del cliente: 40
 [2026-03-16 18:39:25][INFO] Configuración guardada correctamente en: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_40/config/archivo1.json
 [2026-03-16 18:39:33][INFO] Archivo JSON leído correctamente: /var/www/practicas2026/app/aplicacionweb/assets/archivosC/cliente_40/config/archivo1.json y los datos: {"archivo":"archivo1.csv","id":"import_69b12b6464c48","tabla":"fservicios","columnas":{"telefono":"ocupada","fichero":"nombre","nombre":"nombre"}}
+[2026-03-16 19:18:34][WARNING] LoginConCookie: token inválido o expirado

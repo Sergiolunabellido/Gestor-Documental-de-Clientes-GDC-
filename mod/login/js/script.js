@@ -417,9 +417,10 @@ function cerrarSesion(){
                 alert('Sesion cerrada')
                 clearInterval(intervalo)
                 sessionStorage.removeItem('sesionActiva');
+                location.reload()
                 $('#estaticos').html('');
                 $('#contenido').html(res.contenido);
-                location.reload()
+                
             }
         },
         error: function(xhr, status, error) {

@@ -764,3 +764,129 @@ function obtenerConfiguracionesDeArchivo($nombreArchivoCSV, $idCliente) {
         'msg' => empty($configsEncontradas) ? 'No hay configuraciones' : 'Configs cargadas'
     ];
 }
+
+/**
+ * @brief Lee un archivo CSV y devuelve su contenido como un array asociativo utilizando la primera fila como cabecera
+ * @param string $ruta Ruta del archivo CSV a leer
+ * @return array Resultado con clave 'ok' indicando éxito o error, y 'datos' con el contenido del CSV o 'error' con información adicional
+ * Fecha de creación: 2026-03-16
+ */
+function leerCSV($ruta) {
+    if (!file_exists($ruta)) {
+        return ['ok' => false, 'error' => 'Archivo no encontrado'];
+    }
+
+    $datos = [];
+    if (($handle = fopen($ruta, "r")) !== false) {
+        $cabecera = fgetcsv($handle); // Leer la primera línea como cabecera
+        while (($fila = fgetcsv($handle)) !== false) {
+            $datos[] = array_combine($cabecera, $fila); // Combinar cabecera con fila para obtener un array asociativo
+        }
+        fclose($handle);
+        return ['ok' => true, 'datos' => $datos];
+    } else {
+        return ['ok' => false, 'error' => 'No se pudo abrir el archivo'];
+    }
+}
+
+/**
+ * @brief Detecta el tipo de dato de un valor dado para mapearlo a un tipo SQL adecuado
+ * @param string $valor Valor del cual se quiere detectar el tipo de dato
+ * @return string Tipo de dato detectado (INT, FLOAT, DATETIME, TEXT)
+ * Fecha de creación: 2026-03-16
+ */
+function detectarTipoDato($valor) {
+    if (is_numeric($valor) && strpos($valor, '.') !== false) return 'FLOAT';
+    if (is_numeric($valor)) return 'INT';
+    if (strtotime($valor) !== false) return 'DATETIME';
+    return 'TEXT';
+}
+
+/**
+ * @brief Detecta los tipos de datos de las columnas de un archivo CSV basándose en su contenido y devuelve un mapeo de columnas a tipos SQL
+ * @param array $filas Array de filas del CSV, donde cada fila es un array asociativo con los nombres de las columnas como claves
+ * @param array $mapC Mapeo de columnas del CSV a columnas de la base de datos (columnaCSV => columnaBD)
+ * @return array Mapeo de columnas de la base de datos a tipos SQL detectados (columnaBD => tipoSQL)
+ * Fecha de creación: 2026-03-16
+ */
+function detectarTiposColumnas($filas, $mapC) {
+    $tipos = [];
+    foreach ($mapC as $columnaCSV => $columnaBD) {
+        $tiposEncontrados = [];
+        foreach ($filas as $fila) {
+            if (isset($fila[$columnaCSV])) {
+                $tiposEncontrados[] = detectarTipoDato($fila[$columnaCSV]);
+            }
+        }
+        // Si hay algún VARCHAR, toda la columna es VARCHAR
+        if (in_array('VARCHAR', $tiposEncontrados)) $tipos[$columnaBD] = 'VARCHAR(255)';
+        elseif (in_array('FLOAT', $tiposEncontrados)) $tipos[$columnaBD] = 'FLOAT';
+        elseif (in_array('DATETIME', $tiposEncontrados)) $tipos[$columnaBD] = 'DATETIME';
+        else $tipos[$columnaBD] = 'INT';
+    }
+    return $tipos;
+}
+
+function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archivoCSV) {
+    // Esta función se encargará de exportar los datos de un archivo CSV a una base de datos específica, utilizando la configuración guardada previamente.
+
+    if (empty($idCliente) || empty($bdDestino) || empty($prefijodb)) {
+        debug("Parámetros inválidos para exportar CSV a BD: idCliente=$idCliente, bdDestino=$bdDestino, prefijodb=$prefijodb", "ERROR");
+        return ['ok' => false, 'msg' => 'Parámetros inválidos para exportar CSV a base de datos'];
+    }
+
+    $sql = "CREATE DATABASE IF NOT EXISTS `app2026_{$prefijodb}_{$bdDestino}`";
+    $conexionbd->exec($sql);
+
+    foreach ($archivoCSV as $i => $config) {
+
+        if (isset($config['nombre']) && isset($config['tabla'])) {
+
+            if (empty($config['tabla']) || $config['tabla'] === '-' || str_contains($config['tabla'], 'Selecciona')) {
+                continue;
+            }
+
+            // Aquí se implementaría la lógica para leer el CSV y exportarlo a la base de datos utilizando la configuración encontrada.
+            $nombreArchivoCSV = pathinfo($config['nombre'], PATHINFO_FILENAME);
+            $rutaCJson = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW._CONFIG_.DW."{$nombreArchivoCSV}.json";
+            $resJSON = leerJSON($rutaCJson);
+            $rutaCSV = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$nombreArchivoCSV}.csv";
+            $resCSV = leerCSV($rutaCSV);
+
+            if ($resJSON['ok'] && $resCSV['ok']) {
+                $configExportacion = $resJSON['datos'];
+                $mapC = $configExportacion['columnas'];
+
+                $filas = $resCSV['datos'] ?? [];
+
+                $tipos = detectarTiposColumnas($filas, $mapC);
+                $columnasSql = array_map(fn($col, $tipo) => "`$col` $tipo", array_keys($tipos), array_values($tipos));
+
+                $sql = "CREATE TABLE IF NOT EXISTS `$nombreArchivoCSV` (" . implode(", ", $columnasSql) . ")";
+                $conexionbd->exec($sql);
+
+                foreach ($filas as $fila) {
+                    $campos = [];
+                    $valores = [];
+                    foreach ($mapC as $columnaCSV => $columnaBD) {
+                        if (isset($fila[$columnaCSV])) {
+                            $campos[] = "`$columnaBD`";
+                            $valores[] = $conexionbd->quote($fila[$columnaCSV]);
+                        }
+                    }
+                    if (!empty($campos) && !empty($valores)) {
+                        $sqlInsert = "INSERT INTO `$nombreArchivoCSV` (" . implode(", ", $campos) . ") VALUES (" . implode(", ", $valores) . ")";
+                        $conexionbd->exec($sqlInsert);
+                    }
+                }
+                
+            }
+
+        } else {
+            debug("Configuración incompleta para archivo index $i: " . json_encode($config), "ERROR");
+        }
+    }
+
+    return ['ok' => true, 'msg' => 'Exportación completada'];
+
+}

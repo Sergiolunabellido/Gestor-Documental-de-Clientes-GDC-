@@ -1,10 +1,38 @@
 /**
+ * @brief Obtiene los valores de las filas con checkbox seleccionado
+ * @fecha 16/03/2026
+ * @returns {Array} Array de objetos con los datos de las filas seleccionadas
+ */
+function obtenerFilasSeleccionadas() {
+    const filasSeleccionadas = [];
+    const checkboxes = document.querySelectorAll('.check-importar-item:checked');
+
+    //De las filas con el input en checked se cogen los nombres de los archivos y la tabla, aparte de eso se transforma el nombre de .csv a .json 
+    //para poder entrar a la configuracion guardada
+    //por el usuario que contiene la estructura de los campos del csv y los de la tabla .
+    checkboxes.forEach(checkbox => {
+        const fila = checkbox.closest('tr');
+        const celdas = fila.querySelectorAll('td');
+
+        filasSeleccionadas.push({
+            idArchivo: checkbox.dataset.idArchivo,
+            nombre: celdas[1]?.textContent.trim() || '',
+            nombreJson: celdas[1]?.textContent.trim().replace(/\.csv$/i, '.json'),
+            tabla: celdas[2]?.textContent.trim() || '-'
+        });
+    });
+
+    return filasSeleccionadas;
+}
+
+/**
  * @brief Renderiza la tabla de archivos del cliente seleccionado.
  * @fecha 04/03/2026
  * @param {Array<Object>} archivos
  * @param {Object|null} cliente
  */
 function renderizarTablaArchivosCliente(archivos, cliente = null) {
+    clienteActual = cliente;
     const contenedor = document.getElementById('tablaArchivosClientes');
     if (!contenedor) return;
 
@@ -69,9 +97,11 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
 
         const tdNombre = document.createElement('td');
         tdNombre.textContent = archivo.nombre || (archivo.ruta ? String(archivo.ruta).split(/[\\/]/).pop() : 'Sin nombre');
+        tdNombre.id = archivo.nombre
 
         const tdTabla = document.createElement('td');
         tdTabla.textContent = archivo.tabla || archivo.nombreTabla || archivo.tabla_asociada || '-';
+        tdTabla.id = archivo.tabla
 
         const tdAccion = document.createElement('td');
         tdAccion.className = 'text-end';
@@ -79,6 +109,11 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
         boton.type = 'button';
         boton.className = 'btn btn-sm btn-primary';
         boton.textContent = 'Ver';
+        /**
+         * @brief Esta accion de click mostrara la pagina de configuracion de tabla con los datos de el archivo .csv en el que se haya clicado este boton.
+         * @fecha 10/03/2026
+         * @return html
+         */
         boton.addEventListener('click', () => {
             $.ajax({
                 url:  'index.php',
@@ -92,6 +127,8 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                 },
                 success: function(res) {
 
+                    //Comprobamos el contenido de configuracionGuardada que podra guardar el contenido de esta pagina en un .json anteriormente guardado por el usuario.
+                    //Si no contiene informacion se mostrara la pagina "predeterminada", si no cargara los campos guardados dentro de este archivo asi como los inputs y los selects anteriores.
                     const conf = res.configuracionGuardada;
                     let columnasRaw = null;
                     if (conf && typeof conf === 'object') {
@@ -109,6 +146,7 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                     const valoresColumnas = columnas && typeof columnas === 'object' ? (Object.values ? Object.values(columnas) : clavesColumnas.map((k) => columnas[k])) : [];
                 
 
+                    //Se muestra la pagina con el contenido del .json cargado
                     if(conf && conf.ok !== false && clavesColumnas.length > 0){
                         console.log(res.configuracionGuardada)
 
@@ -173,6 +211,7 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                         $('#nombreCliente').text(nombreCliente);
                         $('#nombreArchivo').text(nombreArchivo);
 
+                    //Se muestra la pagina "predeterminada"
                     }else{
                         console.log('Mostrando el panel por defecto, configuracionGuardada esta: ', res.configuracionGuardada)
 
@@ -225,6 +264,7 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
 
         check.addEventListener('change', actualizarMasterCheckbox);
     });
+
 
     checkAll.addEventListener('change', function () {
         const activo = this.checked;
@@ -301,13 +341,128 @@ function inicializarImportar(clientes = []) {
     $(document).off('change', '#listaClientes').on('change', '#listaClientes', function () {
         const idCliente = this.value;
         const clienteSeleccionado = clientes.find((c) => String(c.id) === String(idCliente)) || null;
+        clienteActual = clienteSeleccionado;
         obtenerDatosClientes(idCliente, clienteSeleccionado);
     });
 }
 
+
+/**
+ * @brief Esta funcion de click realiza una peticion al backend para exportar los archivos y la configuracion de la tabla diseñada por el cliente, pasandole la lista de las
+ * filas de la tabla que estan seleccionadas pasandole el nombre del archivo y el nombre de la tabla o de la configuracion creada, junto al id del cliente y el nombre de la tabla o bd
+ * de destino mas el prefijo que esta llevara.
+ * @fecha 16/03/2026
+ * @returns alerts
+ */
+$(document).on('click', '#exportarFicherosCliente', (e) => {
+    e.preventDefault();
+
+    const filasSeleccionadas = obtenerFilasSeleccionadas();
+    
+    if (filasSeleccionadas.length === 0) {
+        alert('Selecciona al menos un archivo para exportar');
+        return;
+    }
+
+    const TablaDestino = document.getElementById('dbDestino')?.value || '';
+    const prefijoTabla = document.getElementById('prefijoTabla')?.value || '';
+
+    console.log('Filas seleccionadas:', filasSeleccionadas  );
+    console.log('Tabla destino:', TablaDestino);
+    console.log('Prefijo:', prefijoTabla);
+    console.log('cliente: ', clienteActual)
+
+    const datosCSVs = [];
+    const datosJSONs = [];
+
+    /**
+     * Guardamos todas las peticiones que se realizan dentro de una variable, para despues lanzarlas con promise.all.
+     * Al lanzar la peticion se guarda la respuesta en un array para poder pasarlas por el cuerpo de otra peticion al backend.
+     * Estas peticiones recogen el contenido de los archivos con el nombre que se encuentren en las filasSeleccionadas del 
+     * cliente actualmente seleccionado en el select del front.
+     */
+    const promesas = filasSeleccionadas.map((datos) =>
+        $.ajax({
+            url: `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/${datos.nombre}`,
+            method: "POST"
+        }).then((data) => {
+            console.log('Archivo CSV procesado:', datos.nombre, data);
+            datosCSVs.push(data);
+            return { nombre: datos.nombre, tipo: 'csv', ok: true, data };
+        }).catch((error) => {
+            console.error('Error procesando CSV:', datos.nombre, error);
+            alert(`El archivo CSV "${datos.nombre}" no existe o no se pudo cargar`);
+            return { nombre: datos.nombre, tipo: 'csv', ok: false, error };
+        })
+    );
+
+    const promesasConf = filasSeleccionadas.map((datos) =>
+        $.ajax({
+            url: `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/config/${datos.nombreJson}`,
+            method: "POST"
+        }).then((data) => {
+            console.log('Archivo JSON procesado:', datos.nombreJson, data);
+            datosJSONs.push(data);
+            return { nombre: datos.nombreJson, tipo: 'json', ok: true, data };
+        }).catch((error) => {
+            console.error('Error procesando JSON:', datos.nombreJson, error);
+            alert(`El archivo JSON "${datos.nombreJson}" no existe o no se pudo cargar`);
+            return { nombre: datos.nombreJson, tipo: 'json', ok: false, error };
+        })
+    );
+
+    /**
+     * Procesamos las promesas tanto las que recogen los datos de los arhcivos .csv como los de .json
+     *  y posteriormente se realiza una paticion en la que pasamos los datos necesarios para que 
+     * el backend pueda crear la tabla con los datos indicados en cada archivo .json con la configuracion
+     * de dicho archivo del cliente.
+     */
+    Promise.all([...promesas, ...promesasConf]).then((resultados) => {
+        const exitosos = resultados.filter((r) => r.ok);
+        const fallidos = resultados.filter((r) => !r.ok);
+        console.log(`Completado: ${exitosos.length} exitosos, ${fallidos.length} fallidos`);
+        console.log('Array de CSVs:', datosCSVs);
+        console.log('Array de JSONs:', datosJSONs);
+
+        $.ajax({
+            url: 'index.php',
+            method: 'POST',
+            dataType: 'json',
+            data: {
+                accion: 'exportarArchivosCliente',
+                datosCSVs: datosCSVs,
+                datosJSONs: datosJSONs,
+                archivos: filasSeleccionadas,
+                bdDestino: TablaDestino,
+                prefijo: prefijoTabla,
+                idCliente: clienteActual?.id || null
+            },
+            success: function(res) {
+                if (res.ok) {
+                    alert('Exportación completada correctamente');
+                    console.log("Mensaje del backend: ",res.msg)
+                } else {
+                    alert('Error: ' + (res.msg || 'No se pudo exportar'));
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error al exportar:', error, status, xhr);
+                alert('Error al exportar los archivos');
+            }
+        });
+    });
+
+});
+
+//Se crea una variable para poder guardar en esta el cliente que se a seleccionado en el select del front.
+let clienteActual = null;
+
+//Inicializamos las funciones
 window.inicializarImportar = inicializarImportar;
 window.obtenerDatosClientes = obtenerDatosClientes;
 window.renderizarTablaArchivosCliente = renderizarTablaArchivosCliente;
+window.obtenerFilasSeleccionadas = obtenerFilasSeleccionadas;
+
 
 
 

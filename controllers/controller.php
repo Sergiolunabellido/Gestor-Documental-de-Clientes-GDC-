@@ -34,6 +34,13 @@ $rutaCSV = $_POST['rutaCSV'] ?? '';
 $configuracionCSV = $_POST['configuracionCSV'] ?? null;
 $nombreArchivoCSV = $_POST['nombreArchivoCSV'] ?? '';
 
+# Exportacion de archivos
+
+$nombreACSV = $_POST['archivos'] ?? null;
+$bdDestino = $_POST['bdDestino'] ?? '';
+$prefijodb = $_POST['prefijo'] ?? '';
+
+
 $recordarme = filter_var($recordarme, FILTER_VALIDATE_BOOLEAN);
 
 // Solo ejecutar guard si NO es login, registro o logoutAutomatico
@@ -46,6 +53,7 @@ $contenido = '';
 
 switch ($accion) {
     # Vistas
+    // Se ejecuta al intentar iniciar sesion o al validar una sesion ya activa.
     case 'login':
 
         if (isset($_SESSION['login']) && $_SESSION['login'] === true) {
@@ -152,6 +160,7 @@ switch ($accion) {
 
         break;
 
+    // Se ejecuta cuando el usuario cierra sesion manualmente.
     case 'logout':
 
         if ($_SESSION['admin'] == 0){
@@ -175,6 +184,7 @@ switch ($accion) {
 
         break;
 
+    // Se ejecuta al cerrar el navegador/pestana sin hacer logout manual.
     case 'logoutAutomatico':
         
         // Logout automático cuando el usuario cierra el navegador sin hacer logout explícito
@@ -190,6 +200,7 @@ switch ($accion) {
         
         break;
 
+    // Se ejecuta al registrar un nuevo usuario.
     case 'registro':
 
         $ok = registroUsuario($db, $usuario, $password, $email, $admin);
@@ -205,6 +216,7 @@ switch ($accion) {
 
         break;
 
+    // Carga la vista de perfil y devuelve los datos del usuario actual.
     case 'perfil':
 
         ob_start();
@@ -222,6 +234,7 @@ switch ($accion) {
 
         break;
 
+    // Carga la pantalla de origen/fuente y listado de clientes.
     case 'fuente':
 
         ob_start();
@@ -238,6 +251,7 @@ switch ($accion) {
 
         break;
 
+    // Carga la pantalla de importacion y listado de clientes.
     case 'importar':
 
         ob_start();
@@ -254,6 +268,7 @@ switch ($accion) {
 
         break;
 
+    // Prepara la vista para mapear/convertir un CSV y su configuracion guardada.
     case 'conversorArchivoCSV':
 
         ob_start();
@@ -305,6 +320,7 @@ switch ($accion) {
 
         break;
 
+    // Devuelve metadatos/campos de una tabla SQL seleccionada.
     case 'tiposTablas':
 
         $tipos = obtenerCamposPorTabla($db, $nombreTabla);
@@ -313,6 +329,7 @@ switch ($accion) {
 
         break;
 
+    // Carga la vista de ficheros y lista los archivos de un cliente.
     case 'ficherosCliente':
 
         ob_start();
@@ -331,6 +348,7 @@ switch ($accion) {
 
         break;
 
+    // Carga la vista de gestion de archivo y estado de la tabla cacheada.
     case 'archivo':
 
         ob_start();
@@ -367,6 +385,16 @@ switch ($accion) {
 
         break;
 
+    // Exportar archivos de cliente.
+    case 'exportarArchivosCliente':
+
+        $exportacion = exportarCSVABD($idCliente, $bdDestino, $prefijodb, $db, $nombreACSV);
+
+        $response = ['ok' => true, 'msg' => $exportacion['msg']];
+
+        break;
+
+    // Carga la vista de detalle de tabla y devuelve sus datos.
     case 'detalleTabla':
         
         ob_start();
@@ -389,6 +417,7 @@ switch ($accion) {
         
         break;
 
+    // Carga la vista del detalle de un cliente por ID.
     case 'detalleCliente':
 
         ob_start();
@@ -406,6 +435,7 @@ switch ($accion) {
 
         break;
 
+    // Carga la vista de usuarios y permite listado/filtrado por criterio.
     case 'usuarios':
 
         ob_start();
@@ -417,12 +447,15 @@ switch ($accion) {
         $contenido = ob_get_clean();
 
         switch ($filtro) {
+            // Filtra por nombre de usuario.
             case 'nombre':
                 $usuarios = $usuarioModel->obtenerListaUsuariosNombre($usuario);
                 break;
+            // Filtra por correo electronico.
             case 'correo':
                 $usuarios = $usuarioModel->obtenerListaUsuariosCorreo($email);
                 break;
+            // Filtra por fecha de registro.
             case 'fecha':
                 $usuarios = $usuarioModel->obtenerListaUsuariosFecha($fecha);
                 break;
@@ -459,6 +492,7 @@ switch ($accion) {
         break;
     
     # Funciones
+    // Se ejecuta al subir o actualizar la foto de perfil.
     case 'cambiarFoto':
         
         if (isset($_SESSION['login']) && $_SESSION['login'] && isset($_FILES['selectorImagenPerfil']) && $_FILES['selectorImagenPerfil']['error'] == 0) {
@@ -489,6 +523,7 @@ switch ($accion) {
 
         break;
 
+    // Se ejecuta al subir un archivo asociado a un cliente.
     case 'subirArchivo':
         // Subir archivos de clientes, solo si el usuario está logueado y se ha enviado un archivo sin errores
 
@@ -531,6 +566,7 @@ switch ($accion) {
 
         break;
 
+    // Devuelve el listado de archivos para un cliente concreto.
     case 'listarArchivosCliente':
 
         if (!isset($_SESSION['login']) || !$_SESSION['login']) {
@@ -548,6 +584,7 @@ switch ($accion) {
 
         break;
 
+    // Procesa un .sql subido, crea tablas y guarda metadatos en cache.
     case 'generarTablas':
 
         $ok = guardarArchivoYCrearTabla($_FILES['archivoSQL'] ?? null);
@@ -561,6 +598,7 @@ switch ($accion) {
         
         break;
 
+    // Guarda la configuracion de mapeo de un CSV para un cliente.
     case 'guardarConfCSV':
 
         // Decodificar la configuración si viene como JSON string
@@ -584,6 +622,7 @@ switch ($accion) {
 
         break;
 
+    // Elimina todos los archivos asociados a un cliente.
     case 'eliminarArchivosCliente':
 
         if (!isset($_SESSION['login']) || !$_SESSION['login']) {
@@ -608,6 +647,7 @@ switch ($accion) {
 
         break;
 
+    // Permite cambiar la contrasena del usuario.
     case 'cambiarContrasenia':
 
         if (cambiarContrasenia($db, $_SESSION['idUsuario'] ?? null, $_POST['contrasenia'] ?? '', $usuario)) {
@@ -619,6 +659,7 @@ switch ($accion) {
 
         break;
 
+    // Renueva el temporizador de sesion si aun no ha expirado.
     case 'renovarSesion':
 
         if (
@@ -650,6 +691,7 @@ switch ($accion) {
 
         break;
 
+    // Gestiona bloqueo/modificacion de datos de usuario (solo admin).
     case 'modificarUsuario':
 
         if (empty($_SESSION['usuario'])) {
@@ -667,6 +709,7 @@ switch ($accion) {
         }
 
         switch ($filtro) {
+            // Libera el bloqueo de edicion de un usuario.
             case 'cancelarModificacion':
 
                 $ok = $usuarioModel->noModificandoUsuario($idUsuario);
@@ -681,6 +724,7 @@ switch ($accion) {
 
                 break;
 
+            // Aplica cambios de nombre y/o correo del usuario.
             case 'actualizarUsuario':
                 
                 if ($usuario === '') {
@@ -716,6 +760,7 @@ switch ($accion) {
 
                 break;
 
+            // Marca al usuario como "en modificacion" para evitar conflictos.
             default:
 
                 $ok = $usuarioModel->modificandoUsuario($idUsuario);
@@ -734,6 +779,7 @@ switch ($accion) {
 
         break;
 
+    // Elimina un usuario y sus sesiones activas.
     case 'eliminarUsuarios' :
 
         $ok = $sesionModel->eliminarSesionesPorUsuario($idUsuario);
@@ -751,6 +797,7 @@ switch ($accion) {
 
         break;
 
+    // Crea un nuevo cliente (registro + estructura de carpeta asociada).
     case 'crearCarpetaCliente':
 
         $resultado = $clienteModel->agregarCliente($nombreCliente, $telefonoCliente);
@@ -770,6 +817,7 @@ switch ($accion) {
 
         break;
 
+    // Elimina un cliente de la aplicacion.
     case 'eliminarCliente':
         
         $ok = $clienteModel->eliminarCliente($idCliente);
@@ -785,6 +833,7 @@ switch ($accion) {
         
         break;
 
+    // Elimina un archivo concreto de un cliente.
     case 'eliminarArchivoCliente':
 
         $ok = $archivoModel->eliminarArchivo($idArchivo, $idCliente);
@@ -800,6 +849,7 @@ switch ($accion) {
 
         break;
 
+    // Ping de sesion: valida que siga activa sin renovar temporizador.
     case 'verificarSesion':
 
         // Verifica que la sesión está activa (sin actualizar la actividad)
@@ -809,12 +859,14 @@ switch ($accion) {
 
         break;
 
+    // Actualiza el estado del usuario (conectado/pendiente/desconectado).
     case'modificarEstadoUsuario':
 
         actualizarEstadoUsuario($db, $idUsuario, $nuevoEstado);
 
         break;
 
+    // Fallback cuando llega una accion no contemplada.
     default:
 
         debug("Acción no válida recibida: $accion", "WARNING");

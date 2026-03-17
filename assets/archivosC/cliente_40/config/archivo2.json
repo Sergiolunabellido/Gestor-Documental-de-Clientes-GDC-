@@ -1,0 +1,8 @@
+{
+    "archivo": "archivo2.csv",
+    "id": "import_69b84c17a2249",
+    "tabla": "fopexpediente",
+    "columnas": {
+        "f_nacimiento": "fecha"
+    }
+}

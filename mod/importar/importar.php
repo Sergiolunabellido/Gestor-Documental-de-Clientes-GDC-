@@ -5,8 +5,9 @@
             <select name="listaClientes" id="listaClientes" required class="w-sm-25 w-25 rounded shadow-sm">
 
             </select>
+             <input id="prefijoTabla" type="text" class="rounded " placeholder="Prefijo para la tabla">
             <input id="dbDestino" type="text" class="rounded" placeholder="DB destino">
-            <input id="prefijoTabla" type="text" class="rounded " placeholder="Prefijo para la tabla">
+           
         </div>
         <button id="exportarFicherosCliente" class="btn btn-primary">Exportar</button>
     </div>

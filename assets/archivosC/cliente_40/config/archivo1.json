@@ -3,8 +3,8 @@
     "id": "import_69b12b6464c48",
     "tabla": "fservicios",
     "columnas": {
-        "telefono": "ocupada",
-        "fichero": "nombre",
-        "nombre": "nombre"
+        "nombre": "nombre",
+        "id": "codigo",
+        "email": "domicilio"
     }
 }

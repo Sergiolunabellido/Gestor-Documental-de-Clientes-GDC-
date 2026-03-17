@@ -789,6 +789,27 @@ function leerCSV($ruta, $separador) {
 }
 
 /**
+ * @brief Verifica si un valor dado coincide con formatos comunes de fecha y hora para determinar si es un valor de tipo DATETIME
+ * @param string $valor Valor a verificar
+ * @return bool True si el valor coincide con algún formato de fecha/hora, false en caso contrario
+ * Fecha de creación: 2026-03-16
+ */
+function esDatetime($valor) {
+    $formatos = [
+        '/^\d{4}-\d{2}-\d{2}$/',                  // 2024-03-16
+        '/^\d{2}\/\d{2}\/\d{4}$/',                // 16/03/2024
+        '/^\d{2}-\d{2}-\d{4}$/',                  // 16-03-2024
+        '/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}$/', // 2024-03-16 12:00:00
+        '/^\d{2}\/\d{2}\/\d{4} \d{2}:\d{2}:\d{2}$/', // 16/03/2024 12:00:00
+    ];
+
+    foreach ($formatos as $formato) {
+        if (preg_match($formato, $valor)) return true;
+    }
+    return false;
+}
+
+/**
  * @brief Detecta el tipo de dato de un valor dado para mapearlo a un tipo SQL adecuado
  * @param string $valor Valor del cual se quiere detectar el tipo de dato
  * @return string Tipo de dato detectado (INT, FLOAT, DATETIME, TEXT)
@@ -797,7 +818,7 @@ function leerCSV($ruta, $separador) {
 function detectarTipoDato($valor) {
     if (is_numeric($valor) && strpos($valor, '.') !== false) return 'FLOAT';
     if (is_numeric($valor)) return 'INT';
-    if (strtotime($valor) !== false) return 'DATETIME';
+    if (esDatetime($valor)) return 'DATETIME';
     return 'VARCHAR(255)';
 }
 

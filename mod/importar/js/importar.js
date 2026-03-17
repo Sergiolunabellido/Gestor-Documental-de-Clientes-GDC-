@@ -357,9 +357,14 @@ function inicializarImportar(clientes = []) {
 $(document).on('click', '#exportarFicherosCliente', (e) => {
     e.preventDefault();
 
+    const boton = document.getElementById('exportarFicherosCliente');
+    const textoOriginal = boton ? boton.textContent : '';
+    if (boton) boton.textContent = 'Procesando...';
+
     const filasSeleccionadas = obtenerFilasSeleccionadas();
     
     if (filasSeleccionadas.length === 0) {
+        if (boton) boton.textContent = textoOriginal;
         alert('Selecciona al menos un archivo para exportar');
         return;
     }
@@ -438,6 +443,7 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
                 idCliente: clienteActual?.id || null
             },
             success: function(res) {
+                if (boton) boton.textContent = textoOriginal;
                 if (res.ok) {
                     alert('Exportación completada correctamente');
                     console.log("Mensaje del backend: ",res.msg)
@@ -446,10 +452,15 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
                 }
             },
             error: function(xhr, status, error) {
+                if (boton) boton.textContent = textoOriginal;
                 console.error('Error al exportar:', error, status, xhr);
                 alert('Error al exportar los archivos');
             }
         });
+    }).catch((error) => {
+        if (boton) boton.textContent = textoOriginal;
+        console.error('Error en el procesamiento de archivos:', error);
+        alert('Error al procesar los archivos');
     });
 
 });

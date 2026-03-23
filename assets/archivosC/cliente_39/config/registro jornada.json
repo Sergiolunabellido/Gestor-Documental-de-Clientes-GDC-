@@ -1,8 +1,8 @@
 {
     "archivo": "registro jornada.csv",
     "id": "import_69b136e9814ff",
-    "tabla": "fopexpediente",
+    "tabla": "fregjornadaresult",
     "columnas": {
-        "id": "idop"
+        "CONCAT(id, dispositivo)": "ootolvido"
     }
 }

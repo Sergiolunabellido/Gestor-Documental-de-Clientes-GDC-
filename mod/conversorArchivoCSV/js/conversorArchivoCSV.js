@@ -76,15 +76,18 @@ function recogerCamposTabla(callback){
 
             const selects =  document.querySelectorAll('.camposTabla')
             const tipos = Array.isArray(res.tipos) ? res.tipos : [res.tipos]
+            const tiposV = Array.isArray(res.tiposV) ? res.tiposV : [res.tiposV]
 
             selects.forEach((select) => {
                 const valorActual = select.value
                 select.innerHTML = ''
 
-                tipos.forEach((tipo) =>{
+                tipos.forEach((tipo, index) =>{
                     const option = document.createElement('option')
+                    const tipoValor = tiposV[index] || ''
+
                     option.value = tipo
-                    option.textContent = tipo
+                    option.textContent = `${tipo}: ${tipoValor}`
 
                     if (tipo === valorActual) {
                         option.selected = true

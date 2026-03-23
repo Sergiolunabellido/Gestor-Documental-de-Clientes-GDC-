@@ -674,6 +674,23 @@ function obtenerCamposPorTabla($db, $tabla) {
 }
 
 /**
+ * @brief Obtiene los tipos de un campo específico para una tabla dada desde la base de datos
+ * @param PDO $db Conexión PDO a la base de datos
+ * @param string $tabla Nombre de la tabla a consultar
+ * @param string $campo Nombre del campo a consultar
+ * @return array Lista de tipos encontrados para el campo especificado
+ * Fecha de creación: 2026-03-23
+ */
+function obtenerTiposPorTablaYCampo($db, $tabla, $campo) {
+    $sql = "SELECT mtype FROM vltfddb WHERE mtable = :tabla AND mfield = :campo";
+    $stmt = $db->prepare($sql);
+    $stmt->execute(['tabla' => $tabla, 'campo' => $campo]);
+    $tipos = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+    return $tipos;
+}
+
+/**
  * @brief Guarda la configuración de un archivo CSV en un archivo JSON específico para el cliente
  * @param array $config Configuración del CSV a guardar
  * @param int $idCliente ID del cliente para el que se guarda la configuración
@@ -948,5 +965,34 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
     }
 
     return ['ok' => true, 'msg' => 'Exportación completada'];
+
+}
+
+/**
+ * @brief Inserta una fila de encabezados genéricos en un archivo CSV existente, sobrescribiendo el archivo con la nueva fila añadida al principio
+ * @param string $ruta Ruta del archivo CSV a modificar
+ * @param array $headers Array de encabezados a insertar como primera fila del CSV
+ * @param string $delimiter Delimitador utilizado en el archivo CSV (por ejemplo, ',' o ';')
+ * @return void
+ * Fecha de creación: 2026-03-18
+ */
+function insertarColumnaGenericaCSV($ruta, $headers, $delimiter) {
+
+    $handle = fopen($ruta, "r");
+
+    while (($fila = fgetcsv($handle, 1000, $delimiter)) !== false) {
+        $datos[] = $fila;
+    }
+    fclose($handle);
+
+    array_unshift($datos, $headers);
+
+    $handle = fopen($ruta, "w");
+
+    foreach ($datos as $fila) {
+        fputcsv($handle, $fila, ",");
+    }
+
+    fclose($handle);
 
 }

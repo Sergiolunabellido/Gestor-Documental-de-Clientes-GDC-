@@ -1,8 +1,11 @@
 {
     "archivo": "operarios dos apellidos sin cabecera.csv",
     "id": "import_69b13835f1bd1",
-    "tabla": "Selecciona cualquier tabla:",
-    "columnas": [
-        ""
-    ]
+    "tabla": "fautoria",
+    "columnas": {
+        "Campo 1 (Juan)": "nombreentidad",
+        "Campo 12 (910200001)": "tlf1entidad",
+        "Campo 11 (600200001)": "tlf1centro",
+        "Campo 3 (Garcia)": "nombrecentro"
+    }
 }

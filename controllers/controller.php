@@ -323,9 +323,27 @@ switch ($accion) {
     // Devuelve metadatos/campos de una tabla SQL seleccionada.
     case 'tiposTablas':
 
-        $tipos = obtenerCamposPorTabla($db, $nombreTabla);
+        if ($nombreTabla === '') {
+            $response = ['ok' => false, 'msg' => 'Tabla no válida', 'tipos' => ''];
+            break;
+        }
 
-        $response = ['ok' => true, 'tipos' => $tipos];
+        $columnas = obtenerCamposPorTabla($db, $nombreTabla);
+
+        if (!is_array($columnas) || empty($columnas)) {
+            $response = ['ok' => false, 'msg' => 'No se encontraron columnas para la tabla', 'tipos' => ''];
+            break;
+        }
+
+        $tipos = [];
+        $tiposV = [];
+
+        foreach ($columnas as $i => $columna) {
+            $tiposV[$i] = obtenerTiposPorTablaYCampo($db, $nombreTabla, $columna);
+            $tipos[] = $columna;
+        }
+
+        $response = ['ok' => true, 'tipos' => $tipos, 'tiposV' => $tiposV];
 
         break;
 
@@ -387,6 +405,8 @@ switch ($accion) {
 
     // Exportar archivos de cliente.
     case 'exportarArchivosCliente':
+        set_time_limit(0);
+        ini_set('memory_limit', '512M');
 
         $csvI = new CSVImportar($db);
 
@@ -396,6 +416,21 @@ switch ($accion) {
             $csvI->setFile($ruta);
 
             $separador[$archivo['nombre']] = $csvI->detectarSeparador();
+
+        }
+
+        $tieneCabezera = $csvI->detectarCabezera();
+
+        $headers = [];
+
+        if(!$tieneCabezera) {
+        
+            $previewData = $csvI->previewCSV();
+            // Si no hay cabecera, generamos nombres genéricos
+            $delimiter = $csvI->detectarSeparador();
+            $headers = $csvI->guardarCabezeraGenerica($previewData, $delimiter, $headers);
+
+            insertarColumnaGenericaCSV($ruta, $headers, $delimiter);
 
         }
 

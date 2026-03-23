@@ -4,7 +4,7 @@
     "tabla": "fservicios",
     "columnas": {
         "nombre": "nombre",
-        "id": "codigo",
-        "email": "domicilio"
+        "id": "cif",
+        "telefono": "codigo"
     }
 }

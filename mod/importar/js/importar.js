@@ -348,7 +348,7 @@ function inicializarImportar(clientes = []) {
 
 
 /**
- * @brief Esta funcion de click realiza una peticion al backend para exportar los archivos y la configuracion de la tabla diseñada por el cliente, pasandole la lista de las
+ * @brief Esta funcion de click realiza una peticion al backend para exportar los archivos y la configuracion de la tabla diseÃƒÂ±ada por el cliente, pasandole la lista de las
  * filas de la tabla que estan seleccionadas pasandole el nombre del archivo y el nombre de la tabla o de la configuracion creada, junto al id del cliente y el nombre de la tabla o bd
  * de destino mas el prefijo que esta llevara.
  * @fecha 16/03/2026
@@ -356,6 +356,23 @@ function inicializarImportar(clientes = []) {
  */
 $(document).on('click', '#exportarFicherosCliente', (e) => {
     e.preventDefault();
+    const barraProgresiva = document.getElementById('barraProgresiva');
+    const barraProgresivaBar = document.getElementById('barraProgresivaBar');
+    const resetProgress = () => {
+        if (!barraProgresiva || !barraProgresivaBar) return;
+        barraProgresivaBar.style.width = '0%';
+        barraProgresivaBar.setAttribute('aria-valuenow', '0');
+    };
+    const setProgress = (value) => {
+        if (!barraProgresiva || !barraProgresivaBar) return;
+        const pct = Math.min(100, Math.max(0, Math.round(value)));
+        requestAnimationFrame(() => {
+            barraProgresivaBar.style.width = `${pct}%`;
+            barraProgresivaBar.setAttribute('aria-valuenow', String(pct));
+        });
+    };
+    resetProgress();
+    if (barraProgresiva) barraProgresiva.classList.remove('visually-hidden');
 
     const boton = document.getElementById('exportarFicherosCliente');
     const textoOriginal = boton ? boton.textContent : '';
@@ -366,6 +383,7 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
     if (filasSeleccionadas.length === 0) {
         if (boton) boton.textContent = textoOriginal;
         alert('Selecciona al menos un archivo para exportar');
+        if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
         return;
     }
 
@@ -379,60 +397,57 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
 
     const datosCSVs = [];
     const datosJSONs = [];
+    const totalPasos = (filasSeleccionadas.length * 2) + 1; // csv + json + petición final
+    let pasosCompletados = 0;
+    const avanzar = () => {
+        pasosCompletados += 1;
+        const pct = (pasosCompletados / totalPasos) * 100;
+        setProgress(Math.min(pct, 99));
+    };
 
-    /**
-     * Guardamos todas las peticiones que se realizan dentro de una variable, para despues lanzarlas con promise.all.
-     * Al lanzar la peticion se guarda la respuesta en un array para poder pasarlas por el cuerpo de otra peticion al backend.
-     * Estas peticiones recogen el contenido de los archivos con el nombre que se encuentren en las filasSeleccionadas del 
-     * cliente actualmente seleccionado en el select del front.
-     */
-    const promesas = filasSeleccionadas.map((datos) =>
-        $.ajax({
-            url: `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/${datos.nombre}`,
-            method: "POST"
-        }).then((data) => {
-            console.log('Archivo CSV procesado:', datos.nombre, data);
-            datosCSVs.push(data);
-            return { nombre: datos.nombre, tipo: 'csv', ok: true, data };
-        }).catch((error) => {
-            console.error('Error procesando CSV:', datos.nombre, error);
-            alert(`El archivo CSV "${datos.nombre}" no existe o no se pudo cargar`);
-            return { nombre: datos.nombre, tipo: 'csv', ok: false, error };
-        })
-    );
+    const cargarArchivo = (url, tipo) => {
+        return $.ajax({ url, method: "GET", dataType: "text" })
+            .then((data) => {
+                if (tipo === 'csv') datosCSVs.push(data);
+                else datosJSONs.push(data);
+                avanzar();
+                return { ok: true, data };
+            })
+            .catch((error) => {
+                alert(`El archivo no existe o no se pudo cargar: ${url}`);
+                avanzar();
+                return { ok: false, error };
+            })
+            .always(() => {
+                console.log(`Finalizado ${tipo}, pasos completados: ${pasosCompletados}/${totalPasos}`);
+            });
+    };
 
-    const promesasConf = filasSeleccionadas.map((datos) =>
-        $.ajax({
-            url: `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/config/${datos.nombreJson}`,
-            method: "POST"
-        }).then((data) => {
-            console.log('Archivo JSON procesado:', datos.nombreJson, data);
-            datosJSONs.push(data);
-            return { nombre: datos.nombreJson, tipo: 'json', ok: true, data };
-        }).catch((error) => {
-            console.error('Error procesando JSON:', datos.nombreJson, error);
-            alert(`El archivo JSON "${datos.nombreJson}" no existe o no se pudo cargar`);
-            return { nombre: datos.nombreJson, tipo: 'json', ok: false, error };
-        })
-    );
+    const procesarSecuencial = async () => {
+        console.log('Iniciando procesamiento secuencial de', filasSeleccionadas.length, 'archivos');
+        for (let i = 0; i < filasSeleccionadas.length; i++) {
+            const datos = filasSeleccionadas[i];
 
-    /**
-     * Procesamos las promesas tanto las que recogen los datos de los arhcivos .csv como los de .json
-     *  y posteriormente se realiza una paticion en la que pasamos los datos necesarios para que 
-     * el backend pueda crear la tabla con los datos indicados en cada archivo .json con la configuracion
-     * de dicho archivo del cliente.
-     */
-    Promise.all([...promesas, ...promesasConf]).then((resultados) => {
-        const exitosos = resultados.filter((r) => r.ok);
-        const fallidos = resultados.filter((r) => !r.ok);
-        console.log(`Completado: ${exitosos.length} exitosos, ${fallidos.length} fallidos`);
-        console.log('Array de CSVs:', datosCSVs);
-        console.log('Array de JSONs:', datosJSONs);
+            const csvUrl = `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/${encodeURIComponent(datos.nombre)}`;
+            const jsonUrl = `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/config/${encodeURIComponent(datos.nombreJson)}`;
+
+            try {
+                await cargarArchivo(csvUrl, 'csv');
+                await cargarArchivo(jsonUrl, 'json');
+            } catch (e) {
+                console.error('Error en iteración:', e);
+                avanzar();
+            }
+        }
+    };
+
+    procesarSecuencial().then(() => {
 
         $.ajax({
             url: 'index.php',
             method: 'POST',
             dataType: 'json',
+            timeout: 120000,
             data: {
                 accion: 'exportarArchivosCliente',
                 datosCSVs: datosCSVs,
@@ -443,24 +458,31 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
                 idCliente: clienteActual?.id || null
             },
             success: function(res) {
-                if (boton) boton.textContent = textoOriginal;
-                if (res.ok) {
-                    alert('Exportación completada correctamente');
-                    console.log("Mensaje del backend: ",res.msg)
-                } else {
-                    alert('Error: ' + (res.msg || 'No se pudo exportar'));
-                }
+                avanzar();
+                setProgress(100);
+                // Esperar para que se vea el 100% antes de ocultar y mostrar alert
+                setTimeout(() => {
+                    if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
+                    if (res.ok) {
+                        alert('Exportacion completada correctamente');
+                    } else {
+                        alert('Error: ' + (res.msg || 'No se pudo exportar'));
+                    }
+                }, 500);
             },
             error: function(xhr, status, error) {
+                alert('Error al exportar los archivos: ', error + status);
+                if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
+            },
+            complete: function() {
                 if (boton) boton.textContent = textoOriginal;
-                console.error('Error al exportar:', error, status, xhr);
-                alert('Error al exportar los archivos');
             }
         });
     }).catch((error) => {
+        alert('Error al procesar los archivos', error);
+        if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
+        resetProgress();
         if (boton) boton.textContent = textoOriginal;
-        console.error('Error en el procesamiento de archivos:', error);
-        alert('Error al procesar los archivos');
     });
 
 });

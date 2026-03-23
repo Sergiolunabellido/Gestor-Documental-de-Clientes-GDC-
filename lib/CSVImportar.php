@@ -195,6 +195,18 @@ class CSVImportar {
         }
     }
 
+    public function guardarCabezeraGenerica($previewData, $delimiter, &$headers) {
+
+        $f = fopen($this->file, "r");
+        $fila = fgetcsv($f, 0, $delimiter);
+        fclose($f);
+        for ($i = 0; $i < count($fila); $i++) {
+            $headers[] = "Campo " . ($i + 1)." (".$previewData[$i].")";
+        }
+
+        return $headers;
+    }
+
     /**
      * @brief Renderiza el componente HTML con columnas detectadas del CSV
      * Fecha de creacion: 2026-03-09
@@ -214,12 +226,9 @@ class CSVImportar {
             $previewData = $this->previewCSV();
             // Si no hay cabecera, generamos nombres genéricos
             $delimiter = $this->detectarSeparador();
-            $f = fopen($this->file, "r");
-            $fila = fgetcsv($f, 0, $delimiter);
-            fclose($f);
-            for ($i = 0; $i < count($fila); $i++) {
-                $headers[] = "Campo " . ($i + 1)." (".$previewData[$i].")";
-            }
+
+            $headers = $this->guardarCabezeraGenerica($previewData, $delimiter, $headers);
+            
         }
 
         if ($configuracion['ok'] !== false) {

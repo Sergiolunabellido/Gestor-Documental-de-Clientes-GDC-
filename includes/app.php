@@ -877,24 +877,26 @@ function detectarTiposColumnas($filas, $mapC) {
 }
 
 /**
- * @brief Exporta los datos de un archivo CSV a una base de datos específica utilizando la configuración guardada previamente
- * @param int $idCliente ID del cliente para el cual se realiza la exportación
- * @param string $bdDestino Nombre de la base de datos destino
- * @param string $prefijodb Prefijo para el nombre de la base de datos
- * @param PDO $conexionbd Conexión PDO a la base de datos
- * @param array $archivoCSV Array de configuraciones de archivos CSV a exportar, cada uno con 'nombre' y 'tabla'
- * @param array $separador Mapeo de nombres de archivos CSV a sus respectivos separadores (archivoCSV => separador)
- * @return array Resultado con clave 'ok' indicando éxito o error, y 'msg' con información adicional
- * Fecha de creación: 2026-03-16
+ * @brief Exporta los datos de archivos CSV a una base de datos destino utilizando las configuraciones JSON guardadas previamente
+ * @param int $idCliente ID del cliente propietario de los archivos CSV
+ * @param string $bdDestino Nombre base de la base de datos destino (se creará como app2026_prefijo_bdDestino)
+ * @param string $prefijodb Prefijo a utilizar en el nombre de la base de datos destino
+ * @param PDO $conexionbd Conexión PDO activa a la base de datos
+ * @param array $archivoCSV Array de configuraciones de archivos CSV, cada elemento contiene 'nombre' (archivo CSV) y 'tabla' (tabla destino)
+ * @param array $separador Mapeo de separadores de CSV (clave: nombre_archivo, valor: separador usado)
+ * @return array Resultado con clave 'ok' (booleano) e 'msg' (mensaje de estado o error)
+ * @nota Busca el archivo JSON de configuración para cada CSV y lo usa para mappear las columnas del CSV a la tabla BD
+ * @fecha 2026-03-16
+ * @última_actualización 2026-03-25
  */
 function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archivoCSV, $separador) {
     
-    // Esta función se encargará de exportar los datos de un archivo CSV a una base de datos específica, utilizando la configuración guardada previamente.
-
     if (empty($idCliente) || empty($bdDestino) || empty($prefijodb)) {
         debug("Parámetros inválidos para exportar CSV a BD: idCliente=$idCliente, bdDestino=$bdDestino, prefijodb=$prefijodb", "ERROR");
         return ['ok' => false, 'msg' => 'Parámetros inválidos para exportar CSV a base de datos'];
     }
+
+    $totalArchivos = count($archivoCSV);
 
     // Crear o seleccionar la base de datos destino
     $sql = "CREATE DATABASE IF NOT EXISTS `app2026_{$prefijodb}_{$bdDestino}`";
@@ -906,34 +908,28 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
         return ['ok' => false, 'msg' => 'Error al preparar la base de datos destino: ' . $e->getMessage()];
     }
     
-    // Recorrer cada configuración de archivo CSV proporcionada
     foreach ($archivoCSV as $i => $config) {
-
         if (isset($config['nombre']) && isset($config['tabla'])) {
 
-            // Validar que el nombre del archivo y la tabla destino sean válidos
             if (empty($config['tabla']) || $config['tabla'] === '-' || str_contains($config['tabla'], 'Selecciona')) {
                 continue;
             }
 
-            // Aquí se implementaría la lógica para leer el CSV y exportarlo a la base de datos utilizando la configuración encontrada.
             $nombreArchivoCSV = pathinfo($config['nombre'], PATHINFO_FILENAME);
             $rutaCJson = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW._CONFIG_.DW."{$nombreArchivoCSV}.json";
             $resJSON = leerJSON($rutaCJson);
             $rutaCSV = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$nombreArchivoCSV}.csv";
             $resCSV = leerCSV($rutaCSV, $separador[$nombreArchivoCSV.".csv"]);
             
-            // Validar que se hayan leído correctamente tanto la configuración JSON como el archivo CSV
             if ($resJSON['ok'] && $resCSV['ok']) {
                 $configExportacion = $resJSON['datos'];
                 $mapC = $configExportacion['columnas'];
-
                 $filas = $resCSV['datos'] ?? [];
+                $totalFilas = count($filas);
 
                 $tipos = detectarTiposColumnas($filas, $mapC);
                 $columnasSql = array_map(fn($col, $tipo) => "`$col` $tipo", array_keys($tipos), array_values($tipos));
                 
-                // Crear la tabla destino en la base de datos con las columnas y tipos detectados
                 $sql = "CREATE TABLE IF NOT EXISTS `$nombreArchivoCSV` (" . implode(", ", $columnasSql) . ")";
                 try {
                     $conexionbd->exec("DROP TABLE IF EXISTS `$nombreArchivoCSV`");
@@ -943,23 +939,18 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
                     return ['ok' => false, 'msg' => 'Error al crear la tabla destino: ' . $e->getMessage()];
                 }
                     
-                // Insertar los datos del CSV en la tabla creada utilizando el mapeo de columnas definido en la configuración
-                foreach ($filas as $fila) {
+                foreach ($filas as $idxFila => $fila) {
                     $campos = [];
                     $valores = [];
 
-                    // Solo insertamos las columnas que estén definidas en el mapeo y presentes en la fila del CSV
                     foreach ($mapC as $columnaCSV => $columnaBD) {
-
                         $valor = resolverExpresionesCSV($columnaCSV, $fila);
-
                         if ($valor !== null) {
                             $campos[] = "`$columnaBD`";
                             $valores[] = $conexionbd->quote($valor);
                         }
                     }
 
-                    // Solo intentamos insertar si tenemos campos y valores válidos para evitar errores de SQL
                     if (!empty($campos) && !empty($valores)) {
                         $sqlInsert = "INSERT INTO `$nombreArchivoCSV` (" . implode(", ", $campos) . ") VALUES (" . implode(", ", $valores) . ")";
                         try {
@@ -969,8 +960,19 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
                             return ['ok' => false, 'msg' => 'Error al insertar datos en la tabla destino: ' . $e->getMessage()];
                         }
                     }
+
+                   
+                    if ($idxFila % 20 == 0 || $idxFila == ($totalFilas - 1)) {
+                      
+                        $progresoArchivoBase = ($i / $totalArchivos) * 65; 
+                        $progresoFila = (($idxFila + 1) / $totalFilas) * (65 / $totalArchivos);
+                        $totalProgreso = 30 + round($progresoArchivoBase + $progresoFila);
+
+                        if (session_status() === PHP_SESSION_NONE) { session_start(); }
+                        $_SESSION['progreso_export'] = min(98, $totalProgreso); 
+                        session_write_close();
+                    }
                 }
-                
             }
 
         } else {
@@ -980,7 +982,6 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
     }
 
     return ['ok' => true, 'msg' => 'Exportación completada'];
-
 }
 
 /**

@@ -286,14 +286,10 @@ $(document).on('click', '#botonGuardar', (e)=>{
     const nombreCliente = document.getElementById('nombreCliente').textContent
 
     //Del contenedor de los inputs creamos un array con el valor de todos estos
-    const contenedorInputs = document.querySelector('.expressions.csv-inputs-container')
-    const inputs = contenedorInputs.querySelectorAll('.fila-expresion input')
+    const inputs = document.querySelectorAll('.fila-expresion input')
     const valoresInputs = Array.from(inputs).map(input => input.value)
 
-    //Campturamos el id guardado en un parrafo oculto para pasarlo al backend.
-    const idObjeto = contenedorInputs.querySelector('p').textContent
-
-    //Realizamos la misma operacion que en el de inputs pero con el contenido de los selects que referencian los campos de la tabla.
+    //Realizamos la misma operacion que con los inputs pero con el contenido de los selects que referencian los campos de la tabla.
     const filasCampo = document.querySelectorAll('.fila-campo')
     const valoresSelects = Array.from(filasCampo).map(fila => {
         const select = fila.querySelector('select')
@@ -321,7 +317,6 @@ $(document).on('click', '#botonGuardar', (e)=>{
     let mapJSON = {
         //Indicamos los valores y claves del map.
         "archivo": nombreArchivo,
-        "id": idObjeto,
         "tabla": tablaReferenciada,
         "columnas": Object.fromEntries( valores)
     }

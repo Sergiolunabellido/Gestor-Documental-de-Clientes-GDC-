@@ -404,37 +404,51 @@ switch ($accion) {
         set_time_limit(0);
         ini_set('memory_limit', '512M');
 
+        $total = count($nombreACSV);
         $csvI = new CSVImportar($db);
+        $contador = 0;
+        $separador = [];
 
         foreach ($nombreACSV as $archivo) {
             $ruta = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$archivo['nombre']}";
-
             $csvI->setFile($ruta);
-
             $separador[$archivo['nombre']] = $csvI->detectarSeparador();
-
+            
+            $contador++;
+            // Calculamos un porcentaje pequeño para esta fase rápida
+            $progreso = round(($contador / $total) * 15);
+            
+            session_start(); 
+            $_SESSION['progreso_export'] = $progreso;
+            session_write_close(); 
         }
 
-        $tieneCabezera = $csvI->detectarCabezera();
+        session_start();
+        $_SESSION['progreso_export'] = 20;
+        session_write_close();
 
+        $tieneCabezera = $csvI->detectarCabezera();
         $headers = [];
 
         if(!$tieneCabezera) {
-        
             $previewData = $csvI->previewCSV();
-            // Si no hay cabecera, generamos nombres genéricos
             $delimiter = $csvI->detectarSeparador();
             $headers = $csvI->guardarCabezeraGenerica($previewData, $delimiter, $headers);
-
             insertarColumnaGenericaCSV($ruta, $headers, $delimiter);
-
         }
+
+        session_start();
+        $_SESSION['progreso_export'] = 30; // Marcamos que ya empieza lo pesado
+        session_write_close();
 
         $exportacion = exportarCSVABD($idCliente, $bdDestino, $prefijodb, $db, $nombreACSV, $separador);
 
-        $response = ['ok' => $exportacion['ok'], 'msg' => $exportacion['msg']];
+        session_start();
+        $_SESSION['progreso_export'] = 100;
+        session_write_close();
 
-        break;
+        $response = ['ok' => $exportacion['ok'], 'msg' => $exportacion['msg']];
+    break;
 
     // Carga la vista de detalle de tabla y devuelve sus datos.
     case 'detalleTabla':

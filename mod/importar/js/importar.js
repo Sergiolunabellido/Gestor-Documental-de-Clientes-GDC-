@@ -362,11 +362,13 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
     e.preventDefault();
     const barraProgresiva = document.getElementById('barraProgresiva');
     const barraProgresivaBar = document.getElementById('barraProgresivaBar');
+
     const resetProgress = () => {
         if (!barraProgresiva || !barraProgresivaBar) return;
         barraProgresivaBar.style.width = '0%';
         barraProgresivaBar.setAttribute('aria-valuenow', '0');
     };
+
     const setProgress = (value) => {
         if (!barraProgresiva || !barraProgresivaBar) return;
         const pct = Math.min(100, Math.max(0, Math.round(value)));
@@ -375,7 +377,11 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
             barraProgresivaBar.setAttribute('aria-valuenow', String(pct));
         });
     };
+
+    // 1. Reset visual y en el servidor (limpia la sesión antes de empezar)
     resetProgress();
+    $.get('/practicas2026/app/aplicacionweb/mod/importar/includes/progreso.php?reset=1');
+
     if (barraProgresiva) barraProgresiva.classList.remove('visually-hidden');
 
     const boton = document.getElementById('exportarFicherosCliente');
@@ -394,19 +400,16 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
     const TablaDestino = document.getElementById('dbDestino')?.value || '';
     const prefijoTabla = document.getElementById('prefijoTabla')?.value || '';
 
-    console.log('Filas seleccionadas:', filasSeleccionadas  );
-    console.log('Tabla destino:', TablaDestino);
-    console.log('Prefijo:', prefijoTabla);
-    console.log('cliente: ', clienteActual)
-
     const datosCSVs = [];
     const datosJSONs = [];
-    const totalPasos = (filasSeleccionadas.length * 2) + 1; // csv + json + petición final
+    const totalPasos = (filasSeleccionadas.length * 2) + 1;
     let pasosCompletados = 0;
+
+    // Fase JS: Carga de archivos (representará el 0-15% visualmente)
     const avanzar = () => {
         pasosCompletados += 1;
-        const pct = (pasosCompletados / totalPasos) * 100;
-        setProgress(Math.min(pct, 99));
+        const pct = (pasosCompletados / totalPasos) * 15; // Limitamos el JS al primer 15%
+        setProgress(pct);
     };
 
     const cargarArchivo = (url, tipo) => {
@@ -418,40 +421,32 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
                 return { ok: true, data };
             })
             .catch((error) => {
-                toastr.error(`El archivo no existe o no se pudo cargar: ${url}`);
+                toastr.error(`Error al cargar: ${url}`);
                 avanzar();
                 return { ok: false, error };
-            })
-            .always(() => {
-                console.log(`Finalizado ${tipo}, pasos completados: ${pasosCompletados}/${totalPasos}`);
             });
     };
 
     const procesarSecuencial = async () => {
-        console.log('Iniciando procesamiento secuencial de', filasSeleccionadas.length, 'archivos');
         for (let i = 0; i < filasSeleccionadas.length; i++) {
             const datos = filasSeleccionadas[i];
-
             const csvUrl = `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/${encodeURIComponent(datos.nombre)}`;
             const jsonUrl = `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/config/${encodeURIComponent(datos.nombreJson)}`;
-
             try {
                 await cargarArchivo(csvUrl, 'csv');
                 await cargarArchivo(jsonUrl, 'json');
-            } catch (e) {
-                toastr.error('Error en iteración:', e);
-                avanzar();
-            }
+            } catch (e) { avanzar(); }
         }
     };
 
     procesarSecuencial().then(() => {
+        let monitorProgreso;
 
         $.ajax({
             url: 'index.php',
             method: 'POST',
             dataType: 'json',
-            timeout: 120000,
+            timeout: 0, // Esperar lo que sea necesario
             data: {
                 accion: 'exportarArchivosCliente',
                 datosCSVs: datosCSVs,
@@ -461,34 +456,53 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
                 prefijo: prefijoTabla,
                 idCliente: clienteActual?.id || null
             },
+            beforeSend: function() {
+            
+                monitorProgreso = setInterval(() => {
+                    $.ajax({
+                        url: '/practicas2026/app/aplicacionweb/mod/importar/includes/progreso.php',
+                        method: 'GET',
+                        dataType: 'text', 
+                        success: function(raw) {
+                            try {
+                               
+                                const cleanJSON = raw.substring(raw.indexOf('{'), raw.lastIndexOf('}') + 1);
+                                const res = JSON.parse(cleanJSON);
+                                if (res.porcentaje !== undefined && res.porcentaje > 0) {
+                                    setProgress(res.porcentaje);
+                                }
+                            } catch(e) { console.error("Error leyendo progreso:", raw); }
+                        }
+                    });
+                }, 1000);
+            },
             success: function(res) {
-                avanzar();
+                clearInterval(monitorProgreso);
                 setProgress(100);
-                // Esperar para que se vea el 100% antes de ocultar y mostrar alert
                 setTimeout(() => {
                     if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
-                    if (res.ok) {
-                        toastr.success('Exportacion completada correctamente');
-                    } else {
-                        toastr.error('Error: ' + (res.msg || 'No se pudo exportar'));
+                     
+                    if(res.ok){
+                        toastr.success('Exportación completada') 
+                        resetProgress()
+                    }else {
+                        toastr.error(res.msg);
+                        resetProgress()
                     }
-                }, 500);
+                }, 600);
             },
             error: function(xhr, status, error) {
-                toastr.error('Error al exportar los archivos: ', error + status);
+                clearInterval(monitorProgreso);
+                toastr.error('Error en el servidor al exportar');
+                resetProgress()
                 if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
             },
             complete: function() {
                 if (boton) boton.textContent = textoOriginal;
+                resetProgress()
             }
         });
-    }).catch((error) => {
-        toastr.error('Error al procesar los archivos', error);
-        if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
-        resetProgress();
-        if (boton) boton.textContent = textoOriginal;
     });
-
 });
 
 //Se crea una variable para poder guardar en esta el cliente que se a seleccionado en el select del front.
@@ -499,19 +513,3 @@ window.inicializarImportar = inicializarImportar;
 window.obtenerDatosClientes = obtenerDatosClientes;
 window.renderizarTablaArchivosCliente = renderizarTablaArchivosCliente;
 window.obtenerFilasSeleccionadas = obtenerFilasSeleccionadas;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

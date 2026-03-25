@@ -1,0 +1,8 @@
+{
+    "archivo": "registro jornada.csv",
+    "id": "import_69c3c0788c57a",
+    "tabla": "fressujmec",
+    "columnas": {
+        "id": "idres"
+    }
+}

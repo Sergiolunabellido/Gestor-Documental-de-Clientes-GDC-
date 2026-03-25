@@ -1,10 +1,9 @@
 {
     "archivo": "archivo1.csv",
-    "id": "import_69b12b6464c48",
     "tabla": "fservicios",
     "columnas": {
         "nombre": "nombre",
-        "id": "cif",
+        "apellido": "descripcion",
         "telefono": "codigo"
     }
 }

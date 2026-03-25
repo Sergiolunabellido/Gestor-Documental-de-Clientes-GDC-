@@ -1,8 +1,8 @@
 {
     "archivo": "archivo3.csv",
-    "id": "import_69b159a6daa26",
     "tabla": "fmotbaja",
     "columnas": {
-        "Nombre del Cliente": "name"
+        "Nombre del Cliente": "name",
+        "Telefono Principal": "orden"
     }
 }

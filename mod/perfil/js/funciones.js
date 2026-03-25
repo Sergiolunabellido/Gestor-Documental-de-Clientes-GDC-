@@ -32,7 +32,7 @@ $(document).on('click', '#botonCambiarImagen', (e)=>{
             console.log(res);
             
             if (res.ok) {
-                console.log('Imagen cambiada correctamente');
+                
                 if (res.foto) {
                     $('img.avatar').attr('src', res.foto);
                     // Si la lista de usuarios está actualmente visible, refrescarla
@@ -40,13 +40,13 @@ $(document).on('click', '#botonCambiarImagen', (e)=>{
                         cargarUsuariosDesdeBackend(); 
                     }
                 }
-                alert('Imagen cambiada correctamente');
+                toastr.success('Imagen cambiada correctamente');
             } else {
                 console.error('Error:', res.msg);
                 if (res.error_code) {
                     console.error('Código de error:', res.error_code);
                 }
-                alert('Error: ' + (res.msg || 'Error desconocido'));
+                toastr.error('Error: ' + (res.msg || 'Error desconocido'));
             }
         },
         error: function(xhr, status, error) {
@@ -54,7 +54,7 @@ $(document).on('click', '#botonCambiarImagen', (e)=>{
             console.error('Status:', status);
             console.error('Error:', error);
             console.error('Response:', xhr.responseText);
-            alert('Error al cambiar la imagen');
+            toast.error('Error al cambiar la imagen');
         }
     })
 

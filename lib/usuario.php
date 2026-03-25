@@ -113,9 +113,9 @@ class Usuario {
 
 
     /**
-     * @brief Obtiene de la lista de usuarios el usuario con el nombre dado
+     * @brief Obtiene de la lista de usuarios el usuario con el correo dado
      * Fecha de creación: 2026-01-27
-     * @param string $nombre Nombre del usuario a excluir
+     * @param string $correo Correo del usuario a excluir
      * @return array Devuelve un array de arrays asociativos con los datos de los usuarios
      */
     public function obtenerListaUsuariosCorreo($correo): array {
@@ -129,10 +129,10 @@ class Usuario {
     }
     
 
-     /**
-     * @brief Obtiene de la lista de usuarios el usuario con el nombre dado
+    /**
+     * @brief Obtiene la lista de usuarios con la fecha dada
      * Fecha de creación: 2026-01-27
-     * @param string $nombre Nombre del usuario a excluir
+     * @param mixed $fecha Fecha en formato YYYY-MM-DD
      * @return array Devuelve un array de arrays asociativos con los datos de los usuarios
      */
     public function obtenerListaUsuariosFecha($fecha): array {
@@ -212,6 +212,21 @@ class Usuario {
      * @return bool True si se modificó correctamente, false en caso contrario
      */
     public function modificarUsuarioPorNombre($usuario, $cambios) {
+
+        if (empty($cambios['nombre'])) {
+            $cambios['nombre'] = $usuario;
+        }
+
+        if (empty($cambios['email'])) {
+            $usuarioData = $this->obtenerPorNombre($usuario);
+            if ($usuarioData) {
+                $cambios['email'] = $usuarioData['email'];
+            } else {
+                debug("Usuario no encontrado para obtener email: $usuario", "ERROR");
+                return false;
+            }
+         }
+
         $setParts = [];
         $params = [];
 
@@ -227,6 +242,7 @@ class Usuario {
         $sql = "UPDATE Usuario SET $setClause WHERE nombre = :usuario";
 
         $stmt = $this->db->prepare($sql);
+
         return $stmt->execute($params);
     }
 
@@ -262,11 +278,10 @@ class Usuario {
 
             return true;
 
-        } else {
-
-            return false;
-
         }
+
+        // Liberar debe ser idempotente: si ya no estaba bloqueado, lo consideramos correcto.
+        return true;
     }
 
     /**

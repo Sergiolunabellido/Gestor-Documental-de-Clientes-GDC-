@@ -38,7 +38,7 @@ function registroUsuario($db, $usuario, $password, $email, $esAdmin): array {
         $esAdmin = $esAdmin ? 1 : 0;
         
 
-        $estado = ($esAdmin == 1) ? 'activo': 'desconectado';
+        $estado = ($esAdmin == 1) ? 'conectado': 'desconectado';
 
 
         $stmt = $db->prepare($sql);

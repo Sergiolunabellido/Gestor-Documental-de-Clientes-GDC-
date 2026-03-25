@@ -1,12 +1,19 @@
 <div class="vh-100 w-full d-flex flex-column aling-items-start  ">
-    
-    <div class="m-3 w-full  border border-2 shadow rounded d-flex align-items-center justify-content-between">
-        <div id="contenidoClienteDetalle" class="m-3">
-            <h2 id="nombreClienteDetalle"></h2>
-            <p id="telefonoClienteDetalle"></p>
+    <div class=" w-full gap-4 d-flex aling-items-start">
+        <div class="d-flex align-items-center m-3 ">
+            <button id="botonVolverFuente" class="btn  btn-dark">
+                <h2> < </h2>
+            </button>
         </div>
-       
+        <div class="m-3 w-100  border border-2 shadow rounded d-flex align-items-center justify-content-between">
+            <div id="contenidoClienteDetalle" class="m-3">
+                <h2 id="nombreClienteDetalle"></h2>
+                <p id="telefonoClienteDetalle"></p>
+            </div>
+        
+        </div>
     </div>
+    
     <div class="d-flex align-items-center justify-content-between gap-2">
     
         <input id="inputArchivo"  type="file"  hidden multiple>

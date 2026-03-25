@@ -109,21 +109,27 @@ class Archivo {
             return ['error' => 'archivo_existente', 'msg' => 'Ya existe un archivo con ese nombre para este cliente'];
         }
 
-        $sql = "INSERT INTO Archivo (nombre, ruta, id_Cliente) VALUES (:nombre, :ruta, :id_Cliente)";
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute([
-            'nombre' => $nuevoNombre,
-            'ruta' => $ruta,
-            'id_Cliente'   => $idCliente
-        ]);
+        try {
+            $sql = "INSERT INTO Archivo (nombre, ruta, id_Cliente) VALUES (:nombre, :ruta, :id_Cliente)";
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute([
+                'nombre' => $nuevoNombre,
+                'ruta' => $ruta,
+                'id_Cliente' => $idCliente
+            ]);
+        } catch (PDOException $e) {
+            debug("Error al insertar el archivo en la base de datos: " . $e->getMessage(), "ERROR");
+            return ['error' => 'db_insert_failed', 'msg' => 'No se pudo guardar la información del archivo en la base de datos'];
+        }
 
         return ['success' => true, 'msg' => "Archivo subido correctamente"];
     }
 
     /**
      * @brief Elimina un archivo tanto del sistema de archivos como de la base de datos
-     * @param int $idArchivo
-     * @return array{error: string, msg: string|array{success: bool, msg: string}}
+     * @param int $idArchivo ID del archivo a eliminar
+     * @param int $idCliente ID del cliente al que pertenece el archivo
+     * @return array{error: string, msg: string|array{success: bool, msg: string}} Resultado de la operación
      * Fecha de creación: 2026-02-23
      */
     function eliminarArchivo($idArchivo, $idCliente) {
@@ -186,6 +192,13 @@ class Archivo {
         return ['success' => true, 'msg' => 'Archivos del cliente eliminados correctamente'];
     }
 
+
+    /**
+     * @brief Asocia un archivo a una tabla específica en la base de datos
+     * @param string $nombreArchivo Nombre del archivo a asociar
+     * @param string $nombreTabla Nombre de la tabla a asociar con el archivo
+     * Fecha de creación: 2026-03-24
+     */
     public function añadirTablaArchivo($nombreArchivo, $nombreTabla) {
         $sql = "UPDATE Archivo SET tabla = :tabla WHERE nombre = :nombre";
         $stmt = $this->db->prepare($sql);

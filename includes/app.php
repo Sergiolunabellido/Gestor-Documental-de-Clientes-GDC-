@@ -851,15 +851,27 @@ function detectarTiposColumnas($filas, $mapC) {
     foreach ($mapC as $columnaCSV => $columnaBD) {
         $tiposEncontrados = [];
         foreach ($filas as $fila) {
-            if (isset($fila[$columnaCSV])) {
-                $tiposEncontrados[] = detectarTipoDato($fila[$columnaCSV]);
+            $valor = resolverExpresionesCSV($columnaCSV, $fila);
+
+            // Ignorar valores no resolubles o vacíos
+            if ($valor === null || $valor === '') {
+                continue;
             }
+
+            $tiposEncontrados[] = detectarTipoDato($valor);
         }
-        // Si hay algún VARCHAR, toda la columna es VARCHAR
-        if (in_array('VARCHAR(255)', $tiposEncontrados)) $tipos[$columnaBD] = 'VARCHAR(255)';
-        elseif (in_array('FLOAT', $tiposEncontrados)) $tipos[$columnaBD] = 'FLOAT';
-        elseif (in_array('DATETIME', $tiposEncontrados)) $tipos[$columnaBD] = 'DATETIME';
-        else $tipos[$columnaBD] = 'INT';
+        // Si no encontramos nada, por seguridad dejamos texto
+        if (empty($tiposEncontrados)) {
+            $tipos[$columnaBD] = 'VARCHAR(255)';
+        } elseif (in_array('VARCHAR(255)', $tiposEncontrados, true)) {
+            $tipos[$columnaBD] = 'VARCHAR(255)';
+        } elseif (in_array('FLOAT', $tiposEncontrados, true)) {
+            $tipos[$columnaBD] = 'FLOAT';
+        } elseif (in_array('DATETIME', $tiposEncontrados, true)) {
+            $tipos[$columnaBD] = 'DATETIME';
+        } else {
+            $tipos[$columnaBD] = 'INT';
+        }
     }
     return $tipos;
 }
@@ -938,9 +950,12 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
 
                     // Solo insertamos las columnas que estén definidas en el mapeo y presentes en la fila del CSV
                     foreach ($mapC as $columnaCSV => $columnaBD) {
-                        if (isset($fila[$columnaCSV])) {
+
+                        $valor = resolverExpresionesCSV($columnaCSV, $fila);
+
+                        if ($valor !== null) {
                             $campos[] = "`$columnaBD`";
-                            $valores[] = $conexionbd->quote($fila[$columnaCSV]);
+                            $valores[] = $conexionbd->quote($valor);
                         }
                     }
 
@@ -995,4 +1010,40 @@ function insertarColumnaGenericaCSV($ruta, $headers, $delimiter) {
 
     fclose($handle);
 
+}
+
+/**
+ * @brief Resuelve expresiones simples en la configuración del CSV, como CONCAT(columna1, columna2), utilizando los valores de la fila actual del CSV
+ * @param string $expresion Expresión a resolver, que puede ser un nombre de columna o una función con argumentos
+ * @param array $fila Fila actual del CSV como un array asociativo (columna => valor)
+ * @return string|null Resultado de la expresión resuelta o null si no se pudo resolver
+ * Fecha de creación: 2026-03-23
+ */
+function resolverExpresionesCSV($expresion, $fila) {
+
+    // Detectar si es una expresión del tipo FUNCION(arg1, arg2, ...)
+    if (preg_match('/^(\w+)\((.+)\)$/', trim($expresion), $matches)) {
+        $funcion = strtoupper($matches[1]);
+        $args = array_map('trim', explode(',', $matches[2]));
+
+        // Resolver cada argumento contra la fila
+        $valores = array_map(fn($arg) => $fila[$arg] ?? null, $args);
+
+        switch ($funcion) {
+            case 'CONCAT':
+                // Si algún valor es null, lo tratamos como string vacío
+                return implode(' ', array_map(fn($v) => $v ?? '', $valores));
+
+            // Aquí se pueden añadir más funciones en el futuro
+            // case 'UPPER': return strtoupper($valores[0] ?? '');
+            // case 'TRIM': return trim($valores[0] ?? '');
+
+            default:
+                debug("Función no soportada en expresión CSV: $funcion", "WARNING");
+                return null;
+        }
+    }
+
+    // Si no es una expresión, devolver el valor directo de la columna
+    return $fila[$expresion] ?? null;
 }

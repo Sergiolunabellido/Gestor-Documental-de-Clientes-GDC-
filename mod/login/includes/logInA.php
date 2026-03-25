@@ -129,8 +129,8 @@ function loginConCookie($db) {
 /**
  * @brief Crear token para "Recuérdame" y establecer cookie
  * Fecha de creación: 2026-01-21
- * @param PDO $db
- * @param string $nombreUsuario
+ * @param PDO $db Conexión a la base de datos
+ * @param string $nombreUsuario Nombre de usuario para el que se generará el token
  * @return string Token generado
  */
 
@@ -165,10 +165,11 @@ function crearRecuerdameToken($db, $nombreUsuario) {
 /**
  * @brief Cambia la contraseña del usuario
  * Fecha de creación: 2026-01-26
- * @param PDO $db
- * @param int $idUsuario
- * @param string $nuevaContrasenia
- * @return bool
+ * @param PDO $db Conexión a la base de datos
+ * @param int $idUsuario ID del usuario
+ * @param string $nuevaContrasenia Nueva contraseña del usuario
+ * @param string $usuario Nombre de usuario (para el WHERE)
+ * @return bool Devuelve true si la contraseña se cambió correctamente, o false en caso de error
  */
 function cambiarContrasenia($db, $idUsuario, $nuevaContrasenia, $usuario) {
 
@@ -197,10 +198,10 @@ function cambiarContrasenia($db, $idUsuario, $nuevaContrasenia, $usuario) {
 /**
  * @brief Actualiza el estado del usuario (activo, desconectado, etc.)
  * Fecha de creación: 2026-02-10
- * @param PDO $db
- * @param int $idUsuario
+ * @param PDO $db Conexión a la base de datos
+ * @param int $idUsuario ID del usuario a actualizar
  * @param string $estado Nuevo estado del usuario
- * @return bool
+ * @return bool Devuelve true si se actualizó correctamente, o false en caso de error
  */
 function actualizarEstadoUsuario($db, $idUsuario, $estado) {
     if (empty($idUsuario)){

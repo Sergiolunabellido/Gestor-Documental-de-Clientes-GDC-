@@ -32,12 +32,12 @@ $(document).on('click', '.botonModificarUsuario', function (e){
                 
                 
             } else {
-               alert(res.msg || 'Error al abrir el modal');
+               toastr.error(res.msg || 'Error al abrir el modal');
             }
         },
         error: function(xhr, status, error) {
             console.error('Error al abrir el modal:', error, status, xhr);
-            alert('Error de conexión al mostrar el modal');
+            toastr.error('Error de conexión al mostrar el modal');
         }
     });
   
@@ -80,12 +80,12 @@ modal.addEventListener('hidden.bs.modal', function (e) {
         },
         success: function(res) {
             if(res.ok === false) {
-            alert('Error al cancelar modificación del usuario');
+            toastr.error(res.msg||'Error al cancelar modificación del usuario');
             }else console.log('Usuario liberado correctamente')
         },
         error: function(xhr, status, error) {
             console.error('Error al cancelar modificación del usuario:', error, status, xhr);
-            alert('Error de conexión al cancelar modificación del usuario');
+            toastr.error('Error de conexión al cancelar modificación del usuario');
         }
     });
 })
@@ -161,12 +161,12 @@ $(document).on('click', '#botonModificar', (e) =>{
                     },
                     success: function(res) {
                         if(res.ok === false) {
-                        alert('Error al cancelar modificación del usuario');
+                        toastr.error(res.msg || 'Error al cancelar modificación del usuario');
                         }else console.log('Usuario liberado correctamente')
                     },
                     error: function(xhr, status, error) {
                         console.error('Error al cancelar modificación del usuario:', error, status, xhr);
-                        alert('Error de conexión al cancelar modificación del usuario');
+                        toast.error(res.msg ||'Error de conexión al cancelar modificación del usuario');
                     }
                 });
                 
@@ -181,7 +181,7 @@ $(document).on('click', '#botonModificar', (e) =>{
         },
         error: function(xhr, status, error) {
             console.error('Error al modificar usuario:', error, status, xhr);
-            alert('Error de conexión al modificar el usuario');
+            toast.error('Error de conexión al modificar el usuario');
         }
     });
 
@@ -240,11 +240,11 @@ $(document).on('click', '#botonEliminar', function (e){
 
                 // Si el usuario eliminado es el usuario actualmente logueado, cerrar su sesión
                 if (currentLoggedInUserId && currentLoggedInUserId == idUsuarioAEliminar) {
-                    alert('Tu sesión ha sido cerrada porque tu usuario ha sido eliminado.');
+                    toastr.warning('Tu sesión ha sido cerrada porque tu usuario ha sido eliminado.');
                     logout(); // Llama a la función global de logout
                 }
             } else {
-                alert(res.msg || 'Ha habido un error al eliminar el usuario.');
+                toastr.error(res.msg || 'Ha habido un error al eliminar el usuario.');
                 console.log(res.msg)
             }
         },
@@ -283,7 +283,8 @@ $(document).on('input', '#nombreUserFiltro', (e) => {
 
                 renderizarUsuarios(res.usuarios);
             },error: function(xhr, status, error) {
-                console.error('Error al cargar la vista home', error, status, xhr);
+                toastr.error('Error al filtrar usuarios', error, status, xhr);
+                console.error('Error al filtrar usuarios', error, status, xhr);
                 
             }
         })
@@ -308,7 +309,8 @@ $(document).on('input', '#correoUserFiltro', (e) => {
                 renderizarUsuarios(res.usuarios);
 
             },error: function(xhr, status, error) {
-                console.error('Error al cargar la vista home', error, status, xhr);
+                toastr.error('Error al filtrar usuarios por correo', error, status, xhr);
+                console.error('Error al filtrar usuarios por correo', error, status, xhr);
                 
             }
         })
@@ -334,8 +336,9 @@ $(document).on('input', '#correoUserFiltro', (e) => {
 
 
             },error: function(xhr, status, error) {
-                console.error('Error al cargar la vista home', error, status, xhr);
-                
+                toastr.error('Error al filtrar usuarios por fecha de creacion', error, status, xhr);
+                console.error('Error al filtrar usuarios por fecha de creacion', error, status, xhr);
+             
             }
         })
 
@@ -368,7 +371,8 @@ $(document).on('click', '#botonFiltrar', (e)=>{
             renderizarUsuarios(res.usuarios);
 
         },error: function(xhr, status, error) {
-            console.error('Error al cargar la vista home', error, status, xhr);
+            toastr.error('Error al filtrar usuarios', error, status, xhr);
+            console.error('Error al filtrar usuarios', error, status, xhr);
             
         }
     })
@@ -388,8 +392,8 @@ $(document).on('click', '#botonFiltrar', (e)=>{
 
 
             },error: function(xhr, status, error) {
-                console.error('Error al cargar la vista home', error, status, xhr);
-                
+                toastr.error('Error al filtrar usuarios', error, status, xhr);
+                console.error('Error al filtrar usuarios', error, status, xhr);
             }
         })
     }

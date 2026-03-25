@@ -27,6 +27,7 @@ function crearCarpetaCliente(){
                 const modal = bootstrap.Modal.getInstance(document.getElementById('modalCrearCliente'));
                 modal.hide();
                 renderizarClientes(res.clientes)
+                toastr.success('Cliente creado correctamente')
                 
             }else{
                 contenedorError.classList.remove('d-none');
@@ -34,7 +35,7 @@ function crearCarpetaCliente(){
             }
 
         },error: function(xhr, status, error) {
-            console.error('Error al crear la carpeta del cliente ', error, status, xhr);
+            toastr.error('Error al crear la carpeta del cliente ', error, status, xhr);
             
         }
     })

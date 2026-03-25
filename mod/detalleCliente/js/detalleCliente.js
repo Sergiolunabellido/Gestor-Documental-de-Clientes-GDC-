@@ -30,7 +30,8 @@ function subirArchivoCliente(file, idCliente) {
             },
             error: function(xhr, status, error) {
                 console.error('Error al subir archivo', error, status, xhr);
-                reject({ msg: 'Error de red al subir archivo' });
+                toastr.error('Error al subir archivo', error, status, xhr);
+                
             }
         });
     });
@@ -49,12 +50,12 @@ function crearArchivo() {
     const idCliente = document.getElementById('nombreClienteDetalle')?.dataset.idUsuario;
 
     if (!idCliente) {
-        alert('No se encontro el cliente');
+        toastr.error('No se encontro el cliente');
         return;
     }
 
     if (archivos.length === 0) {
-        alert('Selecciona uno o varios archivos antes de subir');
+        toastr.error('Selecciona uno o varios archivos antes de subir');
         return;
     }
 
@@ -75,9 +76,9 @@ function crearArchivo() {
             .filter(Boolean);
 
         if (fail === 0) {
-            alert(`Se subieron ${ok} archivo(s).`);
+            toastr.info(`Se subieron ${ok} archivo(s).`);
         } else {
-            alert(`Subidos: ${ok}. Fallidos: ${fail}.\n${mensajesError.join('\n')}`);
+            toastr.info(`Subidos: ${ok}. Fallidos: ${fail}.\n${mensajesError.join('\n')}`);
         }
     });
 }
@@ -138,7 +139,7 @@ $(document).on('drop', '#ficherosCliente', function(e) {
     e.stopPropagation();
     const idCliente = document.getElementById('nombreClienteDetalle')?.dataset.idUsuario;
     if (!idCliente) {
-        alert('No se encontro el cliente');
+        toastr.error('No se encontro el cliente');
         return;
     }
 
@@ -170,9 +171,9 @@ $(document).on('drop', '#ficherosCliente', function(e) {
             .filter(Boolean);
 
         if (fail === 0) {
-            alert(`Se subieron ${ok} archivo(s).\n${mensajesOk.join('\n')}`);
+            toastr.info(`Se subieron ${ok} archivo(s).\n${mensajesOk.join('\n')}`);
         } else {
-            alert(
+            toastr.info(
                 `Subidos: ${ok}. Fallidos: ${fail}.\n` +
                 `${mensajesError.join('\n')}`
             );
@@ -218,6 +219,7 @@ function renderizarArchivosClientes(cliente) {
             contenedor.innerHTML = '';
 
             if (!res.ok) {
+                toastr.error(res.msg || 'No se pudieron cargar los archivos');
                 contenedor.innerHTML = `<p class="m-3">${res.msg || 'No se pudieron cargar los archivos'}</p>`;
                 return;
             }
@@ -225,6 +227,7 @@ function renderizarArchivosClientes(cliente) {
             const archivos = Array.isArray(res.archivos) ? res.archivos : [];
 
             if (archivos.length === 0) {
+                toastr.info('Este cliente no tiene archivos aun')
                 contenedor.innerHTML = '<p class="m-3">Este cliente todavia no tiene archivos.</p>';
                 return;
             }
@@ -283,7 +286,7 @@ function renderizarArchivosClientes(cliente) {
             contenedor.appendChild(lista);
         },
         error: function(xhr, status, error) {
-            console.error('Error al cargar archivos del cliente', error, status, xhr);
+            toastr.error('Error al cargar archivos del cliente', error, status, xhr);
             contenedor.innerHTML = '<p class="m-3">Error al cargar los archivos.</p>';
         }
     });
@@ -313,13 +316,14 @@ $(document).on('click', '#botonEliminarArchivo', function (e){
                 renderizarArchivosClientes(idCliente);
                 const modal = bootstrap.Modal.getInstance(document.getElementById('modalEliminarArchivo'));
                 modal.hide();
+                toastr.success('Archivo eliminado correctamente');
             } else {
-                alert(respuesta.msg || 'Ha habido un error al eliminar el archivo.');
+                toastr.error(respuesta.msg || 'Ha habido un error al eliminar el archivo.');
                 console.log(res.msg)
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error al eliminar el archivo:', error, status, xhr);
+            toastr.error('Error al eliminar el archivo:', error, status, xhr);
         }
     })
 
@@ -351,16 +355,41 @@ $(document).on('click', '#botonEliminarArchivos', function (e){
                 renderizarArchivosClientes(idCliente);
                 const modal = bootstrap.Modal.getInstance(document.getElementById('modalEliminarArchivos'));
                 modal.hide();
+                toastr.success('Archivos eliminados correctamente');
             } else {
-                alert(respuesta.msg || 'Ha habido un error al eliminar el archivo.');
+                toastr.error(respuesta.msg || 'Ha habido un error al eliminar el archivo.');
                 console.log(res.msg)
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error al eliminar el archivo:', error, status, xhr);
+            toastr.error('Error al eliminar el archivo:', error, status, xhr);
         }
     })
 
 
 });
 
+$(document).on('click', '#botonVolverFuente', (e) => {
+
+    e.preventDefault()
+
+    $.ajax({
+        url:  'index.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            accion:'fuente',
+        },
+        success: function(res) {
+            $('#estaticos').html(res.estaticos);
+            $('#contenido').html(res.contenido);
+            renderizarClientes(res.clientes)
+            
+
+        },error: function(xhr, status, error) {
+            toastr.error('Error al cargar la vista fuente', error, status, xhr);
+            
+        }
+    })
+
+})

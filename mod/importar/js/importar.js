@@ -34,11 +34,15 @@ function obtenerFilasSeleccionadas() {
 function renderizarTablaArchivosCliente(archivos, cliente = null) {
     clienteActual = cliente;
     const contenedor = document.getElementById('tablaArchivosClientes');
-    if (!contenedor) return;
+    if (!contenedor){ 
+        toastr.error('No se a encontrado el contenedor de la tabla de archivos.')
+        return
+    };
 
     contenedor.innerHTML = '';
 
     if (!Array.isArray(archivos) || archivos.length === 0) {
+        toastr.info('No hay archivos para este cliente.');
         contenedor.innerHTML = '<p class="m-3">No hay archivos para este cliente.</p>';
         return;
     }
@@ -249,7 +253,7 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                     
 
                 },error: function(xhr, status, error) {
-                    console.error('Error al cargar la vista importar', error, status, xhr);
+                    toastr.error('Error al cargar la vista importar', error, status, xhr);
                     
                 }
             })
@@ -305,7 +309,7 @@ function obtenerDatosClientes(idCliente, cliente = null) {
             renderizarTablaArchivosCliente(Array.isArray(res.archivos) ? res.archivos : [], cliente);
         },
         error: function (xhr, status, error) {
-            console.error('Error al cargar los archivos del cliente en importar', error, status, xhr);
+            toastr.error('Error al cargar los archivos del cliente en importar', error, status, xhr);
         }
     });
 }
@@ -382,7 +386,7 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
     
     if (filasSeleccionadas.length === 0) {
         if (boton) boton.textContent = textoOriginal;
-        alert('Selecciona al menos un archivo para exportar');
+        toastr.warning('Selecciona al menos un archivo para exportar');
         if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
         return;
     }
@@ -414,7 +418,7 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
                 return { ok: true, data };
             })
             .catch((error) => {
-                alert(`El archivo no existe o no se pudo cargar: ${url}`);
+                toastr.error(`El archivo no existe o no se pudo cargar: ${url}`);
                 avanzar();
                 return { ok: false, error };
             })
@@ -435,7 +439,7 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
                 await cargarArchivo(csvUrl, 'csv');
                 await cargarArchivo(jsonUrl, 'json');
             } catch (e) {
-                console.error('Error en iteración:', e);
+                toastr.error('Error en iteración:', e);
                 avanzar();
             }
         }
@@ -464,14 +468,14 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
                 setTimeout(() => {
                     if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
                     if (res.ok) {
-                        alert('Exportacion completada correctamente');
+                        toastr.success('Exportacion completada correctamente');
                     } else {
-                        alert('Error: ' + (res.msg || 'No se pudo exportar'));
+                        toastr.error('Error: ' + (res.msg || 'No se pudo exportar'));
                     }
                 }, 500);
             },
             error: function(xhr, status, error) {
-                alert('Error al exportar los archivos: ', error + status);
+                toastr.error('Error al exportar los archivos: ', error + status);
                 if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
             },
             complete: function() {
@@ -479,7 +483,7 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
             }
         });
     }).catch((error) => {
-        alert('Error al procesar los archivos', error);
+        toastr.error('Error al procesar los archivos', error);
         if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
         resetProgress();
         if (boton) boton.textContent = textoOriginal;

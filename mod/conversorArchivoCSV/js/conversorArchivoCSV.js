@@ -50,7 +50,7 @@ $(document).on('click', '#botonVolver', (e) => {
             }
 
         },error: function(xhr, status, error) {
-            console.error('Error al cargar la vista importar', error, status, xhr);
+            toastr.error('Error al cargar la vista importar', error, status, xhr);
             
         }
     })
@@ -100,7 +100,7 @@ function recogerCamposTabla(callback){
             if (typeof callback === 'function') { callback(); }
 
         },error: function(xhr, status, error) {
-            console.error('Error al cargar la vista importar', error, status, xhr);
+            toastr.error('Error al cargar la vista importar', error, status, xhr);
 
         }
     })
@@ -155,21 +155,23 @@ function eliminarFilaCampo(boton) {
 
     if (filas.length > 1) {
         const fila = boton.closest('.fila-campo');
+        const index = Array.from(filas).indexOf(fila);
         fila.remove();
+        toastr.info('Se a eliminado un campo de la lista')
+
+        // Eliminar la fila de expresión correspondiente por índice
+        const contenedorExp = document.getElementById('contenedorExpresion');
+        if (contenedorExp) {
+            const filasExp = contenedorExp.querySelectorAll('.fila-expresion');
+            if (filasExp.length > index) {
+                filasExp[index].remove();
+                
+            }
+        }
     } else {
-        alert('Debe haber al menos un campo');
+        toastr.error('Debe haber al menos un campo');
     }
 }
-
-$(document).on('click', '.botonAñadirCampo', function(e) {
-    e.preventDefault();
-    añadirFilaCampo();
-});
-
-$(document).on('click', '.botonEliminarCampo', function(e) {
-    e.preventDefault();
-    eliminarFilaCampo(this);
-});
 
 /**
  * @brief Esta funcion permite añadir un nuevo input para seguir añadiendo expresiones con el contenido del CSV en la tabla de la BD, clonando el input existente.
@@ -177,27 +179,24 @@ $(document).on('click', '.botonEliminarCampo', function(e) {
  * @returns 
  */
 
-function añadirFilaExpresion(boton) {
-    contadorExpresiones++;
-    const filaActual = boton.closest('.fila-expresion');
-    if (!filaActual) return;
 
-    const nuevaFila = filaActual.cloneNode(true);
-
-    nuevaFila.dataset.id = contadorExpresiones;
-    const nuevoInput = nuevaFila.querySelector('input');
-    nuevoInput.id = 'expresion_' + contadorExpresiones;
-    nuevoInput.value = '';
-
-    filaActual.after(nuevaFila);
-}
 
 function añadirFilaExpresionConf(valorInput) {
-    const contenedor = document.querySelector('.expressions.csv-inputs-container');
+    const contenedor = document.getElementById('contenedorExpresion');
     if (!contenedor) return;
 
     const filas = contenedor.querySelectorAll('.fila-expresion');
-    if (filas.length === 0) return;
+    if (filas.length === 0) {
+        contadorExpresiones++;
+        const nuevaFila = document.createElement('div');
+        nuevaFila.className = 'fila-expresion';
+        nuevaFila.dataset.id = contadorExpresiones;
+        nuevaFila.innerHTML = `
+            <input type="text" id="expresion_${contadorExpresiones}" class="form-control" placeholder="Expresión" value="${valorInput}">
+        `;
+        contenedor.appendChild(nuevaFila);
+        return;
+    }
 
     const filaBase = filas[0];
     const inputBase = filaBase.querySelector('input');
@@ -232,7 +231,7 @@ function eliminarFilaExpresion(boton){
     const fila = boton.closest('.fila-expresion');
     if (!fila) return;
 
-    const contenedor = fila.closest('.expressions.csv-inputs-container');
+    const contenedor = document.getElementById('contenedorExpresion');
     if (!contenedor) return;
 
     const filas = contenedor.querySelectorAll('.fila-expresion');
@@ -243,23 +242,25 @@ function eliminarFilaExpresion(boton){
         const input = document.querySelector('input')
         if(input){
             input.value = ""
-             alert('Debe haber al menos una expresión');
+             toastr.warning('Debe haber al menos una expresión');
         }
        
         
     }
 }
 
-$(document).on('click', '.botonAñadirExpresion', function(e) {
+$(document).on('click', '.botonAñadirCampo', function(e) {
     e.preventDefault();
-    añadirFilaExpresion(this);
+    añadirFilaExpresionConf('');
+    añadirFilaCampo(this);
+    
 });
 
-$(document).on('click', '.botonEliminarExpresion', function(e) {
+$(document).on('click', '.botonEliminarCampo', function(e) {
     e.preventDefault();
-    
-    eliminarFilaExpresion(this);
+    eliminarFilaCampo(this);
 });
+
 
 $(document).on('change','#tablas', ()=>{
     recogerCamposTabla()
@@ -330,7 +331,7 @@ $(document).on('click', '#botonGuardar', (e)=>{
     console.log(mapJSON)
 
     if(tablaReferenciada === "Selecciona cualquier tabla:"){
-        alert('Si te digo que eligas una tabla es por algo melon...')
+        toastr.warning('Si te digo que eligas una tabla es por algo...')
         return;
     }
 
@@ -393,17 +394,17 @@ $(document).on('click', '#botonGuardar', (e)=>{
                         }
 
                     },error: function(xhr, status, error) {
-                        console.error('Error al cargar la vista importar', error, status, xhr);
+                        toastr.error('Error al cargar la vista importar', error, status, xhr);
                         
                     }
                 })
-                alert('El contenido de configuracion se ha guardado exitosamente.')
+                toastr.success('El contenido de configuracion se ha guardado exitosamente.')
            }else{
-            alert(res.msg || 'No se a podido guardar la configuracion de este archivo.')
+            toastr.error(res.msg || 'No se a podido guardar la configuracion de este archivo.')
            }
 
         },error: function(xhr, status, error) {
-            console.error('Error al guardar la configuracion de este archivo', error, status, xhr);
+            toastr.error('Error al guardar la configuracion de este archivo', error, status, xhr);
 
         }
     })

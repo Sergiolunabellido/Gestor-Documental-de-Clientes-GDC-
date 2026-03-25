@@ -18,7 +18,7 @@ function logout(){
                 $('#estaticos').html('');
                 $('#contenido').html(res.contenido);
         },error: function(xhr, status, error) {
-            console.error('Error al cargar la vista home', error, " estado: ", status, " xhr: ", xhr);
+            toastr.error('Error al cargar la vista home', error, " estado: ", status, " xhr: ", xhr);
         }
     })
 
@@ -54,7 +54,7 @@ $(document).on('click', '#home', (e) => {
 
 
         },error: function(xhr, status, error) {
-            console.error('Error al cargar la vista home', error, status, xhr);
+            toastr.error('Error al cargar la vista home', error, status, xhr);
             
         }
     })
@@ -87,7 +87,7 @@ $(document).on('click', '#usuarios', (e) => {
             $('#contenido').html(res.contenido);
             renderizarUsuarios(res.usuarios);
         }, error: function(xhr, status, error) {
-            console.error('Error al cargar la vista de usuarios', error, status, xhr);
+            toastr.error('Error al cargar la vista de usuarios', error, status, xhr);
         }
     });
 
@@ -121,7 +121,7 @@ $(document).on('click', '#fuente', (e) => {
             
 
         },error: function(xhr, status, error) {
-            console.error('Error al cargar la vista fuente', error, status, xhr);
+            toastr.error('Error al cargar la vista fuente', error, status, xhr);
             
         }
     })
@@ -159,7 +159,7 @@ $(document).on('click', '#archivo', (e) => {
             
 
         },error: function(xhr, status, error) {
-            console.error('Error al cargar la vista archivo', error, status, xhr);
+            toastr.error('Error al cargar la vista archivo', error, status, xhr);
             
         }
     })
@@ -218,7 +218,7 @@ $(document).on('click', '#importar', (e) => {
             }
 
         },error: function(xhr, status, error) {
-            console.error('Error al cargar la vista importar', error, status, xhr);
+            toastr.error('Error al cargar la vista importar', error, status, xhr);
             
         }
     })
@@ -284,7 +284,7 @@ $(document).on('click', '#botonPerfil', (e)=>{
             })
 
         },error: function(xhr, status, error) {
-            console.error('Error al cargar la vista perfil', error, status, xhr);
+            toastr.error('Error al cargar la vista perfil', error, status, xhr);
             
         }
     })
@@ -424,9 +424,75 @@ function renderizarClientes(users) {
         divPadre.dataset.idUsuario = user.id;
 
         const divUsuario = document.createElement("div");
-        divUsuario.className = "d-flex  flex-wrap align-items-center justify-content-center rounded  shadow p-2 m-3 bg-primary";
+        divUsuario.className = "position-relative d-flex  flex-wrap align-items-center justify-content-center rounded  shadow p-2 m-3 bg-primary";
         divUsuario.id = "usuario-" + user.id;
         divUsuario.dataset.idUsuario = user.id;
+
+        // Botón de menú (tres puntos)
+        const menuButton = document.createElement("button");
+        menuButton.className = " btn btn-link position-absolute text-white";
+        menuButton.style.top = '0px';
+        menuButton.style.right = '-8px';
+        menuButton.style.zIndex = "11"; 
+        menuButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" class="bi bi-three-dots-vertical" viewBox="0 0 16 16"><path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/></svg>`;
+
+        menuButton.addEventListener('click', (e) => {
+            e.stopPropagation(); // Evitar que se dispare el click del divPadre
+            e.preventDefault();
+
+            // Eliminar menú anterior si existe
+            const menuExistente = document.getElementById("menu-contextual");
+            if (menuExistente) {
+                menuExistente.remove();
+            }
+
+            // Crear contenedor del menú
+            const menu = document.createElement("ul");
+            menu.id = "menu-contextual";
+            menu.className = "list-group position-absolute";
+            // Posicionamos el menú cerca del botón
+            const rect = e.currentTarget.getBoundingClientRect();
+            menu.style.top = `${rect.bottom + window.scrollY}px`;
+            menu.style.left = `${rect.left + window.scrollX - 130}px`; // Ajustar para que aparezca a la izquierda del botón
+            menu.style.zIndex = "1000";
+            menu.style.width = "150px";
+
+            // Opciones del menú
+            const opciones = [
+                { texto: "Eliminar", accion: () => eliminarCliente(user.id) }
+            ];
+
+            opciones.forEach(op => {
+                const item = document.createElement("li");
+                item.className = "list-group-item list-group-item-action";
+                item.style.cursor = "pointer";
+                item.textContent = op.texto;
+
+                item.addEventListener("click", (event) => {
+                    event.stopPropagation();
+                    op.accion();
+                    menu.remove();
+                });
+
+                menu.appendChild(item);
+            });
+
+            document.body.appendChild(menu);
+
+            // Cerrar menú si se hace click fuera
+            const closeMenuOnClickOutside = (event) => {
+                if (!menu.contains(event.target)) {
+                    menu.remove();
+                    document.removeEventListener("click", closeMenuOnClickOutside);
+                }
+            };
+            
+            // Usamos un timeout para que el evento de click que abrió el menú no lo cierre inmediatamente
+            setTimeout(() => {
+                document.addEventListener("click", closeMenuOnClickOutside);
+            }, 0);
+        });
+
 
         const logo = document.createElement("img")
         logo.className = "w-100 h-100 p-3  "
@@ -466,56 +532,13 @@ function renderizarClientes(users) {
                     }
 
                 },error: function(xhr, status, error) {
-                    console.error('Error al cargar la vista fuente', error, status, xhr);
+                    toastr.error('Error al cargar la vista fuente', error, status, xhr);
                     
                 }
             })
         })
 
-        divPadre.addEventListener('contextmenu', (e)=>{
-            e.preventDefault();
-
-             // Eliminar menú anterior si existe
-            const menuExistente = document.getElementById("menu-contextual");
-            if (menuExistente) {
-                menuExistente.remove();
-            }
-
-            // Crear contenedor del menú
-            const menu = document.createElement("ul");
-            menu.id = "menu-contextual";
-            menu.className = "list-group position-absolute";
-            menu.style.top = `${e.pageY}px`;
-            menu.style.left = `${e.pageX}px`;
-            menu.style.zIndex = "1000";
-            menu.style.width = "150px";
-
-            // Opciones del menú
-            const opciones = [
-                { texto: "Eliminar", accion: () => eliminarCliente(user.id) }
-            ];
-
-            opciones.forEach(op => {
-                const item = document.createElement("li");
-                item.className = "list-group-item list-group-item-action cursor-none";
-                item.textContent = op.texto;
-
-                item.addEventListener("click", () => {
-                    op.accion();
-                    menu.remove();
-                });
-
-                menu.appendChild(item);
-            });
-
-            document.body.appendChild(menu);
-
-            // Cerrar menú si se hace click fuera
-            document.addEventListener("click", () => {
-                menu.remove();
-            }, { once: true });
-
-        })
+        divUsuario.appendChild(menuButton);
         divUsuario.appendChild(logo)
         
         divPadre.appendChild(divUsuario)
@@ -553,12 +576,12 @@ function eliminarCliente(userId){
                 }
 
             } else {
-                alert(res.msg || 'Ha habido un error al eliminar el cliente.');
-                console.log(res.msg)
+                toastr.error(res.msg || 'Ha habido un error al eliminar el cliente.');
+                
             }
         },
         error: function(xhr, status, error) {
-            console.error('Error al eliminar usuario:', error, status, xhr);
+            toastr.error('Error al eliminar usuario:', error, status, xhr);
         }
     })
 }
@@ -577,7 +600,7 @@ function modificarEstadoUsuario(estado, id){
                     nuevoEstado: estado
                 },
                 error: function(xhr, status, error) {
-                    console.error('Error al cargar la vista perfil', error, status, xhr);
+                    toastr.error('Error al modificar el estado del usuario', error, status, xhr);
                     
                 }
             })

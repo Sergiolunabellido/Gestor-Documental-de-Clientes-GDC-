@@ -56,17 +56,18 @@ $(document).on('click', '#botonRegistrarse', (e)=>{
         },
         success: function(res) {    
             if(res.ok === false){
-                document.getElementById('contenidoErrorRegistro').textContent = res.msg;
                 mostrarErrorRegistro();
+                toastr.error(res.msg)
                 return;
             }
 
+            
             const inicioSesion = document.getElementById('inicioSesion');
             const registro = document.getElementById('registro');
 
             inicioSesion.classList.remove('d-none');
             registro.classList.add('d-none');
-
+            toastr.success(res.msg)
 
         },error: function(xhr, status, error) {
             console.error('Error al registrar el usuario: ', error, xhr , status);
@@ -104,7 +105,7 @@ function home(vista){
           
 
             if(res.estado === 'pendiente'){
-                alert(res.msg);
+                toastr.warning(res.msg);
             }else if(res.estado === 'conectado'){
                 $('#estaticos').html(res.estaticos);
                 $('#contenido').html(res.contenido);
@@ -264,7 +265,7 @@ $(document).on('click', '#botonConfirmarCambio', (e) =>{
                 const modal = bootstrap.Modal.getInstance(document.getElementById('modalCambiarContraseña'));
                 modal.hide();
                 
-                alert('Se ha cambiado tu contraseña correctamente');
+                toastr.success('Se ha cambiado tu contraseña correctamente');
             } else {
                 mensajeError.textContent = res.msg || 'Ha habido un error al modificar tu contraseña.';
                 errorDiv.classList.remove('d-none');
@@ -414,7 +415,7 @@ function cerrarSesion(){
         success: (res) =>{
             
             if(res.ok){
-                alert('Sesion cerrada')
+                toastr.success('Sesion cerrada')
                 clearInterval(intervalo)
                 sessionStorage.removeItem('sesionActiva');
                 location.reload()

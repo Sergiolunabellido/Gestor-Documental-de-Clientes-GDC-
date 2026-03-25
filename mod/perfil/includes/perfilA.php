@@ -1,4 +1,8 @@
 <?php
+// Comentado para evitar que los warnings rompan la respuesta JSON
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 /**
  * @brief Cambia la foto de perfil del usuario
  * Fecha de creación: 2026-02-10
@@ -7,10 +11,6 @@
  * @param array $archivo Información del archivo subido
  * @return string|array Ruta de la nueva foto o array con error si falla
  */
-// Comentado para evitar que los warnings rompan la respuesta JSON
-//ini_set('display_errors', 1);
-//ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 function cambiarFotoPerfil($db, $idUsuario, $archivo) {
     
     if (!$idUsuario) {

@@ -284,8 +284,6 @@ switch ($accion) {
 
         $lecturaConfJSON = leerJSON($rutaEspecifica);
 
-        debug("Ruta configuración específica: $rutaEspecifica", "INFO");
-
         if (!$lecturaConfJSON['ok']) {
             $contenidoConf = ['ok' => false, 'msg' => 'No se ha encontrado una configuración previa para este archivo'];
         } else {
@@ -306,8 +304,6 @@ switch ($accion) {
         if (!empty($cacheTabla['ok']) && is_array($cacheTabla['datos'])) {
             $campoTabla = $cacheTabla['datos']['campoTabla'] ?? '';
         }
-
-        debug("Id del cliente: $idCliente", "INFO");
 
         $response = [
             'ok' => true, 
@@ -443,13 +439,6 @@ switch ($accion) {
     // Carga la vista de detalle de tabla y devuelve sus datos.
     case 'detalleTabla':
         
-        ob_start();
-        ponerEstatico('detalleTabla');
-        $estaticos = ob_get_clean();
-
-        ob_start();
-        cargarVista('detalleTabla');
-        $contenido = ob_get_clean();
 
         $ok = leerCampoTablaSQL($db, $nombreTabla, $nombreCampo);
 

@@ -195,6 +195,14 @@ class CSVImportar {
         }
     }
 
+    /**
+     * @brief Genera nombres genéricos para las columnas si no se detecta cabecera
+     * Fecha de creacion: 2026-03-26
+     * @param array $previewData Primera fila del CSV como vista previa
+     * @param string $delimiter Delimitador usado en el CSV
+     * @param array $headers Array donde se almacenarán los nombres generados
+     * @return array Array con los nombres de las columnas generados
+     */
     public function guardarCabezeraGenerica($previewData, $delimiter, &$headers) {
 
         $f = fopen($this->file, "r");
@@ -210,6 +218,7 @@ class CSVImportar {
     /**
      * @brief Renderiza el componente HTML con columnas detectadas del CSV
      * Fecha de creacion: 2026-03-09
+     * @param array $configuracion Configuración adicional para el renderizado
      * @return void
      */
     public function renderCSV($configuracion) {
@@ -239,16 +248,14 @@ class CSVImportar {
         echo "<div id='{$this->id}' class='{$this->class} w-100' data-headers='".json_encode($headers)."'>";
         echo "  <div class='mapping-container flex flex-column gap-5 w-100' >";
         echo "      <div class='expressions csv-inputs-container d-flex flex-column gap-2 w-100' data-headers='".json_encode($headers)."'>";
-        echo "          <div class='fila-expresion d-flex align-items-center justify-content-center gap-3 w-100' data-id='1'>";
-        echo "              <input list='camposCSV-{$this->id}' id='expresion_1' class='form-control w-100 rounded shadow' placeholder='Selecciona o escribe' data-can-add='true'>";
-        echo "              <button class='btn botonEliminarExpresion' title='Eliminar expresión'> - </button>";
-        echo "              <button class='btn botonAñadirExpresion' title='Añadir expresión'> + </button>";
+        echo "          <div class='fila-expresion d-flex align-items-center justify-content-center w-100' data-id='1'>";
+        echo "              <input list='camposCSV-{$this->id}' id='expresion_1' class='form-control w-100 rounded shadow mb-3' placeholder='Selecciona o escribe' data-can-add='true'>";
         echo "              <p class='visually-hidden'>{$this->id}<p/>    ";
         echo "          </div>";
-        echo "          <datalist id='camposCSV-{$this->id}'>";
-        foreach ($headers as $header) {
-            echo "<option value='{$header}'>{$header}</option>";
-        }
+        echo "          <datalist id='camposCSV-{$this->id}' >";
+                            foreach ($headers as $header) {
+                                echo "<option value='{$header}'>{$header}</option>";
+                            }
         echo "          </datalist>";
         echo "      </div>";
         echo "  </div>";

@@ -33,6 +33,12 @@ class Cliente {
         return $cliente;
     }
 
+    /**
+     * @brief Obtiene un cliente por su nombre
+     * Fecha de creación: 2026-02-17
+     * @param string $nombre Nombre del cliente
+     * @return array Devuelve un array con los datos del cliente o false si no se encuentra
+     */
     public function obtenerClienteNombre($nombre) {
         $sql = "SELECT id FROM Cliente WHERE deleted = 0 AND nombre = :nombre";
         $stmt = $this->db->prepare($sql);
@@ -71,14 +77,21 @@ class Cliente {
     /**
      * @brief Agrega un nuevo cliente a la base de datos
      * Fecha de creación: 2026-02-17
-     * @param string $nombre
-     * @param string $telefono
+     * @param string $nombre Nombre del cliente
+     * @param string $telefono Teléfono del cliente
      * @return array<bool|string> Devuelve un array con el resultado de la operación y un mensaje de error si es necesario
      */
     public function agregarCliente(string $nombre, string $telefono): array {
         try {
+
+            $telefono = preg_replace('/\D/', '', $telefono);
+
+            if (strlen($telefono) > 9) {
+                $telefono = substr($telefono, 2); // Eliminar el prefijo internacional (por ejemplo, "34" para España)
+            }
+
             // Comprobar si ya existe el cliente por nombre o teléfono
-            $sqlCheck = "SELECT nombre, telefono 
+            $sqlCheck = "SELECT nombre, telefono
                         FROM Cliente 
                         WHERE (nombre = :nombre OR telefono = :telefono)
                         AND deleted = 0";

@@ -1,8 +1,8 @@
 {
     "archivo": "registro jornada.csv",
     "id": "import_69b136e9814ff",
-    "tabla": "fregjornadaresult",
+    "tabla": "fmenu",
     "columnas": {
-        "CONCAT(id, dispositivo)": "ootolvido"
+        "idoperario": "permission"
     }
 }

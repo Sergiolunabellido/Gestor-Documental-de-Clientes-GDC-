@@ -77,10 +77,7 @@ $script = `<script src="./js/script.js" ></script>`;
                     <input id="contraseniaRegistro" type="password" class="form-control" name="password" placeholder="Introduce tu contraseña" required>
                 </form>
             </div>
-            <div id="contenedorErrorRegistro"  class="mt-3 d-none alert alert-danger text-center text-red">
-                <p id="contenidoErrorRegistro">
-                </p>
-            </div>
+           
             <div class=" mt-2">
                 <label><input id="checkAdministrador" type="checkbox" > admin </label>
             </div>

@@ -12,7 +12,7 @@
         <button id="exportarFicherosCliente" class="btn btn-primary">Exportar</button>
     </div>
     <div id="barraProgresiva" class="progress visually-hidden mx-3" aria-label="Progreso de exportación">
-        <div id="barraProgresivaBar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+        <div id="barraProgresivaBar" class="progress-bar progress-bar-striped progress-bar-animated " role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
     </div>
     <div id="tablaArchivosClientes"  class="m-3 h-100 border border-2 shadow rounded overflow-auto"
         style="max-height: calc(100vh - 220px);">

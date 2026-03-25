@@ -35,7 +35,7 @@ function crearFichero() {
                     return;
                 }
 
-                alert(res.msg || 'Tabla creada en BD');
+                toastr.success(res.msg || 'Tabla creada en BD');
 
                 const modalEl = document.getElementById('modalCrearFichero');
                 const modalInstance = modalEl ? bootstrap.Modal.getInstance(modalEl) : null;
@@ -53,11 +53,12 @@ function crearFichero() {
                 }
             } else {
                 contenedorError?.classList.remove('d-none');
+                toastr.error(res.msg || 'Error al procesar el archivo');
                 if (mensajeError) mensajeError.textContent = res.msg || 'Error al procesar el archivo';
             }
         },
         error: function (xhr, status, error) {
-            console.error('Error al crear tabla desde fichero', error, status, xhr);
+            toastr.error('Error al crear tabla desde fichero', error, status, xhr);
         }
     });
 }
@@ -130,12 +131,20 @@ function renderizarFicheros(nombreCampo, nombreTabla) {
                         nombreCampo: tabla
                     },
                     success: function(res) {
-                        $('#estaticos').html(res.estaticos);
-                        $('#contenido').html(res.contenido);
+                        
+                        const detalleTabla = document.getElementById('detalleTabla');
+                        const archivos = document.getElementById('archivos');
+                        archivos.classList.add('d-none')
+                        archivos.classList.remove('d-flex')
+                        detalleTabla.classList.add('d-flex')
+                        detalleTabla.classList.remove('d-none')
+
                         renderizarTabla(res.datos, tabla);
+                        
+
 
                     },error: function(xhr, status, error) {
-                        console.error('Error al cargar la vista fuente', error, status, xhr);
+                        toastr.error('Error al cargar la vista fuente', error, status, xhr);
                         
                     }
                 })
@@ -153,6 +162,22 @@ function renderizarFicheros(nombreCampo, nombreTabla) {
         
 };
 
+
+
+$(document).on('click', '#botonVolverArchivo', (e) => {
+
+    e.preventDefault()
+
+    const detalleTabla = document.getElementById('detalleTabla');
+    const archivos = document.getElementById('archivos');
+    archivos.classList.remove('d-none')
+    archivos.classList.add('d-flex')
+    detalleTabla.classList.remove('d-flex')
+    detalleTabla.classList.add('d-none')
+
+})
+
+
 /**
  * @brief Renderiza la tabla completa que se le indique a travez de el nombre.
  * @param {*} datos 
@@ -161,6 +186,7 @@ function renderizarFicheros(nombreCampo, nombreTabla) {
  * @returns html
  */
 function renderizarTabla(datos, nombreTabla) {
+
     const contenedor = document.getElementById('datosTabla');
     const tituloTabla = document.getElementById('nombreTabla');
 

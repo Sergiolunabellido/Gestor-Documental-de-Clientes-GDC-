@@ -378,7 +378,6 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
         });
     };
 
-    // 1. Reset visual y en el servidor (limpia la sesión antes de empezar)
     resetProgress();
     $.get('/practicas2026/app/aplicacionweb/mod/importar/includes/progreso.php?reset=1');
 
@@ -405,10 +404,10 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
     const totalPasos = (filasSeleccionadas.length * 2) + 1;
     let pasosCompletados = 0;
 
-    // Fase JS: Carga de archivos (representará el 0-15% visualmente)
+   
     const avanzar = () => {
         pasosCompletados += 1;
-        const pct = (pasosCompletados / totalPasos) * 15; // Limitamos el JS al primer 15%
+        const pct = (pasosCompletados / totalPasos) * 20; 
         setProgress(pct);
     };
 

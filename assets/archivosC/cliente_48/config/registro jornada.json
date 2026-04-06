@@ -1,10 +1,8 @@
 {
     "archivo": "registro jornada.csv",
-    "id": "import_69c2569ad6e43",
     "tabla": "fcococdet",
     "columnas": {
-        "dispositivo": "idcococ",
-        "latitud": "idcococ",
-        "0": "idcococ"
+        "id": "idcocio",
+        "idoperario": "idcocrec"
     }
 }

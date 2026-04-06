@@ -823,12 +823,9 @@ $(document).on('click', '#botonGuardar', (e)=>{
                     success: function(res) {
                         divImportar.classList.add('d-flex');
                         divImportar.classList.remove('d-none');
-
-                        divConversor.classList.add('d-none');
-                        divConversor.classList.remove('d-flex');
-
                         const clientes = Array.isArray(res.clientes) ? res.clientes : [];
                         const selectClientes = document.getElementById('listaClientes');
+                        const idClienteActual = clienteActual?.id || localStorage.getItem('idCliente');
 
                         if (selectClientes) {
                             selectClientes.innerHTML = '';
@@ -846,6 +843,11 @@ $(document).on('click', '#botonGuardar', (e)=>{
                                 option.textContent = cliente.nombre;
                                 selectClientes.appendChild(option);
                             });
+
+                            // Re-selecciona el cliente activo antes de guardar
+                            if (idClienteActual) {
+                                selectClientes.value = idClienteActual;
+                            }
                         }
 
                         $(document).off('change', '#listaClientes').on('change', '#listaClientes', function () {
@@ -857,6 +859,21 @@ $(document).on('click', '#botonGuardar', (e)=>{
                             }
                         });
 
+                        // Si hab�a cliente seleccionado, recarga sus archivos sin limpiar la selecci�n
+                        if (idClienteActual && typeof window.obtenerDatosClientes === 'function') {
+                            const clienteSeleccionado = clientes.find((c) => String(c.id) === String(idClienteActual)) || null;
+                            window.obtenerDatosClientes(idClienteActual, clienteSeleccionado);
+                        } else if (typeof window.renderizarTablaArchivosCliente === 'function') {
+                            window.renderizarTablaArchivosCliente([]);
+                        }
+                        
+                        const idCliente = this.value;
+                        const clienteSeleccionado = clientes.find((c) => String(c.id) === String(idCliente)) || null;
+
+                        if (typeof window.obtenerDatosClientes === 'function') {
+                            window.obtenerDatosClientes(idCliente, clienteSeleccionado);
+                        }
+                        
                         if (typeof window.renderizarTablaArchivosCliente === 'function') {
                             window.renderizarTablaArchivosCliente([]);
                         }
@@ -878,5 +895,6 @@ $(document).on('click', '#botonGuardar', (e)=>{
         }
     })
 })
+
 
 

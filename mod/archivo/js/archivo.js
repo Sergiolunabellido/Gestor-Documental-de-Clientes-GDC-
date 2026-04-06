@@ -18,8 +18,7 @@ function crearFichero() {
     const fd = new FormData();
     fd.append('accion', 'generarTablas');
     fd.append('archivoSQL', archivo); 
-    const nombreFicheroSubido = document.getElementById('nombreFicheroSubido');
-    nombreFicheroSubido.textContent = archivo.name;
+   
 
     $.ajax({
         url: 'index.php',
@@ -76,6 +75,58 @@ $(document).on('click', '#botonCrearFichero', (e) => {
 
 })
 
+/**
+ * @brief Esta accion de click se encarga de eliminar la tabla del fichero.sql que se ha subido.
+ * @fecha 06/04/2026
+ * @return void
+ */
+
+$(document).on('click', '#botonEliminarFichero', (e) => {
+    e.preventDefault()
+    const modal = document.getElementById('modalEliminarFicheroBD');
+    new bootstrap.Modal(modal).show();
+
+})
+$(document).on('click', '#botonCancelarEliminacionFichero', (e) => {
+    e.preventDefault()
+    const modal = document.getElementById('modalEliminarFicheroBD');
+    modal ? bootstrap.Modal.getInstance(modal)?.hide() : null;
+})
+
+
+
+$(document).on('click', '#botonEliminarFicheroBD', (e) => {
+    e.preventDefault()
+    const nombreTabla = localStorage.getItem('nombreTabla');
+    console.log('Nombre de la tabla a eliminar:', nombreTabla);
+
+    if (!nombreTabla) {
+        toastr.error('No se encontró el nombre de la tabla a eliminar');
+        return;
+    }
+
+    $.ajax({url: 'index.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            accion: 'eliminarTablaBD',
+            nombreTabla: nombreTabla
+        },
+        success: function(res) {
+            if (res.ok) {
+                toastr.success(res.msg || 'Tabla eliminada correctamente');
+                $('#archivo').trigger('click');
+                const modal = document.getElementById('modalEliminarFicheroBD');
+                modal ? bootstrap.Modal.getInstance(modal)?.hide() : null;
+            } else {
+                toastr.error(res.msg || 'Error al eliminar la tabla');
+            }
+        },
+        error: function(xhr, status, error) {
+            toastr.error('Error al eliminar la tabla', error, status, xhr);
+        }
+    })
+})
 
 /**
  * @brief Renderiza los ficheros de cada tabla devuelta por el backend, estos hacen referencia a todos los mtable distintos de la tabla original.
@@ -84,8 +135,11 @@ $(document).on('click', '#botonCrearFichero', (e) => {
  * @returns 
  */
 function renderizarFicheros(nombreCampo, nombreTabla) {
+    localStorage.setItem('nombreTabla', nombreTabla);
     const divGenerico = document.getElementById('divPadreFicheros');
     if (!divGenerico) return;
+    const nombreFicheroSubido = document.getElementById('nombreFicheroSubido');
+    nombreFicheroSubido.textContent = nombreTabla ? `Archivo: ${nombreTabla}` : 'Archivo';
 
     const tablaOrigen = Array.isArray(nombreTabla) ? (nombreTabla[0] || '') : (nombreTabla || '');
     const tablas = Array.isArray(nombreCampo)

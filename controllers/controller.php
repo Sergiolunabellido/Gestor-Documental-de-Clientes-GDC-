@@ -33,6 +33,7 @@ $nombreCampo = $_POST['nombreCampo'] ?? '';
 $rutaCSV = $_POST['rutaCSV'] ?? '';
 $configuracionCSV = $_POST['configuracionCSV'] ?? null;
 $nombreArchivoCSV = $_POST['nombreArchivoCSV'] ?? '';
+$nombreTabla = $_POST['nombreTabla'] ?? '';
 
 # Exportacion de archivos
 
@@ -881,6 +882,20 @@ switch ($accion) {
 
         actualizarEstadoUsuario($db, $idUsuario, $nuevoEstado);
 
+        break;
+    
+    case'eliminarTablaBD':
+
+        $ok = eliminarTablaSQL($db, $nombreTabla);
+
+        if (!$ok) {
+            debug("Error al eliminar tabla SQL: $nombreTabla", "ERROR");
+            $response = ['ok' => false, 'msg' => 'Error al eliminar la tabla'];
+        } else {
+            debug("Tabla SQL eliminada correctamente: $nombreTabla", "INFO");
+            $response = ['ok' => true, 'msg' => 'La tabla se ha eliminado correctamente'];
+        }
+        
         break;
 
     // Fallback cuando llega una accion no contemplada.

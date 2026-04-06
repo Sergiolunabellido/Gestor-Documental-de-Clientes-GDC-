@@ -177,7 +177,7 @@ function renderModalesBase(): void {
         ],
     ]);
 
-      renderModal([
+    renderModal([
         'id' => 'modalEliminarArchivo',
         'title' => 'Eliminar Archivo',
         'ariaLabelledBy' => 'modalEliminarArchivoTitle',
@@ -230,6 +230,35 @@ function renderModalesBase(): void {
             ],
         ],
     ]);
+
+
+    renderModal([
+        'id' => 'modalEliminarFicheroBD',
+        'title' => 'Eliminar Fichero',
+        'ariaLabelledBy' => 'modalEliminarFicheroBDTitle',
+        'ariaHidden' => 'true',
+        'body' => <<<'HTML'
+            <div class="d-flex align-items-center">
+                <label for="nuevoNombre" class="form-label">Esta usted seguro de que desea eliminar el fichero?</label>
+            </div>
+        HTML,
+        'footerButtons' => [
+            [
+                'id' => 'botonCancelarEliminacionFichero',
+                'type' => 'button',
+                'class' => 'btn btn-secondary',
+                'label' => 'Cancelar',
+                'dismiss' => true,
+            ],
+            [
+                'id' => 'botonEliminarFicheroBD',
+                'type' => 'button',
+                'class' => 'btn btn-primary',
+                'label' => 'Aceptar',
+            ],
+        ],
+    ]);
+
 
     renderModal([
         'id' => 'modalCrearCliente',
@@ -1156,4 +1185,15 @@ function resolverExpresionesCSV($expresion, $fila) {
 
     // Si no es una expresión, devolver el valor directo de la columna
     return $fila[$expresion] ?? null;
+}
+
+function eliminarTablaSQL($conexion, $tabla) {
+    try {
+        $sql = "DROP TABLE IF EXISTS `$tabla`";
+        $conexion->exec($sql);
+        return ['ok' => true];
+    } catch (PDOException $e) {
+        debug("Error al eliminar la tabla '$tabla': " . $e->getMessage(), "ERROR");
+        return ['ok' => false, 'error' => 'Error al eliminar la tabla: ' . $e->getMessage()];
+    }
 }

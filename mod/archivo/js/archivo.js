@@ -43,8 +43,8 @@ function crearFichero() {
                     modalInstance.hide();
                 }
 
-                // Si la vista Archivo ya está pintada, renderizamos al instante.
-                // Si no está, recargamos la vista Archivo y su click handler la renderizará.
+                // Si la vista Archivo ya est� pintada, renderizamos al instante.
+                // Si no est�, recargamos la vista Archivo y su click handler la renderizar�.
                 if (document.getElementById('divPadreFicheros')) {
                     renderizarFicheros(res.campoTabla, nombreTabla);
                     
@@ -63,7 +63,7 @@ function crearFichero() {
     });
 }
 
-$(document).on('click', '#botonAñadirFichero', function (e){
+$(document).on('click', '#botonA�adirFichero', function (e){
     e.preventDefault();
     // Abrir el modal de modificar usuario
     const modal = document.getElementById('modalCrearFichero');
@@ -119,8 +119,18 @@ function renderizarFicheros(nombreCampo, nombreTabla) {
 
             divPadre.addEventListener('click', (e)=>{
                 e.preventDefault()
+                
+                
+                const seleccionClasses = ["border", "border-3", "border-secondary"];
+                const botones = divGenerico.querySelectorAll("button");
+                botones.forEach((btn)=>{
+                    btn.classList.remove(...seleccionClasses);
+                    btn.classList.add("border-0");
+                });
 
-        
+                divPadre.classList.remove("border-0");
+                divPadre.classList.add(...seleccionClasses);
+
                 $.ajax({
                     url:  'index.php',
                     method: 'POST',

@@ -1,8 +1,8 @@
 {
     "archivo": "archivo2.csv",
-    "id": "import_69b84c17a2249",
     "tabla": "fcocmen",
     "columnas": {
-        "primer_nombre": "name"
+        "primer_nombre": "name",
+        "apellido_paterno": "description"
     }
 }

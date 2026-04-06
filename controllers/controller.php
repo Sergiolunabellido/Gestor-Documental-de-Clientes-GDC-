@@ -271,13 +271,13 @@ switch ($accion) {
     // Prepara la vista para mapear/convertir un CSV y su configuracion guardada.
     case 'conversorArchivoCSV':
 
-        ob_start();
-        ponerEstatico('conversorArchivoCSV');
-        $estaticos = ob_get_clean();
+        // ob_start();
+        // ponerEstatico('conversorArchivoCSV');
+        // $estaticos = ob_get_clean();
 
-        ob_start();
-        cargarVista('conversorArchivoCSV');
-        $contenido = ob_get_clean();
+        // ob_start();
+        // cargarVista('conversorArchivoCSV');
+        // $contenido = ob_get_clean();
 
         $nombreBase = pathinfo($nombreArchivoCSV, PATHINFO_FILENAME);
         $rutaEspecifica = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_{$idCliente}".DW._CONFIG_.DW."{$nombreBase}"./*_{$nombreTablaDestino}*/".json";
@@ -409,24 +409,6 @@ switch ($accion) {
         $contador = 0;
         $separador = [];
 
-        foreach ($nombreACSV as $archivo) {
-            $ruta = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$archivo['nombre']}";
-            $csvI->setFile($ruta);
-            $separador[$archivo['nombre']] = $csvI->detectarSeparador();
-            
-            $contador++;
-            // Calculamos un porcentaje pequeño para esta fase rápida
-            $progreso = round(($contador / $total) * 15);
-            
-            session_start(); 
-            $_SESSION['progreso_export'] = $progreso;
-            session_write_close(); 
-        }
-
-        session_start();
-        $_SESSION['progreso_export'] = 20;
-        session_write_close();
-
         $tieneCabezera = $csvI->detectarCabezera();
         $headers = [];
 
@@ -435,6 +417,25 @@ switch ($accion) {
             $delimiter = $csvI->detectarSeparador();
             $headers = $csvI->guardarCabezeraGenerica($previewData, $delimiter, $headers);
             insertarColumnaGenericaCSV($ruta, $headers, $delimiter);
+
+            $lineas = fopen($rutaCSV, 'r');
+            while(fgetcsv($lineas) !== false) {
+                $contador++;
+                session_start(); 
+                $_SESSION['progreso_export'] = $contador;
+                session_write_close(); 
+            }
+            fclose($lineas);
+        } else {
+            $lineas = fopen($rutaCSV, 'r');
+            fgetcsv($lineas); // Saltar la cabecera
+            while(fgetcsv($lineas) !== false) {
+                $contador++;
+                session_start(); 
+                $_SESSION['progreso_export'] = $contador;
+                session_write_close(); 
+            }
+            fclose($lineas);
         }
 
         session_start();

@@ -34,6 +34,9 @@ function obtenerFilasSeleccionadas() {
 function renderizarTablaArchivosCliente(archivos, cliente = null) {
     clienteActual = cliente;
     const contenedor = document.getElementById('tablaArchivosClientes');
+    const divImportar = document.getElementById('pantallaImportar');
+    const divConversor = document.getElementById('conversorArchivo');
+
     if (!contenedor){ 
         toastr.error('No se a encontrado el contenedor de la tabla de archivos.')
         return
@@ -131,6 +134,7 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                 },
                 success: function(res) {
 
+
                     //Comprobamos el contenido de configuracionGuardada que podra guardar el contenido de esta pagina en un .json anteriormente guardado por el usuario.
                     //Si no contiene informacion se mostrara la pagina "predeterminada", si no cargara los campos guardados dentro de este archivo asi como los inputs y los selects anteriores.
                     const conf = res.configuracionGuardada;
@@ -154,8 +158,12 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                     if(conf && conf.ok !== false && clavesColumnas.length > 0){
                         console.log(res.configuracionGuardada)
 
-                        $('#estaticos').html(res.estaticos);
-                        $('#contenido').html(res.contenido);
+                        divImportar.classList.remove('d-flex');
+                        divImportar.classList.add('d-none');
+
+                        divConversor.classList.remove('d-none');
+                        divConversor.classList.add('d-flex');
+
                         const nombreCliente = (cliente && cliente.nombre) ? cliente.nombre : '';
                         let nombreArchivo = archivo.nombre;
                         let nombreTabla = '';
@@ -512,3 +520,326 @@ window.inicializarImportar = inicializarImportar;
 window.obtenerDatosClientes = obtenerDatosClientes;
 window.renderizarTablaArchivosCliente = renderizarTablaArchivosCliente;
 window.obtenerFilasSeleccionadas = obtenerFilasSeleccionadas;
+
+
+//Contenido conversorArchivoCSV.
+
+$(document).on('click', '#botonVolver', (e) => {
+    e.preventDefault()
+    const divImportar = document.getElementById('pantallaImportar');
+    const divConversor = document.getElementById('conversorArchivo');
+    divImportar.classList.add('d-flex');
+    divImportar.classList.remove('d-none');
+
+    divConversor.classList.add('d-none');
+    divConversor.classList.remove('d-flex');
+})
+
+let contadorFilas = 1;
+let contadorExpresiones = 1;
+
+function recogerCamposTabla(callback){
+    const tabla = document.getElementById('tablas').value
+
+    $.ajax({
+        url:  'index.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            accion:'tiposTablas',
+            nombreTabla: tabla
+        },
+        success: function(res) {
+            console.log(res.tipos)
+
+            const selects =  document.querySelectorAll('.camposTabla')
+            const tipos = Array.isArray(res.tipos) ? res.tipos : [res.tipos]
+            const tiposV = Array.isArray(res.tiposV) ? res.tiposV : [res.tiposV]
+
+            selects.forEach((select) => {
+                const valorActual = select.value
+                select.innerHTML = ''
+
+                tipos.forEach((tipo, index) =>{
+                    const option = document.createElement('option')
+                    const tipoValor = tiposV[index] || ''
+
+                    option.value = tipo
+                    option.textContent = `${tipo}: ${tipoValor}`
+
+                    if (tipo === valorActual) {
+                        option.selected = true
+                    }
+
+                    select.appendChild(option)
+                })
+            })
+
+            if (typeof callback === 'function') { callback(); }
+
+        },error: function(xhr, status, error) {
+            toastr.error('Error al cargar la vista importar', error, status, xhr);
+
+        }
+    })
+}
+
+function añadirFilaCampo() {
+    contadorFilas++;
+    const contenedor = document.getElementById('divCamposTabla');
+    const ultimaFila = contenedor.querySelector('.fila-campo:last-child');
+    const nuevaFila = ultimaFila.cloneNode(true);
+
+    nuevaFila.dataset.id = contadorFilas;
+    const nuevoSelect = nuevaFila.querySelector('select');
+    nuevoSelect.id = 'camposTabla_' + contadorFilas;
+    nuevoSelect.value = '';
+
+    contenedor.appendChild(nuevaFila);
+}
+
+function añadirFilaCampoConf(valorSelect) {
+    const contenedor = document.getElementById('divCamposTabla');
+    if (!contenedor) return;
+
+    const filas = contenedor.querySelectorAll('.fila-campo');
+    if (filas.length === 0) return;
+
+    const filaBase = filas[0];
+    const selectBase = filaBase.querySelector('select');
+
+    if (filas.length === 1 && selectBase && !selectBase.dataset.confInit) {
+        selectBase.value = valorSelect;
+        selectBase.dataset.confInit = '1';
+        return;
+    }
+
+    contadorFilas++;
+    const nuevaFila = filaBase.cloneNode(true);
+    nuevaFila.dataset.id = contadorFilas;
+
+    const nuevoSelect = nuevaFila.querySelector('select');
+    if (nuevoSelect) {
+        nuevoSelect.id = 'camposTabla_' + contadorFilas;
+        nuevoSelect.value = valorSelect;
+    }
+
+    contenedor.appendChild(nuevaFila);
+}
+
+function eliminarFilaCampo(boton) {
+    const contenedor = document.getElementById('divCamposTabla');
+    const filas = contenedor.querySelectorAll('.fila-campo');
+
+    if (filas.length > 1) {
+        const fila = boton.closest('.fila-campo');
+        const index = Array.from(filas).indexOf(fila);
+        fila.remove();
+        toastr.info('Se a eliminado un campo de la lista')
+
+        // Eliminar la fila de expresión correspondiente por índice
+        const contenedorExp = document.getElementById('contenedorExpresion');
+        if (contenedorExp) {
+            const filasExp = contenedorExp.querySelectorAll('.fila-expresion');
+            if (filasExp.length > index) {
+                filasExp[index].remove();
+                
+            }
+        }
+    } else {
+        toastr.error('Debe haber al menos un campo');
+    }
+}
+
+/**
+ * @brief Esta funcion permite añadir un nuevo input para seguir añadiendo expresiones con el contenido del CSV en la tabla de la BD, clonando el input existente.
+ * @param {*} boton 
+ * @returns 
+ */
+
+
+
+function añadirFilaExpresionConf(valorInput) {
+    const contenedor = document.getElementById('contenedorExpresion');
+    if (!contenedor) return;
+
+    const filas = contenedor.querySelectorAll('.fila-expresion');
+    if (filas.length === 0) {
+        contadorExpresiones++;
+        const nuevaFila = document.createElement('div');
+        nuevaFila.className = 'fila-expresion';
+        nuevaFila.dataset.id = contadorExpresiones;
+        nuevaFila.innerHTML = `
+            <input type="text" id="expresion_${contadorExpresiones}" class="form-control" placeholder="Expresión" value="${valorInput}">
+        `;
+        contenedor.appendChild(nuevaFila);
+        return;
+    }
+
+    const filaBase = filas[0];
+    const inputBase = filaBase.querySelector('input');
+
+    if (filas.length === 1 && inputBase && inputBase.value === '') {
+        inputBase.value = valorInput;
+        return;
+    }
+
+    contadorExpresiones++;
+    const nuevaFila = filaBase.cloneNode(true);
+    nuevaFila.dataset.id = contadorExpresiones;
+
+    const nuevoInput = nuevaFila.querySelector('input');
+    if (nuevoInput) {
+        nuevoInput.id = 'expresion_' + contadorExpresiones;
+        nuevoInput.value = valorInput;
+    }
+
+    contenedor.appendChild(nuevaFila);
+}
+
+/**
+ * @brief Esta funcion permite eliminar un input de la lista de inputs de las expresiones, eliminando el input ligado a ese boton de eliminar ( - ), si intentamos eliminar el ultimo este se limpiara
+ * pero no nos permitira eliminarlo ya que al menos a de quedar un input para poder realizar la accion.
+ * @param {*} boton 
+ * @returns alert | html
+ */
+
+function eliminarFilaExpresion(boton){
+    contenedorExpresion = contenedorExpresion -1;
+    const fila = boton.closest('.fila-expresion');
+    if (!fila) return;
+
+    const contenedor = document.getElementById('contenedorExpresion');
+    if (!contenedor) return;
+
+    const filas = contenedor.querySelectorAll('.fila-expresion');
+
+    if (filas.length > 1) {
+        fila.remove();
+    } else {
+        const input = document.querySelector('input')
+        if(input){
+            input.value = ""
+             toastr.warning('Debe haber al menos una expresión');
+        }
+       
+        
+    }
+}
+
+$(document).on('click', '.botonAñadirCampo', function(e) {
+    e.preventDefault();
+    añadirFilaExpresionConf('');
+    añadirFilaCampo(this);
+    
+});
+
+$(document).on('click', '.botonEliminarCampo', function(e) {
+    e.preventDefault();
+    eliminarFilaCampo(this);
+});
+
+
+$(document).on('change','#tablas', ()=>{
+    recogerCamposTabla()
+ })
+
+$(document).on('change', '.camposTabla', function(e) {
+    const idSelect = this.id;
+    const valorSeleccionado = this.value;
+    console.log('Select cambiado:', idSelect, 'Valor:', valorSeleccionado);
+
+})
+
+
+/**
+ * @brief Esta accion de click inicia una peticion que envia al backend un Map con el contenido necesario de la pagina para que al volver a cargar esta se muestren dichos datos, inputs...
+ * al guardar el contenido devuelve a la pagina anterior de importar dando por hecho que ya has terminado el trabajo.
+ * @fecha 10/03/2026
+ * @returns alert | html
+ *  */  
+$(document).on('click', '#botonGuardar', (e)=>{
+    e.preventDefault()
+
+    const divImportar = document.getElementById('pantallaImportar');
+    const divConversor = document.getElementById('conversorArchivo');
+
+    //Del contenedor de los inputs creamos un array con el valor de todos estos
+    const inputs = document.querySelectorAll('.fila-expresion input')
+    const valoresInputs = Array.from(inputs).map(input => input.value)
+
+    //Realizamos la misma operacion que con los inputs pero con el contenido de los selects que referencian los campos de la tabla.
+    const filasCampo = document.querySelectorAll('.fila-campo')
+    const valoresSelects = Array.from(filasCampo).map(fila => {
+        const select = fila.querySelector('select')
+        return select ? select.value : ''
+    })
+
+    //Recogemos la tabla que estamos usando para referenciar los campos como ejemplo.
+    const tablaReferenciada = document.getElementById('tablas').value
+    
+    //Recogemos el nombre del archivo del cual estamos guardando la configuracion.
+    const nombreArchivo = document.getElementById('nombreArchivo').textContent
+
+    //Creamos un Map para guardar clave valor de los inputs y los select que hacen referencia al valor y el nombre de la columna en la cual se guardara el valor del input.
+    let valores = new Map();
+
+    //Obtenemos la lonjitud mas corta de los dos arrays para poder realizar el map correctamente sin que se quede ningun campo suelto.
+    const longitud = Math.min(valoresInputs.length, valoresSelects.length)
+
+    //Creamos un bucle y rellenamos el map con los valores de cada posicion de los arrays.
+    for(let i = 0; i < longitud; i++){
+            valores.set(valoresInputs[i],valoresSelects[i])
+    }
+
+    //Creamos un nuevo Map para guardar todo el contenido y pasarlo al back-end.
+    let mapJSON = {
+        //Indicamos los valores y claves del map.
+        "archivo": nombreArchivo,
+        "tabla": tablaReferenciada,
+        "columnas": Object.fromEntries( valores)
+    }
+
+    
+
+    console.log(mapJSON)
+
+    if(tablaReferenciada === "Selecciona cualquier tabla:"){
+        toastr.warning('Si te digo que eligas una tabla es por algo...')
+        return;
+    }
+
+    $.ajax({
+        url:  'index.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            accion:'guardarConfCSV',
+            configuracionCSV: mapJSON,
+            idCliente: localStorage.getItem('idCliente')
+
+        },
+        success: function(res) {
+            //Si la respuesta es correcta se vuelve a la pagina anterior. Si no se muestra una alerta de error.
+           if(res.ok === true){
+                divImportar.classList.add('d-flex');
+                divImportar.classList.remove('d-none');
+
+                divConversor.classList.add('d-none');
+                divConversor.classList.remove('d-flex');      
+                toastr.success('El contenido de configuracion se ha guardado exitosamente.')
+           }else{
+            toastr.error(res.msg || 'No se a podido guardar la configuracion de este archivo.')
+           }
+
+        },error: function(xhr, status, error) {
+            toastr.error('Error al guardar la configuracion de este archivo', error, status, xhr);
+
+        }
+    })
+
+
+})
+
+
+

@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @brief Permite subir un archivo .sql y crear la tabla que este contenga dentro de el y poder posterior mente renderizar el contenido de esta.
  * @fecha 24/02/2026
  * @returns alert | html | errores.
@@ -8,6 +8,7 @@ function crearFichero() {
     const archivo = input?.files?.[0];
     const contenedorError = document.getElementById('errorCrearFichero');
     const mensajeError = document.getElementById('mensajeErrorFichero');
+    const btnCrear = $('#botonCrearFichero');
 
     if (!archivo) {
         contenedorError?.classList.remove('d-none');
@@ -17,8 +18,24 @@ function crearFichero() {
 
     const fd = new FormData();
     fd.append('accion', 'generarTablas');
-    fd.append('archivoSQL', archivo); 
-   
+    fd.append('archivoSQL', archivo);
+
+    const activarCarga = () => {
+        const textoOriginal = btnCrear.data('original-text') ?? btnCrear.text();
+        btnCrear.data('original-text', textoOriginal);
+        btnCrear.prop('disabled', true).html(
+            '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Subiendo...'
+        );
+        input?.setAttribute('disabled', 'disabled');
+    };
+
+    const desactivarCarga = () => {
+        const textoOriginal = btnCrear.data('original-text') || 'Crear';
+        btnCrear.prop('disabled', false).html(textoOriginal);
+        input?.removeAttribute('disabled');
+    };
+
+    activarCarga();
 
     $.ajax({
         url: 'index.php',
@@ -46,7 +63,6 @@ function crearFichero() {
 
                 if (document.getElementById('divPadreFicheros')) {
                     renderizarFicheros(res.campoTabla, nombreTabla);
-                    
                 } else {
                     $('#archivo').trigger('click');
                 }
@@ -58,6 +74,9 @@ function crearFichero() {
         },
         error: function (xhr, status, error) {
             toastr.error('Error al crear tabla desde fichero', error, status, xhr);
+        },
+        complete: function () {
+            desactivarCarga();
         }
     });
 }
@@ -98,12 +117,33 @@ $(document).on('click', '#botonCancelarEliminacionFichero', (e) => {
 $(document).on('click', '#botonEliminarFicheroBD', (e) => {
     e.preventDefault()
     const nombreTabla = localStorage.getItem('nombreTabla');
+    const btnEliminar = $('#botonEliminarFicheroBD');
+    const btnCancelar = $('#botonCancelarEliminacionFichero');
+    const modal = document.getElementById('modalEliminarFicheroBD');
     console.log('Nombre de la tabla a eliminar:', nombreTabla);
 
     if (!nombreTabla) {
         toastr.error('No se encontró el nombre de la tabla a eliminar');
         return;
     }
+
+
+    const activarCarga = () => {
+        const textoOriginal = btnEliminar.data('original-text') ?? btnEliminar.text();
+        btnEliminar.data('original-text', textoOriginal);
+        btnEliminar.prop('disabled', true).html(
+            '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Eliminando...'
+        );
+        btnCancelar.prop('disabled', true);
+    };
+
+    const desactivarCarga = () => {
+        const textoOriginal = btnEliminar.data('original-text') || 'Eliminar';
+        btnEliminar.prop('disabled', false).html(textoOriginal);
+        btnCancelar.prop('disabled', false);
+    };
+
+    activarCarga();
 
     $.ajax({url: 'index.php',
         method: 'POST',
@@ -116,7 +156,6 @@ $(document).on('click', '#botonEliminarFicheroBD', (e) => {
             if (res.ok) {
                 toastr.success(res.msg || 'Tabla eliminada correctamente');
                 $('#archivo').trigger('click');
-                const modal = document.getElementById('modalEliminarFicheroBD');
                 modal ? bootstrap.Modal.getInstance(modal)?.hide() : null;
             } else {
                 toastr.error(res.msg || 'Error al eliminar la tabla');
@@ -124,7 +163,8 @@ $(document).on('click', '#botonEliminarFicheroBD', (e) => {
         },
         error: function(xhr, status, error) {
             toastr.error('Error al eliminar la tabla', error, status, xhr);
-        }
+        },
+        complete: () => desactivarCarga()
     })
 })
 
@@ -307,4 +347,7 @@ function renderizarTabla(datos, nombreTabla) {
     divPadreTabla.appendChild(tabla);
     contenedor.appendChild(divPadreTabla);
 }
+
+
+
 

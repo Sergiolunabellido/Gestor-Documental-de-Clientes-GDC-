@@ -787,16 +787,53 @@ function obtenerConfiguracionesDeArchivo($nombreArchivoCSV, $idCliente) {
  * @return array Resultado con clave 'ok' indicando éxito o error, y 'datos' con el contenido del CSV o 'error' con información adicional
  * Fecha de creación: 2026-03-16
  */
-function leerCSV($ruta, $separador) {
+function leerCSV($ruta, $separador, $tieneCabecera = true) {
     if (!file_exists($ruta)) {
         return ['ok' => false, 'error' => 'Archivo no encontrado'];
     }
 
     $datos = [];
     if (($handle = fopen($ruta, "r")) !== false) {
-        $cabecera = fgetcsv($handle, 0, $separador); // Leer la primera línea como cabecera
+        $primeraFila = fgetcsv($handle, 0, $separador);
+        if ($primeraFila === false) {
+            fclose($handle);
+            return ['ok' => true, 'datos' => []];
+        }
+
+        if (isset($primeraFila[0]) && is_string($primeraFila[0])) {
+            $primeraFila[0] = preg_replace('/^\xEF\xBB\xBF/', '', $primeraFila[0]);
+        }
+
+        if ($tieneCabecera) {
+            $cabecera = $primeraFila;
+        } else {
+            $cabecera = [];
+            foreach ($primeraFila as $i => $valor) {
+                $cabecera[] = "Campo " . ($i + 1) . " (" . $valor . ")";
+            }
+
+            $filaNormalizada = $primeraFila;
+            $totalColumnas = count($cabecera);
+            if (count($filaNormalizada) < $totalColumnas) {
+                $filaNormalizada = array_pad($filaNormalizada, $totalColumnas, '');
+            } elseif (count($filaNormalizada) > $totalColumnas) {
+                $filaNormalizada = array_slice($filaNormalizada, 0, $totalColumnas);
+            }
+
+            $datos[] = array_combine($cabecera, $filaNormalizada);
+        }
+
         while (($fila = fgetcsv($handle, 0, $separador)) !== false) {
-            $datos[] = array_combine($cabecera, $fila); // Combinar cabecera con fila para obtener un array asociativo
+            $filaNormalizada = $fila;
+            $totalColumnas = count($cabecera);
+
+            if (count($filaNormalizada) < $totalColumnas) {
+                $filaNormalizada = array_pad($filaNormalizada, $totalColumnas, '');
+            } elseif (count($filaNormalizada) > $totalColumnas) {
+                $filaNormalizada = array_slice($filaNormalizada, 0, $totalColumnas);
+            }
+
+            $datos[] = array_combine($cabecera, $filaNormalizada);
         }
         fclose($handle);
         return ['ok' => true, 'datos' => $datos];
@@ -897,17 +934,63 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
     }
 
     $totalArchivos = count($archivoCSV);
+    $totalFilasGlobal = 0;
+
+    foreach ($archivoCSV as $config) {
+        if (!isset($config['nombre']) || !isset($config['tabla'])) {
+            continue;
+        }
+
+        if (empty($config['tabla']) || $config['tabla'] === '-' || str_contains($config['tabla'], 'Selecciona')) {
+            continue;
+        }
+
+        $nombreArchivoCSV = pathinfo($config['nombre'], PATHINFO_FILENAME);
+        $rutaCJson = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW._CONFIG_.DW."{$nombreArchivoCSV}.json";
+        $resJSON = leerJSON($rutaCJson);
+
+        if (!$resJSON['ok']) {
+            continue;
+        }
+
+        $rutaCSV = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$nombreArchivoCSV}.csv";
+        $mapC = $resJSON['datos']['columnas'] ?? [];
+        $usaCabecerasGenericas = false;
+
+        if (!empty($mapC)) {
+            $primeraClave = array_key_first($mapC);
+            if (is_string($primeraClave) && preg_match('/^Campo\s+\d+\s+\(.+\)$/', $primeraClave)) {
+                $usaCabecerasGenericas = true;
+            }
+        }
+
+        $separadorArchivo = $separador[$nombreArchivoCSV.".csv"] ?? ',';
+        $resCSVConteo = leerCSV($rutaCSV, $separadorArchivo, !$usaCabecerasGenericas);
+        if ($resCSVConteo['ok']) {
+            $totalFilasGlobal += count($resCSVConteo['datos'] ?? []);
+        }
+    }
+
+    if (session_status() === PHP_SESSION_NONE) { session_start(); }
+    $_SESSION['progreso_export'] = 0;
+    $_SESSION['progreso_export_filas'] = [
+        'procesadas' => 0,
+        'total' => $totalFilasGlobal
+    ];
+    session_write_close();
 
     // Crear o seleccionar la base de datos destino
-    $sql = "CREATE DATABASE IF NOT EXISTS `app2026_{$prefijodb}_{$bdDestino}`";
+    $sql = "CREATE DATABASE IF NOT EXISTS `app2026_{$bdDestino}`";
     try {
         $conexionbd->exec($sql);
-        $conexionbd->exec("USE `app2026_{$prefijodb}_{$bdDestino}`");
+        $conexionbd->exec("USE `app2026_{$bdDestino}`");
     } catch (PDOException $e) {
         debug("Error al crear o seleccionar la base de datos: " . $e->getMessage(), "ERROR");
         return ['ok' => false, 'msg' => 'Error al preparar la base de datos destino: ' . $e->getMessage()];
     }
     
+    $filasProcesadasGlobal = 0;
+
     foreach ($archivoCSV as $i => $config) {
         if (isset($config['nombre']) && isset($config['tabla'])) {
 
@@ -919,7 +1002,17 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
             $rutaCJson = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW._CONFIG_.DW."{$nombreArchivoCSV}.json";
             $resJSON = leerJSON($rutaCJson);
             $rutaCSV = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$nombreArchivoCSV}.csv";
-            $resCSV = leerCSV($rutaCSV, $separador[$nombreArchivoCSV.".csv"]);
+            $mapC = $resJSON['datos']['columnas'] ?? [];
+            $usaCabecerasGenericas = false;
+
+            if (!empty($mapC)) {
+                $primeraClave = array_key_first($mapC);
+                if (is_string($primeraClave) && preg_match('/^Campo\s+\d+\s+\(.+\)$/', $primeraClave)) {
+                    $usaCabecerasGenericas = true;
+                }
+            }
+
+            $resCSV = leerCSV($rutaCSV, $separador[$nombreArchivoCSV.".csv"], !$usaCabecerasGenericas);
             
             if ($resJSON['ok'] && $resCSV['ok']) {
                 $configExportacion = $resJSON['datos'];
@@ -930,9 +1023,9 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
                 $tipos = detectarTiposColumnas($filas, $mapC);
                 $columnasSql = array_map(fn($col, $tipo) => "`$col` $tipo", array_keys($tipos), array_values($tipos));
                 
-                $sql = "CREATE TABLE IF NOT EXISTS `$nombreArchivoCSV` (" . implode(", ", $columnasSql) . ")";
+                $sql = "CREATE TABLE IF NOT EXISTS `{$prefijodb}_$nombreArchivoCSV` (" . implode(", ", $columnasSql) . ")";
                 try {
-                    $conexionbd->exec("DROP TABLE IF EXISTS `$nombreArchivoCSV`");
+                    $conexionbd->exec("DROP TABLE IF EXISTS `{$prefijodb}_$nombreArchivoCSV`");
                     $conexionbd->exec($sql);
                 } catch (PDOException $e) {
                     debug("Error al crear la tabla '$nombreArchivoCSV': " . $e->getMessage(), "ERROR");
@@ -952,7 +1045,7 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
                     }
 
                     if (!empty($campos) && !empty($valores)) {
-                        $sqlInsert = "INSERT INTO `$nombreArchivoCSV` (" . implode(", ", $campos) . ") VALUES (" . implode(", ", $valores) . ")";
+                        $sqlInsert = "INSERT INTO `{$prefijodb}_$nombreArchivoCSV` (" . implode(", ", $campos) . ") VALUES (" . implode(", ", $valores) . ")";
                         try {
                             $conexionbd->exec($sqlInsert);
                         } catch (PDOException $e) {
@@ -961,17 +1054,24 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
                         }
                     }
 
-                   
-                    if ($idxFila % 20 == 0 || $idxFila == ($totalFilas - 1)) {
-                      
-                        $progresoArchivoBase = ($i / $totalArchivos) * 65; 
-                        $progresoFila = (($idxFila + 1) / $totalFilas) * (65 / $totalArchivos);
-                        $totalProgreso = 30 + round($progresoArchivoBase + $progresoFila);
+                    $filasProcesadasGlobal++;
+                    $progresoPct = $totalFilasGlobal > 0
+                        ? (int) round(($filasProcesadasGlobal / $totalFilasGlobal) * 100)
+                        : 0;
+                    $progresoPct = max(0, min(100, $progresoPct));
+
+                    if ($idxFila % 10 == 0 || $idxFila == $totalFilas - 1) {
 
                         if (session_status() === PHP_SESSION_NONE) { session_start(); }
-                        $_SESSION['progreso_export'] = min(98, $totalProgreso); 
+                        $_SESSION['progreso_export'] = $progresoPct;
+                        $_SESSION['progreso_export_filas'] = [
+                            'procesadas' => $filasProcesadasGlobal,
+                            'total' => $totalFilasGlobal
+                        ];
                         session_write_close();
+
                     }
+
                 }
             }
 
@@ -980,6 +1080,14 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
             return ['ok' => false, 'msg' => "Configuración incompleta para el archivo index $i"];
         }
     }
+
+    if (session_status() === PHP_SESSION_NONE) { session_start(); }
+    $_SESSION['progreso_export'] = 100;
+    $_SESSION['progreso_export_filas'] = [
+        'procesadas' => $totalFilasGlobal,
+        'total' => $totalFilasGlobal
+    ];
+    session_write_close();
 
     return ['ok' => true, 'msg' => 'Exportación completada'];
 }
@@ -994,6 +1102,8 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
  */
 function insertarColumnaGenericaCSV($ruta, $headers, $delimiter) {
 
+    $datos = [];
+
     $handle = fopen($ruta, "r");
 
     while (($fila = fgetcsv($handle, 1000, $delimiter)) !== false) {
@@ -1006,7 +1116,7 @@ function insertarColumnaGenericaCSV($ruta, $headers, $delimiter) {
     $handle = fopen($ruta, "w");
 
     foreach ($datos as $fila) {
-        fputcsv($handle, $fila, ",");
+        fputcsv($handle, $fila, $delimiter);
     }
 
     fclose($handle);

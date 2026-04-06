@@ -39,6 +39,7 @@ $nombreArchivoCSV = $_POST['nombreArchivoCSV'] ?? '';
 $nombreACSV = $_POST['archivos'] ?? null;
 $bdDestino = $_POST['bdDestino'] ?? '';
 $prefijodb = $_POST['prefijo'] ?? '';
+$separador = $_POST['separador'] ?? [];
 
 
 $recordarme = filter_var($recordarme, FILTER_VALIDATE_BOOLEAN);
@@ -404,49 +405,15 @@ switch ($accion) {
         set_time_limit(0);
         ini_set('memory_limit', '512M');
 
-        $total = count($nombreACSV);
         $csvI = new CSVImportar($db);
-        $contador = 0;
-        $separador = [];
 
-        $tieneCabezera = $csvI->detectarCabezera();
-        $headers = [];
-
-        if(!$tieneCabezera) {
-            $previewData = $csvI->previewCSV();
-            $delimiter = $csvI->detectarSeparador();
-            $headers = $csvI->guardarCabezeraGenerica($previewData, $delimiter, $headers);
-            insertarColumnaGenericaCSV($ruta, $headers, $delimiter);
-
-            $lineas = fopen($rutaCSV, 'r');
-            while(fgetcsv($lineas) !== false) {
-                $contador++;
-                session_start(); 
-                $_SESSION['progreso_export'] = $contador;
-                session_write_close(); 
-            }
-            fclose($lineas);
-        } else {
-            $lineas = fopen($rutaCSV, 'r');
-            fgetcsv($lineas); // Saltar la cabecera
-            while(fgetcsv($lineas) !== false) {
-                $contador++;
-                session_start(); 
-                $_SESSION['progreso_export'] = $contador;
-                session_write_close(); 
-            }
-            fclose($lineas);
+        foreach ($nombreACSV as $archivo) {
+            $ruta = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_$idCliente".DW."{$archivo['nombre']}";
+            $csvI->setFile($ruta);
+            $separador[$archivo['nombre']] = $csvI->detectarSeparador();
         }
 
-        session_start();
-        $_SESSION['progreso_export'] = 30; // Marcamos que ya empieza lo pesado
-        session_write_close();
-
         $exportacion = exportarCSVABD($idCliente, $bdDestino, $prefijodb, $db, $nombreACSV, $separador);
-
-        session_start();
-        $_SESSION['progreso_export'] = 100;
-        session_write_close();
 
         $response = ['ok' => $exportacion['ok'], 'msg' => $exportacion['msg']];
     break;

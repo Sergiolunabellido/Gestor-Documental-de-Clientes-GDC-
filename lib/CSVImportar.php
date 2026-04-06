@@ -126,7 +126,7 @@ class CSVImportar {
      * Fecha de creacion: 2026-03-09
      * @return bool True si se detecta cabecera, false en caso contrario
      */
-    public function detectarCabezera() {
+    public function detectarCabecera() {
         if (empty($this->file) || !is_readable($this->file)) {
             return false;
         }
@@ -225,7 +225,7 @@ class CSVImportar {
 
         // Leemos la primera fila del CSV para mostrar las cabeceras al usuario
 
-        $tieneCabezera = $this->detectarCabezera();
+        $tieneCabezera = $this->detectarCabecera();
 
         $headers = [];
         if($tieneCabezera) {

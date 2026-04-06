@@ -375,6 +375,7 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
         if (!barraProgresiva || !barraProgresivaBar) return;
         barraProgresivaBar.style.width = '0%';
         barraProgresivaBar.setAttribute('aria-valuenow', '0');
+        barraProgresivaBar.textContent = '';
     };
 
     const setProgress = (value) => {
@@ -386,8 +387,20 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
         });
     };
 
+    const setFilas = (procesadas, total) => {
+        if (!barraProgresivaBar) return;
+        const p = Number.isFinite(Number(procesadas)) ? Number(procesadas) : 0;
+        const t = Number.isFinite(Number(total)) ? Number(total) : 0;
+        if (t > 0) {
+            barraProgresivaBar.textContent = `${p}/${t} filas`;
+        } else {
+            barraProgresivaBar.textContent = `${p} filas`;
+        }
+    };
+
     resetProgress();
     $.get('/practicas2026/app/aplicacionweb/mod/importar/includes/progreso.php?reset=1');
+    setFilas(0, 0);
 
     if (barraProgresiva) barraProgresiva.classList.remove('visually-hidden');
 
@@ -407,108 +420,65 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
     const TablaDestino = document.getElementById('dbDestino')?.value || '';
     const prefijoTabla = document.getElementById('prefijoTabla')?.value || '';
 
-    const datosCSVs = [];
-    const datosJSONs = [];
-    const totalPasos = (filasSeleccionadas.length * 2) + 1;
-    let pasosCompletados = 0;
+    let monitorProgreso;
 
-   
-    const avanzar = () => {
-        pasosCompletados += 1;
-        const pct = (pasosCompletados / totalPasos) * 20; 
-        setProgress(pct);
-    };
-
-    const cargarArchivo = (url, tipo) => {
-        return $.ajax({ url, method: "GET", dataType: "text" })
-            .then((data) => {
-                if (tipo === 'csv') datosCSVs.push(data);
-                else datosJSONs.push(data);
-                avanzar();
-                return { ok: true, data };
-            })
-            .catch((error) => {
-                toastr.error(`Error al cargar: ${url}`);
-                avanzar();
-                return { ok: false, error };
-            });
-    };
-
-    const procesarSecuencial = async () => {
-        for (let i = 0; i < filasSeleccionadas.length; i++) {
-            const datos = filasSeleccionadas[i];
-            const csvUrl = `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/${encodeURIComponent(datos.nombre)}`;
-            const jsonUrl = `/practicas2026/app/aplicacionweb/assets/archivosC/cliente_${clienteActual?.id}/config/${encodeURIComponent(datos.nombreJson)}`;
-            try {
-                await cargarArchivo(csvUrl, 'csv');
-                await cargarArchivo(jsonUrl, 'json');
-            } catch (e) { avanzar(); }
-        }
-    };
-
-    procesarSecuencial().then(() => {
-        let monitorProgreso;
-
-        $.ajax({
-            url: 'index.php',
-            method: 'POST',
-            dataType: 'json',
-            timeout: 0, // Esperar lo que sea necesario
-            data: {
-                accion: 'exportarArchivosCliente',
-                datosCSVs: datosCSVs,
-                datosJSONs: datosJSONs,
-                archivos: filasSeleccionadas,
-                bdDestino: TablaDestino,
-                prefijo: prefijoTabla,
-                idCliente: clienteActual?.id || null
-            },
-            beforeSend: function() {
-            
-                monitorProgreso = setInterval(() => {
-                    $.ajax({
-                        url: '/practicas2026/app/aplicacionweb/mod/importar/includes/progreso.php',
-                        method: 'GET',
-                        dataType: 'text', 
-                        success: function(raw) {
-                            try {
-                               
-                                const cleanJSON = raw.substring(raw.indexOf('{'), raw.lastIndexOf('}') + 1);
-                                const res = JSON.parse(cleanJSON);
-                                if (res.porcentaje !== undefined && res.porcentaje > 0) {
-                                    setProgress(res.porcentaje);
-                                }
-                            } catch(e) { console.error("Error leyendo progreso:", raw); }
+    $.ajax({
+        url: 'index.php',
+        method: 'POST',
+        dataType: 'json',
+        timeout: 0,
+        data: {
+            accion: 'exportarArchivosCliente',
+            archivos: filasSeleccionadas,
+            bdDestino: TablaDestino,
+            prefijo: prefijoTabla,
+            idCliente: clienteActual?.id || null
+        },
+        beforeSend: function() {
+            monitorProgreso = setInterval(() => {
+                $.ajax({
+                    url: '/practicas2026/app/aplicacionweb/mod/importar/includes/progreso.php',
+                    method: 'GET',
+                    dataType: 'json',
+                    cache: false,
+                    success: function(res) {
+                        if (typeof res?.porcentaje !== 'undefined') {
+                            setProgress(res.porcentaje);
                         }
-                    });
-                }, 1000);
-            },
-            success: function(res) {
-                clearInterval(monitorProgreso);
-                setProgress(100);
-                setTimeout(() => {
-                    if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
-                     
-                    if(res.ok){
-                        toastr.success('Exportación completada') 
-                        resetProgress()
-                    }else {
-                        toastr.error(res.msg);
-                        resetProgress()
+                        if (res?.filas) {
+                            setFilas(res.filas.procesadas, res.filas.total);
+                        }
                     }
-                }, 600);
-            },
-            error: function(xhr, status, error) {
-                clearInterval(monitorProgreso);
-                toastr.error('Error en el servidor al exportar');
-                resetProgress()
-                if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
-            },
-            complete: function() {
-                if (boton) boton.textContent = textoOriginal;
-                resetProgress()
+                });
+            }, 300);
+        },
+        success: function(res) {
+            clearInterval(monitorProgreso);
+            setProgress(100);
+            if (res?.filas) {
+                setFilas(res.filas.procesadas, res.filas.total);
             }
-        });
+            setTimeout(() => {
+                if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
+
+                if (res.ok) {
+                    toastr.success('Exportación completada');
+                } else {
+                    toastr.error(res.msg || 'Error al exportar');
+                }
+
+                resetProgress();
+            }, 600);
+        },
+        error: function() {
+            clearInterval(monitorProgreso);
+            toastr.error('Error en el servidor al exportar');
+            if (barraProgresiva) barraProgresiva.classList.add('visually-hidden');
+            resetProgress();
+        },
+        complete: function() {
+            if (boton) boton.textContent = textoOriginal;
+        }
     });
 });
 

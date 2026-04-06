@@ -859,7 +859,7 @@ $(document).on('click', '#botonGuardar', (e)=>{
                             }
                         });
 
-                        // Si hab�a cliente seleccionado, recarga sus archivos sin limpiar la selecci�n
+                        // Si habia cliente seleccionado, recarga sus archivos sin limpiar la seleccion
                         if (idClienteActual && typeof window.obtenerDatosClientes === 'function') {
                             const clienteSeleccionado = clientes.find((c) => String(c.id) === String(idClienteActual)) || null;
                             window.obtenerDatosClientes(idClienteActual, clienteSeleccionado);

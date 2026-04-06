@@ -18,6 +18,8 @@ function crearFichero() {
     const fd = new FormData();
     fd.append('accion', 'generarTablas');
     fd.append('archivoSQL', archivo); 
+    const nombreFicheroSubido = document.getElementById('nombreFicheroSubido');
+    nombreFicheroSubido.textContent = archivo.name;
 
     $.ajax({
         url: 'index.php',
@@ -43,8 +45,6 @@ function crearFichero() {
                     modalInstance.hide();
                 }
 
-                // Si la vista Archivo ya est� pintada, renderizamos al instante.
-                // Si no est�, recargamos la vista Archivo y su click handler la renderizar�.
                 if (document.getElementById('divPadreFicheros')) {
                     renderizarFicheros(res.campoTabla, nombreTabla);
                     
@@ -63,7 +63,7 @@ function crearFichero() {
     });
 }
 
-$(document).on('click', '#botonA�adirFichero', function (e){
+$(document).on('click', '#botonAñadirFichero', function (e){
     e.preventDefault();
     // Abrir el modal de modificar usuario
     const modal = document.getElementById('modalCrearFichero');

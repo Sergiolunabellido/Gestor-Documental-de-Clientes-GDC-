@@ -1,7 +1,11 @@
 <div class="vh-100 w-full d-flex flex-column aling-items-start " id="archivos">
-    <div class="m-3">
+    <div class="m-3 d-flex justify-content-between align-items-center w-full">
         <button id="botonAñadirFichero" class="btn btn-primary">
             Subir fichero
+        </button>
+        <h1 id="nombreFicheroSubido"></h1>
+        <button id="botonEliminarFichero" class="btn btn-danger">
+            Eliminar fichero
         </button>
     </div>
     <div id="divPadreFicheros" class="m-5" style="max-height: 100vh; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; align-content: start;">

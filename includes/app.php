@@ -924,7 +924,7 @@ function detectarTiposColumnas($filas, $mapC) {
  * @return array Resultado con clave 'ok' (booleano) e 'msg' (mensaje de estado o error)
  * @nota Busca el archivo JSON de configuración para cada CSV y lo usa para mappear las columnas del CSV a la tabla BD
  * @fecha 2026-03-16
- * @última_actualización 2026-03-25
+ * @última_actualización 2026-04-06
  */
 function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archivoCSV, $separador) {
     
@@ -933,7 +933,6 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
         return ['ok' => false, 'msg' => 'Parámetros inválidos para exportar CSV a base de datos'];
     }
 
-    $totalArchivos = count($archivoCSV);
     $totalFilasGlobal = 0;
 
     foreach ($archivoCSV as $config) {
@@ -1060,7 +1059,7 @@ function exportarCSVABD($idCliente, $bdDestino, $prefijodb, $conexionbd, $archiv
                         : 0;
                     $progresoPct = max(0, min(100, $progresoPct));
 
-                    if ($idxFila % 10 == 0 || $idxFila == $totalFilas - 1) {
+                    if ($idxFila % 5 == 0 || $idxFila == $totalFilas - 1) {
 
                         if (session_status() === PHP_SESSION_NONE) { session_start(); }
                         $_SESSION['progreso_export'] = $progresoPct;

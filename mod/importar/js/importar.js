@@ -187,7 +187,22 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                                 añadirFilaExpresionConf(clave);
                             });
                             const contenedorCamposTabla = document.getElementById('divCamposTabla');
+                            
                             if (contenedorCamposTabla) {
+                                
+                                const filaBase = contenedorCamposTabla.querySelector('.fila-campo');
+                                contenedorCamposTabla.innerHTML = '';
+                                if (filaBase) {
+                                    const baseClon = filaBase.cloneNode(true);
+                                    const selBase = baseClon.querySelector('select');
+                                    if (selBase) {
+                                        selBase.value = '';
+                                        delete selBase.dataset.confInit;
+                                    }
+                                    contenedorCamposTabla.appendChild(baseClon);
+                                }
+                                contadorFilas = 1;
+
                                 valoresColumnas.forEach((valor) => {
                                     añadirFilaCampoConf(valor);
                                 });
@@ -196,8 +211,8 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                         }
 
                         const selectTabla = document.getElementById('tablas');
+                        selectTabla.innerHTML = '';
                         if (selectTabla) {
-                            selectTabla.innerHTML = '';
                             res.campoTabla.forEach((campo) =>{
                                 const option = document.createElement('option');
                                 option.value = campo;
@@ -244,7 +259,7 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                         $('#nombreArchivo').text(nombreArchivo);
 
                         const select =  document.getElementById('tablas')
-                        
+                        select.innerHTML = ''
 
                         res.campoTabla.forEach((campo) =>{
 
@@ -450,7 +465,7 @@ $(document).on('click', '#exportarFicherosCliente', (e) => {
                         }
                     }
                 });
-            }, 300);
+            }, 200);
         },
         success: function(res) {
             clearInterval(monitorProgreso);
@@ -503,6 +518,11 @@ $(document).on('click', '#botonVolver', (e) => {
 
     divConversor.classList.add('d-none');
     divConversor.classList.remove('d-flex');
+
+    // Al volver, recarga la tabla del cliente actual sin tocar el select
+    if (clienteActual && clienteActual.id && typeof obtenerDatosClientes === 'function') {
+        obtenerDatosClientes(clienteActual.id, clienteActual);
+    }
 })
 
 let contadorFilas = 1;
@@ -792,11 +812,61 @@ $(document).on('click', '#botonGuardar', (e)=>{
         success: function(res) {
             //Si la respuesta es correcta se vuelve a la pagina anterior. Si no se muestra una alerta de error.
            if(res.ok === true){
-                divImportar.classList.add('d-flex');
-                divImportar.classList.remove('d-none');
+                
+                 $.ajax({
+                    url:  'index.php',
+                    method: 'POST',
+                    dataType: 'json',
+                    data: {
+                        accion:'importar',
+                    },
+                    success: function(res) {
+                        divImportar.classList.add('d-flex');
+                        divImportar.classList.remove('d-none');
 
-                divConversor.classList.add('d-none');
-                divConversor.classList.remove('d-flex');      
+                        divConversor.classList.add('d-none');
+                        divConversor.classList.remove('d-flex');
+
+                        const clientes = Array.isArray(res.clientes) ? res.clientes : [];
+                        const selectClientes = document.getElementById('listaClientes');
+
+                        if (selectClientes) {
+                            selectClientes.innerHTML = '';
+
+                            const optionDefault = document.createElement('option');
+                            optionDefault.value = '';
+                            optionDefault.textContent = 'Selecciona un cliente';
+                            optionDefault.selected = true;
+                            optionDefault.disabled = true;
+                            selectClientes.appendChild(optionDefault);
+
+                            clientes.forEach((cliente) => {
+                                const option = document.createElement('option');
+                                option.value = cliente.id;
+                                option.textContent = cliente.nombre;
+                                selectClientes.appendChild(option);
+                            });
+                        }
+
+                        $(document).off('change', '#listaClientes').on('change', '#listaClientes', function () {
+                            const idCliente = this.value;
+                            const clienteSeleccionado = clientes.find((c) => String(c.id) === String(idCliente)) || null;
+
+                            if (typeof window.obtenerDatosClientes === 'function') {
+                                window.obtenerDatosClientes(idCliente, clienteSeleccionado);
+                            }
+                        });
+
+                        if (typeof window.renderizarTablaArchivosCliente === 'function') {
+                            window.renderizarTablaArchivosCliente([]);
+                        }
+
+                    },error: function(xhr, status, error) {
+                        toastr.error('Error al cargar la vista importar', error, status, xhr);
+                        
+                    }
+                })
+                    
                 toastr.success('El contenido de configuracion se ha guardado exitosamente.')
            }else{
             toastr.error(res.msg || 'No se a podido guardar la configuracion de este archivo.')
@@ -807,9 +877,6 @@ $(document).on('click', '#botonGuardar', (e)=>{
 
         }
     })
-
-
 })
-
 
 

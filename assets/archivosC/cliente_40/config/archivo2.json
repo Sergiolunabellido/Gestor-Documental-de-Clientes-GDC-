@@ -1,8 +1,9 @@
 {
     "archivo": "archivo2.csv",
-    "tabla": "fcocmen",
+    "tabla": "fmedotrosingreso",
     "columnas": {
-        "primer_nombre": "name",
-        "apellido_paterno": "description"
+        "primer_nombre": "hora",
+        "apellido_paterno": "observacion",
+        "cod_usuario": "idmedalmdet"
     }
 }

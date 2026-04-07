@@ -1,8 +1,8 @@
 {
     "archivo": "registro jornada.csv",
-    "tabla": "fcococdet",
+    "tabla": "ftsalariales",
     "columnas": {
-        "id": "idcocio",
-        "idoperario": "idcocrec"
+        "id": "idcon",
+        "observaciones": "categoria"
     }
 }

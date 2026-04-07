@@ -20,7 +20,7 @@
                 ?>
 
             </div>
-            <div id="contenido" class="flex-grow-1  min-vh-100">
+            <div id="contenido" class="min-vh-100">
                 <?php
 
                     if (!empty($_SESSION['login'])) {
@@ -45,7 +45,6 @@
         <script src="mod/importar/js/importar.js"></script>
         <script src="mod/detalleCliente/js/detalleCliente.js"></script>
         <script src="mod/archivo/js/archivo.js"></script>
-        <script src="mod/conversorArchivoCSV/js/conversorArchivoCSV.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script src="config-toast/config-toast.js"></script>
     </body>

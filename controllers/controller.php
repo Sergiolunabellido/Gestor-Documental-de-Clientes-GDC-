@@ -269,6 +269,20 @@ switch ($accion) {
         $response = ['ok' => true, 'estaticos' => $estaticos, 'contenido' => $contenido, 'clientes' => $clientes];
 
         break;
+    
+    case 'configuracion':
+
+        ob_start();
+        ponerEstatico('configuracion');
+        $estaticos = ob_get_clean();
+
+        ob_start();
+        cargarVista('configuracion');
+        $contenido = ob_get_clean();
+
+        $response = ['ok' => true, 'estaticos' => $estaticos, 'contenido' => $contenido];
+
+        break;
 
     // Prepara la vista para mapear/convertir un CSV y su configuracion guardada.
     case 'conversorArchivoCSV':

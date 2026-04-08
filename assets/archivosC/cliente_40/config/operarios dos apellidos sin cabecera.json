@@ -1,8 +1,0 @@
-{
-    "archivo": "operarios dos apellidos sin cabecera.csv",
-    "tabla": "fmenu",
-    "columnas": {
-        "Campo 1 (Juan)": "name",
-        "Campo 3 (Garcia)": "permission"
-    }
-}

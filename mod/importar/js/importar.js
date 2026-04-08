@@ -242,13 +242,16 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                     }else{
                         console.log('Mostrando el panel por defecto, configuracionGuardada esta: ', res.configuracionGuardada)
 
-                        $('#estaticos').html(res.estaticos);
-                        $('#contenido').html(res.contenido);
+                        divImportar.classList.remove('d-flex');
+                        divImportar.classList.add('d-none');
+
+                        divConversor.classList.remove('d-none');
+                        divConversor.classList.add('d-flex');
                         const nombreCliente = (cliente && cliente.nombre) ? cliente.nombre : '';
                         let nombreArchivo = archivo.nombre;
-                        
+
                         localStorage.setItem('idCliente', cliente.id)
-                        
+
                         const contenedorExpresion = document.getElementById('contenedorExpresion');
                         contenedorExpresion.innerHTML = ''
                         if (contenedorExpresion) {
@@ -259,7 +262,7 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                         $('#nombreArchivo').text(nombreArchivo);
 
                         const select =  document.getElementById('tablas')
-                        select.innerHTML = ''
+
 
                         res.campoTabla.forEach((campo) =>{
 
@@ -269,9 +272,9 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
 
                             select.appendChild(option)
                         })
-                    
+
                     }
-                    
+
 
                     
 

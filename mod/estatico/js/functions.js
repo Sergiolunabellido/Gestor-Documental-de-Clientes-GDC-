@@ -290,6 +290,27 @@ $(document).on('click', '#botonPerfil', (e)=>{
     })
 })
 
+$(document).on('click', '#botonConfiguracion', (e)=>{
+    e.preventDefault()
+
+    $.ajax({
+        url:  'index.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            accion:'configuracion',
+        },
+        success: function(res) {
+          $('#estaticos').html(res.estaticos);
+          $('#contenido').html(res.contenido);
+
+        },error: function(xhr, status, error) {
+            toastr.error('Error al cargar la vista configuracion', error, status, xhr);
+            
+        }
+    })
+})
+
 /**
  * @brief Renderiza la lista de usuarios en el contenedor #divs-usuarios. Cada usuario se muestra con su foto de perfil, nombre, correo y botones para modificar o eliminar.
  * @param {Array<Object>} users - Lista de objetos de usuario, cada uno con propiedades como id, nombre, email, foto_perfil y timestamp.

@@ -1,10 +1,9 @@
 {
     "archivo": "operarios un nombre con cabedera.csv",
-    "id": "import_69c24f90c97d0",
-    "tabla": "fcocing",
+    "tabla": "fautoria",
     "columnas": {
-        "nombre": "name",
-        "id": "cantunit",
-        "tlfno1": "cunitt"
+        "nombre": "nombreentidad",
+        "tlfno1": "tlf1centro",
+        "tlfno2": "tlf1entidad"
     }
 }

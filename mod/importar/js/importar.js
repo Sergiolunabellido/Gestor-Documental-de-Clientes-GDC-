@@ -262,7 +262,7 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                         $('#nombreArchivo').text(nombreArchivo);
 
                         const select =  document.getElementById('tablas')
-
+                        select.innerHTML = ''
 
                         res.campoTabla.forEach((campo) =>{
 

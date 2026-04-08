@@ -1,4 +1,4 @@
-<div class="vh-100 w-full d-flex flex-column aling-items-start  ">
+<div class="min-vh-100 w-75 d-flex flex-column aling-items-start  ">
     <div class=" w-full gap-4 d-flex aling-items-start">
         <div class="d-flex align-items-center m-3 ">
             <button id="botonVolverFuente" class="btn  btn-dark">

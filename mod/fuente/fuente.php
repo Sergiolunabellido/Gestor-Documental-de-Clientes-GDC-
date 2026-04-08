@@ -1,4 +1,4 @@
-<div class="vh-100 w-full d-flex flex-column aling-items-start ">
+<div class="min-vh-100 w-75 d-flex flex-column aling-items-start ">
      <div class="m-3 fs-2 fw-bold">
         <Label>Carpetas de Clientes</Label>
     </div>

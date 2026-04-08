@@ -6,11 +6,15 @@
  */
 function cargarVista($vista) {
     $archivoVista = _ROOT_.DW._MOD_.DW."$vista/$vista.php" ;
+
+
     if(file_exists($archivoVista)) {
         include $archivoVista;
     }else {
         echo "<h1> La vista no existe </h1>";
     }
+
+
 }
 
 /*

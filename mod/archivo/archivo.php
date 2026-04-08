@@ -1,4 +1,4 @@
-<div class="vh-100 w-full d-flex flex-column aling-items-start " id="archivos">
+<div class="vh-100 w-75 d-flex flex-column aling-items-start " id="archivos">
     <div class="m-3 d-flex justify-content-between align-items-center w-full">
         <button id="botonAñadirFichero" class="btn btn-primary">
             Subir fichero

@@ -1,4 +1,4 @@
-<div class="vh-100">
+<div class="vh-100 w-75">
     <div>
         <h1>  Perfil Usuario</h1>
         <div class=" d-flex  align-items-center justify-content-start gap-2">

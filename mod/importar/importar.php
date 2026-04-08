@@ -1,4 +1,4 @@
-<div id="pantallaImportar" class="vh-100 w-full d-flex flex-column aling-items-start ">
+<div id="pantallaImportar" class="vh-100 w-75 d-flex flex-column aling-items-start ">
     <div id="cabeceraImportar" class="d-flex align-items-center justify-content-between m-3">
         <div class="d-flex flex-wrap align-items-center w-100 gap-3">
             <label for="listaClientes">Seleccione al cliente:</label>

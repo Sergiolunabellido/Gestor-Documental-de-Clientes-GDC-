@@ -1,4 +1,4 @@
-<div class="vh-100 d-flex flex-column align-items-center ">
+<div class="vh-100 w-75 d-flex flex-column align-items-center ">
     
     <div class="d-flex flex-column align-items-center m-3">
         <h1>Lista de usuarios</h1>

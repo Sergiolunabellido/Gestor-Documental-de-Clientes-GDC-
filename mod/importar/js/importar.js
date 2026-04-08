@@ -264,6 +264,8 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                         const select =  document.getElementById('tablas')
                         select.innerHTML = ''
 
+                        const selectTabla = document.getElementById('tablas');
+                        selectTabla.innerHTML = '';
                         res.campoTabla.forEach((campo) =>{
 
                             const option = document.createElement('option')

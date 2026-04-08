@@ -1,4 +1,4 @@
-<div class="vh-100 w-full d-flex flex-column gap-10">
+<div class="min-vh-100 w-75 d-flex flex-column gap-10">
     <div id="TitleBack">
         <h1 class="m-3" class="form-label">Configuración</h1>
     </div>

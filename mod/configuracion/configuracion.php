@@ -11,7 +11,7 @@
                 </tr>
             </thead>
             <tbody id="configuracionBody">
-                <!-- Aquí se llenará dinámicamente con JavaScript -->
+               
             </tbody>
         </table>
     </div>

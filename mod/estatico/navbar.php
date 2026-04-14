@@ -2,7 +2,7 @@
         <div class="d-flex align-items-start gap-3">
             <p id="nombreAplicacion"><?php echo _APPNAME_; ?></p>
             <p id="versionAplicacion"><?php echo _VERSION_; ?></p>
-            <p id="fechaActual"></p>
+            <p id="fechaActual"><?php echo date('Y-m-d H:i:s'); ?></p>
         </div>
         <div class=" d-flex align-items-center justify-content-end gap-2 p-0 rounded">
             <p class="lead">En linea</p>

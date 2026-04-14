@@ -227,7 +227,6 @@ function renderizarArchivosClientes(cliente) {
             const archivos = Array.isArray(res.archivos) ? res.archivos : [];
 
             if (archivos.length === 0) {
-                toastr.info('Este cliente no tiene archivos aun')
                 contenedor.innerHTML = '<p class="m-3">Este cliente todavia no tiene archivos.</p>';
                 return;
             }

@@ -334,6 +334,7 @@ function renderizarConfiguracion() {
                         const tr = document.createElement("tr")
                         const tdNombre = document.createElement("td")
                         tdNombre.textContent = variable.nombre
+                        tdNombre.classList.add('fw-semibold')
                         const tdValor = document.createElement("td")
                         tdValor.textContent = variable.valor
                         tdValor.contentEditable = true

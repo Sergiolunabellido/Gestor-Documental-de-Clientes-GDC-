@@ -1,8 +1,0 @@
-{
-    "archivo": "archivo3.csv",
-    "tabla": "fmotbaja",
-    "columnas": {
-        "Nombre del Cliente": "name",
-        "Telefono Principal": "orden"
-    }
-}

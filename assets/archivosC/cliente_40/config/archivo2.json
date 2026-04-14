@@ -1,9 +1,0 @@
-{
-    "archivo": "archivo2.csv",
-    "tabla": "fautoria",
-    "columnas": {
-        "primer_nombre": "nombreentidad",
-        "apellido_paterno": "domentidad",
-        "cod_usuario": "cifentidad"
-    }
-}

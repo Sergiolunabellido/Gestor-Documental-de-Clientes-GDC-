@@ -1,9 +1,0 @@
-{
-    "archivo": "archivo1.csv",
-    "tabla": "fservicios",
-    "columnas": {
-        "nombre": "nombre",
-        "apellido": "descripcion",
-        "telefono": "codigo"
-    }
-}

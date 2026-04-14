@@ -477,8 +477,8 @@ function renderizarUsuarios(users) {
         divTextoDatos.className = "d-flex flex-column justify-content-between";
 
         const contenedor = document.createElement("div");
-        contenedor.style.display = "flex";        // para alinear horizontalmente
-        contenedor.style.alignItems = "center";   // alineación vertical
+        contenedor.style.display = "flex";        
+        contenedor.style.alignItems = "center";   
         contenedor.style.gap = "6px"; 
 
         const imgIcono = document.createElement("img");

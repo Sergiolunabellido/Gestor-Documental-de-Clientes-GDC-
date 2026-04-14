@@ -426,13 +426,23 @@ switch ($accion) {
         set_time_limit(0);
         ini_set('memory_limit', '512M');
 
-        $rutaEspecifica = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_{$idCliente}".DW._CONFIG_.DW."{$nombreACSV['nombreJson']}";
+        foreach ($nombreACSV as $archivo) {
 
-        $archivoLC = leerJSON($rutaEspecifica);
+            $nombreAJ = $archivo['nombreJson'] ?? '';
 
-        $datosALC = $archivoLC['datos'] ?? null;
+            $rutaEspecifica = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_{$idCliente}".DW._CONFIG_.DW."{$nombreAJ}";
 
-        if ($datosALC['columnas'] === null) {
+            $archivoLC = leerJSON($rutaEspecifica);
+
+            $datosALC = $archivoLC['datos'] ?? null;
+
+            if ($datosALC['columnas'] === null) {
+                $hayVacio = true;
+            }
+            
+        }
+
+        if ($hayVacio) {
             debug("Error: Configuración de columnas no válida para exportación, {$archivoLC['datos']}", "ERROR");
             $response = ['ok' => false, 'msg' => 'Archivo de configuración vacío'];
             break;

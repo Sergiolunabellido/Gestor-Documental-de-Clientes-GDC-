@@ -13,6 +13,17 @@ $(document).on('click', '#iniciarSesion', (e) =>{
 
     inicioSesion.classList.remove('d-none');
     registro.classList.add('d-none');
+
+    const nombreUsuarioRegistro = document.getElementById('nombreUsuarioRegistro');
+    const contraseniaUsuarioRegistro = document.getElementById('contraseniaRegistro');
+    const correoElectronico = document.getElementById('correoElectronico');
+    const checkAdministrador = document.getElementById('checkAdministrador');
+    const error = document.getElementById('contenedorErrorRegistro');
+    nombreUsuarioRegistro.value = '';
+    contraseniaUsuarioRegistro.value = '';
+    correoElectronico.value = '';
+    checkAdministrador.checked = false;
+    error.classList.add('d-none');
 })
 
 $(document).on('click', '#iniciarRegistro', (e) =>{
@@ -23,6 +34,13 @@ $(document).on('click', '#iniciarRegistro', (e) =>{
 
     inicioSesion.classList.add('d-none');
     registro.classList.remove('d-none');
+
+    const nombreUsuario = document.getElementById('nombreUsuario');
+    const contraseniaUsuario = document.getElementById('contraseniaUsuario');
+    const error = document.getElementById('contenedorError');
+    nombreUsuario.value = '';
+    contraseniaUsuario.value = '';
+    error.classList.add('d-none');
 })
 
 /**
@@ -109,8 +127,9 @@ function home(vista){
             }else if(res.estado === 'conectado'){
                 $('#estaticos').html(res.estaticos);
                 $('#contenido').html(res.contenido);
-
-                
+               
+                const fechaActual = document.getElementById('fechaActual');
+                fechaActual.textContent = res.fechaActual;
                 marcarSesionActiva(); // Marcar sesión activa en sessionStorage
                 if (res.sessionId) {
                     localStorage.setItem('sessionId', res.sessionId);
@@ -118,7 +137,7 @@ function home(vista){
                 if (res.usuarioId) {
                     localStorage.setItem('usuarioId', res.usuarioId);
                 }
-                manejarExpiracionSesion(res.expiraEn);
+                manejarExpiracionSesion(res.expiraEn, res.tiempoActual);
             }
 
             if(res.ok === false){
@@ -141,6 +160,35 @@ $(document).on('click','#botonIniciar',async (e) => {
         e.preventDefault();
         home('login');
 })
+
+
+
+/**
+ * @brief Esta funcion actualiza la fecha actual en el navbar
+ * @fecha 21/01/2026
+ * @return void
+ */
+
+
+function actualizarFecha(){
+   $.ajax({
+    url: 'index.php',
+    method: 'POST',
+    dataType: 'json',
+    data: {
+        accion: 'actualizarHoraServidor'
+    },
+    success: function(res)
+    {
+        const fechaActual = document.getElementById('fechaActual');
+        fechaActual.textContent = res.fechaActual;
+    }
+   })
+}
+
+setInterval(actualizarFecha, 1000); // Actualiza cada minuto
+
+
 
 /** 
 * @brief Este metodo se encarga de mostrar el div que contiene el mensaje de error 
@@ -299,12 +347,12 @@ const AVISO_EXPIRACION = 30 * 1000;
  * @param tiempo
  */
 
-function iniciarTemporizador(tiempo){
+function iniciarTemporizador(tiempo, tiempoActual){
     expiracionSesion = tiempo * 1000;
     avisoMostrado = false;
 
     if(intervalo) clearInterval(intervalo);
-    intervalo = setInterval(controlarSesion, 1000)
+    intervalo = setInterval(() => controlarSesion(tiempoActual), 1000)
     console.log('Tiempo iniciado')
 }
 
@@ -316,9 +364,9 @@ function iniciarTemporizador(tiempo){
  * @fecha 28/01/2026
  * @returns function
  */
-function manejarExpiracionSesion (tiempo){
+function manejarExpiracionSesion (tiempo, tiempoActual){
     localStorage.setItem('expiraEn', tiempo);
-    iniciarTemporizador(tiempo);
+    iniciarTemporizador(tiempo, tiempoActual);
 }
 
 /**
@@ -329,8 +377,8 @@ function manejarExpiracionSesion (tiempo){
  * @fecha 28/01/2026
  * @return functions
  */
-function controlarSesion(){
-    const ahora = Date.now();
+function controlarSesion(tiempoActual){
+    const ahora = tiempoActual * 1000;
     const restante = expiracionSesion - ahora;
 
     if(restante <= AVISO_EXPIRACION && !avisoMostrado){
@@ -390,6 +438,8 @@ document.addEventListener('click', () => {
     if (localStorage.getItem('sessionId')) {
         renovarSesion();
     }
+  
+                
 });
 
 

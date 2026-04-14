@@ -145,6 +145,17 @@ class Archivo {
 
         $rutaCompleta = _ROOT_ . DW . $archivo['ruta'];
 
+        $rutaConfiguracion = dirname($rutaCompleta) . DW . _CONFIG_ . DW . pathinfo($rutaCompleta, PATHINFO_FILENAME) . ".json";
+
+        if (file_exists($rutaConfiguracion)) {
+            if (!unlink($rutaConfiguracion)) {
+                debug("Error al eliminar el archivo de configuración del sistema: " . $rutaConfiguracion, "ERROR");
+                return ['error' => 'eliminar_fallo', 'msg' => 'No se pudo eliminar el archivo de configuración del sistema'];
+            }
+        } else {
+            debug("Archivo de configuración no encontrado en el sistema: " . $rutaConfiguracion, "WARNING");
+        }
+
         if (file_exists($rutaCompleta)) {
             if (!unlink($rutaCompleta)) {
                 debug("Error al eliminar el archivo del sistema: " . $rutaCompleta, "ERROR");
@@ -175,6 +186,18 @@ class Archivo {
 
         foreach ($rutasA as $archivo) {
             $rutaCompleta = _ROOT_ . DW . $archivo['ruta'];
+
+            $rutaConfiguracion = dirname($rutaCompleta) . DW . _CONFIG_ . DW . pathinfo($rutaCompleta, PATHINFO_FILENAME) . ".json";
+
+            if (file_exists($rutaConfiguracion)) {
+                if (!unlink($rutaConfiguracion)) {
+                    debug("Error al eliminar el archivo de configuración del sistema: " . $rutaConfiguracion, "ERROR");
+                    return ['success' => false, 'msg' => 'No se pudo eliminar el archivo de configuración del sistema'];
+                }
+            } else {
+                debug("Archivo no encontrado en el sistema: " . $rutaConfiguracion, "WARNING");
+            }
+
             if (file_exists($rutaCompleta)) {
                 if (!unlink($rutaCompleta)) {
                     debug("Error al eliminar el archivo del sistema: " . $rutaCompleta, "ERROR");

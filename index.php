@@ -2,6 +2,7 @@
 session_start();
 
 require "/var/www/practicas2026/app/aplicacionweb/configuracion/configuracion.php";
+include _ROOT_.DW._ASSETS_.DW."variablesE.php";
 include _ROOT_.DW._INCLUDES_.DW."app.php";
 include _ROOT_.DW._LIB_.DW."db.php";
 include _ROOT_.DW._MOD_.DW._LOGIN_.DW._INCLUDES_.DW."logInA.php";

@@ -183,8 +183,13 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                             contenedorExpresion.innerHTML = res.html || '';
 
                             console.log(columnas);
-                            clavesColumnas.forEach((clave) => {
-                                añadirFilaExpresionConf(clave);
+                            const filaExpInicial = contenedorExpresion.querySelector('.fila-expresion input');
+                            clavesColumnas.forEach((clave, idx) => {
+                                if (idx === 0 && filaExpInicial) {
+                                    filaExpInicial.value = clave;
+                                } else {
+                                    añadirFilaExpresionConf(clave);
+                                }
                             });
                             const contenedorCamposTabla = document.getElementById('divCamposTabla');
                             
@@ -672,12 +677,6 @@ function añadirFilaExpresionConf(valorInput) {
     }
 
     const filaBase = filas[0];
-    const inputBase = filaBase.querySelector('input');
-
-    if (filas.length === 1 && inputBase && inputBase.value === '') {
-        inputBase.value = valorInput;
-        return;
-    }
 
     contadorExpresiones++;
     const nuevaFila = filaBase.cloneNode(true);
@@ -784,7 +783,17 @@ $(document).on('click', '#botonGuardar', (e)=>{
 
     //Creamos un bucle y rellenamos el map con los valores de cada posicion de los arrays.
     for(let i = 0; i < longitud; i++){
-            valores.set(valoresInputs[i],valoresSelects[i])
+            const clave = (valoresInputs[i] || '').trim()
+            const valor = (valoresSelects[i] || '').trim()
+
+            if (clave !== '' && valor !== '') {
+                valores.set(clave, valor)
+            }
+    }
+
+    if (valores.size === 0) {
+        toastr.warning('Debes rellenar al menos una columna origen y su campo destino.')
+        return;
     }
 
     //Creamos un nuevo Map para guardar todo el contenido y pasarlo al back-end.
@@ -900,6 +909,10 @@ $(document).on('click', '#botonGuardar', (e)=>{
         }
     })
 })
+
+
+
+
 
 
 

@@ -1201,3 +1201,32 @@ function eliminarTablaSQL($conexion, $tabla) {
         return ['ok' => false, 'error' => 'Error al eliminar la tabla: ' . $e->getMessage()];
     }
 }
+
+function modificarVariablesEntorno($variables) {
+
+    $archivo = file_get_contents(_ROOT_ . DW . _ASSETS_ . DW . "variablesE.php");
+
+    if (is_writable(_ROOT_ . DW . _ASSETS_ . DW . "variablesE.php")) {
+        debug("Archivo de configuración es escribible", "INFO");
+    } else {
+        file_put_contents(_ROOT_ . DW . _ASSETS_ . DW . "variablesE.php", $archivo);
+        debug("Archivo de configuración no tiene permisos de escritura", "ERROR");
+        return ['ok' => false, 'msg' => 'El archivo de configuración no tiene permisos de escritura'];
+    }
+
+    foreach ($variables as $clave => $valor) {
+        $patron = "/(define\s*\(\s*['\"]" . preg_quote($clave, '/') . "['\"]\s*,\s*)(\".*?\"|\'.*?\'|true|false|null|-?\d+\.?\d*)(\s*\))/";
+        $reemplazo = '$1' . var_export($valor, true) . '$3';
+        $archivo = preg_replace($patron, $reemplazo, $archivo);
+    }
+
+    $resultado = file_put_contents(_ROOT_ . DW . _ASSETS_ . DW . "variablesE.php", $archivo);
+
+    if ($resultado === false) {
+        debug("Error al escribir en el archivo de configuración", "ERROR");
+        return ['ok' => false, 'msg' => 'Error al escribir en el archivo de configuración'];
+    }
+
+    return ['ok' => true, 'msg' => 'Variables de entorno modificadas correctamente'];
+
+}

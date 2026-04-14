@@ -15,4 +15,5 @@
             </tbody>
         </table>
     </div>
+    <button id="guardarConfiguracion" class="btn btn-primary w-25 m-3">Guardar Configuración</button>
 </div>

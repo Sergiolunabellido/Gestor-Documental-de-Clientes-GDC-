@@ -207,25 +207,36 @@ class Usuario {
     /**
      * @brief Modifica los datos de un usuario por su nombre
      * Fecha de creación: 2026-02-02
-     * @param string $nombre Nombre del usuario a modificar
+     * @param string $usuario Nombre del usuario a modificar
      * @param array $cambios Array asociativo con los campos a modificar y sus nuevos valores
-     * @return bool True si se modificó correctamente, false en caso contrario
+     * @return array<bool|string> True si se modificó correctamente, false en caso contrario acompañado de un mensaje explicativo
      */
     public function modificarUsuarioPorNombre($usuario, $cambios) {
-
-        if (empty($cambios['nombre'])) {
-            $cambios['nombre'] = $usuario;
+        $usuarioActual = $this->obtenerPorNombre($usuario);
+        if (!$usuarioActual) {
+            debug("Usuario no encontrado para modificar: $usuario", "ERROR");
+            return [false, "Usuario no encontrado: $usuario"];
         }
 
-        if (empty($cambios['email'])) {
-            $usuarioData = $this->obtenerPorNombre($usuario);
-            if ($usuarioData) {
-                $cambios['email'] = $usuarioData['email'];
-            } else {
-                debug("Usuario no encontrado para obtener email: $usuario", "ERROR");
-                return false;
+        $idUsuarioActual = (int) $usuarioActual['id'];
+
+        /* nombre ya existente
+        if (isset($cambios['nombre']) && $cambios['nombre'] !== '') {
+            $usuarioConMismoNombre = $this->obtenerPorNombre($cambios['nombre']);
+            if ($usuarioConMismoNombre && (int) $usuarioConMismoNombre['id'] !== $idUsuarioActual) {
+                debug("El nombre de usuario ya existe: " . $cambios['nombre'], "ERROR");
+                return [false, "Nombre de usuario ya existe: " . $cambios['nombre']];
             }
-         }
+        }
+        */
+
+        if (isset($cambios['email']) && $cambios['email'] !== '') {
+            $usuarioConMismoEmail = $this->obtenerPorEmail($cambios['email']);
+            if ($usuarioConMismoEmail && (int) $usuarioConMismoEmail['id'] !== $idUsuarioActual) {
+                debug("El email ya existe: " . $cambios['email'], "ERROR");
+                return [false, "Email ya existe: " . $cambios['email']];
+            }
+        }
 
         $setParts = [];
         $params = [];
@@ -236,20 +247,29 @@ class Usuario {
             $params[$campo] = $valor;
         }
 
-        $params['usuario'] = $usuario;
+        $params['idUsuarioObjetivo'] = $idUsuarioActual;
         $setClause = implode(", ", $setParts);
 
-        $sql = "UPDATE Usuario SET $setClause WHERE nombre = :usuario";
+        $sql = "UPDATE Usuario SET $setClause WHERE id = :idUsuarioObjetivo";
 
         $stmt = $this->db->prepare($sql);
 
-        return $stmt->execute($params);
+        try {
+            return [$stmt->execute($params), "Usuario modificado correctamente"];
+        } catch (PDOException $e) {
+            if (($e->getCode() ?? '') === '23000') {
+                debug("Conflicto de clave unica al modificar usuario: $usuario", "WARNING");
+                return [false, "Nombre de usuario o email ya existente"];
+            }
+
+            debug("Error SQL al modificar usuario: " . $e->getMessage(), "ERROR");
+            return [false, "Error al modificar el usuario"];
+        }
     }
 
     /**
      * @brief Libera un usuario que estaba siendo modificado por un administrador
      * Fecha de creación: 2026-02-02
-     * @param int $idAdmin ID del administrador que libera el usuario
      * @param int $idUsuario ID del usuario a liberar
      * @return bool True si se liberó correctamente, false en caso contrario
      */
@@ -287,7 +307,6 @@ class Usuario {
     /**
      * @brief Marca un usuario como siendo modificado por un administrador
      * Fecha de creación: 2026-02-02
-     * @param int $idAdmin ID del administrador que modifica el usuario
      * @param int $idUsuario ID del usuario a modificar
      * @return bool True si se marcó correctamente, false en caso contrario
      */

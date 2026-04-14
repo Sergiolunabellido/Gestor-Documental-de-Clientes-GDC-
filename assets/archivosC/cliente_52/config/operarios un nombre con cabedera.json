@@ -1,0 +1,9 @@
+{
+    "archivo": "operarios un nombre con cabedera.csv",
+    "tabla": "fseroption",
+    "columnas": {
+        "nombre": "labeloption",
+        "id": "idser",
+        "tstamp": "orden"
+    }
+}

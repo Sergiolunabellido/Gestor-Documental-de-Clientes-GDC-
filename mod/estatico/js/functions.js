@@ -28,6 +28,10 @@ $(document).on('click', '#botonCerrarSesion' , (e) =>{
     logout()
 })
 
+function setBodyScroll(enable = true){
+    document.body.style.overflow = enable ? '' : 'hidden';
+}
+
 
 /**
  * @brief Realizamos una peticion el archivo index.php el cual contiene a controller
@@ -50,8 +54,8 @@ $(document).on('click', '#home', (e) => {
         },
         success: function(res) {
           $('#estaticos').html(res.estaticos);
-            $('#contenido').html(res.contenido);
-
+            $("#contenido").html(res.contenido);
+          setBodyScroll(true);
 
         },error: function(xhr, status, error) {
             toastr.error('Error al cargar la vista home', error, status, xhr);
@@ -86,6 +90,7 @@ $(document).on('click', '#usuarios', (e) => {
             $('#estaticos').html(res.estaticos);
             $('#contenido').html(res.contenido);
             renderizarUsuarios(res.usuarios);
+            setBodyScroll(false);
         }, error: function(xhr, status, error) {
             toastr.error('Error al cargar la vista de usuarios', error, status, xhr);
         }
@@ -118,6 +123,7 @@ $(document).on('click', '#fuente', (e) => {
             $('#estaticos').html(res.estaticos);
             $('#contenido').html(res.contenido);
             renderizarClientes(res.clientes)
+            setBodyScroll(true);
             
 
         },error: function(xhr, status, error) {
@@ -150,7 +156,8 @@ $(document).on('click', '#archivo', (e) => {
         },
         success: function(res) {
             $('#estaticos').html(res.estaticos);
-            $('#contenido').html(res.contenido);
+            $("#contenido").html(res.contenido);
+            setBodyScroll(true);
 
             if (res.existeTabla && res.nombreTabla) {
                 renderizarFicheros(res.campoTabla, res.nombreTabla);
@@ -181,7 +188,8 @@ $(document).on('click', '#importar', (e) => {
         },
         success: function(res) {
             $('#estaticos').html(res.estaticos);
-            $('#contenido').html(res.contenido);
+            $("#contenido").html(res.contenido);
+            setBodyScroll(true);
 
             const clientes = Array.isArray(res.clientes) ? res.clientes : [];
             const selectClientes = document.getElementById('listaClientes');
@@ -241,7 +249,8 @@ $(document).on('click', '#botonPerfil', (e)=>{
         },
         success: function(res) {
           $('#estaticos').html(res.estaticos);
-          $('#contenido').html(res.contenido);
+          $("#contenido").html(res.contenido);
+            setBodyScroll(true);
             const divGenerico = document.getElementById('contenedorDatosPerfil')
             divGenerico.innerHTML = '';
 
@@ -292,8 +301,12 @@ $(document).on('click', '#botonPerfil', (e)=>{
 
 $(document).on('click', '#botonConfiguracion', (e)=>{
     e.preventDefault()
+    renderizarConfiguracion()
+   
+})
 
-    $.ajax({
+function renderizarConfiguracion() {
+     $.ajax({
         url:  'index.php',
         method: 'POST',
         dataType: 'json',
@@ -302,14 +315,125 @@ $(document).on('click', '#botonConfiguracion', (e)=>{
         },
         success: function(res) {
           $('#estaticos').html(res.estaticos);
-          $('#contenido').html(res.contenido);
+          $("#contenido").html(res.contenido);
+          setBodyScroll(true);
+
+            $.ajax({
+                url:  'index.php',
+                method: 'POST',
+                dataType: 'json',
+                data: {
+                    accion:'variablesEntorno',
+                },
+                success: function(res) {
+                    console.log(res.variables)
+                
+                    const divGenerico = document.getElementById('configuracionBody')
+                    divGenerico.innerHTML = '';
+                    res.variables.forEach(variable =>{
+                        const tr = document.createElement("tr")
+                        const tdNombre = document.createElement("td")
+                        tdNombre.textContent = variable.nombre
+                        const tdValor = document.createElement("td")
+                        tdValor.textContent = variable.valor
+                        tdValor.contentEditable = true
+                        tr.appendChild(tdNombre)
+                        tr.appendChild(tdValor)
+                        divGenerico.appendChild(tr)
+                    })
+                   
+
+                },error: function(xhr, status, error) {
+                    toastr.error('Error al cargar las variables de entorno: ', error, status, xhr);
+                    
+                }
+            })
 
         },error: function(xhr, status, error) {
             toastr.error('Error al cargar la vista configuracion', error, status, xhr);
             
         }
     })
+}
+
+/**
+ * @brief Al pulsar el boton guardar configuracion se recogen los datos de la tabla y se envian al backend para que se actualicen las variables de entorno.
+ * @fecha 13/04/2026
+ * @return html
+ */
+
+function parseValor(valor) {
+    const v = valor.trim();
+    //Prueba si es boolean para devolverlo en tipo booleano y no como string, si no es ni true ni false se devuelve el valor original
+    if (v === "true") return true;
+    if (v === "false") return false;
+    //Si no es boolean comprueba si es numerico para devolverlo como numero y no como string, si no es un numero se devuelve el valor original
+    if (/^-?\d+(\.\d+)?$/.test(v)) return Number(v);
+
+    
+    return v;
+}
+
+
+$(document).on('click', '#guardarConfiguracion', (e)=>{
+    e.preventDefault()
+
+    const filas = document.querySelectorAll('#configuracionBody tr');
+    const configuracionActualizada =new Map();
+
+    filas.forEach(fila => {
+        const nombre = fila.cells[0].textContent.trim();
+        const valor = fila.cells[1].textContent.trim();
+        configuracionActualizada.set( nombre, parseValor(valor));
+    });
+    console.log(configuracionActualizada)
+
+    $.ajax({
+        url: 'index.php',
+        method: 'POST',
+        dataType: 'json',
+        data: {
+            accion: 'modificarVariablesEntorno',
+            variablesE: Object.fromEntries(configuracionActualizada)
+        },
+        success: function(res) {
+            if(res.ok){
+                 
+            toastr.success(res.msg ||'Configuración actualizada con éxito');
+
+            const filas = document.querySelectorAll('#configuracionBody tr');
+            const nombreAplicacion = document.getElementById('nombreAplicacion');
+            const versionAplicacion = document.getElementById('versionAplicacion');
+
+            filas.forEach(fila => {
+                const nombre = fila.cells[0].textContent.trim();
+
+                if(configuracionActualizada.has(nombre)){
+                    fila.cells[1].textContent = configuracionActualizada.get(nombre);
+                    if(nombre === '_APPNAME_' && nombreAplicacion){
+                        nombreAplicacion.textContent = configuracionActualizada.get(nombre);
+                    }
+                    if(nombre === '_VERSION_' && versionAplicacion){
+                        versionAplicacion.textContent = configuracionActualizada.get(nombre);
+                    }
+                    document.title = configuracionActualizada.get('_APPNAME_') || document.title;
+                }
+            })
+            
+                
+            }else{
+                toastr.error(res.msg || 'Ha habido un error al actualizar la configuración.');
+            }
+            
+        },
+        error: function(xhr, status, error) {
+            toastr.error('Error al guardar la configuración', error, status, xhr);
+        }
+    });
+
+
 })
+
 
 /**
  * @brief Renderiza la lista de usuarios en el contenedor #divs-usuarios. Cada usuario se muestra con su foto de perfil, nombre, correo y botones para modificar o eliminar.
@@ -323,6 +447,7 @@ function renderizarUsuarios(users) {
         console.warn('Container #divs-usuarios not found.');
         return;
     }
+    setBodyScroll(false);
     divGenerico.innerHTML = ''; // Clear existing content
 
     console.log('Rendering users:', users); // Debug: Check the users data
@@ -627,4 +752,21 @@ function modificarEstadoUsuario(estado, id){
             })
            
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

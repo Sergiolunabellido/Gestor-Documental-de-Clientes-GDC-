@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <base href="<?php echo _URI_ ?>" />
-        <title>Aplicacion web</title>
+        <title><?php echo _APPNAME_; ?></title>
         <link rel="stylesheet" href="mod/detalleCliente/css/styles.css?v=1">
         <link href="bootstrap-5.3.8-dist/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

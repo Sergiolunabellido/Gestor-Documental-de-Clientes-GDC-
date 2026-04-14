@@ -26,7 +26,7 @@
 
     </div>
    
-    <div id="ficherosCliente" class="m-3 h-100 border border-2 shadow rounded overflow-auto"
+    <div id="ficherosCliente" class="m-3 vh-100 border border-2 shadow rounded overflow-auto"
     style="max-height: calc(100vh - 220px);">
        
     </div>

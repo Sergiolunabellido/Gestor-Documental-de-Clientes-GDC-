@@ -34,6 +34,7 @@ $rutaCSV = $_POST['rutaCSV'] ?? '';
 $configuracionCSV = $_POST['configuracionCSV'] ?? null;
 $nombreArchivoCSV = $_POST['nombreArchivoCSV'] ?? '';
 $nombreTabla = $_POST['nombreTabla'] ?? '';
+$variablesE = $_POST['variablesE'] ?? null;
 
 # Exportacion de archivos
 
@@ -123,6 +124,7 @@ switch ($accion) {
 
                 $_SESSION['tiempo_sesion'] = $tiempoSesion;
                 $_SESSION['inicio_sesion'] = time();
+                $_SESSION['hora_servidor'] = date('H:i:s');
 
                 if ($recordarme) {
                     crearRecuerdameToken($db, $user['nombre']);
@@ -137,12 +139,16 @@ switch ($accion) {
                 $contenido = ob_get_clean();
 
                 $expiraEn = $_SESSION['inicio_sesion'] + ($_SESSION['tiempo_sesion']);
+                $horaServidor = time();
+                $fechaServidor = date('Y-m-d H:i:s', $horaServidor);
 
                 $response = [
                     'ok' => true,
                     'estaticos' => $estaticos,
                     'contenido' => $contenido,
                     'expiraEn' => $expiraEn,
+                    'tiempoActual' => $horaServidor,
+                    'fechaActual' => $fechaServidor,
                     'sessionId' => session_id(),
                     'usuarioId' => $user['id'],
                     'estado' => $user['estado']
@@ -420,6 +426,12 @@ switch ($accion) {
         set_time_limit(0);
         ini_set('memory_limit', '512M');
 
+        if ($nombreACSV['columnas'] === null) {
+            debug("Error: Configuración de columnas no válida para exportación", "ERROR");
+            $response = ['ok' => false, 'msg' => 'Archivo de configuración vacío'];
+            break;
+        }
+
         $csvI = new CSVImportar($db);
 
         foreach ($nombreACSV as $archivo) {
@@ -638,6 +650,38 @@ switch ($accion) {
             $configuracionCSV = json_decode($configuracionCSV, true);
         }
 
+        if (!is_array($configuracionCSV)) {
+            debug("Configuración CSV no es un array válido", "ERROR");
+            $response = ['ok' => false, 'msg' => 'Configuración CSV no válida'];
+            break;
+        }
+
+        $columnas = $configuracionCSV['columnas'] ?? null;
+
+        if (!is_array($columnas)) {
+            debug("Configuración CSV 'columnas' no es un array válido", "ERROR");
+            $response = ['ok' => false, 'msg' => 'Configuración CSV no válida: columnas vacías'];
+            break;
+        }
+
+        $columnasLimpias = [];
+        foreach ($columnas as $origen => $destino) {
+            $origenLimpio = trim((string) $origen);
+            $destinoLimpio = trim((string) $destino);
+
+            if ($origenLimpio !== '' && $destinoLimpio !== '') {
+                $columnasLimpias[$origenLimpio] = $destinoLimpio;
+            }
+        }
+
+        if (empty($columnasLimpias)) {
+            debug("Configuración CSV sin relaciones válidas en 'columnas'", "ERROR");
+            $response = ['ok' => false, 'msg' => 'Configuración CSV no válida: columnas vacías'];
+            break;
+        }
+
+        $configuracionCSV['columnas'] = $columnasLimpias;
+
         $nombreArchivoCSV = $configuracionCSV['archivo'] ?? '';
         $nombreTabla = $configuracionCSV['tabla'] ?? '';
 
@@ -667,11 +711,11 @@ switch ($accion) {
             break;
         }
 
-        $archivosEliminados[] = $archivoModel->eliminarArchivosCliente($idCliente);
+        $archivosEliminados = $archivoModel->eliminarArchivosCliente($idCliente);
 
-        if ($archivosEliminados[0] === false) {
+        if (($archivosEliminados['success'] ?? false) !== true) {
             debug("Error al eliminar archivos del cliente: $idCliente", "ERROR");
-            $response = ['ok' => false, 'msg' => 'Error al eliminar los archivos del cliente'];
+            $response = ['ok' => false, 'msg' => $archivosEliminados['msg'] ?? 'Error al eliminar los archivos del cliente'];
         } else {
             debug("Archivos eliminados correctamente para cliente: $idCliente", "INFO");
             $response = ['ok' => true, 'msg' => 'Los archivos del cliente se han eliminado correctamente'];
@@ -783,11 +827,11 @@ switch ($accion) {
                 
                 $ok = $usuarioModel->modificarUsuarioPorNombre($usuario, $cambios);
 
-                if (!$ok) {
+                if (!$ok[0]) {
                     debug("Error al modificar usuario: $usuario", "ERROR");
-                    $response = ['ok'=> $ok,'msg'=> 'Error: no se ha podido modificar el usuario'];
+                    $response = ['ok'=> $ok[0],'msg'=> $ok[1]];
                 } else {
-                    $response = ['ok'=> $ok, 'msg'=> 'Los cambios se han aplicado correctamente'];
+                    $response = ['ok'=> $ok[0], 'msg'=> $ok[1]];
                 }
 
                 break;
@@ -832,6 +876,18 @@ switch ($accion) {
     // Crea un nuevo cliente (registro + estructura de carpeta asociada).
     case 'crearCarpetaCliente':
 
+        if ($nombreCliente === '') {
+            debug("CrearCarpetaCliente: nombre de cliente no especificado", "WARNING");
+            $response = ['ok' => false, 'mensaje' => 'Error: Nombre de cliente no especificado'];
+            break;
+        }
+
+        if ($telefonoCliente === '') {
+            debug("CrearCarpetaCliente: teléfono de cliente no especificado", "WARNING");
+            $response = ['ok' => false, 'mensaje' => 'Error: Teléfono de cliente no especificado'];
+            break;
+        }
+
         $resultado = $clienteModel->agregarCliente($nombreCliente, $telefonoCliente);
         $ok = $resultado[0] ?? false;
         $mensaje = $resultado[1] ?? 'Error desconocido';
@@ -870,9 +926,9 @@ switch ($accion) {
 
         $ok = $archivoModel->eliminarArchivo($idArchivo, $idCliente);
 
-        if (!$ok) {
+        if (($ok['success'] ?? false) !== true) {
             debug("Error al eliminar archivo: $idArchivo para cliente: $idCliente", "ERROR");
-            $response = ['ok'=> false,'msg'=> 'Error: no se ha podido eliminar el archivo'];
+            $response = ['ok'=> false,'msg'=> $ok['msg'] ?? 'Error: no se ha podido eliminar el archivo'];
             break;
         } else {
             debug("El archivo se ha eliminado correctamente: $idArchivo para cliente: $idCliente", "INFO");
@@ -910,6 +966,64 @@ switch ($accion) {
             $response = ['ok' => true, 'msg' => 'La tabla se ha eliminado correctamente'];
         }
         
+        break;
+
+    case 'actualizarHoraServidor':
+
+        $fechaServidor = date('Y-m-d H:i:s', $horaServidor);
+
+        $response = ['ok' => true, 'fechaActual' => $fechaServidor];
+
+        break;
+
+    # Enviar variables de entorno al frontend
+    case 'variablesEntorno':
+
+        $response = [
+            'ok' => true,
+            'variables' => [
+                ['nombre' => '_APPNAME_', 'valor' => _APPNAME_],
+                ['nombre' => '_VERSION_', 'valor' => _VERSION_],
+                ['nombre' => '_DESCRIPCION_APP_', 'valor' => _DESCRIPCION_APP_],
+                ['nombre' => '_COPYRIGHT_', 'valor' => _COPYRIGHT_],
+                ['nombre' => '_NUMERO_DECIMALES_', 'valor' => _NUMERO_DECIMALES_],
+                ['nombre' => '_MODO_DEBUG_', 'valor' => _MODO_DEBUG_]
+            ]
+        ];
+        break;
+
+    # Modificar variables de entorno (solo admin)
+    case 'modificarVariablesEntorno':
+
+        if (!isset($_SESSION['login']) || !$_SESSION['login'] || comprobarAdmin($db, $_SESSION['usuario']) == 0) {
+            debug("ModificarVariablesEntorno: usuario sin permisos - {$_SESSION['usuario']}", "WARNING");
+            $response = ['ok' => false, 'msg' => 'No tienes permisos'];
+            break;
+        }
+
+        foreach ($variablesE as $variable) {
+            debug("ModificarVariablesEntorno: variables recibidas - " . $variable, "INFO");
+        }
+
+        if (!is_array($variablesE)) {
+            debug("ModificarVariablesEntorno: variables no son un array válido", "ERROR");
+            $response = ['ok' => false, 'msg' => 'Variables no válidas'];
+            break;
+        }
+
+        $ok[] = modificarVariablesEntorno($variablesE);
+
+        if (!$ok[0]) {
+            debug("Error al modificar variables de entorno", "ERROR");
+            $response = ['ok' => false, 'msg' => $ok[1]];
+        } else {
+            debug("Variables de entorno modificadas correctamente", "INFO");
+            $response = ['ok' => true, 'msg' => $ok[1], 'variables' => [
+                ['nombre' => '_APPNAME_', 'valor' => _APPNAME_],
+                ['nombre' => '_VERSION_', 'valor' => _VERSION_],
+            ]];
+        }
+
         break;
 
     // Fallback cuando llega una accion no contemplada.

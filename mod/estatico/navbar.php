@@ -1,4 +1,12 @@
-<nav id="navbar" class=" navbar d-flex justify-content-end align-items-center p-3 bg-light bg-opacity-75 h-50 ">
+<nav id="navbar" class=" navbar d-flex justify-content-between align-items-center p-3 bg-light bg-opacity-75 h-50 ">
+        <div class="d-flex flex-column align-items-start">
+            <div class="d-flex align-items-center gap-3">
+                <p id="nombreAplicacion"><?php echo _APPNAME_; ?></p>
+                <p id="versionAplicacion"><?php echo _VERSION_; ?></p>
+            </div>
+            
+            <p id="fechaActual"></p>
+        </div>
         <div class=" d-flex align-items-center justify-content-end gap-2 p-0 rounded">
             <p class="lead">En linea</p>
             <button id="usuario" class="btn btn-light w-25 h-25" data-bs-toggle="dropdown" aria-expanded="false" >

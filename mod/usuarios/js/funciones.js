@@ -166,7 +166,7 @@ $(document).on('click', '#botonModificar', (e) =>{
                     },
                     error: function(xhr, status, error) {
                         console.error('Error al cancelar modificación del usuario:', error, status, xhr);
-                        toast.error(res.msg ||'Error de conexión al cancelar modificación del usuario');
+                        toastr.error('Error de conexión al cancelar modificación del usuario');
                     }
                 });
                 
@@ -181,7 +181,7 @@ $(document).on('click', '#botonModificar', (e) =>{
         },
         error: function(xhr, status, error) {
             console.error('Error al modificar usuario:', error, status, xhr);
-            toast.error('Error de conexión al modificar el usuario');
+            toastr.error('Error de conexión al modificar el usuario');
         }
     });
 

@@ -9,9 +9,10 @@
             <button type="button" id="botonFiltrar" class="btn btn-primary">Filtrar</button>
         </div>
     </div>
-    <div id="divs-usuarios" class="w-75 h-100 ">
+    <div id="divs-usuarios" class="w-75 h-100" style="max-height: calc(100vh - 220px); overflow-y: auto; overflow-x: hidden;">
        
     </div>
 </div>
+
 
 

@@ -263,6 +263,22 @@ function renderizarTablaArchivosCliente(archivos, cliente = null) {
                             contenedorExpresion.innerHTML = res.html || '';
                         }
 
+                        const contenedorCamposTabla = document.getElementById('divCamposTabla');
+                        if (contenedorCamposTabla) {
+                            const filaBase = contenedorCamposTabla.querySelector('.fila-campo');
+                            contenedorCamposTabla.innerHTML = '';
+                            if (filaBase) {
+                                const baseClon = filaBase.cloneNode(true);
+                                const selBase = baseClon.querySelector('select');
+                                if (selBase) {
+                                    selBase.value = '';
+                                    delete selBase.dataset.confInit;
+                                }
+                                contenedorCamposTabla.appendChild(baseClon);
+                            }
+                            contadorFilas = 1; 
+                        }
+
                         $('#nombreCliente').text(nombreCliente);
                         $('#nombreArchivo').text(nombreArchivo);
 

@@ -1,0 +1,8 @@
+id,company_id,partner_id,active,create_date,login,password,action_id,create_uid,write_uid,signature,share,write_date,totp_last_counter,totp_secret,tour_enabled,notification_type,manual_im_status,out_of_office_message,out_of_office_from,out_of_office_to,odoobot_state,odoobot_failed,sale_team_id,property_warehouse_id
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,,,
+,,,,,pepe,,,,,,,,,,,,,,,,,,,
+,,,,,juan,,,,,,,,,,,,,,,,,,,

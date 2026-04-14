@@ -1,0 +1,9 @@
+{
+    "archivo": "ventas_libros_dataset.csv",
+    "tabla": "ftsalariales",
+    "columnas": {
+        "titulo": "categoria",
+        "unidades_vendidas": "horaextra",
+        "mes": "festivoespecial"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "archivo": "operarios un nombre con cabedera.csv",
+    "tabla": "fregjornadainfo",
+    "columnas": {
+        "id": "idregjornada",
+        "cp": "tipo"
+    }
+}

@@ -5,7 +5,7 @@
         <div class="d-flex align-items-center justify-content-center gap-3">
             <input type="text" placeholder="Nombre Usuario" id="nombreUserFiltro" class="form-control">
             <input type="text" placeholder="Correo Usuario" id="correoUserFiltro" class="form-control">
-            <input type="text" placeholder="Fecha Creacion" id="fechaUserFiltro" class="form-control">
+            <input type="text" placeholder="Fecha Creacion(YYYY-MM-DD)" id="fechaUserFiltro" class="form-control">
             <button type="button" id="botonFiltrar" class="btn btn-primary">Filtrar</button>
         </div>
     </div>

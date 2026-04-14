@@ -8,10 +8,8 @@ $archivoModel = new Archivo($db);
 
 $accion   = $_POST['accion'] ?? '';
 $filtro = $_POST['filtro'] ??'';
-$fecha = null;
-if (!empty($_POST['fecha'])) {
-    $fecha = new DateTime($_POST['fecha']);
-}
+$fecha = $_POST['fecha'] ?? null;
+
 $usuario  = $_POST['usuario'] ?? '';
 $nuevoUsuario = $_POST['nuevoUsuario'] ?? '';
 $password = $_POST['password'] ?? '';

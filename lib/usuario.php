@@ -137,11 +137,11 @@ class Usuario {
      */
     public function obtenerListaUsuariosFecha($fecha): array {
         $sql = "SELECT id, nombre, email, foto_perfil, timestamp, estado
-                FROM Usuario WHERE DATE(timestamp) = :fecha AND deleted = 0";
+                FROM Usuario WHERE DATE(timestamp) like :fecha AND deleted = 0";
 
         $stmt = $this->db->prepare($sql);
-        $stmt->execute(['fecha' => $fecha->format('Y-m-d')]);
-       
+        $stmt->bindValue(':fecha', '%' . $fecha . '%');
+        $stmt->execute();
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }

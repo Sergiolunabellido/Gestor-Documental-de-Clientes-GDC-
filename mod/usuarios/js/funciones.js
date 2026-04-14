@@ -323,7 +323,7 @@ $(document).on('input', '#correoUserFiltro', (e) => {
 
 })
 
-$(document).on('input', '#correoUserFiltro', (e) => {
+$(document).on('input', '#fechaUserFiltro', (e) => {
     e.preventDefault()
     let fechaUserFiltro =  $('#fechaUserFiltro').val()
     

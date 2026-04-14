@@ -1,9 +1,9 @@
 {
     "archivo": "archivo2.csv",
-    "tabla": "fmedotrosingreso",
+    "tabla": "fautoria",
     "columnas": {
-        "primer_nombre": "hora",
-        "apellido_paterno": "observacion",
-        "cod_usuario": "idmedalmdet"
+        "primer_nombre": "nombreentidad",
+        "apellido_paterno": "domentidad",
+        "cod_usuario": "cifentidad"
     }
 }

@@ -169,6 +169,11 @@ $(document).on('click', '#botonModificar', (e) =>{
                         toastr.error('Error de conexión al cancelar modificación del usuario');
                     }
                 });
+                // Actualizar el nombre y correo del usuario en la lista
+                const labelNombre = divUsuario.querySelector('.labelNombreUsuarioActual');
+                const labelEmail = divUsuario.querySelector('.labelEmailUsuarioActual');
+                if (labelNombre) labelNombre.textContent = nuevoNombre || nombreUsuarioActual;
+                if (labelEmail) labelEmail.textContent = nuevoEmail || divUsuario.querySelector('.labelEmailUsuarioActual').textContent;
                 
                 
                 
@@ -280,6 +285,7 @@ $(document).on('input', '#nombreUserFiltro', (e) => {
                 usuario: nombreUserFiltro
             },
             success: function(res) {
+                localStorage.setItem('usuarios', res.usuarios)
 
                 renderizarUsuarios(res.usuarios);
             },error: function(xhr, status, error) {

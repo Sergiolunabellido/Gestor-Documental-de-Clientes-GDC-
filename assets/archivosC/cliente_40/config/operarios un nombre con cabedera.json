@@ -4,6 +4,7 @@
     "columnas": {
         "nombre": "nombreentidad",
         "tlfno1": "tlf1centro",
-        "tlfno2": "tlf1entidad"
+        "tlfno2": "tlf1entidad",
+        "dni": "procentro"
     }
 }

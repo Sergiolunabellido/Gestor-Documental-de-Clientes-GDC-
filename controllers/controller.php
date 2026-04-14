@@ -426,8 +426,14 @@ switch ($accion) {
         set_time_limit(0);
         ini_set('memory_limit', '512M');
 
-        if ($nombreACSV['columnas'] === null) {
-            debug("Error: Configuración de columnas no válida para exportación", "ERROR");
+        $rutaEspecifica = _ROOT_.DW._ASSETS_.DW._ARCHIVOSC_.DW."cliente_{$idCliente}".DW._CONFIG_.DW."{$nombreACSV['nombreJson']}";
+
+        $archivoLC = leerJSON($rutaEspecifica);
+
+        $datosALC = $archivoLC['datos'] ?? null;
+
+        if ($datosALC['columnas'] === null) {
+            debug("Error: Configuración de columnas no válida para exportación, {$archivoLC['datos']}", "ERROR");
             $response = ['ok' => false, 'msg' => 'Archivo de configuración vacío'];
             break;
         }

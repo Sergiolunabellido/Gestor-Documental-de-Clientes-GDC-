@@ -498,6 +498,8 @@ function renderizarUsuarios(users) {
 
         const labelCorreo = document.createElement("label");
         labelCorreo.textContent = user.email;
+        labelCorreo.classList = "labelEmailUsuarioActual";
+        labelCorreo.dataset.idUsuario = user.id;
         const labelContraseña = document.createElement("label");
         labelContraseña.textContent = "******";
 

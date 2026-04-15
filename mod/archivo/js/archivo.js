@@ -175,6 +175,7 @@ $(document).on('click', '#botonEliminarFicheroBD', (e) => {
  * @returns 
  */
 function renderizarFicheros(nombreCampo, nombreTabla) {
+    setBodyScroll(false);
     localStorage.setItem('nombreTabla', nombreTabla);
     const divGenerico = document.getElementById('divPadreFicheros');
     if (!divGenerico) return;

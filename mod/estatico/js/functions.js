@@ -1,4 +1,3 @@
-
 /**
 * @brief Esta funcion realiza una peticion ajax al pulsar el enlace cerrar sesion de la lista desplegable en el home, esta peticion se 
 * realiza al back-end(index.php) que llama al controller.php para cerrar la sesion que actualmente tiene el usuario y volver a mostrar 
@@ -384,8 +383,13 @@ $(document).on('click', '#guardarConfiguracion', (e)=>{
 
     filas.forEach(fila => {
         const nombre = fila.cells[0].textContent.trim();
-        const valor = fila.cells[1].textContent.trim();
-        configuracionActualizada.set( nombre, parseValor(valor));
+        if (nombre === '_MODO_DEBUG_') {
+            const valor = fila.cells[1].textContent.trim().toLowerCase();
+            configuracionActualizada.set( nombre, parseValor(valor));
+        }else{
+            const valor = fila.cells[1].textContent.trim();
+            configuracionActualizada.set( nombre, parseValor(valor));
+        }
     });
     console.log(configuracionActualizada)
 
@@ -399,7 +403,12 @@ $(document).on('click', '#guardarConfiguracion', (e)=>{
         },
         success: function(res) {
             if(res.ok){
-                 
+            configuracionActualizada.forEach((valor, nombre) => {
+                if(nombre === '_MODO_DEBUG_'){
+                    habilitarDebug(valor)
+                }
+            })
+                
             toastr.success(res.msg ||'Configuración actualizada con éxito');
 
             const filas = document.querySelectorAll('#configuracionBody tr');

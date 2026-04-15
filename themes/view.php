@@ -36,7 +36,7 @@
         
         <script src="bootstrap-5.3.8-dist/js/jquery-3.7.1.min.js"></script>
         <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
-        <script type="module" src="js/app.js"></script>
+        <script src="js/app.js"></script>
         <script src="mod/estatico/js/functions.js"></script>
         <script src="mod/login/js/script.js"></script>
         <script src="mod/perfil/js/funciones.js"></script>

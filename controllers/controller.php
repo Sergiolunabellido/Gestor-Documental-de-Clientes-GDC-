@@ -149,7 +149,8 @@ switch ($accion) {
                     'fechaActual' => $fechaServidor,
                     'sessionId' => session_id(),
                     'usuarioId' => $user['id'],
-                    'estado' => $user['estado']
+                    'estado' => $user['estado'],
+                    'admin' => $isAdmin
                 ];
             } else {
                 debug("Error al registrar sesión para usuario: $usuario", "ERROR");
@@ -913,7 +914,6 @@ switch ($accion) {
             $response = ['ok'=> false,'mensaje'=> $mensaje];
             break;
         } else {
-            debug('La carpeta del cliente se ha creado correctamente', 'INFO');
             $response = ['ok'=> true, 'mensaje'=> $mensaje, 'clientes' => $clientes];
         }
 
@@ -1006,6 +1006,16 @@ switch ($accion) {
         ];
         break;
 
+    case 'modoDebug':
+
+        $response = [
+            'ok' => true,
+            'variables' => [
+                ['nombre' => '_MODO_DEBUG_', 'valor' => _MODO_DEBUG_]
+            ]
+        ];
+        break;
+
     # Modificar variables de entorno (solo admin)
     case 'modificarVariablesEntorno':
 
@@ -1013,10 +1023,6 @@ switch ($accion) {
             debug("ModificarVariablesEntorno: usuario sin permisos - {$_SESSION['usuario']}", "WARNING");
             $response = ['ok' => false, 'msg' => 'No tienes permisos'];
             break;
-        }
-
-        foreach ($variablesE as $variable) {
-            debug("ModificarVariablesEntorno: variables recibidas - " . $variable, "INFO");
         }
 
         if (!is_array($variablesE)) {
@@ -1031,12 +1037,19 @@ switch ($accion) {
             debug("Error al modificar variables de entorno", "ERROR");
             $response = ['ok' => false, 'msg' => $ok[1]];
         } else {
-            debug("Variables de entorno modificadas correctamente", "INFO");
             $response = ['ok' => true, 'msg' => $ok[1], 'variables' => [
                 ['nombre' => '_APPNAME_', 'valor' => _APPNAME_],
                 ['nombre' => '_VERSION_', 'valor' => _VERSION_],
             ]];
         }
+
+        break;
+
+    case 'comprobarAdmin':
+
+        $isAdmin = comprobarAdmin($db, $_SESSION['usuario'] ?? '');
+
+        $response = ['ok' => true, 'isAdmin' => $isAdmin == 1];
 
         break;
 

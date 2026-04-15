@@ -2,7 +2,7 @@
     "archivo": "registro jornada.csv",
     "tabla": "femp",
     "columnas": {
-        "origen": "texto",
-        "tipo_movimiento": "descripcion"
+        "origen": "fenom",
+        "tipo_movimiento": "tr6"
     }
 }

@@ -1,5 +1,5 @@
 <nav id="navbar" class=" navbar d-flex justify-content-between align-items-center p-3 bg-light bg-opacity-75 h-50 ">
-        <div class="d-flex align-items-start gap-3">
+        <div class="d-flex align-items-start justify-content-center gap-3 h-100">
             <p id="nombreAplicacion"><?php echo _APPNAME_; ?></p>
             <p id="versionAplicacion"><?php echo _VERSION_; ?></p>
             <p id="fechaActual"><?php echo date('Y-m-d H:i:s'); ?></p>

@@ -120,7 +120,6 @@ function home(vista){
             recordarme: recordarme.checked
         },
         success: function(res) {
-          
 
             if(res.estado === 'pendiente'){
                 toastr.warning(res.msg);
@@ -144,6 +143,12 @@ function home(vista){
                 document.getElementById('contenedorError').textContent = res.msg;
                 mostrarError();
                 return;
+            }
+
+            if(res.admin === 1){
+                habilitarDebug();
+            }else{
+                habilitarDebugNoAdmin();
             }
             
 

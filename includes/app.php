@@ -615,8 +615,6 @@ function leerJSON($ruta) {
         return ['ok' => false, 'error' => 'Error al decodificar JSON: ' . json_last_error_msg()];
     }
 
-    debug("Archivo JSON leído correctamente: $ruta y los datos: " . json_encode($datos), "INFO");
-
     return ['ok' => true, 'datos' => $datos];
 }
 
@@ -777,7 +775,6 @@ function guardarConfiguracionCSV($config, $idCliente) {
         return ['ok' => false, 'msg' => 'Error al guardar el archivo de configuración'];
     }
     
-    debug("Configuración guardada correctamente en: $cacheFile", "INFO");
     return ['ok' => true, 'msg' => 'Configuración guardada correctamente'];
 }
 
@@ -1206,9 +1203,7 @@ function modificarVariablesEntorno($variables) {
 
     $archivo = file_get_contents(_ROOT_ . DW . _ASSETS_ . DW . "variablesE.php");
 
-    if (is_writable(_ROOT_ . DW . _ASSETS_ . DW . "variablesE.php")) {
-        debug("Archivo de configuración es escribible", "INFO");
-    } else {
+    if (!is_writable(_ROOT_ . DW . _ASSETS_ . DW . "variablesE.php")) {
         file_put_contents(_ROOT_ . DW . _ASSETS_ . DW . "variablesE.php", $archivo);
         debug("Archivo de configuración no tiene permisos de escritura", "ERROR");
         return ['ok' => false, 'msg' => 'El archivo de configuración no tiene permisos de escritura'];

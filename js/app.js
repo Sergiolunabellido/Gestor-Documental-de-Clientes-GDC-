@@ -27,12 +27,12 @@ function habilitarDebug(valor = null) {
     if(valor !== null){
          
         if(valor === 'true' || valor === true){
-            toastr.success('Modo debug habilitado');
+            toastr.info('Modo debug habilitado');
             console.log = avisos;
             return;
         }else{
             console.log = () => {};
-            toastr.error('Modo debug deshabilitado');
+            toastr.info('Modo debug deshabilitado');
             return;
         }
     }
@@ -50,11 +50,11 @@ function habilitarDebug(valor = null) {
                 const modoDebug = res.variables.find(variable => variable.nombre === '_MODO_DEBUG_');
 
                 if(modoDebug && modoDebug.valor === 'true'|| modoDebug.valor === true){
-                    toastr.success('Modo debug habilitado');
+                    toastr.info('Modo debug habilitado');
                     console.log = avisos;
                 }else{
                     console.log = () => {};
-                    toastr.error('Modo debug deshabilitado');
+                    toastr.info('Modo debug deshabilitado');
                     
                 }
                

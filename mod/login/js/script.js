@@ -148,7 +148,7 @@ function home(vista){
             if(res.admin === 1){
                 habilitarDebug();
             }else{
-                habilitarDebugNoAdmin();
+                 console.log = () => {};
             }
             
 

@@ -64,39 +64,6 @@ function habilitarDebug(valor = null) {
     }
 }
 
-function habilitarDebugNoAdmin(valor = null) {
-
-    if(valor !== null){
-         
-        if(valor === 'true' || valor === true){
-            console.log = avisos;
-            return;
-        }else{
-            console.log = () => {};
-            return;
-        }
-    }
-    else{
-        $.ajax({
-            url: 'index.php',
-            method: 'POST',
-            data: {
-                accion : 'modoDebug'
-            },
-            async: false,
-            dataType: 'json',
-            success: function(res){
-                const modoDebug = res.variables.find(variable => variable.nombre === '_MODO_DEBUG_');
-                if(modoDebug && modoDebug.valor === 'true'|| modoDebug.valor === true){
-                    console.log = avisos;
-                }else{
-                    console.log = () => {};
-                }
-            }
-        })
-    }
-}
-
 window.addEventListener('load', () => {
 
     $.ajax({
